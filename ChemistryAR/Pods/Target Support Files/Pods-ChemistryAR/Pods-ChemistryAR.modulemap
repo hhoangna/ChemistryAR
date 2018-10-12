@@ -1,0 +1,6 @@
+framework module Pods_ChemistryAR {
+  umbrella header "Pods-ChemistryAR-umbrella.h"
+
+  export *
+  module * { export * }
+}

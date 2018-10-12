@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  VSip-iOS
+
+  Created by machnguyen_uit on 8/21/18.
+  Copyright © 2018 machnguyen_uit. All rights reserved.
+*/
+
+//Generated IOS file for locale : vi
+
+"language"="en";
+
+"Hello"="Xin chào";
+
+//LOGIN SCREEN
+"Login" = "Đăng nhập";
+"Register" = "Đăng ký";
+"Email" = "Email";
+"Password" = "Mật khẩu";
+"User Name" = "Tên người dùng";
+"Re-Password"="Nhập lại mật khẩu";
+
+//BOTTOMBAR
+"Periodic" = "BTH";
+"Reaction" = "Phản ứng";
+"Home" = "Trang chính";
+"AR" = "AR";
+"Setting" = "Cài đặt";
+
+//HOME SCREEN
+"Periodic Table" = "Bảng tuần hoàn";
+"Chemical Reaction" = "Phản ứng hoá học";
+"Augmented Reality" = "Thực tế ảo";
+
+//PERIODIC SCREEN
+"Mendeleev Periodic Table" = "Bảng tuần hoàn Mendeleev";
+"Solubility" = "Độ hoà tan";
+"Electronegativity of elements" = "Độ âm điện nguyên tố";
+"Molecular weight of organic substances" = "Trọng lượng phân tử hữu cơ";
+"Reactivity series" = "Chuỗi phản ứng";

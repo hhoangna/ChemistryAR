@@ -1,0 +1,44 @@
+PODS:
+  - ESTabBarController-swift (2.6.2)
+  - FSPagerView (0.8.1)
+  - IQKeyboardManager (6.2.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SpreadsheetView (0.8.4)
+  - SVProgressHUD (2.2.5)
+  - SwiftMessages (6.0.0):
+    - SwiftMessages/App (= 6.0.0)
+  - SwiftMessages/App (6.0.0)
+
+DEPENDENCIES:
+  - ESTabBarController-swift
+  - FSPagerView
+  - IQKeyboardManager
+  - SDWebImage
+  - SpreadsheetView
+  - SVProgressHUD
+  - SwiftMessages
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ESTabBarController-swift
+    - FSPagerView
+    - IQKeyboardManager
+    - SDWebImage
+    - SpreadsheetView
+    - SVProgressHUD
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  ESTabBarController-swift: f0a8679e43df1e60b7b36bbcaf1dc98ba6273c7d
+  FSPagerView: 4e865526acc0b0e3077e2abb29b8d10a9f395476
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SpreadsheetView: 17c55b6dc82099993cc2ceb818248d19f3220998
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
+
+PODFILE CHECKSUM: d95a724bd692fad7f7368b051a8f365ea1cd9433
+
+COCOAPODS: 1.5.3

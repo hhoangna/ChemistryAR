@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  VSip-iOS
+
+  Created by machnguyen_uit on 8/21/18.
+  Copyright © 2018 machnguyen_uit. All rights reserved.
+*/
+
+//Generated IOS file for locale : en
+
+"language"="en";
+
+
+"Hello"="Hello";
+
+//LOGIN SCREEN
+"Login" = "Login";
+"Register" = "Register";
+"Email" = "Email";
+"Password" = "Password";
+"User Name" = "User Name";
+"Re-Password"="Re-Password";
+
+//BOTTOMBAR
+"Periodic" = "Periodic";
+"Reaction" = "Reaction";
+"Home" = "Home";
+"AR" = "AR";
+"Setting" = "Setting";
+
+//HOME SCREEN
+"Periodic Table" = "Periodic Table";
+"Chemical Reaction" = "Chemical Reaction";
+"Augmented Reality" = "Agumented Reality";
+
+//PERIODIC SCREEN
+"Mendeleev Periodic Table" = "Mendeleev Periodic Table";
+"Solubility" = "Solubility";
+"Electronegativity of elements" = "Electronegativity of elements";
+"Molecular weight of organic substances" = "Molecular weight of organic substances";
+"Reactivity series" = "Reactivity series";
