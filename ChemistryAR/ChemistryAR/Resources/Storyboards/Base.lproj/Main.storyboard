@@ -36,62 +36,27 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-sG-OrR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="582"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="38i-61-gfU" kind="embed" identifier="Main_NV" id="YGu-cu-418"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Eg-TL-QkC" userLabel="VBarButtomItem" customClass="HView" customModule="ChemistryAR" customModuleProvider="target">
-                                <rect key="frame" x="5" y="602" width="365" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="5" height="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ego-tY-JQj" firstAttribute="leading" secondItem="69N-6w-OoY" secondAttribute="leading" id="0vn-oa-Vek"/>
                             <constraint firstItem="69N-6w-OoY" firstAttribute="trailing" secondItem="Ego-tY-JQj" secondAttribute="trailing" id="4aj-1s-lXb"/>
-                            <constraint firstItem="69N-6w-OoY" firstAttribute="bottom" secondItem="6Eg-TL-QkC" secondAttribute="bottom" constant="5" id="Grk-6h-wYC"/>
+                            <constraint firstItem="69N-6w-OoY" firstAttribute="bottom" secondItem="ck8-sG-OrR" secondAttribute="bottom" id="CCt-sL-rSO"/>
                             <constraint firstItem="69N-6w-OoY" firstAttribute="bottom" secondItem="Ego-tY-JQj" secondAttribute="bottom" id="Nvf-hg-3Kf"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="leading" secondItem="69N-6w-OoY" secondAttribute="leading" id="QMF-u7-L24"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="top" secondItem="69N-6w-OoY" secondAttribute="top" id="Qjf-1q-Yy3"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="trailing" secondItem="69N-6w-OoY" secondAttribute="trailing" id="b62-kW-xYy"/>
                             <constraint firstItem="Ego-tY-JQj" firstAttribute="top" secondItem="69N-6w-OoY" secondAttribute="top" id="chM-TD-5QB"/>
-                            <constraint firstItem="6Eg-TL-QkC" firstAttribute="height" secondItem="BsN-HA-8Mg" secondAttribute="height" multiplier="0.09" id="jVV-AN-GEn"/>
-                            <constraint firstItem="6Eg-TL-QkC" firstAttribute="leading" secondItem="69N-6w-OoY" secondAttribute="leading" constant="5" id="oWd-Cc-yHw"/>
-                            <constraint firstItem="69N-6w-OoY" firstAttribute="trailing" secondItem="6Eg-TL-QkC" secondAttribute="trailing" constant="5" id="tjX-yH-Qaj"/>
-                            <constraint firstItem="6Eg-TL-QkC" firstAttribute="top" secondItem="ck8-sG-OrR" secondAttribute="bottom" id="wUK-uC-Y7M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="69N-6w-OoY"/>
                     </view>
                     <navigationItem key="navigationItem" id="XR9-Wi-SMJ"/>
-                    <connections>
-                        <outlet property="barBottomItemView" destination="6Eg-TL-QkC" id="Isj-kc-6pN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBx-ex-zL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

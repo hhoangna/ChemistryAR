@@ -24,26 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         IQKeyboardManager.shared().isEnabled = true
         LanguageHelper.setLanguage(forLanguage: .EN)
         
-        let tabBarController = ESTabBarController()
-        tabBarController.delegate = self
-        
-        let vHome = HomeVC()
-        let vPeriodic = PeriodicTableVC()
-        let vReaction = ReactionVC()
-        let vARKit = ARKitVC()
-        let vSetting = SettingVC()
-        vHome.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
-        vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Find", image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"))
-        vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Photo", image: UIImage(named: "photo"), selectedImage: UIImage(named: "photo_1"))
-        vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Favor", image: UIImage(named: "favor"), selectedImage: UIImage(named: "favor_1"))
-        vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Me", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
-        
-        tabBarController.viewControllers = [vHome, vPeriodic, vReaction, vARKit, vSetting]
-        
-        let navigationController = BaseNV.init(rootViewController: tabBarController)
-        window?.rootViewController = navigationController
-        
         checkStatusLogin()
+        
         return true
     }
 
