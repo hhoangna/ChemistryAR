@@ -32,9 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ego-tY-JQj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-sG-OrR">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,14 +42,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ego-tY-JQj" firstAttribute="leading" secondItem="69N-6w-OoY" secondAttribute="leading" id="0vn-oa-Vek"/>
-                            <constraint firstItem="69N-6w-OoY" firstAttribute="trailing" secondItem="Ego-tY-JQj" secondAttribute="trailing" id="4aj-1s-lXb"/>
                             <constraint firstItem="69N-6w-OoY" firstAttribute="bottom" secondItem="ck8-sG-OrR" secondAttribute="bottom" id="CCt-sL-rSO"/>
-                            <constraint firstItem="69N-6w-OoY" firstAttribute="bottom" secondItem="Ego-tY-JQj" secondAttribute="bottom" id="Nvf-hg-3Kf"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="leading" secondItem="69N-6w-OoY" secondAttribute="leading" id="QMF-u7-L24"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="top" secondItem="69N-6w-OoY" secondAttribute="top" id="Qjf-1q-Yy3"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="trailing" secondItem="69N-6w-OoY" secondAttribute="trailing" id="b62-kW-xYy"/>
-                            <constraint firstItem="Ego-tY-JQj" firstAttribute="top" secondItem="69N-6w-OoY" secondAttribute="top" id="chM-TD-5QB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="69N-6w-OoY"/>
                     </view>
@@ -78,7 +71,4 @@
             <point key="canvasLocation" x="177" y="844"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_Background" width="283" height="384"/>
-    </resources>
 </document>

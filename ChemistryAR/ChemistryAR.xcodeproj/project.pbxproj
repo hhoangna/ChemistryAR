@@ -13,6 +13,7 @@
 		843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843F93E52174A7ED0016D04F /* GoogleService-Info.plist */; };
 		844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B728D2165FE4F001E778F /* PeriodicTableVC.swift */; };
 		844B7291216602C9001E778F /* PeriodicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B7290216602C9001E778F /* PeriodicCell.swift */; };
+		845D63872175DC4D00B8BE54 /* UINavigationBar + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */; };
 		848F7D7A216313C1006F264C /* HeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D79216313C1006F264C /* HeaderBar.swift */; };
 		848F7D7C216313D0006F264C /* HeaderBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848F7D7B216313D0006F264C /* HeaderBar.xib */; };
 		848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D7D21632738006F264C /* CustomNavigationBar.swift */; };
@@ -65,6 +66,7 @@
 		843F93E52174A7ED0016D04F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844B728D2165FE4F001E778F /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		844B7290216602C9001E778F /* PeriodicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCell.swift; sourceTree = "<group>"; };
+		845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Ext.swift"; sourceTree = "<group>"; };
 		848F7D79216313C1006F264C /* HeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBar.swift; sourceTree = "<group>"; };
 		848F7D7B216313D0006F264C /* HeaderBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderBar.xib; sourceTree = "<group>"; };
 		848F7D7D21632738006F264C /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -346,6 +348,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		845D63852175DC2B00B8BE54 /* UINavigationBar + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */,
+			);
+			path = "UINavigationBar + Ext";
+			sourceTree = "<group>";
+		};
 		848F7D7821631287006F264C /* HeaderBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +368,7 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				845D63852175DC2B00B8BE54 /* UINavigationBar + Ext */,
 				84A99F5F2164B243007C54CD /* UIButton + Ext */,
 				84A99F5C2164B17C007C54CD /* UITextField + Ext */,
 				848F7D9821637748006F264C /* String + Ext */,
@@ -710,6 +721,7 @@
 				84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */,
 				84A99F4821648C70007C54CD /* HomeVC.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
+				845D63872175DC4D00B8BE54 /* UINavigationBar + Ext.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
