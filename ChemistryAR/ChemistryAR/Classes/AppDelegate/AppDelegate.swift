@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import IQKeyboardManager
 import SwiftMessages
-import ESTabBarController_swift
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         // Override point for customization after application launch.
         IQKeyboardManager.shared().isEnabled = true
         LanguageHelper.setLanguage(forLanguage: .EN)
+        FirebaseApp.configure()
         
         checkStatusLogin()
         

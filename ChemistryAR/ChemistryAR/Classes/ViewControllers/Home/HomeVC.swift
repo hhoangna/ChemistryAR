@@ -90,12 +90,6 @@ class HomeVC: BaseVC {
     
     func updateUI() {
         setupCollectionView()
-        setupBarButtomItemView()
-    }
-    
-    override func setupBarButtomItemView() {
-        super.setupBarButtomItemView()
-        buttonItemView?.indexSelected = 2
     }
 }
 

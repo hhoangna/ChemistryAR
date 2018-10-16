@@ -19,12 +19,7 @@ class MainVC: BaseVC,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateUI()
         pushHomeViewController()
-    }
-    
-    func updateUI() {
-        setupBarButtomItemView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,23 +39,20 @@ class MainVC: BaseVC,UITabBarControllerDelegate {
         let tabBarController = ESTabBarController()
         tabBarController.delegate = self
         
-        let vHome:HomeVC = HomeVC.load(SB: .Home)
         let vPeriodic:PeriodicTableVC = PeriodicTableVC.load(SB: .Periodic)
         let vReaction:ReactionVC = ReactionVC.load(SB: .Reaction)
         let vARKit:ARKitVC = ARKitVC.load(SB: .AR)
         let vSetting:SettingVC = SettingVC.load(SB: .Setting)
         
-        vHome.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
-        vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Find", image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"))
-        vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Photo", image: UIImage(named: "photo"), selectedImage: UIImage(named: "photo_1"))
-        vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Favor", image: UIImage(named: "favor"), selectedImage: UIImage(named: "favor_1"))
-        vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Me", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
+        vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Periodic Table", image: UIImage(named: "ic_table"), selectedImage: UIImage(named: "ic_tableSelected"))
+        vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Reaction Chemical", image: UIImage(named: "ic_react"), selectedImage: UIImage(named: "ic_reactSelected"))
+        vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
+        vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
         
-        tabBarController.viewControllers = [vHome, vPeriodic, vReaction, vARKit, vSetting]
+        tabBarController.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
         
         return tabBarController
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

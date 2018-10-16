@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9335919CEC4F460F5963BEA31E6AE777"
+               BlueprintIdentifier = "38C61A2D81B6B6AEFCF2E148676D9C09"
                BuildableName = "Pods_ChemistryAR.framework"
                BlueprintName = "Pods-ChemistryAR"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9335919CEC4F460F5963BEA31E6AE777"
+            BlueprintIdentifier = "38C61A2D81B6B6AEFCF2E148676D9C09"
             BuildableName = "Pods_ChemistryAR.framework"
             BlueprintName = "Pods-ChemistryAR"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -23,7 +23,6 @@ class PeriodicTableVC: BaseVC {
     func updateUI() {
         setupViewHeader()
         setupTableView()
-        setupBarButtomItemView()
     }
     
     func setupTableView() {
@@ -35,11 +34,6 @@ class PeriodicTableVC: BaseVC {
         vHeader?.delegate = self
         vHeader?.setCustomNavigationBar(type: .None,
                                         title: "Periodic Table".localized)
-    }
-    
-    override func setupBarButtomItemView() {
-        super.setupBarButtomItemView()
-        buttonItemView?.indexSelected = 0
     }
 }
 
