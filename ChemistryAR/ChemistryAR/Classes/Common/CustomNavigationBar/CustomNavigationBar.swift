@@ -36,7 +36,6 @@ extension BaseVC {
         }
         switch barStyle {
         case .None:
-            self.navigationItem.leftBarButtonItem = menuBarItem
             break
         case .BackOnly:
             self.navigationItem.leftBarButtonItem = backBarItem
@@ -65,6 +64,6 @@ extension BaseVC {
     }
     
     @objc func onNavigationClickRightButton(_ sender: UIBarButtonItem) {
-        delegate?.didSelectedRightButton()
+        delegate?.didSelectRight()
     }
 }

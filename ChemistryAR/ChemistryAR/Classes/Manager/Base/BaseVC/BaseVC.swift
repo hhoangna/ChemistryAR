@@ -18,6 +18,8 @@ enum BottomItemSelect:Int {
 
 class BaseVC: UIViewController {
     
+    var backBarItem : UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
+    
     @IBOutlet weak var tabBarTopItemView: UIView?
     @IBOutlet weak var vHeader:CustomNavigationBar?
     

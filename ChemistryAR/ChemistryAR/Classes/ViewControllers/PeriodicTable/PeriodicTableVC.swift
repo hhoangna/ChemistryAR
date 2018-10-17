@@ -21,7 +21,7 @@ class PeriodicTableVC: BaseVC {
     }
 
     func updateUI() {
-        self.navigationController?.navigationItem.title = "Periodic Table"
+        self.updateCustomNavigationBar(.BackOnly, "Adnkasjdnak")
         setupTableView()
     }
     

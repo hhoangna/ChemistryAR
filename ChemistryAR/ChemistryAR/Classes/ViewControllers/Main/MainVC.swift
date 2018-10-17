@@ -10,7 +10,7 @@ import UIKit
 import ESTabBarController_swift
 
 
-class MainVC: BaseVC,UITabBarControllerDelegate {
+class MainVC: BaseVC, UITabBarControllerDelegate {
     
     @IBOutlet weak var bannerView:UIView?
     @IBOutlet weak var vContainerMaster:UIView?
@@ -25,7 +25,7 @@ class MainVC: BaseVC,UITabBarControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Main_NV" {
-            rootNV = segue.destination as? BaseNV
+            rootNV = segue.destination as? CustomNavigationBar
         }
     }
     
@@ -49,7 +49,7 @@ class MainVC: BaseVC,UITabBarControllerDelegate {
         vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
         vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
         
-        vPeriodic.navigationItem.title = "Periodic Table"
+        vPeriodic.updateCustomNavigationBar(.None, "Periodic Table")
         
         tabBarController.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
         

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */; };
 		84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84154F0421621D34008F2C05 /* AppDelegate.swift */; };
 		84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0B21621D36008F2C05 /* Assets.xcassets */; };
 		84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0D21621D36008F2C05 /* LaunchScreen.storyboard */; };
 		843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843F93E52174A7ED0016D04F /* GoogleService-Info.plist */; };
 		844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B728D2165FE4F001E778F /* PeriodicTableVC.swift */; };
 		844B7291216602C9001E778F /* PeriodicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B7290216602C9001E778F /* PeriodicCell.swift */; };
-		845D63872175DC4D00B8BE54 /* UINavigationBar + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */; };
 		848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D7D21632738006F264C /* CustomNavigationBar.swift */; };
 		848F7D8321632A95006F264C /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D8221632A95006F264C /* UIView + Ext.swift */; };
 		848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D8421632ADD006F264C /* UIViewController + Ext.swift */; };
@@ -56,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Ext.swift"; sourceTree = "<group>"; };
 		71F5D8E2BA8CA7B795D43C72 /* Pods-ChemistryAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.debug.xcconfig"; sourceTree = "<group>"; };
 		84154F0121621D34008F2C05 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84154F0421621D34008F2C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		843F93E52174A7ED0016D04F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844B728D2165FE4F001E778F /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		844B7290216602C9001E778F /* PeriodicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCell.swift; sourceTree = "<group>"; };
-		845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Ext.swift"; sourceTree = "<group>"; };
 		848F7D7D21632738006F264C /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		848F7D8221632A95006F264C /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		848F7D8421632ADD006F264C /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -121,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42891DDC21779665007CA947 /* UIBarButtonItem + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */,
+			);
+			path = "UIBarButtonItem + Ext";
+			sourceTree = "<group>";
+		};
 		6447A6B7C7D96350920C67AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,18 +354,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		845D63852175DC2B00B8BE54 /* UINavigationBar + Ext */ = {
-			isa = PBXGroup;
-			children = (
-				845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */,
-			);
-			path = "UINavigationBar + Ext";
-			sourceTree = "<group>";
-		};
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				845D63852175DC2B00B8BE54 /* UINavigationBar + Ext */,
+				42891DDC21779665007CA947 /* UIBarButtonItem + Ext */,
 				84A99F5F2164B243007C54CD /* UIButton + Ext */,
 				84A99F5C2164B17C007C54CD /* UITextField + Ext */,
 				848F7D9821637748006F264C /* String + Ext */,
@@ -717,9 +717,9 @@
 				84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */,
 				84A99F4821648C70007C54CD /* HomeVC.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
-				845D63872175DC4D00B8BE54 /* UINavigationBar + Ext.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
+				42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */,
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
 				848F7D9021633A2A006F264C /* MainVC.swift in Sources */,
