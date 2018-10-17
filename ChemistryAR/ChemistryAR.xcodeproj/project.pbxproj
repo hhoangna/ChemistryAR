@@ -14,8 +14,6 @@
 		844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B728D2165FE4F001E778F /* PeriodicTableVC.swift */; };
 		844B7291216602C9001E778F /* PeriodicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B7290216602C9001E778F /* PeriodicCell.swift */; };
 		845D63872175DC4D00B8BE54 /* UINavigationBar + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */; };
-		848F7D7A216313C1006F264C /* HeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D79216313C1006F264C /* HeaderBar.swift */; };
-		848F7D7C216313D0006F264C /* HeaderBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848F7D7B216313D0006F264C /* HeaderBar.xib */; };
 		848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D7D21632738006F264C /* CustomNavigationBar.swift */; };
 		848F7D8321632A95006F264C /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D8221632A95006F264C /* UIView + Ext.swift */; };
 		848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D8421632ADD006F264C /* UIViewController + Ext.swift */; };
@@ -32,6 +30,7 @@
 		849712D4216E40CF00394891 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849712D3216E40CF00394891 /* SettingVC.swift */; };
 		849712D6216E40E000394891 /* ARKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849712D5216E40E000394891 /* ARKitVC.swift */; };
 		849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849712E0216F45E100394891 /* BounceCustomTabbar.swift */; };
+		84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2EA452177308200C49599 /* ElementTableVC.swift */; };
 		84A99F222163B836007C54CD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F212163B836007C54CD /* Login.storyboard */; };
 		84A99F242163B8EC007C54CD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F232163B8EC007C54CD /* LoginVC.swift */; };
 		84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F2621645324007C54CD /* TabBarTopView.swift */; };
@@ -67,8 +66,6 @@
 		844B728D2165FE4F001E778F /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		844B7290216602C9001E778F /* PeriodicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCell.swift; sourceTree = "<group>"; };
 		845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Ext.swift"; sourceTree = "<group>"; };
-		848F7D79216313C1006F264C /* HeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBar.swift; sourceTree = "<group>"; };
-		848F7D7B216313D0006F264C /* HeaderBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderBar.xib; sourceTree = "<group>"; };
 		848F7D7D21632738006F264C /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		848F7D8221632A95006F264C /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		848F7D8421632ADD006F264C /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -85,6 +82,7 @@
 		849712D3216E40CF00394891 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		849712D5216E40E000394891 /* ARKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitVC.swift; sourceTree = "<group>"; };
 		849712E0216F45E100394891 /* BounceCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceCustomTabbar.swift; sourceTree = "<group>"; };
+		84A2EA452177308200C49599 /* ElementTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTableVC.swift; sourceTree = "<group>"; };
 		84A99F212163B836007C54CD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		84A99F232163B8EC007C54CD /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		84A99F2621645324007C54CD /* TabBarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTopView.swift; sourceTree = "<group>"; };
@@ -219,7 +217,7 @@
 			children = (
 				849712DF216F459D00394891 /* CustomTabbar */,
 				84A99F2521645263007C54CD /* TabBarTopView */,
-				84154F27216225B4008F2C05 /* NavigationBarView */,
+				84154F27216225B4008F2C05 /* CustomNavigationBar */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -322,18 +320,18 @@
 			path = BaseClvCell;
 			sourceTree = "<group>";
 		};
-		84154F27216225B4008F2C05 /* NavigationBarView */ = {
+		84154F27216225B4008F2C05 /* CustomNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				848F7D7821631287006F264C /* HeaderBar */,
 				848F7D7D21632738006F264C /* CustomNavigationBar.swift */,
 			);
-			path = NavigationBarView;
+			path = CustomNavigationBar;
 			sourceTree = "<group>";
 		};
 		844B728C2165FE1E001E778F /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
+				84A2EA442177306700C49599 /* ElementTable */,
 				844B728F216602B1001E778F /* Cell */,
 				844B728D2165FE4F001E778F /* PeriodicTableVC.swift */,
 			);
@@ -354,15 +352,6 @@
 				845D63862175DC4D00B8BE54 /* UINavigationBar + Ext.swift */,
 			);
 			path = "UINavigationBar + Ext";
-			sourceTree = "<group>";
-		};
-		848F7D7821631287006F264C /* HeaderBar */ = {
-			isa = PBXGroup;
-			children = (
-				848F7D79216313C1006F264C /* HeaderBar.swift */,
-				848F7D7B216313D0006F264C /* HeaderBar.xib */,
-			);
-			path = HeaderBar;
 			sourceTree = "<group>";
 		};
 		848F7D7F216329F7006F264C /* Extensions */ = {
@@ -468,6 +457,14 @@
 				849712E0216F45E100394891 /* BounceCustomTabbar.swift */,
 			);
 			path = CustomTabbar;
+			sourceTree = "<group>";
+		};
+		84A2EA442177306700C49599 /* ElementTable */ = {
+			isa = PBXGroup;
+			children = (
+				84A2EA452177308200C49599 /* ElementTableVC.swift */,
+			);
+			path = ElementTable;
 			sourceTree = "<group>";
 		};
 		84A99F2521645263007C54CD /* TabBarTopView */ = {
@@ -609,7 +606,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848F7D7C216313D0006F264C /* HeaderBar.xib in Resources */,
 				84A99F4521648C30007C54CD /* Home.storyboard in Resources */,
 				843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */,
 				84A99F3521646C4D007C54CD /* video_background.mp4 in Resources */,
@@ -731,8 +727,8 @@
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
 				848F7D97216376EF006F264C /* UIColor + Ext.swift in Sources */,
 				849712D2216E40C000394891 /* ReactionVC.swift in Sources */,
-				848F7D7A216313C1006F264C /* HeaderBar.swift in Sources */,
 				848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */,
+				84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */,
 				84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */,
 				848F7D8821632B24006F264C /* Constants.swift in Sources */,
 				84A99F242163B8EC007C54CD /* LoginVC.swift in Sources */,

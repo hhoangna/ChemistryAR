@@ -1,19 +1,19 @@
 //
-//  ARKitVC.swift
+//  ElementTableVC.swift
 //  ChemistryAR
 //
-//  Created by Admin on 10/10/18.
+//  Created by Admin on 10/17/18.
 //  Copyright © 2018 HHumorous. All rights reserved.
 //
 
 import UIKit
 
-class ARKitVC: BaseVC {
+class ElementTableVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationItem.title = " adasdasdasdasd"
+        // Do any additional setup after loading the view.
     }
     
 

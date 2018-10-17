@@ -21,19 +21,13 @@ class PeriodicTableVC: BaseVC {
     }
 
     func updateUI() {
-        setupViewHeader()
+        self.navigationController?.navigationItem.title = "Periodic Table"
         setupTableView()
     }
     
     func setupTableView() {
         tbvContent?.delegate = self
         tbvContent?.dataSource = self
-    }
-    
-    func setupViewHeader() {
-        vHeader?.delegate = self
-        vHeader?.setCustomNavigationBar(type: .None,
-                                        title: "Periodic Table".localized)
     }
 }
 
@@ -57,23 +51,11 @@ extension PeriodicTableVC: UITableViewDataSource {
 }
 
 extension PeriodicTableVC: UITableViewDelegate {
-    
-}
-
-extension PeriodicTableVC: CustomNavigationBarDelegate {
-    func didSelectOne(header: CustomNavigationBar, btn: UIButton) {
-        //
-    }
-    
-    func didSelecCreate(header: CustomNavigationBar, btn: UIButton) {
-        //
-    }
-    
-    func diSelectBtnTwo(header: CustomNavigationBar, btn: UIButton) {
-        //
-    }
-    
-    func didSelectback(header: CustomNavigationBar, btn: UIButton) {
-        didSelectback()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc: ElementTableVC = .load(SB: .Periodic)
+        
+        vc.navigationItem.title = "asdadadasdadasdasdada"
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

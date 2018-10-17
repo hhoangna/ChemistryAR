@@ -9,18 +9,26 @@
 import UIKit
 
 class BaseNV: UINavigationController {
+    
+    var backgroundImage = UIImage(named: "img_Banner")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareTabBar()
-        
+        backgroundImage =
+            backgroundImage?.resizableImage(
+                withCapInsets: UIEdgeInsets(top: 0,
+                                            left: 0,
+                                            bottom: (backgroundImage?.size.height)! - 1,
+                                            right: (backgroundImage?.size.width)! - 1))
+        setupCustomNavigationBar()
         self.interactivePopGestureRecognizer?.delegate = self
     }
     
-    func prepareTabBar() {
-        let appearance = UIBarButtonItem.appearance()
-        appearance.setBackButtonTitlePositionAdjustment(UIOffset.init(horizontal: 0.0, vertical: -60), for: .default)
+    func setupCustomNavigationBar() {
+        let navigationBarAppearance = self.navigationBar
+        navigationBarAppearance.setBackgroundImage(backgroundImage, for: .default)
+        navigationBarAppearance.setBackgroundImage(backgroundImage, for: .compact)
     }
     
     override func didReceiveMemoryWarning() {

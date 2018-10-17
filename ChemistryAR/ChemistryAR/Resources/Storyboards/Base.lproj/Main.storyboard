@@ -12,8 +12,9 @@
         <!--BaseNV-->
         <scene sceneID="wOl-gy-iUz">
             <objects>
-                <navigationController navigationBarHidden="YES" id="VFk-3L-SiW" customClass="BaseNV" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1T0-66-Plq">
+                <navigationController id="VFk-3L-SiW" customClass="BaseNV" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1T0-66-Plq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -24,16 +25,16 @@
             </objects>
             <point key="canvasLocation" x="-641" y="60"/>
         </scene>
-        <!--MainVC-->
+        <!--TESTTTT-->
         <scene sceneID="qUd-tJ-OIk">
             <objects>
                 <viewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K2T-F4-VDt" customClass="MainVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BsN-HA-8Mg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-sG-OrR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="38i-61-gfU" kind="embed" identifier="Main_NV" id="YGu-cu-418"/>
@@ -44,12 +45,12 @@
                         <constraints>
                             <constraint firstItem="69N-6w-OoY" firstAttribute="bottom" secondItem="ck8-sG-OrR" secondAttribute="bottom" id="CCt-sL-rSO"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="leading" secondItem="69N-6w-OoY" secondAttribute="leading" id="QMF-u7-L24"/>
-                            <constraint firstItem="ck8-sG-OrR" firstAttribute="top" secondItem="69N-6w-OoY" secondAttribute="top" id="Qjf-1q-Yy3"/>
+                            <constraint firstItem="ck8-sG-OrR" firstAttribute="top" secondItem="BsN-HA-8Mg" secondAttribute="top" id="WMc-Q9-PgP"/>
                             <constraint firstItem="ck8-sG-OrR" firstAttribute="trailing" secondItem="69N-6w-OoY" secondAttribute="trailing" id="b62-kW-xYy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="69N-6w-OoY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XR9-Wi-SMJ"/>
+                    <navigationItem key="navigationItem" title="TESTTTT" id="XR9-Wi-SMJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBx-ex-zL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,8 +64,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.0" green="0.61568627450980395" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VhV-3i-Uzf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vY-W6-kIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

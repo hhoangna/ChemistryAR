@@ -13,7 +13,7 @@ import SwiftMessages
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate {
 
     var window: UIWindow?
     var rootNV: BaseNV?
@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         checkStatusLogin()
         
         return true
+    }
+    
+    func navigationControllerSupportedInterfaceOrientations(_ navigationController: UINavigationController) -> UIInterfaceOrientationMask {
+        return navigationController.topViewController!.supportedInterfaceOrientations
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -55,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     func checkStatusLogin() {
         if rootNV == nil {
             rootNV = window?.rootViewController as? BaseNV
+            rootNV?.delegate = self
         }
         if Caches().hasLogin {
             onLoginSuccess()

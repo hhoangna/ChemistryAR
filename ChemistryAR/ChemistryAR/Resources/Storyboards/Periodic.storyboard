@@ -17,15 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fji-FV-96f" customClass="CustomNavigationBar" customModule="ChemistryAR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="v7n-uk-t3o"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-vv-Jev">
-                                <rect key="frame" x="5" y="70" width="365" height="592"/>
+                                <rect key="frame" x="5" y="25" width="365" height="637"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="R9b-Ra-IGk" customClass="PeriodicCell" customModule="ChemistryAR" customModuleProvider="target">
@@ -103,23 +96,36 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yim-9D-7ct" firstAttribute="bottom" secondItem="8Ye-vv-Jev" secondAttribute="bottom" constant="5" id="2oo-on-RW8"/>
-                            <constraint firstItem="fji-FV-96f" firstAttribute="top" secondItem="xbN-Un-Tx8" secondAttribute="top" id="3bw-of-bS5"/>
-                            <constraint firstItem="8Ye-vv-Jev" firstAttribute="top" secondItem="fji-FV-96f" secondAttribute="bottom" constant="-20" id="7Xn-fk-gzP"/>
-                            <constraint firstItem="fji-FV-96f" firstAttribute="trailing" secondItem="yim-9D-7ct" secondAttribute="trailing" id="PxO-w4-A8k"/>
+                            <constraint firstItem="8Ye-vv-Jev" firstAttribute="top" secondItem="yim-9D-7ct" secondAttribute="top" constant="5" id="PKu-bZ-99T"/>
                             <constraint firstItem="8Ye-vv-Jev" firstAttribute="leading" secondItem="yim-9D-7ct" secondAttribute="leading" constant="5" id="Vi5-Ls-hfN"/>
-                            <constraint firstItem="fji-FV-96f" firstAttribute="leading" secondItem="yim-9D-7ct" secondAttribute="leading" id="eZK-d5-315"/>
                             <constraint firstItem="8Ye-vv-Jev" firstAttribute="trailing" secondItem="yim-9D-7ct" secondAttribute="trailing" constant="-5" id="rXY-Oa-qVe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yim-9D-7ct"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tbvContent" destination="8Ye-vv-Jev" id="Bpw-b5-haX"/>
-                        <outlet property="vHeader" destination="fji-FV-96f" id="S8g-1u-Zk5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCT-gh-5kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1183.2" y="214.54272863568218"/>
+        </scene>
+        <!--Element TableVC-->
+        <scene sceneID="eeA-OL-ZDM">
+            <objects>
+                <viewController storyboardIdentifier="ElementTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a00-iS-iju" customClass="ElementTableVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZlL-sI-Vkn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NlI-pa-hjN"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFf-Ez-V7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375" y="215"/>
         </scene>
     </scenes>
     <resources>

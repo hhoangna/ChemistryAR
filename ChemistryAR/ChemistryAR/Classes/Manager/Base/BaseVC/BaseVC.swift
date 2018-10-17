@@ -23,16 +23,27 @@ class BaseVC: UIViewController {
     
     var topItemView: TabBarTopView?
     var modeBar: ModeBottomBar = .modeMain
+    weak var delegate: CustomNavigationBarDelegate?
     
     private var gesDismissKeyboardDetector : UITapGestureRecognizer? = nil;
     private var obsKeyboardChangeFrame: NSObjectProtocol? = nil;
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let navController = self.navigationController {
-            navController.navigationBar.clearNavigationBar()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(checkNavigationBarHidden(), animated: true)
+    }
+    
+    func checkNavigationBarHidden() -> Bool {
+        if self is LoginVC || self is MainVC {
+            return true
         }
+        return false
     }
 }
 

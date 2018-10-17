@@ -49,6 +49,8 @@ class MainVC: BaseVC,UITabBarControllerDelegate {
         vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
         vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
         
+        vPeriodic.navigationItem.title = "Periodic Table"
+        
         tabBarController.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
         
         return tabBarController
