@@ -15,7 +15,7 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
     @IBOutlet weak var bannerView:UIView?
     @IBOutlet weak var vContainerMaster:UIView?
     
-    var rootNV:BaseNV?
+    var rootNV:CustomNavigationBar?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,8 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
     
     func pushHomeViewController() {
         let vc  = setupESTabBarController()
+        
+        vc.navigationItem.title = "Chemistry AR"
         
         rootNV?.pushViewController(vc, animated: false)
     }
@@ -48,8 +50,6 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Reaction Chemical", image: UIImage(named: "ic_react"), selectedImage: UIImage(named: "ic_reactSelected"))
         vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
         vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
-        
-        vPeriodic.updateCustomNavigationBar(.None, "Periodic Table")
         
         tabBarController.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
         

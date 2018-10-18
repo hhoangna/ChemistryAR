@@ -23,6 +23,8 @@ class BaseVC: UIViewController {
     @IBOutlet weak var tabBarTopItemView: UIView?
     @IBOutlet weak var vHeader:CustomNavigationBar?
     
+    var customNV: CustomNavigationBar?
+    
     var topItemView: TabBarTopView?
     var modeBar: ModeBottomBar = .modeMain
     weak var delegate: CustomNavigationBarDelegate?
@@ -49,7 +51,7 @@ class BaseVC: UIViewController {
     }
 }
 
-extension BaseVC{
+extension BaseVC {
     
     final func registerForKeyboardNotifications() {
         
@@ -114,7 +116,7 @@ extension BaseVC{
 }
 
 //MARK: -Other funtion
-extension BaseVC{
+extension BaseVC {
     func didSelectback() {
         self.navigationController?.popViewController(animated: true)
     }

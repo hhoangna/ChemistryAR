@@ -53,9 +53,7 @@ extension PeriodicTableVC: UITableViewDataSource {
 extension PeriodicTableVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: ElementTableVC = .load(SB: .Periodic)
-        
-        vc.navigationItem.title = "asdadadasdadasdasdada"
-        
+                
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

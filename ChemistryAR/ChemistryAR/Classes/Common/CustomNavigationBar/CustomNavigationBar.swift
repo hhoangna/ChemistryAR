@@ -30,7 +30,6 @@ class CustomNavigationBar: BaseNV {
 extension BaseVC {
     
     func updateCustomNavigationBar(_ barStyle: NavigationBarStyle, _ title: String?) {
-        
         if let title = title {
             self.navigationItem.title = title
         }
@@ -44,23 +43,7 @@ extension BaseVC {
     }
     
     @objc func onNavigationBack(_ sender: UIBarButtonItem) {
-        self.view.endEditing(true)
-        
-        if let navi = self.navigationController {
-            
-            if (navi.viewControllers.count <= 1) {
-                if (navi.presentingViewController != nil) {
-                    navi.dismiss(animated: true, completion: nil)
-                }
-            }else {
-                navi.popViewController(animated: true);
-            }
-            
-        }else {
-            if (self.presentingViewController != nil) {
-                self.dismiss(animated: true, completion: nil);
-            }
-        }
+        delegate?.didSelectBack()
     }
     
     @objc func onNavigationClickRightButton(_ sender: UIBarButtonItem) {

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BaseNV-->
+        <!--Custom Navigation Bar-->
         <scene sceneID="wOl-gy-iUz">
             <objects>
-                <navigationController navigationBarHidden="YES" id="VFk-3L-SiW" customClass="BaseNV" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="VFk-3L-SiW" customClass="CustomNavigationBar" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1T0-66-Plq">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-641" y="60"/>
         </scene>
-        <!--TESTTTT-->
+        <!--hihohi-->
         <scene sceneID="qUd-tJ-OIk">
             <objects>
                 <viewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K2T-F4-VDt" customClass="MainVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="69N-6w-OoY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TESTTTT" id="XR9-Wi-SMJ"/>
+                    <navigationItem key="navigationItem" title="hihohi" id="XR9-Wi-SMJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBx-ex-zL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

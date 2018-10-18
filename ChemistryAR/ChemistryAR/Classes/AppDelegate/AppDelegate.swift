@@ -16,7 +16,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate {
 
     var window: UIWindow?
-    var rootNV: BaseNV?
+    var rootNV: CustomNavigationBar?
     var mainVC: MainVC?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     
     func checkStatusLogin() {
         if rootNV == nil {
-            rootNV = window?.rootViewController as? BaseNV
+            rootNV = window?.rootViewController as? CustomNavigationBar
             rootNV?.delegate = self
         }
         if Caches().hasLogin {

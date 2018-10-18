@@ -10,8 +10,8 @@ import UIKit
 
 extension UIBarButtonItem {
     class func backButton(target: Any, action: Selector) -> UIBarButtonItem {
-        let frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        let insets = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 8)
+        let frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        let insets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 8)
         let button = customButton(with: #imageLiteral(resourceName: "ic_Back"),
                                   highlightedImage: #imageLiteral(resourceName: "ic_Back"),
                                   frame: frame,
