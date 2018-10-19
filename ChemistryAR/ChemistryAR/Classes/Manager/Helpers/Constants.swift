@@ -188,8 +188,6 @@ struct DeviceType {
     static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
 }
 
-
-
 struct USER_DEFAULT_KEY {
     static let HF_TOKEN_USER = "HF_TOKEN_USER"
     static let HF_FCM_TOKEN = "HF_FCM_TOKEN"

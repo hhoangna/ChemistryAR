@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SpreadsheetView
 
-enum BottomItemSelect:Int {
+enum BottomItemSelect: Int {
     case Periodic = 0
     case Reaction
     case Home
@@ -21,7 +22,8 @@ class BaseVC: UIViewController {
     var backBarItem : UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
     
     @IBOutlet weak var tabBarTopItemView: UIView?
-    @IBOutlet weak var vHeader:CustomNavigationBar?
+    @IBOutlet weak var vHeader: CustomNavigationBar?
+    @IBOutlet weak var vContainer: SpreadsheetView?
     
     var customNV: CustomNavigationBar?
     
