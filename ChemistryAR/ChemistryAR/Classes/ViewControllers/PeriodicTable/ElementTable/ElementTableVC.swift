@@ -13,9 +13,7 @@ class ElementTableVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.updateCustomNavigationBar(.BackOnly, "Something")
-        
+                
         setupSpreadSheetView()
     }
     

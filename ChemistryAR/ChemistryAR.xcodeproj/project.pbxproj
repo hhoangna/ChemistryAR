@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */; };
+		42B68938217A18B100FBC0C3 /* SolubilityTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68937217A18B100FBC0C3 /* SolubilityTableVC.swift */; };
+		42B6893B217A18D000FBC0C3 /* SolubilityCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6893A217A18D000FBC0C3 /* SolubilityCells.swift */; };
 		84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84154F0421621D34008F2C05 /* AppDelegate.swift */; };
 		84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0B21621D36008F2C05 /* Assets.xcassets */; };
 		84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0D21621D36008F2C05 /* LaunchScreen.storyboard */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Ext.swift"; sourceTree = "<group>"; };
+		42B68937217A18B100FBC0C3 /* SolubilityTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityTableVC.swift; sourceTree = "<group>"; };
+		42B6893A217A18D000FBC0C3 /* SolubilityCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityCells.swift; sourceTree = "<group>"; };
 		71F5D8E2BA8CA7B795D43C72 /* Pods-ChemistryAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.debug.xcconfig"; sourceTree = "<group>"; };
 		84154F0121621D34008F2C05 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84154F0421621D34008F2C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,23 @@
 				42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */,
 			);
 			path = "UIBarButtonItem + Ext";
+			sourceTree = "<group>";
+		};
+		42B68936217A178600FBC0C3 /* Solubility Table */ = {
+			isa = PBXGroup;
+			children = (
+				42B68939217A18B900FBC0C3 /* Cell */,
+				42B68937217A18B100FBC0C3 /* SolubilityTableVC.swift */,
+			);
+			path = "Solubility Table";
+			sourceTree = "<group>";
+		};
+		42B68939217A18B900FBC0C3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				42B6893A217A18D000FBC0C3 /* SolubilityCells.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6447A6B7C7D96350920C67AA /* Frameworks */ = {
@@ -403,6 +424,7 @@
 		844B728C2165FE1E001E778F /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
+				42B68936217A178600FBC0C3 /* Solubility Table */,
 				84A2EA442177306700C49599 /* ElementTable */,
 				844B728F216602B1001E778F /* Cell */,
 				844B728D2165FE4F001E778F /* PeriodicTableVC.swift */,
@@ -787,9 +809,11 @@
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
 				42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */,
+				42B68938217A18B100FBC0C3 /* SolubilityTableVC.swift in Sources */,
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
 				84436BD72179BD470087D3FE /* ElementCells.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
+				42B6893B217A18D000FBC0C3 /* SolubilityCells.swift in Sources */,
 				848F7D9021633A2A006F264C /* MainVC.swift in Sources */,
 				84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */,
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
