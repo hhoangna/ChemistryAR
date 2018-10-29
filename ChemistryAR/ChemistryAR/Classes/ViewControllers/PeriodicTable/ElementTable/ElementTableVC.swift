@@ -98,7 +98,9 @@ extension ElementTableVC: SpreadsheetViewDataSource {
 }
 
 extension ElementTableVC: SpreadsheetViewDelegate {
-    
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
+        print("Selected: (row: \(indexPath.row), column: \(indexPath.column))")
+    }
 }
 
 extension ElementTableVC: CustomNavigationBarDelegate {

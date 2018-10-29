@@ -44,7 +44,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="337.5" height="333"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-YD-iH9" customClass="HView" customModule="ARChemistry" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-YD-iH9" customClass="HView" customModule="ChemistryAR" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="25" width="317.5" height="120"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Mail" translatesAutoresizingMaskIntoConstraints="NO" id="K5m-fj-4u8">
@@ -142,7 +142,7 @@
                                                         <action selector="onbtnClickLoginWithButton:" destination="Jtw-et-nCe" eventType="touchUpInside" id="7Eh-Ti-1rw"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehS-56-uUj" customClass="HButton" customModule="ARChemistry" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehS-56-uUj" customClass="HButton" customModule="ChemistryAR" customModuleProvider="target">
                                                     <rect key="frame" x="174.5" y="230" width="143" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
@@ -157,7 +157,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7c-jL-QaO" customClass="HButton" customModule="ARChemistry" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7c-jL-QaO" customClass="HButton" customModule="ChemistryAR" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="230" width="143" height="45"/>
                                                     <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -204,7 +204,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="337.5" height="333"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94c-9U-TMb" customClass="HView" customModule="ARChemistry" customModuleProvider="target">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94c-9U-TMb" customClass="HView" customModule="ChemistryAR" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="20" width="317.5" height="222"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_User" translatesAutoresizingMaskIntoConstraints="NO" id="aIN-2e-0NJ">
@@ -390,7 +390,7 @@
                                     <outlet property="delegate" destination="2lj-dY-iQc" id="bdy-WI-u4Z"/>
                                 </connections>
                             </collectionView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax7-uE-xzU" customClass="TabBarTopView" customModule="ARChemistry" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax7-uE-xzU" customClass="TabBarTopView" customModule="ChemistryAR" customModuleProvider="target">
                                 <rect key="frame" x="19" y="158.5" width="337.5" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -430,6 +430,6 @@
         <image name="google-icon" width="16" height="16"/>
         <image name="ic_Mail" width="45" height="45"/>
         <image name="ic_Password" width="45" height="45"/>
-        <image name="ic_User" width="45" height="45"/>
+        <image name="ic_User" width="50" height="50"/>
     </resources>
 </document>
