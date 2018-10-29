@@ -19,8 +19,6 @@ enum BottomItemSelect: Int {
 
 class BaseVC: UIViewController {
     
-    var backBarItem : UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
-    
     @IBOutlet weak var tabBarTopItemView: UIView?
     @IBOutlet weak var vHeader: CustomNavigationBar?
     @IBOutlet weak var vContainer: SpreadsheetView?
@@ -29,7 +27,6 @@ class BaseVC: UIViewController {
     
     var topItemView: TabBarTopView?
     var modeBar: ModeBottomBar = .modeMain
-    weak var delegate: CustomNavigationBarDelegate?
     
     private var gesDismissKeyboardDetector : UITapGestureRecognizer? = nil;
     private var obsKeyboardChangeFrame: NSObjectProtocol? = nil;
@@ -41,15 +38,48 @@ class BaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        printControllerName()
         self.navigationController?.setNavigationBarHidden(checkNavigationBarHidden(), animated: true)
     }
+    
+    
+    func printControllerName() {
+        #if DEBUG
+        let name = String(describing: self)
+        print("Current Screen is \(name)")
+        #endif
+    }
+    
     
     func checkNavigationBarHidden() -> Bool {
         if self is LoginVC || self is MainVC {
             return true
         }
         return false
+    }
+    
+    func updateCustomNavigationBar(_ barStyle: NavigationBarStyle, _ title: String?) {
+        let backBarItem : UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
+
+        if let title = title {
+            self.navigationItem.title = title
+        }
+        switch barStyle {
+        case .None:
+            break
+        case .BackOnly:
+            self.navigationItem.leftBarButtonItem = backBarItem
+            break
+        }
+    }
+    
+    
+    @objc func onNavigationBack(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @objc func onNavigationClickRightButton(_ sender: UIBarButtonItem) {
+        //
     }
 }
 

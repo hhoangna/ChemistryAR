@@ -13,9 +13,7 @@ class ElementTableVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.updateCustomNavigationBar(.BackOnly, "Something")
-        
+                
         setupSpreadSheetView()
     }
     
@@ -37,6 +35,10 @@ class ElementTableVC: BaseVC {
         vContainer?.register(CycleCell.self, forCellWithReuseIdentifier: String(describing: CycleCell.self))
         vContainer?.register(UINib(nibName: String(describing: ElementCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ElementCell.self))
         vContainer?.register(BlankCell.self, forCellWithReuseIdentifier: String(describing: BlankCell.self))
+    }
+    
+    override func onNavigationBack(_ sender: UIBarButtonItem) {
+        self.didSelectback()
     }
 }
 
@@ -103,12 +105,3 @@ extension ElementTableVC: SpreadsheetViewDelegate {
     }
 }
 
-extension ElementTableVC: CustomNavigationBarDelegate {
-    func didSelectBack() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func didSelectRight() {
-        //
-    }
-}

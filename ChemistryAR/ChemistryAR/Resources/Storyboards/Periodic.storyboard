@@ -131,6 +131,7 @@
                             <constraint firstItem="h5B-9i-lxt" firstAttribute="leading" secondItem="ZlL-sI-Vkn" secondAttribute="leading" id="sov-Pq-UIN"/>
                             <constraint firstAttribute="bottom" secondItem="h5B-9i-lxt" secondAttribute="bottom" id="xmV-VM-r7H"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="l7s-9P-3U1"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -139,7 +140,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFf-Ez-V7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375" y="215"/>
+            <point key="canvasLocation" x="-537" y="215"/>
+        </scene>
+        <!--Solubility TableVC-->
+        <scene sceneID="4MS-TD-dCC">
+            <objects>
+                <viewController storyboardIdentifier="SolubilityTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P6I-GT-lqW" customClass="SolubilityTableVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m0k-gv-FlW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCT-NB-ta9" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WCT-NB-ta9" firstAttribute="top" secondItem="m0k-gv-FlW" secondAttribute="top" id="838-Zh-Flo"/>
+                            <constraint firstAttribute="trailing" secondItem="WCT-NB-ta9" secondAttribute="trailing" id="O8k-h7-4Pg"/>
+                            <constraint firstAttribute="bottom" secondItem="WCT-NB-ta9" secondAttribute="bottom" id="TVC-Km-NUN"/>
+                            <constraint firstItem="WCT-NB-ta9" firstAttribute="leading" secondItem="m0k-gv-FlW" secondAttribute="leading" id="wk2-9m-BTg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0A5-u3-5BX"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZJ-rt-8rV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="215"/>
         </scene>
     </scenes>
     <resources>

@@ -21,7 +21,6 @@ class PeriodicTableVC: BaseVC {
     }
 
     func updateUI() {
-        self.updateCustomNavigationBar(.BackOnly, "Adnkasjdnak")
         setupTableView()
     }
     
@@ -52,8 +51,25 @@ extension PeriodicTableVC: UITableViewDataSource {
 
 extension PeriodicTableVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: ElementTableVC = .load(SB: .Periodic)
-                
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        switch indexPath.row {
+        case 0:
+            let vc: ElementTableVC = .load(SB: .Periodic)
+            
+            vc.updateCustomNavigationBar(.BackOnly, arrList[indexPath.row])
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            let vc: SolubilityTableVC = .load(SB: .Periodic)
+            
+            vc.updateCustomNavigationBar(.BackOnly, arrList[indexPath.row])
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            let vc: ElementTableVC = .load(SB: .Periodic)
+            
+            vc.updateCustomNavigationBar(.BackOnly, arrList[indexPath.row])
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
