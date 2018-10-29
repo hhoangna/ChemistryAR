@@ -36,6 +36,10 @@ class ElementTableVC: BaseVC {
         vContainer?.register(UINib(nibName: String(describing: ElementCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ElementCell.self))
         vContainer?.register(BlankCell.self, forCellWithReuseIdentifier: String(describing: BlankCell.self))
     }
+    
+    override func onNavigationBack(_ sender: UIBarButtonItem) {
+        self.didSelectback()
+    }
 }
 
 extension ElementTableVC: SpreadsheetViewDataSource {
@@ -99,12 +103,3 @@ extension ElementTableVC: SpreadsheetViewDelegate {
     
 }
 
-extension ElementTableVC: CustomNavigationBarDelegate {
-    func didSelectBack() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func didSelectRight() {
-        //
-    }
-}

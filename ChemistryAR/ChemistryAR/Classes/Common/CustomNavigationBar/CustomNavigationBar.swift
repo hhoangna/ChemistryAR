@@ -13,10 +13,6 @@ enum NavigationBarStyle {
     case BackOnly
 }
 
-protocol CustomNavigationBarDelegate: class {
-    func didSelectBack()
-    func didSelectRight()
-}
 
 class CustomNavigationBar: BaseNV {
     
@@ -24,29 +20,5 @@ class CustomNavigationBar: BaseNV {
         super.viewDidLoad()
         
         setNavigationBarHidden(false, animated: true)
-    }
-}
-
-extension BaseVC {
-    
-    func updateCustomNavigationBar(_ barStyle: NavigationBarStyle, _ title: String?) {
-        if let title = title {
-            self.navigationItem.title = title
-        }
-        switch barStyle {
-        case .None:
-            break
-        case .BackOnly:
-            self.navigationItem.leftBarButtonItem = backBarItem
-            break
-        }
-    }
-    
-    @objc func onNavigationBack(_ sender: UIBarButtonItem) {
-        delegate?.didSelectBack()
-    }
-    
-    @objc func onNavigationClickRightButton(_ sender: UIBarButtonItem) {
-        delegate?.didSelectRight()
     }
 }
