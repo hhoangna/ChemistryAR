@@ -14,6 +14,9 @@
 		84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0B21621D36008F2C05 /* Assets.xcassets */; };
 		84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0D21621D36008F2C05 /* LaunchScreen.storyboard */; };
 		843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843F93E52174A7ED0016D04F /* GoogleService-Info.plist */; };
+		844304FC218815BD0074B609 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844304FB218815BD0074B609 /* UserModel.swift */; };
+		8443050621889F250074B609 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443050521889F250074B609 /* SettingCell.swift */; };
+		844305092188B2D00074B609 /* UIImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844305082188B2D00074B609 /* UIImageView + Ext.swift */; };
 		84436BCD2179840F0087D3FE /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84436BCC2179840F0087D3FE /* BaseModel.swift */; };
 		84436BCF217986900087D3FE /* Constants + API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84436BCE217986900087D3FE /* Constants + API.swift */; };
 		84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84436BD1217987E80087D3FE /* AppConfiguration.swift */; };
@@ -74,6 +77,9 @@
 		84154F0E21621D36008F2C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84154F1021621D36008F2C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843F93E52174A7ED0016D04F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		844304FB218815BD0074B609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8443050521889F250074B609 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		844305082188B2D00074B609 /* UIImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Ext.swift"; sourceTree = "<group>"; };
 		84436BCC2179840F0087D3FE /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		84436BCE217986900087D3FE /* Constants + API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants + API.swift"; sourceTree = "<group>"; };
 		84436BD1217987E80087D3FE /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 		84154F1C21621FAE008F2C05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				844304FA2188159C0074B609 /* User */,
 				84436BC9217983BB0087D3FE /* PeriodicTable */,
 			);
 			path = Models;
@@ -373,6 +380,31 @@
 			path = CustomNavigationBar;
 			sourceTree = "<group>";
 		};
+		844304FA2188159C0074B609 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				844304FB218815BD0074B609 /* UserModel.swift */,
+			);
+			name = User;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8443050421889F100074B609 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8443050521889F250074B609 /* SettingCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		844305072188B2B40074B609 /* UIImageView + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				844305082188B2D00074B609 /* UIImageView + Ext.swift */,
+			);
+			path = "UIImageView + Ext";
+			sourceTree = "<group>";
+		};
 		84436BC8217981850087D3FE /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +475,7 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				844305072188B2B40074B609 /* UIImageView + Ext */,
 				42891DDC21779665007CA947 /* UIBarButtonItem + Ext */,
 				84A99F5F2164B243007C54CD /* UIButton + Ext */,
 				84A99F5C2164B17C007C54CD /* UITextField + Ext */,
@@ -525,6 +558,7 @@
 		849712CF216E401C00394891 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				8443050421889F100074B609 /* Cell */,
 				849712D3216E40CF00394891 /* SettingVC.swift */,
 			);
 			path = Setting;
@@ -722,12 +756,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -743,12 +779,14 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -805,11 +843,13 @@
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
 				84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */,
 				84A99F4821648C70007C54CD /* HomeVC.swift in Sources */,
+				844305092188B2D00074B609 /* UIImageView + Ext.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
 				42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */,
 				42B68938217A18B100FBC0C3 /* SolubilityTableVC.swift in Sources */,
+				8443050621889F250074B609 /* SettingCell.swift in Sources */,
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
 				84436BD72179BD470087D3FE /* ElementCells.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
@@ -823,6 +863,7 @@
 				849712D2216E40C000394891 /* ReactionVC.swift in Sources */,
 				848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */,
 				84436BCF217986900087D3FE /* Constants + API.swift in Sources */,
+				844304FC218815BD0074B609 /* UserModel.swift in Sources */,
 				84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */,
 				84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */,
 				848F7D8821632B24006F264C /* Constants.swift in Sources */,

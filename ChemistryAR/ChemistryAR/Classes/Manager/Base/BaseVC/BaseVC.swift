@@ -42,7 +42,6 @@ class BaseVC: UIViewController {
         self.navigationController?.setNavigationBarHidden(checkNavigationBarHidden(), animated: true)
     }
     
-    
     func printControllerName() {
         #if DEBUG
         let name = String(describing: self)

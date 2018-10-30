@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.3)
   - BoringSSL (10.0.6):
     - BoringSSL/Implementation (= 10.0.6)
     - BoringSSL/Interface (= 10.0.6)
@@ -124,6 +125,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - ObjectMapper (3.3.0)
   - Protobuf (3.6.1)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -135,6 +137,7 @@ PODS:
   - SwiftMessages/App (6.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - ESTabBarController-swift
   - Firebase/Auth
   - Firebase/Core
@@ -142,6 +145,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FSPagerView
   - IQKeyboardManager
+  - ObjectMapper
   - SDWebImage
   - SpreadsheetView
   - SVProgressHUD
@@ -149,6 +153,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - BoringSSL
     - ESTabBarController-swift
     - Firebase
@@ -171,6 +176,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - leveldb-library
     - nanopb
+    - ObjectMapper
     - Protobuf
     - SDWebImage
     - SpreadsheetView
@@ -178,6 +184,7 @@ SPEC REPOS:
     - SwiftMessages
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
   ESTabBarController-swift: f0a8679e43df1e60b7b36bbcaf1dc98ba6273c7d
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
@@ -200,12 +207,13 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SpreadsheetView: 17c55b6dc82099993cc2ceb818248d19f3220998
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
 
-PODFILE CHECKSUM: 7b0231eac43a6101f2c365c2d50e705f06ac94ca
+PODFILE CHECKSUM: f4cfdf11e8f7831904490337ce5ea4f8636cc2e0
 
 COCOAPODS: 1.5.3

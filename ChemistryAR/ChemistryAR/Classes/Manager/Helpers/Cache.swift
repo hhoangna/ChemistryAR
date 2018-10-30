@@ -7,15 +7,39 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class Cache: NSObject {
     static let shared = Cache()
     private let userDefaults = UserDefaults.standard
-//    private var userLogin:LoginResultModel?
+    private var userLogin: UserModel?
     
-    var currentBarItemSelected:BottomItemSelect = .Home
+    /*
+    var user: User {
+        set (newValue) {
+            if let encoder = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false) {
+                    userDefaults.set(encoder, forKey: USER_DEFAULT_KEY.HF_USER)
+            }
+        }
+        get {
+            if let data = userDefaults.object(forKey: USER_DEFAULT_KEY.HF_USER) as? Data {
+                if let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as! User {
+                    return object
+                }
+            }
+            
+            return User()
+        }
+    }
+    */
     
-    var token:String{
+    var user: User? {
+        get {
+            return getUser()
+        }
+    }
+
+    var token: String{
         set{
             userDefaults.set(newValue, forKey: USER_DEFAULT_KEY.HF_TOKEN_USER)
         }
@@ -37,8 +61,6 @@ class Cache: NSObject {
     func removeAllCache() {
         userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_TOKEN_USER)
         userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_USER)
-        userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_TOKEN_USER)
-        currentBarItemSelected = .Home
     }
     
     
@@ -64,5 +86,35 @@ class Cache: NSObject {
     
     func getTokenDevice() -> String?{
         return getObject(forKey:USER_DEFAULT_KEY.HF_DEVICE_TOKEN) as? String
+    }
+    
+    func setUser(_ user: User?) {
+        if (user != nil) {
+            let data = user?.getJSONString()
+            if (data != nil) {
+                userDefaults.set(data, forKey: USER_DEFAULT_KEY.HF_USER)
+            } else {
+                //
+            }
+        } else {
+            userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_USER)
+        }
+        
+        userDefaults.synchronize()
+    }
+    
+    private func getUser() -> User? {
+        
+        var user: User?
+        if(user !=  nil) {
+            user = self.user
+        }else {
+            let data = userDefaults.object(forKey: USER_DEFAULT_KEY.HF_USER)
+            if(data != nil) {
+                user =  User(JSON: data as! [String:Any])
+            }
+        }
+        
+        return user;
     }
 }
