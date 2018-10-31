@@ -26,6 +26,10 @@ class LoginVC: BaseVC {
         setupBackgroundVideo()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func setupTabBarItemView() {
         topItemView = TabBarTopView.load()
         topItemView?.delegate = self
@@ -118,14 +122,13 @@ extension LoginVC: UICollectionViewDataSource {
         if (indexPath.row == 0) {
             let cell: LoginCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LoginClvCell", for: indexPath) as! LoginCell
             
-//            cell.rootVC = self
-//            cell.delegate = self
+            cell.rootVC = self
             
             return cell;
         } else {
             let cell: RegisterCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RegisterClvCell", for: indexPath) as! RegisterCell
             
-//            cell.rootVC = self
+            cell.rootVC = self
             
             return cell;
         }

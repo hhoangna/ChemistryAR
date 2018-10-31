@@ -18,6 +18,7 @@ class LoginCell: BaseClvCell {
     @IBOutlet fileprivate weak var btnLogin: UIButton?
     
     var db = Firestore.firestore()
+    var rootVC: LoginVC?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,22 +46,29 @@ class LoginCell: BaseClvCell {
         
         App().showLoadingIndicator()
         Auth.auth().signIn(withEmail: username, password: password) { (result, err) in
+            App().dismissLoadingIndicator()
             if err != nil {
-                App().dismissLoadingIndicator()
                 App().showMessageNotice(title: "Login Failed!", presentationStyle: .center, styleView: .centeredView, styleTheme: .error)
             } else {
-                guard let uid = Auth.auth().currentUser?.uid else { return }
+                guard let uid = Auth.auth().currentUser?.uid,
+                let lastActive = Auth.auth().currentUser?.metadata.lastSignInDate else { return }
                 
-                self.db.collection("Users").document(uid).getDocument(completion: { (document, err) in
-                    if let user = document.flatMap({
-                        $0.data().flatMap({ (data) in
-                            return Mapper<UserModel>().map(JSON: data)
+                self.db.collection("Users").document(uid).updateData(["user.lastActive": lastActive.timeIntervalSince1970], completion: { (err) in
+                    if err == nil {
+                        self.db.collection("Users").document(uid).getDocument(completion: { (document, err) in
+                            if let user = document.flatMap({
+                                $0.data().flatMap({ (data) in
+                                    return Mapper<UserModel>().map(JSON: data)
+                                })
+                            }) {
+                                Caches().token = E(user.token)
+                                Caches().setUser(user.user)
+                                App().dismissLoadingIndicator()
+                                App().onLoginSuccess()
+                            }
                         })
-                    }) {
-                        Caches().token = E(user.token)
-                        Caches().setUser(user.user)
-                        App().dismissLoadingIndicator()
-                        App().onLoginSuccess()
+                    } else {
+                        self.rootVC?.showAlertView("Can't load user data")
                     }
                 })
             }

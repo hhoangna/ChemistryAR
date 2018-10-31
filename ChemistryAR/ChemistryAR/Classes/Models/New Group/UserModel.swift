@@ -12,13 +12,15 @@ import ObjectMapper
 class User: BaseModel {
     var name: String?
     var email: String?
-    var birthday: Date?
+    var birthday: Double?
     var address: String?
     var password: String?
     var _id: String?
     var imgLink: String?
     var role: String?
     var isVIP: Bool?
+    var createAt: Double?
+    var lastActive: Double?
     
     required convenience init?(map: Map) {
         self.init()
@@ -34,6 +36,8 @@ class User: BaseModel {
         role <- map["role"]
         isVIP <- map["isVIP"]
         birthday <- map["birthday"]
+        createAt <- map["createAt"]
+        lastActive <- map["lastActive"]
     }
 }
 

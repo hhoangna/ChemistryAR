@@ -17,6 +17,8 @@
 		844304FC218815BD0074B609 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844304FB218815BD0074B609 /* UserModel.swift */; };
 		8443050621889F250074B609 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443050521889F250074B609 /* SettingCell.swift */; };
 		844305092188B2D00074B609 /* UIImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844305082188B2D00074B609 /* UIImageView + Ext.swift */; };
+		8443050E2189421C0074B609 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443050D2189421C0074B609 /* UserListVC.swift */; };
+		84430510218943740074B609 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443050F218943740074B609 /* UserListCell.swift */; };
 		84436BCD2179840F0087D3FE /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84436BCC2179840F0087D3FE /* BaseModel.swift */; };
 		84436BCF217986900087D3FE /* Constants + API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84436BCE217986900087D3FE /* Constants + API.swift */; };
 		84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84436BD1217987E80087D3FE /* AppConfiguration.swift */; };
@@ -63,6 +65,9 @@
 		84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */; };
 		84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F602164B257007C54CD /* UIButton + Ext.swift */; };
 		84A99F642164B7B9007C54CD /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F632164B7B9007C54CD /* HomeCell.swift */; };
+		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
+		84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA02189CCF3001F0001 /* ProfileVC.swift */; };
+		84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA22189CD07001F0001 /* ProfileCell.swift */; };
 		C82270514EE2A2D17FD2AFA3 /* Pods_ChemistryAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8350ACC1D14490AD975BC97 /* Pods_ChemistryAR.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,8 @@
 		844304FB218815BD0074B609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8443050521889F250074B609 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		844305082188B2D00074B609 /* UIImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Ext.swift"; sourceTree = "<group>"; };
+		8443050D2189421C0074B609 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		8443050F218943740074B609 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		84436BCC2179840F0087D3FE /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		84436BCE217986900087D3FE /* Constants + API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants + API.swift"; sourceTree = "<group>"; };
 		84436BD1217987E80087D3FE /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -127,6 +134,9 @@
 		84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		84A99F602164B257007C54CD /* UIButton + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Ext.swift"; sourceTree = "<group>"; };
 		84A99F632164B7B9007C54CD /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
+		84F72DA02189CCF3001F0001 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		84F72DA22189CD07001F0001 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		970F231EF99B0C048E1C3E24 /* Pods-ChemistryAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.release.xcconfig"; sourceTree = "<group>"; };
 		C8350ACC1D14490AD975BC97 /* Pods_ChemistryAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChemistryAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -292,6 +302,7 @@
 		84154F1E21621FFD008F2C05 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				84F72D9B21898A47001F0001 /* ValidateUtils */,
 				848F7D7F216329F7006F264C /* Extensions */,
 			);
 			path = Utils;
@@ -403,6 +414,32 @@
 				844305082188B2D00074B609 /* UIImageView + Ext.swift */,
 			);
 			path = "UIImageView + Ext";
+			sourceTree = "<group>";
+		};
+		8443050A218941B70074B609 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				8443050421889F100074B609 /* Cell */,
+				849712D3216E40CF00394891 /* SettingVC.swift */,
+			);
+			path = SettingVC;
+			sourceTree = "<group>";
+		};
+		8443050B218941D10074B609 /* UserManagementList */ = {
+			isa = PBXGroup;
+			children = (
+				8443050C218941E70074B609 /* Cell */,
+				8443050D2189421C0074B609 /* UserListVC.swift */,
+			);
+			path = UserManagementList;
+			sourceTree = "<group>";
+		};
+		8443050C218941E70074B609 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8443050F218943740074B609 /* UserListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		84436BC8217981850087D3FE /* Nibs */ = {
@@ -558,8 +595,9 @@
 		849712CF216E401C00394891 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				8443050421889F100074B609 /* Cell */,
-				849712D3216E40CF00394891 /* SettingVC.swift */,
+				84F72D9E2189CB95001F0001 /* ProfileVC */,
+				8443050B218941D10074B609 /* UserManagementList */,
+				8443050A218941B70074B609 /* SettingVC */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -654,6 +692,31 @@
 			isa = PBXGroup;
 			children = (
 				84A99F632164B7B9007C54CD /* HomeCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84F72D9B21898A47001F0001 /* ValidateUtils */ = {
+			isa = PBXGroup;
+			children = (
+				84F72D9C21898A64001F0001 /* ValidateUtils.swift */,
+			);
+			path = ValidateUtils;
+			sourceTree = "<group>";
+		};
+		84F72D9E2189CB95001F0001 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				84F72D9F2189CBA1001F0001 /* Cell */,
+				84F72DA02189CCF3001F0001 /* ProfileVC.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		84F72D9F2189CBA1001F0001 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F72DA22189CD07001F0001 /* ProfileCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -833,11 +896,14 @@
 				84A99F4A2164901F007C54CD /* Cache.swift in Sources */,
 				848F7D8321632A95006F264C /* UIView + Ext.swift in Sources */,
 				848F7D9A2163775D006F264C /* String + Ext.swift in Sources */,
+				84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */,
 				848F7D9421637643006F264C /* BaseClvCell.swift in Sources */,
 				848F7D9C21637953006F264C /* Languages.swift in Sources */,
 				84A99F642164B7B9007C54CD /* HomeCell.swift in Sources */,
+				84430510218943740074B609 /* UserListCell.swift in Sources */,
 				849712D4216E40CF00394891 /* SettingVC.swift in Sources */,
 				848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */,
+				84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */,
 				844B7291216602C9001E778F /* PeriodicCell.swift in Sources */,
 				844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
@@ -858,6 +924,7 @@
 				84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */,
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
+				84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */,
 				84436BCD2179840F0087D3FE /* BaseModel.swift in Sources */,
 				848F7D97216376EF006F264C /* UIColor + Ext.swift in Sources */,
 				849712D2216E40C000394891 /* ReactionVC.swift in Sources */,
@@ -865,6 +932,7 @@
 				84436BCF217986900087D3FE /* Constants + API.swift in Sources */,
 				844304FC218815BD0074B609 /* UserModel.swift in Sources */,
 				84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */,
+				8443050E2189421C0074B609 /* UserListVC.swift in Sources */,
 				84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */,
 				848F7D8821632B24006F264C /* Constants.swift in Sources */,
 				84A99F242163B8EC007C54CD /* LoginVC.swift in Sources */,
