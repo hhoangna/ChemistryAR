@@ -19,4 +19,5 @@ target 'ChemistryAR' do
   pod 'Firebase/Firestore'
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'TLPhotoPicker'
 end

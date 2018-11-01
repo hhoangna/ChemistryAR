@@ -65,6 +65,8 @@
 		84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */; };
 		84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F602164B257007C54CD /* UIButton + Ext.swift */; };
 		84A99F642164B7B9007C54CD /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F632164B7B9007C54CD /* HomeCell.swift */; };
+		84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */; };
+		84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E332218AA52F00AE429D /* ImagePickerVC.swift */; };
 		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
 		84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA02189CCF3001F0001 /* ProfileVC.swift */; };
 		84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA22189CD07001F0001 /* ProfileCell.swift */; };
@@ -134,6 +136,8 @@
 		84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		84A99F602164B257007C54CD /* UIButton + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Ext.swift"; sourceTree = "<group>"; };
 		84A99F632164B7B9007C54CD /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
+		84C7E332218AA52F00AE429D /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
 		84F72DA02189CCF3001F0001 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		84F72DA22189CD07001F0001 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		84154F1B21621FA8008F2C05 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				84C7E331218AA50800AE429D /* ImagePicker */,
 				849712DF216F459D00394891 /* CustomTabbar */,
 				84A99F2521645263007C54CD /* TabBarTopView */,
 				84154F27216225B4008F2C05 /* CustomNavigationBar */,
@@ -512,6 +517,7 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */,
 				844305072188B2B40074B609 /* UIImageView + Ext */,
 				42891DDC21779665007CA947 /* UIBarButtonItem + Ext */,
 				84A99F5F2164B243007C54CD /* UIButton + Ext */,
@@ -696,6 +702,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */,
+			);
+			path = "DateFormatter + Ext";
+			sourceTree = "<group>";
+		};
+		84C7E331218AA50800AE429D /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				84C7E332218AA52F00AE429D /* ImagePickerVC.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		84F72D9B21898A47001F0001 /* ValidateUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +854,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -855,6 +878,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -901,11 +925,13 @@
 				848F7D9C21637953006F264C /* Languages.swift in Sources */,
 				84A99F642164B7B9007C54CD /* HomeCell.swift in Sources */,
 				84430510218943740074B609 /* UserListCell.swift in Sources */,
+				84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */,
 				849712D4216E40CF00394891 /* SettingVC.swift in Sources */,
 				848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */,
 				84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */,
 				844B7291216602C9001E778F /* PeriodicCell.swift in Sources */,
 				844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */,
+				84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
 				84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */,
 				84A99F4821648C70007C54CD /* HomeVC.swift in Sources */,

@@ -117,6 +117,12 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fh-KH-SLN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="281" height="105"/>
+                                                    <connections>
+                                                        <action selector="pressBtnChangeMode:" destination="xq3-8w-aNj" eventType="touchUpInside" id="4Ih-ae-apw"/>
+                                                    </connections>
+                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRn-YO-5ew">
                                                     <rect key="frame" x="281" y="29" width="0.5" height="47"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,8 +145,11 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWF-Dg-mWR">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWF-Dg-mWR">
                                                             <rect key="frame" x="0.0" y="0.0" width="93.5" height="105"/>
+                                                            <connections>
+                                                                <action selector="pressBtnChangeMode:" destination="xq3-8w-aNj" eventType="touchUpInside" id="X8v-p0-drq"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,6 +174,9 @@
                                                 <constraint firstItem="V0c-N0-WJz" firstAttribute="top" secondItem="rRn-YO-5ew" secondAttribute="top" id="Gbv-sd-puP"/>
                                                 <constraint firstItem="6mu-5s-K3c" firstAttribute="leading" secondItem="Axl-rt-onu" secondAttribute="trailing" constant="15" id="J62-jc-ozD"/>
                                                 <constraint firstItem="QsT-ZN-PJ1" firstAttribute="centerY" secondItem="Axl-rt-onu" secondAttribute="centerY" multiplier="0.75" id="N3u-Jz-XLF"/>
+                                                <constraint firstItem="rRn-YO-5ew" firstAttribute="leading" secondItem="4fh-KH-SLN" secondAttribute="trailing" id="NTn-VC-kgu"/>
+                                                <constraint firstAttribute="bottom" secondItem="4fh-KH-SLN" secondAttribute="bottom" id="Nhu-wV-f4m"/>
+                                                <constraint firstItem="4fh-KH-SLN" firstAttribute="top" secondItem="d36-MK-O9Q" secondAttribute="top" id="Q0s-BR-gcd"/>
                                                 <constraint firstItem="aDb-2B-qKR" firstAttribute="top" secondItem="d36-MK-O9Q" secondAttribute="top" id="U74-Hh-Xhe"/>
                                                 <constraint firstItem="6mu-5s-K3c" firstAttribute="centerY" secondItem="Axl-rt-onu" secondAttribute="centerY" multiplier="1.25" id="br7-Fl-Lf7"/>
                                                 <constraint firstItem="Axl-rt-onu" firstAttribute="centerY" secondItem="d36-MK-O9Q" secondAttribute="centerY" id="fP8-xO-FR5"/>
@@ -172,6 +184,7 @@
                                                 <constraint firstItem="rRn-YO-5ew" firstAttribute="centerX" secondItem="d36-MK-O9Q" secondAttribute="centerX" multiplier="1.5" id="i2y-dr-zs7"/>
                                                 <constraint firstItem="rRn-YO-5ew" firstAttribute="leading" secondItem="QsT-ZN-PJ1" secondAttribute="trailing" constant="15" id="iwO-Zu-TNx"/>
                                                 <constraint firstAttribute="bottom" secondItem="aDb-2B-qKR" secondAttribute="bottom" id="n9l-tG-tP1"/>
+                                                <constraint firstItem="4fh-KH-SLN" firstAttribute="leading" secondItem="d36-MK-O9Q" secondAttribute="leading" id="oua-TJ-lMz"/>
                                                 <constraint firstItem="QsT-ZN-PJ1" firstAttribute="leading" secondItem="Axl-rt-onu" secondAttribute="trailing" constant="15" id="tYL-Lw-vJy"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -501,6 +514,10 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadowShouldRasterize" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -786,6 +803,7 @@
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>

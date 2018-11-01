@@ -135,6 +135,7 @@ PODS:
   - SwiftMessages (6.0.0):
     - SwiftMessages/App (= 6.0.0)
   - SwiftMessages/App (6.0.0)
+  - TLPhotoPicker (1.7.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -150,6 +151,7 @@ DEPENDENCIES:
   - SpreadsheetView
   - SVProgressHUD
   - SwiftMessages
+  - TLPhotoPicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -182,6 +184,7 @@ SPEC REPOS:
     - SpreadsheetView
     - SVProgressHUD
     - SwiftMessages
+    - TLPhotoPicker
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -213,7 +216,8 @@ SPEC CHECKSUMS:
   SpreadsheetView: 17c55b6dc82099993cc2ceb818248d19f3220998
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
+  TLPhotoPicker: ced10aa9cdbce11bda2272f919cdace69e964239
 
-PODFILE CHECKSUM: f4cfdf11e8f7831904490337ce5ea4f8636cc2e0
+PODFILE CHECKSUM: fb2bacc5f210cdad81d38ad15b0ff64f15b0b36b
 
 COCOAPODS: 1.5.3
