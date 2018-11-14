@@ -23,6 +23,9 @@ class LoginCell: BaseClvCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        tfUsername?.returnKeyType = .next
+        tfPassword?.returnKeyType = .go
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,38 +42,68 @@ class LoginCell: BaseClvCell {
         }
     }
     
-    @IBAction func onbtnClickLogin(button: UIButton) {
+    func checkForValidate() -> Bool {
+        if let email = tfUsername?.text {
+            if !(ValidateUtils.validateEmail(email)) {
+                tfUsername?.becomeFirstResponder()
+                self.rootVC?.showAlertView("Email invalid".localized)
+                return false
+            }
+        }
         
-        guard let username = tfUsername?.text,
-            let password = tfPassword?.text else { return }
+        if let pass = tfPassword?.text {
+            if !(ValidateUtils.validatePassword(pass)) {
+                tfPassword?.becomeFirstResponder()
+                self.rootVC?.showAlertView("Password invalid".localized)
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    @IBAction func onbtnClickLogin(button: UIButton) {
+        login()
+    }
+}
+
+extension LoginCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if tfUsername == textField {
+            tfPassword?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            if checkForValidate() {
+                login()
+            }
+        }
+        return false
+    }
+}
+
+extension LoginCell {
+    func login() {
+        let login = LoginModel()
+        login.email = tfUsername?.text
+        login.password = tfPassword?.text
         
         App().showLoadingIndicator()
-        Auth.auth().signIn(withEmail: username, password: password) { (result, err) in
+        SERVICES().API.login(loginModel: login) {[weak self] (result) in
             App().dismissLoadingIndicator()
-            if err != nil {
-                App().showMessageNotice(title: "Login Failed!", presentationStyle: .center, styleView: .centeredView, styleTheme: .error)
-            } else {
-                guard let uid = Auth.auth().currentUser?.uid,
-                let lastActive = Auth.auth().currentUser?.metadata.lastSignInDate else { return }
+            switch result {
+            case .object(let obj):
+                if let user = obj.user{
+//                    user.roleList = obj.user?.role?.getArrayModel()
+//                    user.avatarModel = obj.user?.avatar?.getModel()
+                    Caches().user = user
+                }
+                Caches().token = E(obj.token)
+                App().onLoginSuccess()
                 
-                self.db.collection("Users").document(uid).updateData(["user.lastActive": lastActive.timeIntervalSince1970], completion: { (err) in
-                    if err == nil {
-                        self.db.collection("Users").document(uid).getDocument(completion: { (document, err) in
-                            if let user = document.flatMap({
-                                $0.data().flatMap({ (data) in
-                                    return Mapper<UserModel>().map(JSON: data)
-                                })
-                            }) {
-                                Caches().token = E(user.token)
-                                Caches().setUser(user.user)
-                                App().dismissLoadingIndicator()
-                                App().onLoginSuccess()
-                            }
-                        })
-                    } else {
-                        self.rootVC?.showAlertView("Can't load user data")
-                    }
-                })
+                break;
+            case .error(let error):
+                self?.rootVC?.showAlertView(E(error.message))
+                break;
             }
         }
     }

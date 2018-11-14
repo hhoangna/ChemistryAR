@@ -144,9 +144,9 @@ extension SettingVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyAvatar,
                                                  for:indexPath) as! SettingCell
         
-        cell.imgAvatar?.setImageWithURL(url: Caches().user?.imgLink, placeHolderImage: UIImage(named: "ic_User"))
-        cell.lblTitle?.text = Caches().user?.name
-        cell.lblSubtitle?.text = Caches().user?.email
+//        cell.imgAvatar?.setImageWithURL(url: Caches().user?.imgLink, placeHolderImage: UIImage(named: "ic_User"))
+        cell.lblTitle?.text = Caches().user.name
+        cell.lblSubtitle?.text = Caches().user.email
         
         cell.delegate = self
         

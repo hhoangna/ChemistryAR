@@ -203,44 +203,5 @@ extension RegisterCell {
             return
         }
         App().showLoadingIndicator()
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            App().dismissLoadingIndicator()
-            if error != nil {
-                self.rootVC?.showAlertView("Failed to create account!")
-                return
-            }
-            
-            guard let uid = user?.user.uid,
-                let createAt = user?.user.metadata.creationDate,
-                let lastActive = user?.user.metadata.lastSignInDate,
-                let name = self.tfUsername.text else { return }
-            
-            let userDetail = User()
-            userDetail._id = uid
-            userDetail.email = email
-            userDetail.name = name
-            userDetail.password = password
-            userDetail.createAt = createAt.timeIntervalSince1970
-            userDetail.lastActive = lastActive.timeIntervalSince1970
-            userDetail.isVIP = false
-            userDetail.role = "User"
-            userDetail.birthday = Date().timeIntervalSince1970
-            userDetail.imgLink = ""
-            userDetail.address = ""
-            
-            let userModel = UserModel()
-            userModel.token = uid
-            userModel.user = userDetail
-            
-            let newUser = Mapper<UserModel>().toJSON(userModel)
-            
-            self.db.collection("Users").document(uid).setData(newUser, completion: { (err) in
-                if err == nil {
-                    self.rootVC?.showAlertView("Create account successful!")
-                } else {
-                    print("Can't save account to db")
-                }
-            })
-        }
     }
 }

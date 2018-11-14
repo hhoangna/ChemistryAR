@@ -154,20 +154,20 @@ enum ModeBottomBar: Int {
 }
 
 //MARK: - SERVER_URL
-//struct SERVER_URL {
-//
-//    static var API: String{
-//        get{
-//            return PATH_REQUEST_URL.BASE_URL.URL
-//        }
-//    }
-//
-//    static var API_FILE:String  {
-//        get{
-//            return PATH_REQUEST_URL.BASE_URL.URL
-//        }
-//    }
-//}
+struct SERVER_URL {
+
+    static var API: String{
+        get{
+            return PATH_REQUEST_URL.BASE_URL.URL
+        }
+    }
+
+    static var API_FILE:String  {
+        get{
+            return PATH_REQUEST_URL.BASE_URL.URL
+        }
+    }
+}
 
 // Window size
 struct ScreenSize {

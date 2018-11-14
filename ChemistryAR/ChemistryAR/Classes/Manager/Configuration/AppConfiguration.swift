@@ -39,7 +39,7 @@ class AppConfiguration: NSObject {
     }
     
     private func readServicesConfigs() -> NSDictionary? {
-        guard let path = Bundle.main.path(forResource: "ServiceURLConfigs", ofType: "plist") else {
+        guard let path = Bundle.main.path(forResource: "URLServices", ofType: "plist") else {
             return nil
         }
         return NSDictionary(contentsOfFile: path)

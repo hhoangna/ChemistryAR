@@ -28,7 +28,7 @@ enum APIInput {
     case json(Any); //dic: Dictionary
     case str(String, in: String?); //str: String
     case data(Data);
-//    case mutiFile([AttachFileModel])
+    case mutiFile([FileModel])
 }
 
 enum PATH_REQUEST_URL: String {

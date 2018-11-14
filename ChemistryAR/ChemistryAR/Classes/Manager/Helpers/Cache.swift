@@ -14,32 +14,26 @@ class Cache: NSObject {
     private let userDefaults = UserDefaults.standard
     private var userLogin: UserModel?
     
-    /*
-    var user: User {
-        set (newValue) {
-            if let encoder = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false) {
-                    userDefaults.set(encoder, forKey: USER_DEFAULT_KEY.HF_USER)
+    var user :UserModel{
+        set(newValue){
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(newValue) {
+                userDefaults.set(encoded, forKey: USER_DEFAULT_KEY.HF_USER)
             }
         }
         get {
             if let data = userDefaults.object(forKey: USER_DEFAULT_KEY.HF_USER) as? Data {
-                if let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as! User {
+                let decoder = JSONDecoder()
+                if let object = try? decoder.decode(UserModel.self, from: data) {
                     return object
                 }
             }
             
-            return User()
+            return UserModel()
         }
     }
-    */
     
-    var user: User? {
-        get {
-            return getUser()
-        }
-    }
-
-    var token: String{
+    var token:String{
         set{
             userDefaults.set(newValue, forKey: USER_DEFAULT_KEY.HF_TOKEN_USER)
         }
@@ -61,11 +55,12 @@ class Cache: NSObject {
     func removeAllCache() {
         userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_TOKEN_USER)
         userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_USER)
+        userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_TOKEN_USER)
     }
     
     
     func setObject(obj: Any, forKey key: String) {
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: obj, requiringSecureCoding: true)
+        let data = NSKeyedArchiver.archivedData(withRootObject: obj)
         userDefaults.set(data, forKey: key)
         userDefaults.synchronize()
     }
@@ -86,35 +81,5 @@ class Cache: NSObject {
     
     func getTokenDevice() -> String?{
         return getObject(forKey:USER_DEFAULT_KEY.HF_DEVICE_TOKEN) as? String
-    }
-    
-    func setUser(_ user: User?) {
-        if (user != nil) {
-            let data = user?.getJSONString()
-            if (data != nil) {
-                userDefaults.set(data, forKey: USER_DEFAULT_KEY.HF_USER)
-            } else {
-                //
-            }
-        } else {
-            userDefaults.removeObject(forKey: USER_DEFAULT_KEY.HF_USER)
-        }
-        
-        userDefaults.synchronize()
-    }
-    
-    private func getUser() -> User? {
-        
-        var user: User?
-        if(user !=  nil) {
-            user = self.user
-        }else {
-            let data = userDefaults.object(forKey: USER_DEFAULT_KEY.HF_USER)
-            if(data != nil) {
-                user =  User(JSON: data as! [String:Any])
-            }
-        }
-        
-        return user;
     }
 }

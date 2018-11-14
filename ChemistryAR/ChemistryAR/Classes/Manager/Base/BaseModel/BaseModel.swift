@@ -76,40 +76,15 @@ public enum JSONValue<T:Codable>: Codable {
         //
     }
 }
-/*
+
 class BaseModel: NSObject {
-    
+ 
     func getDataObject() -> Data  {
         return  Data()
     }
-    
+ 
     func getJSONObject(method: ParamsMethod) -> Any {
         return getDataObject()
-    }
-}
- */
-
-class BaseModel: NSObject, Mappable {
-    
-    override init() {
-        //
-    }
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        
-    }
-    
-    func getJSONString()-> [String: Any] {
-        let json = self.toJSON()
-        return json
-    }
-    
-    func getJsonObject(method: ParamsMethod)-> Any {
-        return self.getJSONString();
     }
 }
 

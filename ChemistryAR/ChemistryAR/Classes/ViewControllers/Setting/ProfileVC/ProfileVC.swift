@@ -32,7 +32,7 @@ class ProfileVC: BaseVC {
     fileprivate var indentifyButton = "ButtonCell"
     fileprivate var indentifyDelete = "DeleteCell"
     
-    var userModel: User?
+    var userModel: UserModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ extension ProfileVC: UITableViewDataSource {
         case .Info:
             return 200
         case .ChangePass:
-            return userModel?._id == Caches().token ? 100 : 0
+            return 100 //Need update
         case .Delete:
             return 55
         }
@@ -89,7 +89,7 @@ extension ProfileVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyAvatar,
                                                  for:indexPath) as! ProfileCell
         
-        cell.imgIcon?.setImageWithURL(url: userModel?.imgLink, placeHolderImage: UIImage(named: "ic_User"))
+//        cell.imgIcon?.setImageWithURL(url: userModel?.imgLink, placeHolderImage: UIImage(named: "ic_User"))
         
         return cell
     }

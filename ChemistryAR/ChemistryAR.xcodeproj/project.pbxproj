@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420DDD52219BF8DC00E77A7F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD51219BF8DC00E77A7F /* LoginModel.swift */; };
+		420DDD55219BFB9700E77A7F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD54219BFB9700E77A7F /* Services.swift */; };
+		420DDD58219BFBC800E77A7F /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD57219BFBC800E77A7F /* FirebaseService.swift */; };
+		420DDD5B219BFC7000E77A7F /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD5A219BFC7000E77A7F /* PushNotificationService.swift */; };
+		420DDD5F219C07CE00E77A7F /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD5E219C07CE00E77A7F /* BaseAPI.swift */; };
+		420DDD62219C090600E77A7F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD61219C090600E77A7F /* APIError.swift */; };
+		420DDD65219C0C6C00E77A7F /* LoginResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD64219C0C6C00E77A7F /* LoginResultModel.swift */; };
+		420DDD67219C0D8D00E77A7F /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD66219C0D8D00E77A7F /* APIs.swift */; };
+		420DDD69219C0F5C00E77A7F /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD68219C0F5C00E77A7F /* EmptyModel.swift */; };
+		420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD6B219C104D00E77A7F /* FileModel.swift */; };
+		420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420DDD6D219C11DB00E77A7F /* URLServices.plist */; };
 		42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */; };
 		42B68938217A18B100FBC0C3 /* SolubilityTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68937217A18B100FBC0C3 /* SolubilityTableVC.swift */; };
 		42B6893B217A18D000FBC0C3 /* SolubilityCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6893A217A18D000FBC0C3 /* SolubilityCells.swift */; };
@@ -74,6 +85,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420DDD51219BF8DC00E77A7F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		420DDD54219BFB9700E77A7F /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		420DDD57219BFBC800E77A7F /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		420DDD5A219BFC7000E77A7F /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		420DDD5E219C07CE00E77A7F /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		420DDD61219C090600E77A7F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		420DDD64219C0C6C00E77A7F /* LoginResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResultModel.swift; sourceTree = "<group>"; };
+		420DDD66219C0D8D00E77A7F /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		420DDD68219C0F5C00E77A7F /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
+		420DDD6B219C104D00E77A7F /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
+		420DDD6D219C11DB00E77A7F /* URLServices.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLServices.plist; sourceTree = "<group>"; };
 		42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Ext.swift"; sourceTree = "<group>"; };
 		42B68937217A18B100FBC0C3 /* SolubilityTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityTableVC.swift; sourceTree = "<group>"; };
 		42B6893A217A18D000FBC0C3 /* SolubilityCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityCells.swift; sourceTree = "<group>"; };
@@ -157,6 +179,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420DDD50219BF8BF00E77A7F /* LoginModel */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD51219BF8DC00E77A7F /* LoginModel.swift */,
+			);
+			path = LoginModel;
+			sourceTree = "<group>";
+		};
+		420DDD53219BFB7F00E77A7F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD54219BFB9700E77A7F /* Services.swift */,
+				420DDD56219BFBA500E77A7F /* FirebaseService */,
+				420DDD5C219C07A100E77A7F /* APIService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		420DDD56219BFBA500E77A7F /* FirebaseService */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD57219BFBC800E77A7F /* FirebaseService.swift */,
+				420DDD59219BFC5100E77A7F /* PushNotificationService */,
+			);
+			path = FirebaseService;
+			sourceTree = "<group>";
+		};
+		420DDD59219BFC5100E77A7F /* PushNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD5A219BFC7000E77A7F /* PushNotificationService.swift */,
+			);
+			path = PushNotificationService;
+			sourceTree = "<group>";
+		};
+		420DDD5C219C07A100E77A7F /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD5D219C07B800E77A7F /* APIs */,
+				420DDD5E219C07CE00E77A7F /* BaseAPI.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		420DDD5D219C07B800E77A7F /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD66219C0D8D00E77A7F /* APIs.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		420DDD60219C08F100E77A7F /* APIModel */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD61219C090600E77A7F /* APIError.swift */,
+				420DDD68219C0F5C00E77A7F /* EmptyModel.swift */,
+			);
+			path = APIModel;
+			sourceTree = "<group>";
+		};
+		420DDD63219C0C4E00E77A7F /* LoginResultModel */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD64219C0C6C00E77A7F /* LoginResultModel.swift */,
+			);
+			path = LoginResultModel;
+			sourceTree = "<group>";
+		};
+		420DDD6A219C103D00E77A7F /* FileModel */ = {
+			isa = PBXGroup;
+			children = (
+				420DDD6B219C104D00E77A7F /* FileModel.swift */,
+			);
+			path = FileModel;
+			sourceTree = "<group>";
+		};
 		42891DDC21779665007CA947 /* UIBarButtonItem + Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +347,7 @@
 				84A99F572164AE0F007C54CD /* Localizable */,
 				843F93E52174A7ED0016D04F /* GoogleService-Info.plist */,
 				84154F1021621D36008F2C05 /* Info.plist */,
+				420DDD6D219C11DB00E77A7F /* URLServices.plist */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -288,6 +388,10 @@
 		84154F1C21621FAE008F2C05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				420DDD6A219C103D00E77A7F /* FileModel */,
+				420DDD63219C0C4E00E77A7F /* LoginResultModel */,
+				420DDD60219C08F100E77A7F /* APIModel */,
+				420DDD50219BF8BF00E77A7F /* LoginModel */,
 				844304FA2188159C0074B609 /* User */,
 				84436BC9217983BB0087D3FE /* PeriodicTable */,
 			);
@@ -297,6 +401,7 @@
 		84154F1D21621FB7008F2C05 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				420DDD53219BFB7F00E77A7F /* Services */,
 				84436BD0217987D10087D3FE /* Configuration */,
 				848F7D8621632B12006F264C /* Helpers */,
 				84154F222162224F008F2C05 /* Base */,
@@ -815,6 +920,7 @@
 			files = (
 				84A99F4521648C30007C54CD /* Home.storyboard in Resources */,
 				843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */,
+				420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */,
 				84A99F3521646C4D007C54CD /* video_background.mp4 in Resources */,
 				84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */,
 				84A99F3821647B47007C54CD /* Main.storyboard in Resources */,
@@ -922,6 +1028,7 @@
 				848F7D9A2163775D006F264C /* String + Ext.swift in Sources */,
 				84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */,
 				848F7D9421637643006F264C /* BaseClvCell.swift in Sources */,
+				420DDD5F219C07CE00E77A7F /* BaseAPI.swift in Sources */,
 				848F7D9C21637953006F264C /* Languages.swift in Sources */,
 				84A99F642164B7B9007C54CD /* HomeCell.swift in Sources */,
 				84430510218943740074B609 /* UserListCell.swift in Sources */,
@@ -933,9 +1040,11 @@
 				844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */,
 				84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
+				420DDD69219C0F5C00E77A7F /* EmptyModel.swift in Sources */,
 				84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */,
 				84A99F4821648C70007C54CD /* HomeVC.swift in Sources */,
 				844305092188B2D00074B609 /* UIImageView + Ext.swift in Sources */,
+				420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
@@ -946,11 +1055,14 @@
 				84436BD72179BD470087D3FE /* ElementCells.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
 				42B6893B217A18D000FBC0C3 /* SolubilityCells.swift in Sources */,
+				420DDD52219BF8DC00E77A7F /* LoginModel.swift in Sources */,
 				848F7D9021633A2A006F264C /* MainVC.swift in Sources */,
 				84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */,
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
+				420DDD62219C090600E77A7F /* APIError.swift in Sources */,
 				84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */,
+				420DDD55219BFB9700E77A7F /* Services.swift in Sources */,
 				84436BCD2179840F0087D3FE /* BaseModel.swift in Sources */,
 				848F7D97216376EF006F264C /* UIColor + Ext.swift in Sources */,
 				849712D2216E40C000394891 /* ReactionVC.swift in Sources */,
@@ -959,8 +1071,12 @@
 				844304FC218815BD0074B609 /* UserModel.swift in Sources */,
 				84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */,
 				8443050E2189421C0074B609 /* UserListVC.swift in Sources */,
+				420DDD5B219BFC7000E77A7F /* PushNotificationService.swift in Sources */,
 				84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */,
+				420DDD65219C0C6C00E77A7F /* LoginResultModel.swift in Sources */,
 				848F7D8821632B24006F264C /* Constants.swift in Sources */,
+				420DDD67219C0D8D00E77A7F /* APIs.swift in Sources */,
+				420DDD58219BFBC800E77A7F /* FirebaseService.swift in Sources */,
 				84A99F242163B8EC007C54CD /* LoginVC.swift in Sources */,
 				849712D6216E40E000394891 /* ARKitVC.swift in Sources */,
 				84A99F31216468DD007C54CD /* LoginCell.swift in Sources */,
