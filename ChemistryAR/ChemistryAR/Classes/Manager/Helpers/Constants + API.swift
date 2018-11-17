@@ -35,6 +35,9 @@ enum PATH_REQUEST_URL: String {
     
     case BASE_URL = "BASE_URL"
     case LOGIN = "LOGIN"
+    case SIGNUP = "SIGNUP"
+    case GET_ALL_ELEMENT = "GET_ALL_ELEMENT"
+    case GET_DETAIL_ELEMENT = "GET_DETAIL_ELEMENT"
     
     var URL:String  {
         return E(Configuration.pathUrls[self.rawValue])

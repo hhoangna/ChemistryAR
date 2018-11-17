@@ -52,7 +52,6 @@ class RegisterCell: BaseClvCell {
         var isValidateUserName:Bool = false
     }
     
-    
     var isValidateRegister:ValidateRegister = ValidateRegister()
     var isCheckEnableButtonRegister:Bool = false {
         didSet {
@@ -198,10 +197,27 @@ extension RegisterCell: UITextFieldDelegate {
 
 extension RegisterCell {
     @IBAction func onBtnRegisterPressed(_ sender: UIButton) {
+        signup()
+    }
+}
+
+extension RegisterCell {
+    func signup() {
+        let signup = SignupModel()
+        signup.email = tfEmail?.text
+        signup.password = tfPassword?.text
+        signup.name = tfUsername?.text
         
-        guard  let email = tfEmail.text, let password = tfPassword.text else {
-            return
-        }
         App().showLoadingIndicator()
+        SERVICES().API.signup(signupModel: signup) {[weak self] (result) in
+            App().dismissLoadingIndicator()
+            switch result {
+            case .object:
+                self?.rootVC?.showAlertView(E("Create Successfully!"))
+            case .error(let error):
+                self?.rootVC?.showAlertView(E(error.message))
+                break;
+            }
+        }
     }
 }

@@ -10,11 +10,15 @@ import UIKit
 import SpreadsheetView
 
 class ElementTableVC: BaseVC {
+    
+    var elementModel: [ElementModel] = []
+    var displayElement: [[ElementModel]] = [[]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         setupSpreadSheetView()
+        fetchData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,11 +44,31 @@ class ElementTableVC: BaseVC {
     override func onNavigationBack(_ sender: UIBarButtonItem) {
         self.didSelectback()
     }
+    
+    func fetchData() {
+        App().showLoadingIndicator()
+        SERVICES().API.getAllElement { (results) in
+            App().dismissLoadingIndicator()
+            switch results {
+            case .object(let obj):
+                self.elementModel = obj
+                self.vContainer?.reloadData()
+            case .error(let error):
+                self.showAlertView(E(error.message))
+            }
+        }
+    }
+    
+    func displayData(from arrElements: [ElementModel]) {
+        var arrRow: [ElementModel] = []
+        
+        arrRow.insert(<#T##newElement: ElementModel##ElementModel#>, at: <#T##Int#>)
+    }
 }
 
 extension ElementTableVC: SpreadsheetViewDataSource {
     func numberOfColumns(in spreadsheetView: SpreadsheetView) -> Int {
-        return 1 + 10
+        return 1 + 20
     }
     
     func numberOfRows(in spreadsheetView: SpreadsheetView) -> Int {
@@ -76,32 +100,58 @@ extension ElementTableVC: SpreadsheetViewDataSource {
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
+        let row = indexPath.row
+        let col = indexPath.column
+        
+        var cell: Cell?
+        
+        
+        
         if case (1...(10 + 1), 0) = (indexPath.column, indexPath.row) {
-            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: GroupCell.self), for: indexPath) as! GroupCell
-            
-            cell.label.text = "\(indexPath.column)"
-            
-            return cell
+            return cellGroup(spreadsheetView, indexPath)
         } else if case (0, 1...20 + 1) = (indexPath.column, indexPath.row) {
-            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: CycleCell.self), for: indexPath) as! CycleCell
-            
-            cell.label.text = "\(indexPath.row)"
-            
-            return cell
+            return cellPeriod(spreadsheetView, indexPath)
         } else if case (1...10 + 1, 1...20 + 1) = (indexPath.column, indexPath.row) {
-            let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: ElementCell.self), for: indexPath) as! ElementCell
-            
-            cell.borders = .all(.solid(width: 1, color: AppColor.mainColor))
-            
-            return cell
+            elementModel.contains()
+            }
         }
-        return spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: BlankCell.self), for: indexPath)
+        return cell
     }
 }
 
 extension ElementTableVC: SpreadsheetViewDelegate {
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
         print("Selected: (row: \(indexPath.row), column: \(indexPath.column))")
+    }
+}
+
+extension ElementTableVC {
+    func cellGroup(_ spreadsheetView: SpreadsheetView,_ indexPath:IndexPath) -> Cell {
+        let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: GroupCell.self), for: indexPath) as! GroupCell
+        
+        cell.label.text = "\(indexPath.column)"
+        
+        return cell
+    }
+    
+    func cellPeriod(_ spreadsheetView: SpreadsheetView,_ indexPath:IndexPath) -> Cell {
+        let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: CycleCell.self), for: indexPath) as! CycleCell
+        
+        cell.label.text = "\(indexPath.row)"
+        
+        return cell
+    }
+    
+    func cellElement(_ spreadsheetView: SpreadsheetView,_ indexPath:IndexPath) -> Cell {
+        let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: ElementCell.self), for: indexPath) as! ElementCell
+                
+        return cell
+    }
+    
+    func cellBlank(_ spreadsheetView: SpreadsheetView,_ indexPath:IndexPath) -> Cell {
+        let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: BlankCell.self), for: indexPath) as! BlankCell
+        
+        return cell
     }
 }
 

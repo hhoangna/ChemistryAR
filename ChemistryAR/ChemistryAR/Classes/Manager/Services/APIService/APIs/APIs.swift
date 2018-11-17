@@ -18,6 +18,15 @@ extension BaseAPI {
                        input: .dto(loginModel),
                        callback: callback)
     }
+    
+    @discardableResult
+    func signup(signupModel:SignupModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
+        
+        return request(method: .POST,
+                       path: PATH_REQUEST_URL.SIGNUP.URL,
+                       input: .dto(signupModel),
+                       callback: callback)
+    }
 
     //MARK: - FILES
     

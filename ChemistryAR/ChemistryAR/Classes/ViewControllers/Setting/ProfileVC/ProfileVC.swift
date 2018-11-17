@@ -100,8 +100,10 @@ extension ProfileVC {
         
         cell.lblSubtitle?.text = userModel?.name
         cell.lblSubtitle1?.text = userModel?.email
-        let dob = Date(timeIntervalSince1970: (userModel?.birthday)!)
-        cell.lblSubtitle2?.text = DateFormatter.displayDateShortText.string(from: dob)
+//        if let dob = userModel?.birthday {
+//            let strinDate = DateFormatter.displayDateShortText.string(from:dob)
+//            cell.lblSubtitle2?.text = E(strinDate)
+//        }
         cell.lblSubtitle3?.text = userModel?.address
         
         return cell

@@ -12,25 +12,33 @@ class ElementModel: BaseModel, Codable {
     
     var _id: String?
     var name: String?
-    var mass: String?
+    var atomicMass: Double?
     var symbol: String?
-    var type: String?
-    var image: String?
-    var atom: Int?
+    var category: CategoryModel?
+    var imagePreview: String?
+    var atomicNumber: Int?
     var electronicConfiguration: String?
-    var electronegativity: String?
-    var oxidationStates: [Int?]
+    var oxidationStates: [Int]?
+    var active: Bool?
+    var boilingPoint: Double?
+    var density: Double?
+    var meltingPoint: Double?
+    var standardState: String?
+    var source: String?
+    var summary: String?
+    var xpos: Int
+    var ypos: Int
+    var updatedAt: Date?
+    var createAt: Date?
     
     func getNewElement() -> ResponseDictionary {
         let body = NSMutableDictionary()
         
         body.setValue(name, forKey: "name")
-        body.setValue(mass, forKey: "mass")
+        body.setValue(atomicMass, forKey: "atomicMass")
         body.setValue(symbol, forKey: "symbol")
-        body.setValue(type, forKey: "type")
-        body.setValue(atom, forKey: "atom")
-        body.setValue(image, forKey: "image")
-        body.setValue(electronegativity, forKey: "electronegativity")
+        body.setValue(atomicNumber, forKey: "atomicNumber")
+        body.setValue(imagePreview, forKey: "imagePreview")
         body.setValue(electronicConfiguration, forKey: "electronicConfiguration")
         body.setValue(oxidationStates, forKey: "oxidationStates")
         

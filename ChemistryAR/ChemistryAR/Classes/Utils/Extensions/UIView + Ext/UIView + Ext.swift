@@ -64,44 +64,7 @@ extension UIView {
     }
     
     @IBInspectable
-    /// Shadow color of view; also inspectable from Storyboard.
-    public var shadowColor: UIColor? {
-        get {
-            guard let color = layer.shadowColor else {
-                return nil
-            }
-            return UIColor(cgColor: color)
-        }
-        set {
-            layer.shadowColor = newValue?.cgColor
-        }
-    }
-    
-    @IBInspectable
-    /// Shadow offset of view; also inspectable from Storyboard.
-    public var shadowOffset: CGSize {
-        get {
-            return layer.shadowOffset
-        }
-        set {
-            layer.shadowOffset = newValue
-        }
-    }
-    
-    @IBInspectable
-    /// Shadow opacity of view; also inspectable from Storyboard.
-    public var shadowOpacity: Double {
-        get {
-            return Double(layer.shadowOpacity)
-        }
-        set {
-            layer.shadowOpacity = Float(newValue)
-        }
-    }
-    
-    @IBInspectable
-    /// Shadow radius of view; also inspectable from Storyboard.
-    public var shadowRadius: CGFloat {
+    var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
@@ -111,37 +74,39 @@ extension UIView {
     }
     
     @IBInspectable
-    /// Shadow path of view; also inspectable from Storyboard.
-    public var shadowPath: CGPath? {
+    var shadowOpacity: Float {
         get {
-            return layer.shadowPath
+            return layer.shadowOpacity
         }
         set {
-            layer.shadowPath = newValue
+            layer.shadowOpacity = newValue
         }
     }
     
     @IBInspectable
-    /// Should shadow rasterize of view; also inspectable from Storyboard.
-    /// cache the rendered shadow so that it doesn't need to be redrawn
-    public var shadowShouldRasterize: Bool {
+    var shadowOffset: CGSize {
         get {
-            return layer.shouldRasterize
+            return layer.shadowOffset
         }
         set {
-            layer.shouldRasterize = newValue
+            layer.shadowOffset = newValue
         }
     }
     
     @IBInspectable
-    /// Should shadow rasterize of view; also inspectable from Storyboard.
-    /// cache the rendered shadow so that it doesn't need to be redrawn
-    public var shadowRasterizationScale: CGFloat {
+    var shadowColor: UIColor? {
         get {
-            return layer.rasterizationScale
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
         }
         set {
-            layer.rasterizationScale = newValue
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
         }
     }
     

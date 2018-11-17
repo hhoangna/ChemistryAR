@@ -3,10 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>BASE_URL</key>
-	<string>https://chemistryapp.herokuapp.com/api/</string>
+	<string>https://chemistryapp.herokuapp.com/</string>
 	<key>LOGIN</key>
 	<string>login</string>
 	<key>SIGNUP</key>
 	<string>signup</string>
+	<key>GET_ALL_ELEMENT</key>
+	<string>api/element</string>
+	<key>GET_DETAIL_ELEMENT</key>
+	<string>api/element/%@</string>
 </dict>
 </plist>
