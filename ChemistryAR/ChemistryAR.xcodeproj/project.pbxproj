@@ -67,6 +67,9 @@
 		8484EFA421A2A23D007F2180 /* ShareScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFA321A2A23D007F2180 /* ShareScan.swift */; };
 		8484EFA621A2A2D4007F2180 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFA521A2A2D4007F2180 /* ARCameraTrackingState.swift */; };
 		8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFA721A2A4C7007F2180 /* art.scnassets */; };
+		8484EFAB21A30484007F2180 /* ShowModelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFAA21A30484007F2180 /* ShowModelVC.swift */; };
+		8484EFB121A305ED007F2180 /* MultipeerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFB021A305ED007F2180 /* MultipeerSession.swift */; };
+		8484EFB421A311D9007F2180 /* ARSharingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFB321A311D9007F2180 /* ARSharingState.swift */; };
 		84880DD7219D03B100C4D075 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880DD6219D03B100C4D075 /* SignupModel.swift */; };
 		84880DDA219DB1E100C4D075 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880DD9219DB1E100C4D075 /* CategoryModel.swift */; };
 		84880DDC219DC5FF00C4D075 /* APIs + Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880DDB219DC5FF00C4D075 /* APIs + Element.swift */; };
@@ -182,6 +185,9 @@
 		8484EFA321A2A23D007F2180 /* ShareScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScan.swift; sourceTree = "<group>"; };
 		8484EFA521A2A2D4007F2180 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		8484EFA721A2A4C7007F2180 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		8484EFAA21A30484007F2180 /* ShowModelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModelVC.swift; sourceTree = "<group>"; };
+		8484EFB021A305ED007F2180 /* MultipeerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSession.swift; sourceTree = "<group>"; };
+		8484EFB321A311D9007F2180 /* ARSharingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSharingState.swift; sourceTree = "<group>"; };
 		84880DD6219D03B100C4D075 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		84880DD9219DB1E100C4D075 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		84880DDB219DC5FF00C4D075 /* APIs + Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + Element.swift"; sourceTree = "<group>"; };
@@ -738,12 +744,12 @@
 			path = "Controllers + Ext";
 			sourceTree = "<group>";
 		};
-		8484EF6B21A28DAB007F2180 /* Utility Extensions */ = {
+		8484EF6B21A28DAB007F2180 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				8484EFA521A2A2D4007F2180 /* ARCameraTrackingState.swift */,
 			);
-			path = "Utility Extensions";
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		8484EF9221A29D39007F2180 /* ARKit + Ext */ = {
@@ -752,6 +758,32 @@
 				8484EF9321A29D52007F2180 /* ARKit + Ext.swift */,
 			);
 			path = "ARKit + Ext";
+			sourceTree = "<group>";
+		};
+		8484EFA921A302ED007F2180 /* ShowModelVC */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFB221A311C5007F2180 /* Utility */,
+				8484EFAF21A305A1007F2180 /* ARSharingMap */,
+				8484EFAA21A30484007F2180 /* ShowModelVC.swift */,
+			);
+			path = ShowModelVC;
+			sourceTree = "<group>";
+		};
+		8484EFAF21A305A1007F2180 /* ARSharingMap */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFB021A305ED007F2180 /* MultipeerSession.swift */,
+			);
+			path = ARSharingMap;
+			sourceTree = "<group>";
+		};
+		8484EFB221A311C5007F2180 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFB321A311D9007F2180 /* ARSharingState.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		84880DD5219D039B00C4D075 /* SignupModel */ = {
@@ -773,7 +805,7 @@
 		84880E0E21A26AD000C4D075 /* ScanObjectVC */ = {
 			isa = PBXGroup;
 			children = (
-				8484EF6B21A28DAB007F2180 /* Utility Extensions */,
+				8484EF6B21A28DAB007F2180 /* Utility */,
 				8484EF6A21A28D97007F2180 /* Controllers + Ext */,
 				8484EF6921A28D8E007F2180 /* Views */,
 				8484EF6821A28D80007F2180 /* 3D UI and Visualizations */,
@@ -863,6 +895,7 @@
 		849712CE216E3FEA00394891 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				8484EFA921A302ED007F2180 /* ShowModelVC */,
 				84880E0E21A26AD000C4D075 /* ScanObjectVC */,
 				849712D5216E40E000394891 /* ARKitVC.swift */,
 			);
@@ -1250,6 +1283,7 @@
 				84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */,
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
+				8484EFB421A311D9007F2180 /* ARSharingState.swift in Sources */,
 				420DDD62219C090600E77A7F /* APIError.swift in Sources */,
 				8484EF9121A29A4A007F2180 /* ScannedPointCloud.swift in Sources */,
 				84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */,
@@ -1263,6 +1297,7 @@
 				844304FC218815BD0074B609 /* UserModel.swift in Sources */,
 				84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */,
 				8484EF7321A28F6F007F2180 /* MessagesLabel.swift in Sources */,
+				8484EFB121A305ED007F2180 /* MultipeerSession.swift in Sources */,
 				8443050E2189421C0074B609 /* UserListVC.swift in Sources */,
 				8484EF8521A29A4A007F2180 /* Tile.swift in Sources */,
 				420DDD5B219BFC7000E77A7F /* PushNotificationService.swift in Sources */,
@@ -1273,6 +1308,7 @@
 				8484EF8821A29A4A007F2180 /* DetectedObject.swift in Sources */,
 				8484EF8F21A29A4A007F2180 /* PointCloud+CreateVisualization.swift in Sources */,
 				420DDD58219BFBC800E77A7F /* FirebaseService.swift in Sources */,
+				8484EFAB21A30484007F2180 /* ShowModelVC.swift in Sources */,
 				84A99F242163B8EC007C54CD /* LoginVC.swift in Sources */,
 				8484EF8621A29A4A007F2180 /* BoundingBox.swift in Sources */,
 				849712D6216E40E000394891 /* ARKitVC.swift in Sources */,

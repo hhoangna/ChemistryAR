@@ -59,6 +59,7 @@ class ARKitVC: BaseVC, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     @IBAction func btnShowModelPressed(_ sender: UIButton) {
-        
+        let vc: ShowModelVC = .load(SB: .AR)
+        self.present(vc, animated: true, completion: nil)
     }
 }
