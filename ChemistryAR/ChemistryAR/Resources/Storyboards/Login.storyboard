@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryR-vH-UJM">
-                                <rect key="frame" x="19" y="158.5" width="337.5" height="356.5"/>
+                                <rect key="frame" x="19" y="107" width="337.5" height="460"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GVW-Ko-J0z">
-                                    <rect key="frame" x="0.0" y="0.0" width="337.5" height="356.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="337.5" height="460"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <vibrancyEffect>
@@ -28,7 +28,7 @@
                                 </vibrancyEffect>
                             </visualEffectView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NCG-4E-f8U">
-                                <rect key="frame" x="19" y="218.5" width="337.5" height="296.5"/>
+                                <rect key="frame" x="19" y="167" width="337.5" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U7I-yL-cS7">
                                     <size key="itemSize" width="337.5" height="333"/>
@@ -38,31 +38,31 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoginClvCell" id="Jtw-et-nCe" customClass="LoginCell" customModule="ChemistryAR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-18.5" width="337.5" height="333"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="337.5" height="333"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="337.5" height="333"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-YD-iH9" customClass="HView" customModule="ChemistryAR" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="25" width="317.5" height="120"/>
+                                                    <rect key="frame" x="10" y="25" width="317.5" height="150"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Mail" translatesAutoresizingMaskIntoConstraints="NO" id="K5m-fj-4u8">
-                                                            <rect key="frame" x="15" y="20" width="20" height="20"/>
+                                                            <rect key="frame" x="15" y="27.5" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="8Oh-cO-ubh"/>
                                                                 <constraint firstAttribute="height" constant="20" id="ftZ-bf-EQP"/>
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrL-Eh-PFk">
-                                                            <rect key="frame" x="35" y="59.5" width="272.5" height="1"/>
+                                                            <rect key="frame" x="35" y="74.5" width="272.5" height="1"/>
                                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="5g7-hU-csA"/>
                                                             </constraints>
                                                         </view>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-w8-YsI">
-                                                            <rect key="frame" x="50" y="12.5" width="257.5" height="35"/>
+                                                            <rect key="frame" x="50" y="20" width="257.5" height="35"/>
                                                             <color key="backgroundColor" white="0.9482421875" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="xWE-Ar-oO3"/>
@@ -73,12 +73,15 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Email"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Jtw-et-nCe" id="KXG-5A-EeA"/>
+                                                            </connections>
                                                         </textField>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Password" translatesAutoresizingMaskIntoConstraints="NO" id="W1y-KJ-bUv">
-                                                            <rect key="frame" x="15" y="80" width="20" height="20"/>
+                                                            <rect key="frame" x="15" y="102.5" width="20" height="20"/>
                                                         </imageView>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hEU-ac-yXB">
-                                                            <rect key="frame" x="50" y="72.5" width="257.5" height="35"/>
+                                                            <rect key="frame" x="50" y="95" width="257.5" height="35"/>
                                                             <color key="backgroundColor" white="0.9482421875" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="LNC-OP-nBf"/>
@@ -89,6 +92,9 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Password"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Jtw-et-nCe" id="Ver-pm-h1W"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,7 +108,7 @@
                                                         <constraint firstItem="W1y-KJ-bUv" firstAttribute="height" secondItem="K5m-fj-4u8" secondAttribute="height" id="Lc5-Lo-eOZ"/>
                                                         <constraint firstItem="W1y-KJ-bUv" firstAttribute="centerY" secondItem="lMt-YD-iH9" secondAttribute="centerY" multiplier="1.5" id="MHl-dL-kOl"/>
                                                         <constraint firstItem="bTy-w8-YsI" firstAttribute="leading" secondItem="K5m-fj-4u8" secondAttribute="trailing" constant="15" id="SXw-6Q-xfx"/>
-                                                        <constraint firstAttribute="height" constant="120" id="Toh-sc-812"/>
+                                                        <constraint firstAttribute="height" constant="150" id="Toh-sc-812"/>
                                                         <constraint firstItem="hEU-ac-yXB" firstAttribute="centerX" secondItem="bTy-w8-YsI" secondAttribute="centerX" id="XC8-nW-9FD"/>
                                                         <constraint firstItem="VrL-Eh-PFk" firstAttribute="leading" secondItem="lMt-YD-iH9" secondAttribute="leading" constant="35" id="auW-dS-4Dk"/>
                                                         <constraint firstItem="VrL-Eh-PFk" firstAttribute="centerY" secondItem="lMt-YD-iH9" secondAttribute="centerY" id="brm-k2-MgG"/>
@@ -118,7 +124,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-B0-mvY">
-                                                    <rect key="frame" x="10" y="160" width="317.5" height="40"/>
+                                                    <rect key="frame" x="10" y="190" width="317.5" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="ue9-hi-g02"/>
                                                     </constraints>
@@ -143,7 +149,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehS-56-uUj" customClass="HButton" customModule="ChemistryAR" customModuleProvider="target">
-                                                    <rect key="frame" x="174.5" y="230" width="143" height="45"/>
+                                                    <rect key="frame" x="174.5" y="260" width="143" height="45"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                     <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -158,7 +164,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7c-jL-QaO" customClass="HButton" customModule="ChemistryAR" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="230" width="143" height="45"/>
+                                                    <rect key="frame" x="20" y="260" width="143" height="45"/>
                                                     <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="2lx-I5-cM8"/>
@@ -198,7 +204,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RegisterClvCell" id="RFX-Bq-GAS" customClass="RegisterCell" customModule="ChemistryAR" customModuleProvider="target">
-                                        <rect key="frame" x="347.5" y="-18.5" width="337.5" height="333"/>
+                                        <rect key="frame" x="347.5" y="33.5" width="337.5" height="333"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="337.5" height="333"/>
@@ -246,6 +252,9 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="User Name"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="RFX-Bq-GAS" id="WBR-3G-Oyf"/>
+                                                            </connections>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9gt-Nj-OYZ">
                                                             <rect key="frame" x="50" y="66" width="257.5" height="35"/>
@@ -258,6 +267,9 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Email"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="RFX-Bq-GAS" id="5V6-8j-YAo"/>
+                                                            </connections>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6n8-Bw-R1o">
                                                             <rect key="frame" x="50" y="121.5" width="257.5" height="35"/>
@@ -270,6 +282,9 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Password"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="RFX-Bq-GAS" id="CNM-YV-iaK"/>
+                                                            </connections>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af8-kC-Nkn">
                                                             <rect key="frame" x="50" y="177" width="257.5" height="35"/>
@@ -282,6 +297,9 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Re-Password"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="RFX-Bq-GAS" id="MaN-5y-b01"/>
+                                                            </connections>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRZ-BH-Te7">
                                                             <rect key="frame" x="35" y="110.5" width="272.5" height="1"/>
@@ -391,7 +409,7 @@
                                 </connections>
                             </collectionView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax7-uE-xzU" customClass="TabBarTopView" customModule="ChemistryAR" customModuleProvider="target">
-                                <rect key="frame" x="19" y="158.5" width="337.5" height="60"/>
+                                <rect key="frame" x="19" y="107" width="337.5" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="yYU-qD-ryR"/>
@@ -409,7 +427,7 @@
                             <constraint firstItem="Ax7-uE-xzU" firstAttribute="leading" secondItem="NCG-4E-f8U" secondAttribute="leading" id="HaI-GF-uzk"/>
                             <constraint firstItem="NCG-4E-f8U" firstAttribute="centerX" secondItem="p3Y-SG-qWx" secondAttribute="centerX" id="MEU-Uw-Ggo"/>
                             <constraint firstItem="Ax7-uE-xzU" firstAttribute="width" secondItem="NCG-4E-f8U" secondAttribute="width" id="NMv-yR-gf5"/>
-                            <constraint firstItem="NCG-4E-f8U" firstAttribute="height" secondItem="p3Y-SG-qWx" secondAttribute="height" multiplier="2/4.5" id="erf-tU-7VA"/>
+                            <constraint firstItem="NCG-4E-f8U" firstAttribute="height" secondItem="p3Y-SG-qWx" secondAttribute="height" multiplier="0.6" id="erf-tU-7VA"/>
                             <constraint firstItem="ryR-vH-UJM" firstAttribute="trailing" secondItem="NCG-4E-f8U" secondAttribute="trailing" id="lLw-8L-shm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YhW-ge-3Ai"/>

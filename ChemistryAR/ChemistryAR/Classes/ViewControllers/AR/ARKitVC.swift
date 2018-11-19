@@ -7,24 +7,58 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ARKitVC: BaseVC {
+class ARKitVC: BaseVC, AVCaptureMetadataOutputObjectsDelegate {
+    
+    var session: AVCaptureSession?
+    var device: AVCaptureDevice?
+    var input: AVCaptureDeviceInput?
+    var output: AVCaptureMetadataOutput?
+    var prevLayer: AVCaptureVideoPreviewLayer?
+    
+    @IBOutlet weak var vCamera: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationItem.title = " adasdasdasdasd"
+        setupSession()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupSession() {
+        session = AVCaptureSession()
+        device = AVCaptureDevice.default(for: .video)
+        
+        let err: NSError? = nil
+        do {
+            if device != nil {
+                input = try AVCaptureDeviceInput(device: device!)
+            }
+        } catch {
+            print(err!)
+        }
+        
+        if err == nil {
+            if input != nil {
+                session?.addInput(input!)
+            }
+        } else {
+            print(SF("Camera input error: %@", para: err))
+        }
+        
+        prevLayer = AVCaptureVideoPreviewLayer(session: session!)
+        prevLayer?.frame = vCamera?.frame ?? CGRect.zero
+        prevLayer?.videoGravity = .resizeAspectFill
+        vCamera?.layer.addSublayer(prevLayer!)
+        session?.startRunning()
     }
-    */
-
+    
+    @IBAction func btnScanObjectPressed(_ sender: UIButton) {
+        let vc: ScanObjectVC = .load(SB: .AR)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnShowModelPressed(_ sender: UIButton) {
+        
+    }
 }

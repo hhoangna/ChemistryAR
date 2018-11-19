@@ -23,9 +23,9 @@ class LoginCell: BaseClvCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        tfUsername?.keyboardType = .emailAddress
         tfUsername?.returnKeyType = .next
         tfPassword?.returnKeyType = .go
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

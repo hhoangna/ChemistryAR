@@ -18,7 +18,7 @@ class ElementTableVC: BaseVC {
         super.viewDidLoad()
                 
         setupSpreadSheetView()
-        fetchData()
+        readDataJSON()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,24 +45,23 @@ class ElementTableVC: BaseVC {
         self.didSelectback()
     }
     
-    func fetchData() {
-        App().showLoadingIndicator()
-        SERVICES().API.getAllElement { (results) in
-            App().dismissLoadingIndicator()
-            switch results {
-            case .object(let obj):
-                self.elementModel = obj
-                self.vContainer?.reloadData()
-            case .error(let error):
-                self.showAlertView(E(error.message))
+    func readDataJSON() {
+        if let path = Bundle.main.path(forResource: "elements", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let elements = try JSONDecoder().decode([[ElementModel]].self, from: data)
+                self.displayElement = elements
+                
+                DispatchQueue.main.async() { () -> Void in
+                    self.vContainer?.reloadData()
+                }
+                
+            } catch let error {
+                print("parse error: \(error.localizedDescription)")
             }
+        } else {
+            print("Invalid filename/path.")
         }
-    }
-    
-    func displayData(from arrElements: [ElementModel]) {
-        var arrRow: [ElementModel] = []
-        
-        arrRow.insert(<#T##newElement: ElementModel##ElementModel#>, at: <#T##Int#>)
     }
 }
 
@@ -100,22 +99,15 @@ extension ElementTableVC: SpreadsheetViewDataSource {
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
-        let row = indexPath.row
-        let col = indexPath.column
-        
-        var cell: Cell?
-        
-        
         
         if case (1...(10 + 1), 0) = (indexPath.column, indexPath.row) {
             return cellGroup(spreadsheetView, indexPath)
         } else if case (0, 1...20 + 1) = (indexPath.column, indexPath.row) {
             return cellPeriod(spreadsheetView, indexPath)
         } else if case (1...10 + 1, 1...20 + 1) = (indexPath.column, indexPath.row) {
-            elementModel.contains()
-            }
+            return cellElement(spreadsheetView, indexPath)
         }
-        return cell
+        return cellBlank(spreadsheetView, indexPath)
     }
 }
 

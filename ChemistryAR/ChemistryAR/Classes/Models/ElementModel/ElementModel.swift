@@ -29,19 +29,5 @@ class ElementModel: BaseModel, Codable {
     var xpos: Int
     var ypos: Int
     var updatedAt: Date?
-    var createAt: Date?
-    
-    func getNewElement() -> ResponseDictionary {
-        let body = NSMutableDictionary()
-        
-        body.setValue(name, forKey: "name")
-        body.setValue(atomicMass, forKey: "atomicMass")
-        body.setValue(symbol, forKey: "symbol")
-        body.setValue(atomicNumber, forKey: "atomicNumber")
-        body.setValue(imagePreview, forKey: "imagePreview")
-        body.setValue(electronicConfiguration, forKey: "electronicConfiguration")
-        body.setValue(oxidationStates, forKey: "oxidationStates")
-        
-        return body as! ResponseDictionary
-    }
+    var createdAt: Date?
 }

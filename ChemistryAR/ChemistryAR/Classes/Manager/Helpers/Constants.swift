@@ -130,6 +130,12 @@ struct AppColor {
     static let black                = UIColor.black
     static let borderColor          = UIColor(hex: "#C2C2C2")
     static let selectedIconColor    = UIColor(hex: "#D1890C")
+    static let blueColor            = UIColor(hex: "#287AFF")
+    static let lightBlueColor       = UIColor(hex: "#72A8FF")
+    static let yellowColor          = UIColor(hex: "#FFD016")
+    static let brownColor           = UIColor(hex: "#7C630D")
+    static let lightYellowColor     = UIColor(hex: "#FFFD89")
+    static let greenColor           = UIColor(hex: "#15B227")
 }
 
 struct Platform {

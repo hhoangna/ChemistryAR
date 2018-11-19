@@ -38,9 +38,40 @@
 		84436BD92179CC170087D3FE /* ElementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84436BD82179CC170087D3FE /* ElementCell.xib */; };
 		844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B728D2165FE4F001E778F /* PeriodicTableVC.swift */; };
 		844B7291216602C9001E778F /* PeriodicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B7290216602C9001E778F /* PeriodicCell.swift */; };
+		8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */; };
+		8484EF6F21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */; };
+		8484EF7121A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */; };
+		8484EF7321A28F6F007F2180 /* MessagesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7221A28F6F007F2180 /* MessagesLabel.swift */; };
+		8484EF7521A28FB8007F2180 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7421A28FB8007F2180 /* RoundedButton.swift */; };
+		8484EF7721A28FD2007F2180 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7621A28FD2007F2180 /* FlashlightButton.swift */; };
+		8484EF8521A29A4A007F2180 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7821A29A35007F2180 /* Tile.swift */; };
+		8484EF8621A29A4A007F2180 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7921A29A36007F2180 /* BoundingBox.swift */; };
+		8484EF8721A29A4A007F2180 /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7A21A29A38007F2180 /* ScannedObject.swift */; };
+		8484EF8821A29A4A007F2180 /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7B21A29A3A007F2180 /* DetectedObject.swift */; };
+		8484EF8921A29A4A007F2180 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7C21A29A3C007F2180 /* Wireframe.swift */; };
+		8484EF8A21A29A4A007F2180 /* ObjectOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7D21A29A3D007F2180 /* ObjectOrigin.swift */; };
+		8484EF8B21A29A4A007F2180 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7E21A29A3F007F2180 /* Snapping.swift */; };
+		8484EF8C21A29A4A007F2180 /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7F21A29A41007F2180 /* ObjectOriginAxis.swift */; };
+		8484EF8D21A29A4A007F2180 /* DetectedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF8021A29A42007F2180 /* DetectedBoundingBox.swift */; };
+		8484EF8E21A29A4A007F2180 /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF8121A29A45007F2180 /* DetectedPointCloud.swift */; };
+		8484EF8F21A29A4A007F2180 /* PointCloud+CreateVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF8221A29A47007F2180 /* PointCloud+CreateVisualization.swift */; };
+		8484EF9021A29A4A007F2180 /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF8321A29A48007F2180 /* BoundingBoxSide.swift */; };
+		8484EF9121A29A4A007F2180 /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF8421A29A4A007F2180 /* ScannedPointCloud.swift */; };
+		8484EF9421A29D52007F2180 /* ARKit + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF9321A29D52007F2180 /* ARKit + Ext.swift */; };
+		8484EF9721A29E65007F2180 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF9521A29E63007F2180 /* Scan.swift */; };
+		8484EF9A21A29EC1007F2180 /* TestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF9921A29EC1007F2180 /* TestRun.swift */; };
+		8484EF9C21A2A11A007F2180 /* ExtGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF9B21A2A11A007F2180 /* ExtGestures.swift */; };
+		8484EF9E21A2A14E007F2180 /* ExtSessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF9D21A2A14E007F2180 /* ExtSessionInfo.swift */; };
+		8484EFA021A2A195007F2180 /* ExtApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF9F21A2A195007F2180 /* ExtApplicationState.swift */; };
+		8484EFA221A2A1D8007F2180 /* ExtNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFA121A2A1D8007F2180 /* ExtNavigationBar.swift */; };
+		8484EFA421A2A23D007F2180 /* ShareScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFA321A2A23D007F2180 /* ShareScan.swift */; };
+		8484EFA621A2A2D4007F2180 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFA521A2A2D4007F2180 /* ARCameraTrackingState.swift */; };
+		8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFA721A2A4C7007F2180 /* art.scnassets */; };
 		84880DD7219D03B100C4D075 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880DD6219D03B100C4D075 /* SignupModel.swift */; };
 		84880DDA219DB1E100C4D075 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880DD9219DB1E100C4D075 /* CategoryModel.swift */; };
 		84880DDC219DC5FF00C4D075 /* APIs + Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880DDB219DC5FF00C4D075 /* APIs + Element.swift */; };
+		84880DE321A1158600C4D075 /* elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 84880DE221A1158600C4D075 /* elements.json */; };
+		84880E1021A26AF500C4D075 /* ScanObjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880E0F21A26AF400C4D075 /* ScanObjectVC.swift */; };
 		848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D7D21632738006F264C /* CustomNavigationBar.swift */; };
 		848F7D8321632A95006F264C /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D8221632A95006F264C /* UIView + Ext.swift */; };
 		848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F7D8421632ADD006F264C /* UIViewController + Ext.swift */; };
@@ -122,9 +153,40 @@
 		84436BD82179CC170087D3FE /* ElementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementCell.xib; sourceTree = "<group>"; };
 		844B728D2165FE4F001E778F /* PeriodicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableVC.swift; sourceTree = "<group>"; };
 		844B7290216602C9001E778F /* PeriodicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCell.swift; sourceTree = "<group>"; };
+		8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
+		8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
+		8484EF7221A28F6F007F2180 /* MessagesLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesLabel.swift; sourceTree = "<group>"; };
+		8484EF7421A28FB8007F2180 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		8484EF7621A28FD2007F2180 /* FlashlightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
+		8484EF7821A29A35007F2180 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		8484EF7921A29A36007F2180 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		8484EF7A21A29A38007F2180 /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
+		8484EF7B21A29A3A007F2180 /* DetectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
+		8484EF7C21A29A3C007F2180 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		8484EF7D21A29A3D007F2180 /* ObjectOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOrigin.swift; sourceTree = "<group>"; };
+		8484EF7E21A29A3F007F2180 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
+		8484EF7F21A29A41007F2180 /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOriginAxis.swift; sourceTree = "<group>"; };
+		8484EF8021A29A42007F2180 /* DetectedBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBoundingBox.swift; sourceTree = "<group>"; };
+		8484EF8121A29A45007F2180 /* DetectedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedPointCloud.swift; sourceTree = "<group>"; };
+		8484EF8221A29A47007F2180 /* PointCloud+CreateVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PointCloud+CreateVisualization.swift"; sourceTree = "<group>"; };
+		8484EF8321A29A48007F2180 /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
+		8484EF8421A29A4A007F2180 /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
+		8484EF9321A29D52007F2180 /* ARKit + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARKit + Ext.swift"; sourceTree = "<group>"; };
+		8484EF9521A29E63007F2180 /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		8484EF9921A29EC1007F2180 /* TestRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRun.swift; sourceTree = "<group>"; };
+		8484EF9B21A2A11A007F2180 /* ExtGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtGestures.swift; sourceTree = "<group>"; };
+		8484EF9D21A2A14E007F2180 /* ExtSessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSessionInfo.swift; sourceTree = "<group>"; };
+		8484EF9F21A2A195007F2180 /* ExtApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtApplicationState.swift; sourceTree = "<group>"; };
+		8484EFA121A2A1D8007F2180 /* ExtNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtNavigationBar.swift; sourceTree = "<group>"; };
+		8484EFA321A2A23D007F2180 /* ShareScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScan.swift; sourceTree = "<group>"; };
+		8484EFA521A2A2D4007F2180 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
+		8484EFA721A2A4C7007F2180 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		84880DD6219D03B100C4D075 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		84880DD9219DB1E100C4D075 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		84880DDB219DC5FF00C4D075 /* APIs + Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + Element.swift"; sourceTree = "<group>"; };
+		84880DE221A1158600C4D075 /* elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = elements.json; sourceTree = "<group>"; };
+		84880E0F21A26AF400C4D075 /* ScanObjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanObjectVC.swift; sourceTree = "<group>"; };
 		848F7D7D21632738006F264C /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		848F7D8221632A95006F264C /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		848F7D8421632ADD006F264C /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -355,6 +417,7 @@
 				843F93E52174A7ED0016D04F /* GoogleService-Info.plist */,
 				84154F1021621D36008F2C05 /* Info.plist */,
 				420DDD6D219C11DB00E77A7F /* URLServices.plist */,
+				84880DE221A1158600C4D075 /* elements.json */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -454,6 +517,7 @@
 		84154F2121622189008F2C05 /* SCNs */ = {
 			isa = PBXGroup;
 			children = (
+				8484EFA721A2A4C7007F2180 /* art.scnassets */,
 			);
 			path = SCNs;
 			sourceTree = "<group>";
@@ -620,6 +684,76 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8484EF6721A28D71007F2180 /* Gesture Recognizers */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */,
+				8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */,
+				8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */,
+			);
+			path = "Gesture Recognizers";
+			sourceTree = "<group>";
+		};
+		8484EF6821A28D80007F2180 /* 3D UI and Visualizations */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF7921A29A36007F2180 /* BoundingBox.swift */,
+				8484EF8321A29A48007F2180 /* BoundingBoxSide.swift */,
+				8484EF8021A29A42007F2180 /* DetectedBoundingBox.swift */,
+				8484EF7B21A29A3A007F2180 /* DetectedObject.swift */,
+				8484EF8121A29A45007F2180 /* DetectedPointCloud.swift */,
+				8484EF7D21A29A3D007F2180 /* ObjectOrigin.swift */,
+				8484EF7F21A29A41007F2180 /* ObjectOriginAxis.swift */,
+				8484EF8221A29A47007F2180 /* PointCloud+CreateVisualization.swift */,
+				8484EF7A21A29A38007F2180 /* ScannedObject.swift */,
+				8484EF8421A29A4A007F2180 /* ScannedPointCloud.swift */,
+				8484EF7E21A29A3F007F2180 /* Snapping.swift */,
+				8484EF7821A29A35007F2180 /* Tile.swift */,
+				8484EF7C21A29A3C007F2180 /* Wireframe.swift */,
+			);
+			path = "3D UI and Visualizations";
+			sourceTree = "<group>";
+		};
+		8484EF6921A28D8E007F2180 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF7221A28F6F007F2180 /* MessagesLabel.swift */,
+				8484EF7421A28FB8007F2180 /* RoundedButton.swift */,
+				8484EF7621A28FD2007F2180 /* FlashlightButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8484EF6A21A28D97007F2180 /* Controllers + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF9521A29E63007F2180 /* Scan.swift */,
+				8484EF9921A29EC1007F2180 /* TestRun.swift */,
+				8484EF9B21A2A11A007F2180 /* ExtGestures.swift */,
+				8484EF9D21A2A14E007F2180 /* ExtSessionInfo.swift */,
+				8484EF9F21A2A195007F2180 /* ExtApplicationState.swift */,
+				8484EFA121A2A1D8007F2180 /* ExtNavigationBar.swift */,
+				8484EFA321A2A23D007F2180 /* ShareScan.swift */,
+			);
+			path = "Controllers + Ext";
+			sourceTree = "<group>";
+		};
+		8484EF6B21A28DAB007F2180 /* Utility Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFA521A2A2D4007F2180 /* ARCameraTrackingState.swift */,
+			);
+			path = "Utility Extensions";
+			sourceTree = "<group>";
+		};
+		8484EF9221A29D39007F2180 /* ARKit + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF9321A29D52007F2180 /* ARKit + Ext.swift */,
+			);
+			path = "ARKit + Ext";
+			sourceTree = "<group>";
+		};
 		84880DD5219D039B00C4D075 /* SignupModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,9 +770,23 @@
 			path = CategoryModel;
 			sourceTree = "<group>";
 		};
+		84880E0E21A26AD000C4D075 /* ScanObjectVC */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF6B21A28DAB007F2180 /* Utility Extensions */,
+				8484EF6A21A28D97007F2180 /* Controllers + Ext */,
+				8484EF6921A28D8E007F2180 /* Views */,
+				8484EF6821A28D80007F2180 /* 3D UI and Visualizations */,
+				8484EF6721A28D71007F2180 /* Gesture Recognizers */,
+				84880E0F21A26AF400C4D075 /* ScanObjectVC.swift */,
+			);
+			path = ScanObjectVC;
+			sourceTree = "<group>";
+		};
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8484EF9221A29D39007F2180 /* ARKit + Ext */,
 				84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */,
 				844305072188B2B40074B609 /* UIImageView + Ext */,
 				42891DDC21779665007CA947 /* UIBarButtonItem + Ext */,
@@ -715,6 +863,7 @@
 		849712CE216E3FEA00394891 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				84880E0E21A26AD000C4D075 /* ScanObjectVC */,
 				849712D5216E40E000394891 /* ARKitVC.swift */,
 			);
 			path = AR;
@@ -936,6 +1085,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A99F4521648C30007C54CD /* Home.storyboard in Resources */,
+				8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */,
 				843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */,
 				420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */,
 				84A99F3521646C4D007C54CD /* video_background.mp4 in Resources */,
@@ -944,6 +1094,7 @@
 				84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */,
 				84A99F222163B836007C54CD /* Login.storyboard in Resources */,
 				84A99F2921645324007C54CD /* TabBarTopView.xib in Resources */,
+				84880DE321A1158600C4D075 /* elements.json in Resources */,
 				84436BD92179CC170087D3FE /* ElementCell.xib in Resources */,
 				84A99F502164A637007C54CD /* Setting.storyboard in Resources */,
 				84A99F4C2164A61B007C54CD /* Periodic.storyboard in Resources */,
@@ -1046,22 +1197,37 @@
 				84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */,
 				848F7D9421637643006F264C /* BaseClvCell.swift in Sources */,
 				420DDD5F219C07CE00E77A7F /* BaseAPI.swift in Sources */,
+				8484EF9E21A2A14E007F2180 /* ExtSessionInfo.swift in Sources */,
 				848F7D9C21637953006F264C /* Languages.swift in Sources */,
 				84A99F642164B7B9007C54CD /* HomeCell.swift in Sources */,
 				84430510218943740074B609 /* UserListCell.swift in Sources */,
 				84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */,
 				849712D4216E40CF00394891 /* SettingVC.swift in Sources */,
 				848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */,
+				8484EF8B21A29A4A007F2180 /* Snapping.swift in Sources */,
 				84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */,
 				84880DDA219DB1E100C4D075 /* CategoryModel.swift in Sources */,
 				84880DD7219D03B100C4D075 /* SignupModel.swift in Sources */,
+				8484EF8721A29A4A007F2180 /* ScannedObject.swift in Sources */,
+				8484EF7721A28FD2007F2180 /* FlashlightButton.swift in Sources */,
 				844B7291216602C9001E778F /* PeriodicCell.swift in Sources */,
 				844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */,
+				8484EF9021A29A4A007F2180 /* BoundingBoxSide.swift in Sources */,
+				8484EF8921A29A4A007F2180 /* Wireframe.swift in Sources */,
+				8484EF7121A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift in Sources */,
 				84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */,
+				8484EFA021A2A195007F2180 /* ExtApplicationState.swift in Sources */,
+				8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
 				420DDD69219C0F5C00E77A7F /* EmptyModel.swift in Sources */,
 				84880DDC219DC5FF00C4D075 /* APIs + Element.swift in Sources */,
+				8484EF9721A29E65007F2180 /* Scan.swift in Sources */,
+				8484EFA221A2A1D8007F2180 /* ExtNavigationBar.swift in Sources */,
+				8484EF9A21A29EC1007F2180 /* TestRun.swift in Sources */,
+				8484EF6F21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */,
+				84880E1021A26AF500C4D075 /* ScanObjectVC.swift in Sources */,
+				8484EF8D21A29A4A007F2180 /* DetectedBoundingBox.swift in Sources */,
 				84A99F4821648C70007C54CD /* HomeVC.swift in Sources */,
 				844305092188B2D00074B609 /* UIImageView + Ext.swift in Sources */,
 				420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */,
@@ -1071,8 +1237,12 @@
 				42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */,
 				42B68938217A18B100FBC0C3 /* SolubilityTableVC.swift in Sources */,
 				8443050621889F250074B609 /* SettingCell.swift in Sources */,
+				8484EF8E21A29A4A007F2180 /* DetectedPointCloud.swift in Sources */,
+				8484EFA421A2A23D007F2180 /* ShareScan.swift in Sources */,
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
 				84436BD72179BD470087D3FE /* ElementCells.swift in Sources */,
+				8484EFA621A2A2D4007F2180 /* ARCameraTrackingState.swift in Sources */,
+				8484EF8C21A29A4A007F2180 /* ObjectOriginAxis.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
 				42B6893B217A18D000FBC0C3 /* SolubilityCells.swift in Sources */,
 				420DDD52219BF8DC00E77A7F /* LoginModel.swift in Sources */,
@@ -1081,25 +1251,35 @@
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
 				420DDD62219C090600E77A7F /* APIError.swift in Sources */,
+				8484EF9121A29A4A007F2180 /* ScannedPointCloud.swift in Sources */,
 				84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */,
 				420DDD55219BFB9700E77A7F /* Services.swift in Sources */,
 				84436BCD2179840F0087D3FE /* BaseModel.swift in Sources */,
 				848F7D97216376EF006F264C /* UIColor + Ext.swift in Sources */,
+				8484EF9C21A2A11A007F2180 /* ExtGestures.swift in Sources */,
 				849712D2216E40C000394891 /* ReactionVC.swift in Sources */,
 				848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */,
 				84436BCF217986900087D3FE /* Constants + API.swift in Sources */,
 				844304FC218815BD0074B609 /* UserModel.swift in Sources */,
 				84A2EA462177308200C49599 /* ElementTableVC.swift in Sources */,
+				8484EF7321A28F6F007F2180 /* MessagesLabel.swift in Sources */,
 				8443050E2189421C0074B609 /* UserListVC.swift in Sources */,
+				8484EF8521A29A4A007F2180 /* Tile.swift in Sources */,
 				420DDD5B219BFC7000E77A7F /* PushNotificationService.swift in Sources */,
 				84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */,
 				420DDD65219C0C6C00E77A7F /* LoginResultModel.swift in Sources */,
 				848F7D8821632B24006F264C /* Constants.swift in Sources */,
 				420DDD67219C0D8D00E77A7F /* APIs.swift in Sources */,
+				8484EF8821A29A4A007F2180 /* DetectedObject.swift in Sources */,
+				8484EF8F21A29A4A007F2180 /* PointCloud+CreateVisualization.swift in Sources */,
 				420DDD58219BFBC800E77A7F /* FirebaseService.swift in Sources */,
 				84A99F242163B8EC007C54CD /* LoginVC.swift in Sources */,
+				8484EF8621A29A4A007F2180 /* BoundingBox.swift in Sources */,
 				849712D6216E40E000394891 /* ARKitVC.swift in Sources */,
+				8484EF9421A29D52007F2180 /* ARKit + Ext.swift in Sources */,
 				84A99F31216468DD007C54CD /* LoginCell.swift in Sources */,
+				8484EF7521A28FB8007F2180 /* RoundedButton.swift in Sources */,
+				8484EF8A21A29A4A007F2180 /* ObjectOrigin.swift in Sources */,
 				84436BD421798DC20087D3FE /* ElementModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1259,7 +1439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 39ALU6TRT7;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1278,7 +1458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 39ALU6TRT7;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
