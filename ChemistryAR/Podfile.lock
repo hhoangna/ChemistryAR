@@ -126,6 +126,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.3.0)
+  - Panels (2.0.3)
   - Protobuf (3.6.1)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -147,6 +148,7 @@ DEPENDENCIES:
   - FSPagerView
   - IQKeyboardManager
   - ObjectMapper
+  - Panels
   - SDWebImage
   - SpreadsheetView
   - SVProgressHUD
@@ -179,6 +181,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - ObjectMapper
+    - Panels
     - Protobuf
     - SDWebImage
     - SpreadsheetView
@@ -211,6 +214,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Panels: bd346a08593b64b9d295de21c366400a93437e79
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SpreadsheetView: 17c55b6dc82099993cc2ceb818248d19f3220998
@@ -218,6 +222,6 @@ SPEC CHECKSUMS:
   SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
   TLPhotoPicker: ced10aa9cdbce11bda2272f919cdace69e964239
 
-PODFILE CHECKSUM: fb2bacc5f210cdad81d38ad15b0ff64f15b0b36b
+PODFILE CHECKSUM: e615be316853cf43ad4fc320b2b4c2c5a91afd03
 
 COCOAPODS: 1.5.3

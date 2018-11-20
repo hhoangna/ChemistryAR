@@ -93,8 +93,6 @@ extension LoginCell {
             switch result {
             case .object(let obj):
                 if let user = obj.user{
-//                    user.roleList = obj.user?.role?.getArrayModel()
-//                    user.avatarModel = obj.user?.avatar?.getModel()
                     Caches().user = user
                 }
                 Caches().token = E(obj.token)

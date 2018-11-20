@@ -12,7 +12,6 @@ import ESTabBarController_swift
 
 class MainVC: BaseVC, UITabBarControllerDelegate {
     
-    @IBOutlet weak var bannerView:UIView?
     @IBOutlet weak var vContainerMaster:UIView?
     
     var rootNV:CustomNavigationBar?
@@ -22,17 +21,10 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         pushHomeViewController()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "Main_NV" {
-            rootNV = segue.destination as? CustomNavigationBar
-        }
-    }
-    
     func pushHomeViewController() {
         let vc  = setupESTabBarController()
         
-        vc.navigationItem.title = "Chemistry AR"
+//        vc.navigationItem.title = "Chemistry AR"
         
         rootNV?.pushViewController(vc, animated: false)
     }

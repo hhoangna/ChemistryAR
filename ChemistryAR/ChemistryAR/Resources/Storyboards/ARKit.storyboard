@@ -227,18 +227,18 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6F-2o-TdP" userLabel="Session Info View">
-                                <rect key="frame" x="92" y="88" width="191" height="38"/>
+                                <rect key="frame" x="100.5" y="88" width="174.5" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hX7-Iw-k1p">
-                                    <rect key="frame" x="0.0" y="0.0" width="191" height="38"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="174.5" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initializing AR session." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-6C-b3u">
-                                            <rect key="frame" x="8" y="8" width="169" height="22"/>
+                                            <rect key="frame" x="8" y="8" width="152" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="VL0-KW-6Ma"/>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ay3-uH-TVT"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -271,7 +271,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-NM-uRu" customClass="MessagesLabel" customModule="ChemistryAR" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                                        <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -380,19 +380,19 @@
                         <outlet property="delegate" destination="ylp-se-IGF" id="PeK-DR-6Cr"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="2" id="mHQ-If-ffw" customClass="ThresholdPanGestureRecognizer" customModule="ScanningApp" customModuleProvider="target">
+                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="2" id="mHQ-If-ffw" customClass="ThresholdPanGestureRecognizer" customModule="ChemistryAR" customModuleProvider="target">
                     <connections>
                         <action selector="didTwoFingerPan:" destination="ylp-se-IGF" id="srs-I2-MHB"/>
                         <outlet property="delegate" destination="ylp-se-IGF" id="pjM-m2-UkW"/>
                     </connections>
                 </panGestureRecognizer>
-                <rotationGestureRecognizer id="jAE-mh-pHl" customClass="ThresholdRotationGestureRecognizer" customModule="ScanningApp" customModuleProvider="target">
+                <rotationGestureRecognizer id="jAE-mh-pHl" customClass="ThresholdRotationGestureRecognizer" customModule="ChemistryAR" customModuleProvider="target">
                     <connections>
                         <action selector="didRotate:" destination="ylp-se-IGF" id="AfK-Ij-Xaq"/>
                         <outlet property="delegate" destination="ylp-se-IGF" id="mvQ-Gp-LhA"/>
                     </connections>
                 </rotationGestureRecognizer>
-                <pinchGestureRecognizer id="PPq-Bi-7RJ" customClass="ThresholdPinchGestureRecognizer" customModule="ScanningApp" customModuleProvider="target">
+                <pinchGestureRecognizer id="PPq-Bi-7RJ" customClass="ThresholdPinchGestureRecognizer" customModule="ChemistryAR" customModuleProvider="target">
                     <connections>
                         <action selector="didPinch:" destination="ylp-se-IGF" id="jt2-eO-R0m"/>
                         <outlet property="delegate" destination="ylp-se-IGF" id="wOK-x4-wLM"/>
@@ -429,7 +429,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr7-Ps-B71" customClass="RoundedButton" customModule="ARMultiuser" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr7-Ps-B71" customClass="RoundedButton" customModule="ChemistryAR" customModuleProvider="target">
                                 <rect key="frame" x="117.5" y="593" width="140" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="13" minY="8" maxX="13" maxY="8"/>

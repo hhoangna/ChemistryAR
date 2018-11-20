@@ -12,6 +12,7 @@ import IQKeyboardManager
 import SwiftMessages
 import Firebase
 import ARKit
+import ESTabBarController_swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate {
@@ -78,9 +79,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     }
     
     func onLoginSuccess()  {
-        let mainVC:MainVC = .load(SB: .Main)
-        rootNV?.setViewControllers([mainVC], animated: false)
-        self.mainVC = mainVC
+        let mainVC = setupESTabBarController()
+        mainVC.title = "Chemistry AR"
+        rootNV?.setViewControllers([setupESTabBarController()], animated: false)
+    }
+    
+    func setupESTabBarController() -> ESTabBarController {
+        let tabBarController = ESTabBarController()
+        tabBarController.delegate = self
+        
+        let vPeriodic:PeriodicTableVC = PeriodicTableVC.load(SB: .Periodic)
+        let vReaction:ReactionVC = ReactionVC.load(SB: .Reaction)
+        let vARKit:ARKitVC = ARKitVC.load(SB: .AR)
+        let vSetting:SettingVC = SettingVC.load(SB: .Setting)
+        
+        vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Periodic Table", image: UIImage(named: "ic_table"), selectedImage: UIImage(named: "ic_tableSelected"))
+        vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Reaction Chemical", image: UIImage(named: "ic_react"), selectedImage: UIImage(named: "ic_reactSelected"))
+        vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
+        vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
+        
+        vPeriodic.title = "Periodic Table"
+        vReaction.title = "Reaction Chemical"
+        vARKit.title = "Augmented Reality"
+        vSetting.title = "Setting"
+        
+        tabBarController.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
+        
+        return tabBarController
     }
 
     public func showLoadingIndicator(_ atView:UIView? = nil) {

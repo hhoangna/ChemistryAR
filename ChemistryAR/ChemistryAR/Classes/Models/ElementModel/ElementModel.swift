@@ -14,7 +14,7 @@ class ElementModel: BaseModel, Codable {
     var name: String?
     var atomicMass: Double?
     var symbol: String?
-    var category: CategoryModel?
+    var category: CategoryModel
     var imagePreview: String?
     var atomicNumber: Int?
     var electronicConfiguration: String?

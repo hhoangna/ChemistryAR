@@ -10,111 +10,9 @@
     </dependencies>
     <scenes>
         <!--Periodic TableVC-->
-        <scene sceneID="b6w-RM-zQ3">
-            <objects>
-                <viewController storyboardIdentifier="PeriodicTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JPL-Mu-SOC" customClass="PeriodicTableVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xbN-Un-Tx8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Ye-vv-Jev">
-                                <rect key="frame" x="5" y="25" width="365" height="637"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="R9b-Ra-IGk" customClass="PeriodicCell" customModule="ChemistryAR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="365" height="74"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9b-Ra-IGk" id="abP-Cb-Pju">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDQ-Ay-dtU">
-                                                    <rect key="frame" x="5" y="5" width="355" height="69"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Periodic" translatesAutoresizingMaskIntoConstraints="NO" id="mCY-Qv-LhX">
-                                                            <rect key="frame" x="10" y="14.5" width="40" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="Fyl-Uz-Xu3"/>
-                                                                <constraint firstAttribute="width" secondItem="mCY-Qv-LhX" secondAttribute="height" id="QWc-Eh-gbT"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gj6-Gv-uZN">
-                                                            <rect key="frame" x="60" y="26" width="37" height="17.5"/>
-                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksa-Fw-7Lu">
-                                                            <rect key="frame" x="315" y="19.5" width="30" height="30"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="2jW-KM-T3Z"/>
-                                                                <constraint firstAttribute="width" secondItem="Ksa-Fw-7Lu" secondAttribute="height" id="Dn2-sa-djb"/>
-                                                            </constraints>
-                                                            <state key="normal" image="ic_arrowRight"/>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="Gj6-Gv-uZN" firstAttribute="centerY" secondItem="JDQ-Ay-dtU" secondAttribute="centerY" id="60j-ra-2AC"/>
-                                                        <constraint firstItem="mCY-Qv-LhX" firstAttribute="centerY" secondItem="JDQ-Ay-dtU" secondAttribute="centerY" id="8sH-CY-rgE"/>
-                                                        <constraint firstItem="Gj6-Gv-uZN" firstAttribute="leading" secondItem="mCY-Qv-LhX" secondAttribute="trailing" constant="10" id="EqX-x3-PEX"/>
-                                                        <constraint firstItem="Ksa-Fw-7Lu" firstAttribute="centerY" secondItem="JDQ-Ay-dtU" secondAttribute="centerY" id="pgz-XS-DCN"/>
-                                                        <constraint firstItem="mCY-Qv-LhX" firstAttribute="leading" secondItem="JDQ-Ay-dtU" secondAttribute="leading" constant="10" id="ssP-Qj-GYq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Ksa-Fw-7Lu" secondAttribute="trailing" constant="10" id="xxB-JG-vSr"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="0.5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="JDQ-Ay-dtU" secondAttribute="bottom" id="DB8-0h-4Ov"/>
-                                                <constraint firstItem="JDQ-Ay-dtU" firstAttribute="leading" secondItem="abP-Cb-Pju" secondAttribute="leading" constant="5" id="WKo-Gn-lUa"/>
-                                                <constraint firstAttribute="trailing" secondItem="JDQ-Ay-dtU" secondAttribute="trailing" constant="5" id="hCJ-5z-WN3"/>
-                                                <constraint firstItem="JDQ-Ay-dtU" firstAttribute="top" secondItem="abP-Cb-Pju" secondAttribute="top" constant="5" id="nsv-Z6-9XB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="imgIcon" destination="mCY-Qv-LhX" id="WbN-fc-eFW"/>
-                                            <outlet property="lblTitle" destination="Gj6-Gv-uZN" id="YJx-wU-0H0"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yim-9D-7ct" firstAttribute="bottom" secondItem="8Ye-vv-Jev" secondAttribute="bottom" constant="5" id="2oo-on-RW8"/>
-                            <constraint firstItem="8Ye-vv-Jev" firstAttribute="top" secondItem="yim-9D-7ct" secondAttribute="top" constant="5" id="PKu-bZ-99T"/>
-                            <constraint firstItem="8Ye-vv-Jev" firstAttribute="leading" secondItem="yim-9D-7ct" secondAttribute="leading" constant="5" id="Vi5-Ls-hfN"/>
-                            <constraint firstItem="8Ye-vv-Jev" firstAttribute="trailing" secondItem="yim-9D-7ct" secondAttribute="trailing" constant="-5" id="rXY-Oa-qVe"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="yim-9D-7ct"/>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="tbvContent" destination="8Ye-vv-Jev" id="Bpw-b5-haX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vCT-gh-5kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1183.2" y="214.54272863568218"/>
-        </scene>
-        <!--Element TableVC-->
         <scene sceneID="eeA-OL-ZDM">
             <objects>
-                <viewController storyboardIdentifier="ElementTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a00-iS-iju" customClass="ElementTableVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PeriodicTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a00-iS-iju" customClass="PeriodicTableVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZlL-sI-Vkn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,37 +40,5 @@
             </objects>
             <point key="canvasLocation" x="-537" y="215"/>
         </scene>
-        <!--Solubility TableVC-->
-        <scene sceneID="4MS-TD-dCC">
-            <objects>
-                <viewController storyboardIdentifier="SolubilityTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P6I-GT-lqW" customClass="SolubilityTableVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m0k-gv-FlW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCT-NB-ta9" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="WCT-NB-ta9" firstAttribute="top" secondItem="m0k-gv-FlW" secondAttribute="top" id="838-Zh-Flo"/>
-                            <constraint firstAttribute="trailing" secondItem="WCT-NB-ta9" secondAttribute="trailing" id="O8k-h7-4Pg"/>
-                            <constraint firstAttribute="bottom" secondItem="WCT-NB-ta9" secondAttribute="bottom" id="TVC-Km-NUN"/>
-                            <constraint firstItem="WCT-NB-ta9" firstAttribute="leading" secondItem="m0k-gv-FlW" secondAttribute="leading" id="wk2-9m-BTg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="0A5-u3-5BX"/>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OZJ-rt-8rV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="110" y="215"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="ic_Periodic" width="45" height="45"/>
-        <image name="ic_arrowRight" width="6" height="10"/>
-    </resources>
 </document>

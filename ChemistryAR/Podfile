@@ -20,4 +20,5 @@ target 'ChemistryAR' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'TLPhotoPicker'
+  pod 'Panels'
 end

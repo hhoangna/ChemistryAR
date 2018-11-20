@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChemistryAR/Classes/Models/ElementModel/ElementModel.swift"
-            timestampString = "564291236.073016"
+            timestampString = "564402025.5539221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "ElementModel"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -26,12 +26,12 @@
                   moduleName = "ChemistryAR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/ChemistryAR/ChemistryAR/ChemistryAR/Classes/Models/ElementModel/ElementModel.swift"
-                  timestampString = "564335977.828837"
+                  timestampString = "564402025.870569"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
                   endingLineNumber = "13"
-                  offsetFromSymbolStart = "116">
+                  offsetFromSymbolStart = "119">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "ChemistryAR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/ChemistryAR/ChemistryAR/ChemistryAR/Classes/Models/ElementModel/ElementModel.swift"
-                  timestampString = "564335977.831442"
+                  timestampString = "564402025.873152"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
                   endingLineNumber = "13"
-                  offsetFromSymbolStart = "144">
+                  offsetFromSymbolStart = "140">
                </Location>
             </Locations>
          </BreakpointContent>
