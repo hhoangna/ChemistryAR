@@ -37,7 +37,7 @@ class ProfileVC: BaseVC {
     var userModel: UserModel?
     var userTemple: UserModel?
     var deleteAccountSuccess: ProfileCallback?
-    var mode: ModeScreen = .modeView {
+    var mode: ModeScreen? {
         didSet {
             updateUI()
         }
@@ -50,7 +50,6 @@ class ProfileVC: BaseVC {
     }
     
     func initData() {
-        self.updateCustomNavigationBar(.BackEdit, "Profile")
         fetchData()
         tbvContent?.addRefreshControl(self, action: #selector(fetchData))
     }
@@ -83,10 +82,7 @@ class ProfileVC: BaseVC {
     }
     
     override func onNavigationBack(_ sender: UIBarButtonItem) {
-        if mode == .modeEdit &&
-            (userTemple?.address != userModel?.address ||
-            userTemple?.birthday != userModel?.birthday ||
-            userTemple?.name != userModel?.name){
+        if mode == .modeEdit {
             self.showAlertView("Do you want to update your change?", positiveTitle: "Update", positiveAction: { (ok) in
                 self.updateAccount()
             }, negativeTitle: "Discard") { (cancel) in
@@ -101,14 +97,8 @@ class ProfileVC: BaseVC {
         if mode == .modeView {
             mode = .modeEdit
         } else {
-            if (userTemple?.address != userModel?.address ||
-                userTemple?.birthday != userModel?.birthday ||
-                userTemple?.name != userModel?.name) {
-                updateAccount()
-                mode = .modeView
-            } else {
-                mode = .modeView
-            }
+            updateAccount()
+            mode = .modeView
         }
     }
     
@@ -178,7 +168,8 @@ extension ProfileVC: UITableViewDelegate {
         let rowScreen: Row = Row(rawValue: indexPath.row)!
         switch rowScreen {
         case .ChangePass:
-            break //
+            let vc: ChangePassVC = .load(SB: .Setting)
+            self.navigationController?.pushViewController(vc, animated: true)
         case .Delete:
             doDeleteAccount()
         default:
@@ -213,6 +204,7 @@ extension ProfileVC {
         } else {
             cell.btnEdit?.isHidden = true
         }
+        cell.imgVip?.isHidden = userModel?.role == "user" ? true : false
         cell.delegate = self
         
         return cell

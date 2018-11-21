@@ -22,6 +22,7 @@ class UserModel: BaseModel, Codable {
     var lastActive: Date?
     var createdAt: Date?
     var updatedAt: Date?
+    var dateOffline: Int?
     
     func bodyUpdate() -> ResponseDictionary {
         let body = NSMutableDictionary()

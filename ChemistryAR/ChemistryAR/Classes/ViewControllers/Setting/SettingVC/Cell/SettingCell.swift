@@ -15,6 +15,7 @@ protocol SettingCellDelegate: class {
 class SettingCell: BaseTbvCell {
     
     @IBOutlet weak var imgAvatar: UIImageView?
+    @IBOutlet weak var imgVip: UIImageView?
     
     var delegate: SettingCellDelegate?
 

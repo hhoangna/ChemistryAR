@@ -148,6 +148,12 @@ struct Platform {
     }()
 }
 
+enum RoleType: String {
+    case User = "user"
+    case Vip = "vip"
+    case Admin = "admin"
+}
+
 enum ModeScreen: Int {
     case modeNew = 0;
     case modeEdit = 1;

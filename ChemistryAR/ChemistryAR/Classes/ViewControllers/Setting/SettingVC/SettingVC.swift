@@ -78,7 +78,11 @@ extension SettingVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell: SettingCell = tableView.dequeueReusableCell(withIdentifier: indentifyHeader) as! SettingCell
         
-        cell.lblTitle?.text = arrHeader[section]
+        if roleType == .Admin {
+            cell.lblTitle?.text = arrHeader[section]
+        } else {
+            cell.lblTitle?.text = ""
+        }
         
         return cell
     }
@@ -98,8 +102,14 @@ extension SettingVC: UITableViewDataSource {
         switch sectionScreen {
         case .Avatar:
             return 100
-        case .Setting, .Developer:
+        case .Setting:
             return 50
+        case .Developer:
+            if roleType == .Admin {
+                return 50
+            } else {
+                return 0
+            }
         }
     }
     
@@ -127,11 +137,13 @@ extension SettingVC: UITableViewDelegate {
         case .Setting:
             break
         case .Developer:
-            let vc: UserListVC = .load(SB: .Setting)
-            
-            vc.updateCustomNavigationBar(.BackOnly, "List User")
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+            if roleType == .Admin {
+                let vc: UserListVC = .load(SB: .Setting)
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                break
+            }
         }
     }
 }
@@ -147,6 +159,7 @@ extension SettingVC {
         cell.imgAvatar?.setImageWithURL(url: Caches().user.avatar, placeHolderImage: UIImage(named: "ic_User"))
         cell.lblTitle?.text = Caches().user.name
         cell.lblSubtitle?.text = Caches().user.email
+        cell.imgVip?.isHidden = roleType == .User ? true : false
         
         cell.delegate = self
         
@@ -177,6 +190,7 @@ extension SettingVC: SettingCellDelegate {
         switch btn.tag {
         case 0:
             let vc: ProfileVC = .load(SB: .Setting)
+            vc.mode = .modeView
             vc.userModel = Caches().user
             self.navigationController?.pushViewController(vc, animated: true)
         default:

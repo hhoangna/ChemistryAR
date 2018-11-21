@@ -37,6 +37,8 @@
 		8433A6A621A543F200B48B92 /* TextView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6A521A543F200B48B92 /* TextView + Ext.swift */; };
 		8433A6A921A5461D00B48B92 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6A821A5461D00B48B92 /* DatePickerController.swift */; };
 		8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8433A6AA21A551ED00B48B92 /* TextViewInput.xib */; };
+		8433A6AE21A5A0B000B48B92 /* ChangePassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6AD21A5A0B000B48B92 /* ChangePassVC.swift */; };
+		8433A6B121A5A3EF00B48B92 /* PasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6B021A5A3EF00B48B92 /* PasswordModel.swift */; };
 		843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843F93E52174A7ED0016D04F /* GoogleService-Info.plist */; };
 		844304FC218815BD0074B609 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844304FB218815BD0074B609 /* UserModel.swift */; };
 		8443050621889F250074B609 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443050521889F250074B609 /* SettingCell.swift */; };
@@ -164,6 +166,8 @@
 		8433A6A521A543F200B48B92 /* TextView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextView + Ext.swift"; sourceTree = "<group>"; };
 		8433A6A821A5461D00B48B92 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		8433A6AA21A551ED00B48B92 /* TextViewInput.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewInput.xib; sourceTree = "<group>"; };
+		8433A6AD21A5A0B000B48B92 /* ChangePassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassVC.swift; sourceTree = "<group>"; };
+		8433A6B021A5A3EF00B48B92 /* PasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModel.swift; sourceTree = "<group>"; };
 		843F93E52174A7ED0016D04F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844304FB218815BD0074B609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8443050521889F250074B609 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
@@ -467,6 +471,7 @@
 		84154F1C21621FAE008F2C05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8433A6AF21A5A3D100B48B92 /* PasswordModel */,
 				84436BCA217983CA0087D3FE /* ElementModel */,
 				84880DD8219DB1D000C4D075 /* CategoryModel */,
 				84880DD5219D039B00C4D075 /* SignupModel */,
@@ -677,6 +682,22 @@
 				8433A6A821A5461D00B48B92 /* DatePickerController.swift */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		8433A6AC21A5A09200B48B92 /* ChangePassVC */ = {
+			isa = PBXGroup;
+			children = (
+				8433A6AD21A5A0B000B48B92 /* ChangePassVC.swift */,
+			);
+			path = ChangePassVC;
+			sourceTree = "<group>";
+		};
+		8433A6AF21A5A3D100B48B92 /* PasswordModel */ = {
+			isa = PBXGroup;
+			children = (
+				8433A6B021A5A3EF00B48B92 /* PasswordModel.swift */,
+			);
+			path = PasswordModel;
 			sourceTree = "<group>";
 		};
 		844304FA2188159C0074B609 /* User */ = {
@@ -998,6 +1019,7 @@
 		849712CF216E401C00394891 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				8433A6AC21A5A09200B48B92 /* ChangePassVC */,
 				84F72D9E2189CB95001F0001 /* ProfileVC */,
 				8443050B218941D10074B609 /* UserManagementList */,
 				8443050A218941B70074B609 /* SettingVC */,
@@ -1355,6 +1377,7 @@
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
 				420DDD52219BF8DC00E77A7F /* LoginModel.swift in Sources */,
 				848F7D9021633A2A006F264C /* MainVC.swift in Sources */,
+				8433A6B121A5A3EF00B48B92 /* PasswordModel.swift in Sources */,
 				84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */,
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
@@ -1372,6 +1395,7 @@
 				848F7D8521632ADD006F264C /* UIViewController + Ext.swift in Sources */,
 				84436BCF217986900087D3FE /* Constants + API.swift in Sources */,
 				844304FC218815BD0074B609 /* UserModel.swift in Sources */,
+				8433A6AE21A5A0B000B48B92 /* ChangePassVC.swift in Sources */,
 				8484EF7321A28F6F007F2180 /* MessagesLabel.swift in Sources */,
 				8433A69321A4FF0F00B48B92 /* ScanModelTbv.swift in Sources */,
 				8484EFB121A305ED007F2180 /* MultipeerSession.swift in Sources */,

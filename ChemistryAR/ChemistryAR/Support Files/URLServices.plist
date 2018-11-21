@@ -20,5 +20,7 @@
 	<string>api/user/%@</string>
 	<key>DELETE_USER</key>
 	<string>api/user/%@</string>
+	<key>CHANGE_PASS</key>
+	<string>api/user/changepassword</string>
 </dict>
 </plist>

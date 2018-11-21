@@ -28,6 +28,15 @@ class BaseVC: UIViewController {
     var topItemView: TabBarTopView?
     var modeBar: ModeBottomBar = .modeMain
     
+    var roleType: RoleType {
+        get{
+            if let role = Caches().user.role {
+                return RoleType(rawValue: role)!
+            }
+            return .User
+        }
+    }
+    
     private var gesDismissKeyboardDetector : UITapGestureRecognizer? = nil;
     private var obsKeyboardChangeFrame: NSObjectProtocol? = nil;
 

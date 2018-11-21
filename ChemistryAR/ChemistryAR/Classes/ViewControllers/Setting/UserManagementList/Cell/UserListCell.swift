@@ -9,6 +9,8 @@
 import UIKit
 
 class UserListCell: BaseTbvCell {
+    
+    @IBOutlet weak var imgVip: UIImageView?
 
     override func awakeFromNib() {
         super.awakeFromNib()

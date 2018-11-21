@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChemistryAR/Classes/Models/ElementModel/ElementModel.swift"
-            timestampString = "564482907.391903"
+            timestampString = "564506320.531104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -26,7 +26,7 @@
                   moduleName = "ChemistryAR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/ChemistryAR/ChemistryAR/ChemistryAR/Classes/Models/ElementModel/ElementModel.swift"
-                  timestampString = "564482907.717242"
+                  timestampString = "564506320.8524899"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -41,7 +41,7 @@
                   moduleName = "ChemistryAR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/ChemistryAR/ChemistryAR/ChemistryAR/Classes/Models/ElementModel/ElementModel.swift"
-                  timestampString = "564482907.719987"
+                  timestampString = "564506320.85493"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -64,22 +64,6 @@
             startingLineNumber = "113"
             endingLineNumber = "113"
             landmarkName = "updateOnEveryFrame()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChemistryAR/Classes/ViewControllers/Setting/ProfileVC/ProfileVC.swift"
-            timestampString = "564483009.2173049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "onNavigationClickRightButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

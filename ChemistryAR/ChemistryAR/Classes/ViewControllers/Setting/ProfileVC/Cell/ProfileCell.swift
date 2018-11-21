@@ -15,6 +15,7 @@ protocol ProfileCellDelegate: class {
 class ProfileCell: BaseTbvCell {
     
     @IBOutlet weak var csButtonWidth: NSLayoutConstraint?
+    @IBOutlet weak var imgVip: UIImageView?
     
     var delegate: ProfileCellDelegate?
     

@@ -42,6 +42,7 @@ enum PATH_REQUEST_URL: String {
     case DELETE_USER = "DELETE_USER"
     case UPDATE_USER = "UPDATE_USER"
     case GET_ALL_USER = "GET_ALL_USER"
+    case CHANGE_PASS = "CHANGE_PASS"
     
     var URL:String  {
         return E(Configuration.pathUrls[self.rawValue])

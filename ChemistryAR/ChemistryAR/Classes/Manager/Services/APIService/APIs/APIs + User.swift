@@ -29,11 +29,28 @@ extension BaseAPI {
     }
     
     @discardableResult
+    func getAllUser(callback: @escaping APICallback<[UserModel]>) -> APIRequest{
+        
+        return request(method: .GET,
+                       path: PATH_REQUEST_URL.GET_ALL_USER.URL,
+                       input: .empty,
+                       callback: callback)
+    }
+    
+    @discardableResult
     func deleteUser(model: UserModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
         
         return request(method: .DELETE,
                        path: String(format: PATH_REQUEST_URL.DELETE_USER.URL, E(model._id)),
                        input: .empty,
+                       callback: callback)
+    }
+    
+    @discardableResult
+    func changePassword(model: PasswordModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
+        return request(method: .POST,
+                       path: PATH_REQUEST_URL.CHANGE_PASS.URL,
+                       input: .dto(model),
                        callback: callback)
     }
 }
