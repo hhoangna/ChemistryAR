@@ -30,6 +30,13 @@
 		8433A69321A4FF0F00B48B92 /* ScanModelTbv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69221A4FF0F00B48B92 /* ScanModelTbv.swift */; };
 		8433A69621A5048E00B48B92 /* UITableView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69521A5048E00B48B92 /* UITableView + Ext.swift */; };
 		8433A69821A52F8900B48B92 /* APIs + User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69721A52F8900B48B92 /* APIs + User.swift */; };
+		8433A69B21A5414700B48B92 /* TextViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69A21A5414700B48B92 /* TextViewInput.swift */; };
+		8433A69D21A5419400B48B92 /* TextViewInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69C21A5419400B48B92 /* TextViewInputController.swift */; };
+		8433A6A021A5421300B48B92 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69F21A5421300B48B92 /* AttributedText.swift */; };
+		8433A6A321A5432200B48B92 /* UIAlertController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6A221A5432200B48B92 /* UIAlertController + Ext.swift */; };
+		8433A6A621A543F200B48B92 /* TextView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6A521A543F200B48B92 /* TextView + Ext.swift */; };
+		8433A6A921A5461D00B48B92 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A6A821A5461D00B48B92 /* DatePickerController.swift */; };
+		8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8433A6AA21A551ED00B48B92 /* TextViewInput.xib */; };
 		843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843F93E52174A7ED0016D04F /* GoogleService-Info.plist */; };
 		844304FC218815BD0074B609 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844304FB218815BD0074B609 /* UserModel.swift */; };
 		8443050621889F250074B609 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443050521889F250074B609 /* SettingCell.swift */; };
@@ -150,6 +157,13 @@
 		8433A69221A4FF0F00B48B92 /* ScanModelTbv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModelTbv.swift; sourceTree = "<group>"; };
 		8433A69521A5048E00B48B92 /* UITableView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Ext.swift"; sourceTree = "<group>"; };
 		8433A69721A52F8900B48B92 /* APIs + User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + User.swift"; sourceTree = "<group>"; };
+		8433A69A21A5414700B48B92 /* TextViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInput.swift; sourceTree = "<group>"; };
+		8433A69C21A5419400B48B92 /* TextViewInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInputController.swift; sourceTree = "<group>"; };
+		8433A69F21A5421300B48B92 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
+		8433A6A221A5432200B48B92 /* UIAlertController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Ext.swift"; sourceTree = "<group>"; };
+		8433A6A521A543F200B48B92 /* TextView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextView + Ext.swift"; sourceTree = "<group>"; };
+		8433A6A821A5461D00B48B92 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		8433A6AA21A551ED00B48B92 /* TextViewInput.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewInput.xib; sourceTree = "<group>"; };
 		843F93E52174A7ED0016D04F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844304FB218815BD0074B609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8443050521889F250074B609 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
@@ -440,6 +454,8 @@
 		84154F1B21621FA8008F2C05 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8433A6A721A5460800B48B92 /* DatePicker */,
+				8433A69921A5412900B48B92 /* TextViewInput */,
 				84C7E331218AA50800AE429D /* ImagePicker */,
 				849712DF216F459D00394891 /* CustomTabbar */,
 				84A99F2521645263007C54CD /* TabBarTopView */,
@@ -622,6 +638,47 @@
 			path = "UITableView + Ext";
 			sourceTree = "<group>";
 		};
+		8433A69921A5412900B48B92 /* TextViewInput */ = {
+			isa = PBXGroup;
+			children = (
+				8433A69A21A5414700B48B92 /* TextViewInput.swift */,
+				8433A69C21A5419400B48B92 /* TextViewInputController.swift */,
+			);
+			path = TextViewInput;
+			sourceTree = "<group>";
+		};
+		8433A69E21A541FD00B48B92 /* AttributedText + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8433A69F21A5421300B48B92 /* AttributedText.swift */,
+			);
+			path = "AttributedText + Ext";
+			sourceTree = "<group>";
+		};
+		8433A6A121A5430000B48B92 /* UIAlertController + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8433A6A221A5432200B48B92 /* UIAlertController + Ext.swift */,
+			);
+			path = "UIAlertController + Ext";
+			sourceTree = "<group>";
+		};
+		8433A6A421A543E100B48B92 /* TextView + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8433A6A521A543F200B48B92 /* TextView + Ext.swift */,
+			);
+			path = "TextView + Ext";
+			sourceTree = "<group>";
+		};
+		8433A6A721A5460800B48B92 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				8433A6A821A5461D00B48B92 /* DatePickerController.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		844304FA2188159C0074B609 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +734,7 @@
 			isa = PBXGroup;
 			children = (
 				84436BD82179CC170087D3FE /* ElementCell.xib */,
+				8433A6AA21A551ED00B48B92 /* TextViewInput.xib */,
 				8433A68921A3EECD00B48B92 /* ModelPanel.storyboard */,
 			);
 			path = Nibs;
@@ -849,6 +907,9 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8433A6A421A543E100B48B92 /* TextView + Ext */,
+				8433A6A121A5430000B48B92 /* UIAlertController + Ext */,
+				8433A69E21A541FD00B48B92 /* AttributedText + Ext */,
 				8433A69421A5047900B48B92 /* UITableView + Ext */,
 				8484EF9221A29D39007F2180 /* ARKit + Ext */,
 				84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */,
@@ -1125,6 +1186,7 @@
 			files = (
 				84A99F4521648C30007C54CD /* Home.storyboard in Resources */,
 				8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */,
+				8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */,
 				843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */,
 				420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */,
 				8433A68A21A3EECD00B48B92 /* ModelPanel.storyboard in Resources */,
@@ -1245,9 +1307,12 @@
 				84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */,
 				849712D4216E40CF00394891 /* SettingVC.swift in Sources */,
 				848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */,
+				8433A6A321A5432200B48B92 /* UIAlertController + Ext.swift in Sources */,
+				8433A6A921A5461D00B48B92 /* DatePickerController.swift in Sources */,
 				8484EF8B21A29A4A007F2180 /* Snapping.swift in Sources */,
 				84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */,
 				84880DDA219DB1E100C4D075 /* CategoryModel.swift in Sources */,
+				8433A69B21A5414700B48B92 /* TextViewInput.swift in Sources */,
 				84880DD7219D03B100C4D075 /* SignupModel.swift in Sources */,
 				8484EF8721A29A4A007F2180 /* ScannedObject.swift in Sources */,
 				8433A68521A3C09500B48B92 /* ModelVC.swift in Sources */,
@@ -1284,6 +1349,7 @@
 				8484EF8E21A29A4A007F2180 /* DetectedPointCloud.swift in Sources */,
 				8484EFA421A2A23D007F2180 /* ShareScan.swift in Sources */,
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
+				8433A6A621A543F200B48B92 /* TextView + Ext.swift in Sources */,
 				8484EFA621A2A2D4007F2180 /* ARCameraTrackingState.swift in Sources */,
 				8484EF8C21A29A4A007F2180 /* ObjectOriginAxis.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
@@ -1293,6 +1359,7 @@
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
 				8484EFB421A311D9007F2180 /* ARSharingState.swift in Sources */,
+				8433A6A021A5421300B48B92 /* AttributedText.swift in Sources */,
 				420DDD62219C090600E77A7F /* APIError.swift in Sources */,
 				8484EF9121A29A4A007F2180 /* ScannedPointCloud.swift in Sources */,
 				84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */,
@@ -1308,6 +1375,7 @@
 				8484EF7321A28F6F007F2180 /* MessagesLabel.swift in Sources */,
 				8433A69321A4FF0F00B48B92 /* ScanModelTbv.swift in Sources */,
 				8484EFB121A305ED007F2180 /* MultipeerSession.swift in Sources */,
+				8433A69D21A5419400B48B92 /* TextViewInputController.swift in Sources */,
 				8443050E2189421C0074B609 /* UserListVC.swift in Sources */,
 				8484EF8521A29A4A007F2180 /* Tile.swift in Sources */,
 				420DDD5B219BFC7000E77A7F /* PushNotificationService.swift in Sources */,

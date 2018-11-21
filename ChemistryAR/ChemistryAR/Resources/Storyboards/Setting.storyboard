@@ -495,6 +495,9 @@
                                                                 <constraint firstAttribute="width" secondItem="Ehf-50-QRt" secondAttribute="height" id="Rvg-5v-piR"/>
                                                             </constraints>
                                                             <state key="normal" image="photo"/>
+                                                            <connections>
+                                                                <action selector="onBtnRightPressed:" destination="Dm7-3J-IzQ" eventType="touchUpInside" id="Gvi-Yn-Dzw"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -577,6 +580,9 @@
                                                                         <constraint firstAttribute="width" constant="15" id="qlT-k9-s45"/>
                                                                     </constraints>
                                                                     <state key="normal" image="ic_editBlue"/>
+                                                                    <connections>
+                                                                        <action selector="onBtnRightPressed:" destination="CUy-0X-TCF" eventType="touchUpInside" id="J7g-MZ-IkV"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-Ax-zgs">
                                                                     <rect key="frame" x="10" y="64" width="345" height="0.5"/>
@@ -648,12 +654,15 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RV-vT-dnA">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RV-vT-dnA">
                                                                     <rect key="frame" x="340" y="24.5" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="0RV-vT-dnA" secondAttribute="height" id="TVv-hL-zaw"/>
                                                                     </constraints>
                                                                     <state key="normal" image="ic_editBlue"/>
+                                                                    <connections>
+                                                                        <action selector="onBtnRightPressed:" destination="CUy-0X-TCF" eventType="touchUpInside" id="7yN-bx-nos"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SB2-ZW-zIc">
                                                                     <rect key="frame" x="10" y="64" width="345" height="0.5"/>
@@ -691,12 +700,15 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmD-Q6-Yj3">
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmD-Q6-Yj3">
                                                                     <rect key="frame" x="340" y="24.5" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="kmD-Q6-Yj3" secondAttribute="height" id="65X-NE-Gar"/>
                                                                     </constraints>
                                                                     <state key="normal" image="ic_editBlue"/>
+                                                                    <connections>
+                                                                        <action selector="onBtnRightPressed:" destination="CUy-0X-TCF" eventType="touchUpInside" id="WIP-Dx-KRT"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileVC: BaseVC {
     
+    typealias ProfileCallback = (_ success: Bool) -> Void
+    
     enum Row: Int {
         case Avatar = 0
         case Info
@@ -33,6 +35,8 @@ class ProfileVC: BaseVC {
     fileprivate var indentifyDelete = "DeleteCell"
     
     var userModel: UserModel?
+    var userTemple: UserModel?
+    var deleteAccountSuccess: ProfileCallback?
     var mode: ModeScreen = .modeView {
         didSet {
             updateUI()
@@ -42,7 +46,13 @@ class ProfileVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initData()
+    }
+    
+    func initData() {
         self.updateCustomNavigationBar(.BackEdit, "Profile")
+        fetchData()
+        tbvContent?.addRefreshControl(self, action: #selector(fetchData))
     }
     
     func updateUI() {
@@ -57,20 +67,65 @@ class ProfileVC: BaseVC {
         tbvContent?.reloadData()
     }
     
-    func fetchData() {
+    @objc func fetchData() {
         App().showLoadingIndicator()
-        SERVICES().API.getAllElement(callback: <#T##APICallback<[ElementModel]>##APICallback<[ElementModel]>##(APIOutput<[ElementModel], APIError>) -> Void#>)
+        SERVICES().API.getDetailUser(model: userModel!) { (result) in
+            App().dismissLoadingIndicator()
+            switch result {
+            case .object(let obj):
+                self.userModel = obj
+                self.userTemple = obj
+                self.tbvContent?.reloadData()
+            case .error(let err):
+                self.showAlertView(E(err.message))
+            }
+        }
     }
     
     override func onNavigationBack(_ sender: UIBarButtonItem) {
-        self.didSelectback()
+        if mode == .modeEdit &&
+            (userTemple?.address != userModel?.address ||
+            userTemple?.birthday != userModel?.birthday ||
+            userTemple?.name != userModel?.name){
+            self.showAlertView("Do you want to update your change?", positiveTitle: "Update", positiveAction: { (ok) in
+                self.updateAccount()
+            }, negativeTitle: "Discard") { (cancel) in
+                self.didSelectback()
+            }
+        } else {
+            self.didSelectback()
+        }
     }
     
     override func onNavigationClickRightButton(_ sender: UIBarButtonItem) {
         if mode == .modeView {
             mode = .modeEdit
         } else {
-            mode = .modeView
+            if (userTemple?.address != userModel?.address ||
+                userTemple?.birthday != userModel?.birthday ||
+                userTemple?.name != userModel?.name) {
+                updateAccount()
+                mode = .modeView
+            } else {
+                mode = .modeView
+            }
+        }
+    }
+    
+    func updateAccount() {
+        App().showLoadingIndicator()
+        SERVICES().API.updateDetailUser(model: userModel!) { (result) in
+            App().dismissLoadingIndicator()
+            switch result {
+            case .object(let obj):
+                self.showAlertView("Update successfully", positiveTitle: "OK", positiveAction: { (ok) in
+                    self.userModel = obj
+                    Caches().user = obj
+                    self.tbvContent?.reloadData()
+                })
+            case .error(let err):
+                self.showAlertView(E(err.message))
+            }
         }
     }
 }
@@ -120,7 +175,29 @@ extension ProfileVC: UITableViewDataSource {
 
 extension ProfileVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        let rowScreen: Row = Row(rawValue: indexPath.row)!
+        switch rowScreen {
+        case .ChangePass:
+            break //
+        case .Delete:
+            doDeleteAccount()
+        default:
+            break
+        }
+    }
+    
+    func doDeleteAccount() {
+        App().showLoadingIndicator()
+        SERVICES().API.deleteUser(model: userModel!) { (result) in
+            App().dismissLoadingIndicator()
+            switch result {
+            case .object(_ ):
+                self.deleteAccountSuccess!(true)
+                self.didSelectback()
+            case .error(let err):
+                self.showAlertView(E(err.message))
+            }
+        }
     }
 }
 
@@ -156,7 +233,7 @@ extension ProfileVC {
         cell.lblSubtitle3?.text = E(userModel?.address)
         
         if mode == .modeEdit {
-            cell.csButtonWidth?.constant = 25
+            cell.csButtonWidth?.constant = 20
         } else {
             cell.csButtonWidth?.constant = 0
         }
@@ -195,7 +272,7 @@ extension ProfileVC: ProfileCellDelegate {
         case .Avatar:
             doEditAvatar()
         case .Info:
-            let tag = cell.btnEdit?.tag
+            let tag = btn.tag
             if tag == 0 {
                 doEditUserName()
             } else if tag == 1 {
@@ -209,18 +286,60 @@ extension ProfileVC: ProfileCellDelegate {
     }
     
     func doEditAvatar() {
+        let picker = UIImagePickerController()
         
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
     }
     
     func doEditDOB() {
-        
+        UIAlertController.showDatePicker(style: .actionSheet,
+                                         mode: .dateAndTime,
+                                         title: "Select date".localized,
+                                         currentDate: userModel?.birthday,
+                                         maximumDate:Date()) {[weak self] (date) in
+                                            self?.userModel?.birthday = date
+                                            self?.tbvContent?.reloadData()
+        }
     }
     
     func doEditAddress() {
-        
+        let alert = UIAlertController(style: .alert,title: "Change Address")
+        alert.showTextViewInput(placeholder: "Enter Address", oldText: E(userModel?.address)) { (ok, content) in
+            if !isEmpty(content) {
+                self.userModel?.address = content
+                self.tbvContent?.reloadData()
+            }
+        }
     }
     
     func doEditUserName() {
-        
+        let alert = UIAlertController(style: .alert,title: "Change Username")
+        alert.showTextViewInput(placeholder: "Enter Username", oldText: E(userModel?.name)) { (ok, content) in
+            if !isEmpty(content) {
+                self.userModel?.name = content
+                self.tbvContent?.reloadData()
+            }
+        }
+    }
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectedImage: UIImage?
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            selectedImage = editedImage
+            print("editedImage's size = \(editedImage.size)")
+            
+        } else if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = originImage
+            print("originImage's size = \(originImage.size)")
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

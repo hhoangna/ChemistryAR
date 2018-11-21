@@ -27,7 +27,10 @@ class UserModel: BaseModel, Codable {
         let body = NSMutableDictionary()
         body.setValue(E(name), forKey: "name")
         body.setValue(E(address), forKey: "address")
-        body.setValue(birthday, forKey: "birthday")
+        if let _dob = birthday {
+            let dob = ServerDateFormater.string(from: _dob)
+            body.setValue(dob, forKey: "birthday")
+        }
         body.setValue(avatar, forKey: "avatar")
         
         return body as! ResponseDictionary
