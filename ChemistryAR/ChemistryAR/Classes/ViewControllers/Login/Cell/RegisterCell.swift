@@ -21,7 +21,6 @@ class RegisterCell: BaseClvCell {
     @IBOutlet fileprivate weak var btnResgister: UIButton?
     
     var db = Firestore.firestore()
-    var rootVC: LoginVC?
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

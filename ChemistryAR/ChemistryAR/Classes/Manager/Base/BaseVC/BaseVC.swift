@@ -58,7 +58,9 @@ class BaseVC: UIViewController {
     }
     
     func updateCustomNavigationBar(_ barStyle: NavigationBarStyle, _ title: String?) {
-        let backBarItem : UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
+        let backBarItem: UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
+        let editBarItem: UIBarButtonItem = UIBarButtonItem.editButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
+        let saveBarItem: UIBarButtonItem = UIBarButtonItem.saveButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
 
         if let title = title {
             self.navigationItem.title = title
@@ -68,6 +70,14 @@ class BaseVC: UIViewController {
             break
         case .BackOnly:
             self.navigationItem.leftBarButtonItem = backBarItem
+            break
+        case .BackEdit:
+            self.navigationItem.leftBarButtonItem = backBarItem
+            self.navigationItem.rightBarButtonItem = editBarItem
+            break
+        case .BackDone:
+            self.navigationItem.leftBarButtonItem = backBarItem
+            self.navigationItem.rightBarButtonItem = saveBarItem
             break
         }
     }

@@ -18,7 +18,6 @@ class LoginCell: BaseClvCell {
     @IBOutlet fileprivate weak var btnLogin: UIButton?
     
     var db = Firestore.firestore()
-    var rootVC: LoginVC?
     
     override func awakeFromNib() {
         super.awakeFromNib()

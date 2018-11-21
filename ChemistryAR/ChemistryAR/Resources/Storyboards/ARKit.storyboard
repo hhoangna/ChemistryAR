@@ -8,6 +8,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MYRIADPRO-BOLD.OTF">
+            <string>MyriadPro-Bold</string>
+        </array>
+        <array key="MYRIADPRO-REGULAR.OTF">
+            <string>MyriadPro-Regular</string>
+        </array>
+        <array key="MYRIADPRO-SEMIBOLD.OTF">
+            <string>MyriadPro-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--KitVC-->
         <scene sceneID="iOD-JD-rMX">
@@ -532,6 +543,172 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1373.5999999999999" y="64.31784107946028"/>
+        </scene>
+        <!--Scan Model ListVC-->
+        <scene sceneID="3bj-69-Dpo">
+            <objects>
+                <viewController storyboardIdentifier="ScanModelListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sNs-Tn-mD9" customClass="ScanModelListVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UXK-Y7-x1j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azv-ca-q1A">
+                                <rect key="frame" x="0.0" y="20" width="375" height="46.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gAh-EI-gW8">
+                                <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wF9-Zi-8xc">
+                                    <size key="itemSize" width="374" height="480"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="DWa-WP-Ar0" customClass="ScanModelClv" customModule="ChemistryAR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60.5" width="374" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="480"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wvy-8B-Eh9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="480"/>
+                                                    <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="wE4-34-VhG" customClass="ScanModelTbv" customModule="ChemistryAR" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28" width="374" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wE4-34-VhG" id="uBh-HV-dCr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztu-jb-JNg" userLabel="vDate" customClass="HView" customModule="VSip_iOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="5" width="364" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnB-tl-tFz">
+                                                                                <rect key="frame" x="10" y="17.5" width="50.5" height="15.5"/>
+                                                                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Location"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX3-RQ-JUy">
+                                                                                <rect key="frame" x="298" y="26" width="32" height="15.5"/>
+                                                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
+                                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(100 công ty)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN0-Ap-x4N">
+                                                                                <rect key="frame" x="269" y="8.5" width="90" height="15.5"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="90" id="J7d-0R-VK9"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="13"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="BN0-Ap-x4N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YnB-tl-tFz" secondAttribute="trailing" constant="10" id="12C-lz-iaM"/>
+                                                                            <constraint firstItem="YnB-tl-tFz" firstAttribute="leading" secondItem="Ztu-jb-JNg" secondAttribute="leading" constant="10" id="FvZ-sK-Kdk"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="BN0-Ap-x4N" secondAttribute="trailing" constant="5" id="WDd-Qt-aeR"/>
+                                                                            <constraint firstItem="YnB-tl-tFz" firstAttribute="centerY" secondItem="Ztu-jb-JNg" secondAttribute="centerY" id="YYb-E9-fzo"/>
+                                                                            <constraint firstItem="BN0-Ap-x4N" firstAttribute="centerY" secondItem="Ztu-jb-JNg" secondAttribute="centerY" multiplier="0.65" id="bmC-FO-eO6"/>
+                                                                            <constraint firstItem="dX3-RQ-JUy" firstAttribute="centerY" secondItem="Ztu-jb-JNg" secondAttribute="centerY" multiplier="1.35" id="mtw-Yn-h3R"/>
+                                                                            <constraint firstItem="dX3-RQ-JUy" firstAttribute="centerX" secondItem="BN0-Ap-x4N" secondAttribute="centerX" id="uKU-OF-F1R"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="0.5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" white="0.80441623259999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                                <real key="value" value="1.5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                                <real key="value" value="0.29999999999999999"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                                <size key="value" width="0.0" height="2"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Ztu-jb-JNg" firstAttribute="top" secondItem="uBh-HV-dCr" secondAttribute="top" constant="5" id="1uo-S6-Gdq"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Ztu-jb-JNg" secondAttribute="bottom" constant="5" id="HZF-0L-0XX"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Ztu-jb-JNg" secondAttribute="trailing" constant="5" id="lCn-pp-GnX"/>
+                                                                    <constraint firstItem="Ztu-jb-JNg" firstAttribute="leading" secondItem="uBh-HV-dCr" secondAttribute="leading" constant="5" id="sGF-qd-XLM"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <connections>
+                                                                <outlet property="lblSubtitle" destination="BN0-Ap-x4N" id="bFR-vb-Ugb"/>
+                                                                <outlet property="lblSubtitle1" destination="dX3-RQ-JUy" id="942-WZ-gO2"/>
+                                                                <outlet property="lblTitle" destination="YnB-tl-tFz" id="6k2-mr-1TQ"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                </tableView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgQ-HD-Y7z">
+                                                    <rect key="frame" x="159.5" y="231.5" width="55.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="No Data"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SgQ-HD-Y7z" firstAttribute="centerX" secondItem="DWa-WP-Ar0" secondAttribute="centerX" id="DZ5-Hb-LHz"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wvy-8B-Eh9" secondAttribute="trailing" id="JZ4-Sr-2Fm"/>
+                                            <constraint firstItem="Wvy-8B-Eh9" firstAttribute="top" secondItem="DWa-WP-Ar0" secondAttribute="top" id="PLB-1p-NhS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wvy-8B-Eh9" secondAttribute="bottom" id="YQA-hy-twb"/>
+                                            <constraint firstItem="SgQ-HD-Y7z" firstAttribute="centerY" secondItem="DWa-WP-Ar0" secondAttribute="centerY" id="aYm-K1-dfQ"/>
+                                            <constraint firstItem="Wvy-8B-Eh9" firstAttribute="leading" secondItem="DWa-WP-Ar0" secondAttribute="leading" id="xNN-5L-Iuu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="lblNodata" destination="SgQ-HD-Y7z" id="HmJ-bd-Pec"/>
+                                            <outlet property="tbvContent" destination="Wvy-8B-Eh9" id="MGK-vd-vzZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gAh-EI-gW8" firstAttribute="trailing" secondItem="yeD-uY-7K6" secondAttribute="trailing" id="1o3-KH-lbU"/>
+                            <constraint firstItem="Azv-ca-q1A" firstAttribute="trailing" secondItem="yeD-uY-7K6" secondAttribute="trailing" id="8Pa-NM-qd9"/>
+                            <constraint firstItem="gAh-EI-gW8" firstAttribute="leading" secondItem="yeD-uY-7K6" secondAttribute="leading" id="8oL-gO-8n4"/>
+                            <constraint firstItem="Azv-ca-q1A" firstAttribute="leading" secondItem="yeD-uY-7K6" secondAttribute="leading" id="9md-Gy-tAO"/>
+                            <constraint firstItem="gAh-EI-gW8" firstAttribute="top" secondItem="Azv-ca-q1A" secondAttribute="bottom" id="HFu-z0-IF0"/>
+                            <constraint firstItem="Azv-ca-q1A" firstAttribute="height" secondItem="UXK-Y7-x1j" secondAttribute="height" multiplier="0.07" id="Jpn-bK-pSt"/>
+                            <constraint firstItem="Azv-ca-q1A" firstAttribute="top" secondItem="yeD-uY-7K6" secondAttribute="top" id="hk0-ae-ZYS"/>
+                            <constraint firstItem="yeD-uY-7K6" firstAttribute="bottom" secondItem="gAh-EI-gW8" secondAttribute="bottom" id="zNW-sn-o5J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yeD-uY-7K6"/>
+                    </view>
+                    <connections>
+                        <outlet property="clvContent" destination="gAh-EI-gW8" id="Bfk-sz-YWh"/>
+                        <outlet property="tabBarTopItemView" destination="Azv-ca-q1A" id="AhZ-eJ-LJR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xm4-BG-7sj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="753"/>
         </scene>
     </scenes>
     <resources>

@@ -12,7 +12,7 @@ struct TabBarItem {
     var title:String?
     var image: UIImage?
     
-    init(_ name:String, _ image: UIImage) {
+    init(_ name:String, _ image: UIImage? = nil) {
         self.title = name;
         self.image = image
     }

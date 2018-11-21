@@ -27,7 +27,7 @@ extension UIBarButtonItem {
     class func closeButton(target: Any, action: Selector) -> UIBarButtonItem {
         let frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         let insets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 0)
-        let button = customButton(with: #imageLiteral(resourceName: "ic-Close"),
+        let button = customButton(with: #imageLiteral(resourceName: "favor"),
                                   highlightedImage: #imageLiteral(resourceName: "ic-Close"),
                                   frame: frame,
                                   imageEdgeInsets: insets,
@@ -41,7 +41,19 @@ extension UIBarButtonItem {
     
     class func editButton(target: Any, action: Selector) -> UIBarButtonItem {
         let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        let button = customButton(with: #imageLiteral(resourceName: "ic_Edit"),
+        let button = customButton(with: #imageLiteral(resourceName: "ic_editBlue"),
+                                  frame: frame,
+                                  target: target,
+                                  action: action)
+        
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
+    class func saveButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        let button = customButton(with: #imageLiteral(resourceName: "ic_checkCircle"),
                                   frame: frame,
                                   target: target,
                                   action: action)

@@ -11,6 +11,8 @@ import UIKit
 enum NavigationBarStyle {
     case None
     case BackOnly
+    case BackEdit
+    case BackDone
 }
 
 

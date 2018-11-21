@@ -9,6 +9,9 @@
 import UIKit
 
 class BaseClvCell: UICollectionViewCell {
+    
+    var rootVC:BaseVC?
+
     @IBOutlet weak var lblTitle: UILabel?
     @IBOutlet weak var lblSubtitle: UILabel?
     @IBOutlet weak var lblSubtitle1: UILabel?

@@ -8,8 +8,16 @@
 
 import UIKit
 
-class ProfileCell: BaseTbvCell {
+protocol ProfileCellDelegate: class {
+    func didSelectBtnRight(cell: ProfileCell, btn: UIButton)
+}
 
+class ProfileCell: BaseTbvCell {
+    
+    @IBOutlet weak var csButtonWidth: NSLayoutConstraint?
+    
+    var delegate: ProfileCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +27,10 @@ class ProfileCell: BaseTbvCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func onBtnRightPressed(_ sender: UIButton) {
+        delegate?.didSelectBtnRight(cell: self, btn: sender)
     }
 
 }

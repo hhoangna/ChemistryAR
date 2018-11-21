@@ -12,5 +12,13 @@
 	<string>api/element</string>
 	<key>GET_DETAIL_ELEMENT</key>
 	<string>api/element/%@</string>
+	<key>GET_ALL_USER</key>
+	<string>api/user</string>
+	<key>GET_DETAIL_USER</key>
+	<string>api/user/%@</string>
+	<key>UPDATE_USER</key>
+	<string>api/user/%@</string>
+	<key>DELETE_USER</key>
+	<string>api/user/%@</string>
 </dict>
 </plist>
