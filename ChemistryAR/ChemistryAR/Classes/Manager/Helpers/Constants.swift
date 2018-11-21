@@ -225,7 +225,6 @@ public enum SBName : String {
     case AR = "ARKit"
 };
 
-var rootMainNV: CustomNavigationBar? = App().mainVC?.rootNV
 
 //func ImagePicker() -> ImagePickerView {
 //    return ImagePickerView.shared()

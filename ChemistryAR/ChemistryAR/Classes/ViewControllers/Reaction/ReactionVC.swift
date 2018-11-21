@@ -12,6 +12,7 @@ class ReactionVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateCustomNavigationBar(.BackOnly, "Periodic Table")
 
         // Do any additional setup after loading the view.
     }
