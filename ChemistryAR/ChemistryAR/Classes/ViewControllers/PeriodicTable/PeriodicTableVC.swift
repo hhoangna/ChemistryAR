@@ -17,6 +17,7 @@ class PeriodicTableVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateCustomNavigationBar(.BackOnly, "Periodic Table")
         setupSpreadSheetView()
         readDataJSON()
     }
@@ -25,6 +26,7 @@ class PeriodicTableVC: BaseVC {
         super.viewDidAppear(animated)
         vContainer?.flashScrollIndicators()
     }
+    
     
     func setupSpreadSheetView() {
         vContainer?.delegate = self

@@ -13,25 +13,25 @@ import ESTabBarController_swift
 class MainVC: BaseVC, UITabBarControllerDelegate {
     
     @IBOutlet weak var vContainerMaster:UIView?
-    
-    var rootNV:CustomNavigationBar?
-    
+    var barController:ESTabBarController?
     override func viewDidLoad() {
         super.viewDidLoad()
         pushHomeViewController()
     }
     
+
     func pushHomeViewController() {
         let vc  = setupESTabBarController()
-        
-//        vc.navigationItem.title = "Chemistry AR"
-        
-        rootNV?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
+    
     func setupESTabBarController() -> ESTabBarController {
-        let tabBarController = ESTabBarController()
-        tabBarController.delegate = self
+        let tabBar = ESTabBarController()
+        tabBar.delegate = self
+        tabBar.navigationItem.hidesBackButton = true
+        tabBar.navigationItem.title = "Periodic Table"
+        barController = tabBar
         
         let vPeriodic:PeriodicTableVC = PeriodicTableVC.load(SB: .Periodic)
         let vReaction:ReactionVC = ReactionVC.load(SB: .Reaction)
@@ -43,13 +43,22 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
         vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
         
-        tabBarController.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
+        tabBar.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
         
-        return tabBarController
+        return tabBar
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController is  PeriodicTableVC {
+            tabBarController.navigationItem.title = "Periodic Table"
+        }else if viewController is ReactionVC{
+            tabBarController.navigationItem.title = "Reaction Chemical"
+
+        }else if viewController is ARKitVC{
+            tabBarController.navigationItem.title = "Augmented Reality"
+
+        }else if viewController is SettingVC{
+            tabBarController.navigationItem.title = "Setting"
+        }
     }
 }

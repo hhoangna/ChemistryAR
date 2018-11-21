@@ -59,7 +59,7 @@ class ProfileVC: BaseVC {
     
     func fetchData() {
         App().showLoadingIndicator()
-        SERVICES().API.getAllElement(callback: <#T##APICallback<[ElementModel]>##APICallback<[ElementModel]>##(APIOutput<[ElementModel], APIError>) -> Void#>)
+      //  SERVICES().API.getAllElement(callback: <#T##APICallback<[ElementModel]>##APICallback<[ElementModel]>##(APIOutput<[ElementModel], APIError>) -> Void#>)
     }
     
     override func onNavigationBack(_ sender: UIBarButtonItem) {

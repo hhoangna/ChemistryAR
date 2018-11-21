@@ -21,6 +21,7 @@ class ARKitVC: BaseVC, AVCaptureMetadataOutputObjectsDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateCustomNavigationBar(.BackOnly, "Periodic Table")
 
         setupSession()
     }
