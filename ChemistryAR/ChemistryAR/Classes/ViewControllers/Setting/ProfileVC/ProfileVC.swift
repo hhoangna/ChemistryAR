@@ -37,6 +37,7 @@ class ProfileVC: BaseVC {
     var userModel: UserModel?
     var userTemple: UserModel?
     var deleteAccountSuccess: ProfileCallback?
+    var updateAccountSuccess: ProfileCallback?
     var mode: ModeScreen? {
         didSet {
             updateUI()
@@ -111,6 +112,7 @@ class ProfileVC: BaseVC {
                 self.showAlertView("Update successfully", positiveTitle: "OK", positiveAction: { (ok) in
                     self.userModel = obj
                     Caches().user = obj
+                    self.updateAccountSuccess!(true)
                     self.tbvContent?.reloadData()
                 })
             case .error(let err):
@@ -287,7 +289,7 @@ extension ProfileVC: ProfileCellDelegate {
     
     func doEditDOB() {
         UIAlertController.showDatePicker(style: .actionSheet,
-                                         mode: .dateAndTime,
+                                         mode: .date,
                                          title: "Select date".localized,
                                          currentDate: userModel?.birthday,
                                          maximumDate:Date()) {[weak self] (date) in

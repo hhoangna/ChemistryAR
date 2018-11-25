@@ -1424,12 +1424,12 @@
             "xpos": 13,
             "ypos": 3,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.068Z",
             "updatedAt": "2018-11-15T12:34:13.068Z"
@@ -2055,12 +2055,12 @@
             "xpos": 13,
             "ypos": 4,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -2673,12 +2673,12 @@
             "xpos": 13,
             "ypos": 5,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -2706,12 +2706,12 @@
             "xpos": 14,
             "ypos": 5,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -3292,12 +3292,12 @@
             "xpos": 13,
             "ypos": 6,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -3325,12 +3325,12 @@
             "xpos": 14,
             "ypos": 6,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -3358,12 +3358,12 @@
             "xpos": 15,
             "ypos": 6,
             "category": {
-                "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id" : "5bed67c2aba1d2fa60e02412",
+                "active" : true,
+                "name" : "Kim loại yếu",
+                "descr" : "Kim loại yếu gồm những nguyên tố hóa học Al, Ga, In, Sn, Tl, Pb, Bi, Fl; chúng nằm giữa kim loại và á kim trong bảng tuần hoàn. Vì đứng trước á kim trong bảng tuần hoàn nên các kim loại này sẽ có tính kim loại yếu hơn.",
+                "createdAt" : "2018-11-15T12:34:10.752Z",
+                "updatedAt" : "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -3393,11 +3393,11 @@
             "ypos": 6,
             "category": {
                 "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id": "5bed67c2aba1d2fa60e02413",
+                "name": "Á kim",
+                "descr": "Á kim gồm những nguyên tố hóa học B, Si, Ge, As, Sb, Te, Po; chúng nằm giữa kim loại và phi kim trong bảng tuần hoàn. Phụ thuộc vào điều kiện môi trường chúng có thể có các tính chất của kim loại như dẫn điện hay phi kim cách điện. Si và Ge là 2 chất bán dẫn quan trọng. Ở điều kiện bình thường, á kim có dạng rắn.",
+                "createdAt": "2018-11-15T12:34:10.752Z",
+                "updatedAt": "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"
@@ -3427,11 +3427,11 @@
             "ypos": 6,
             "category": {
                 "active": true,
-                "_id": "5bed67c2aba1d2fa60e02413",
-                "name": "Á kim",
-                "descr": "Á kim gồm những nguyên tố hóa học B, Si, Ge, As, Sb, Te, Po; chúng nằm giữa kim loại và phi kim trong bảng tuần hoàn. Phụ thuộc vào điều kiện môi trường chúng có thể có các tính chất của kim loại như dẫn điện hay phi kim cách điện. Si và Ge là 2 chất bán dẫn quan trọng. Ở điều kiện bình thường, á kim có dạng rắn.",
-                "createdAt": "2018-11-15T12:34:10.752Z",
-                "updatedAt": "2018-11-15T12:34:10.752Z"
+                "_id": "5bed67c2aba1d2fa60e0240b",
+                "name": "Halogen",
+                "descr": "Nhóm Halogen, các nguyên tố Halogen là những nguyên tố thuộc nhóm VII A trong bảng hệ thống tuần hoàn các nguyên tố hoá học. Nhóm này bao gồm các nguyên tố hoá học là flo, clo, brom, iot, ấttin và tennessine. Chúng là các nguyên tố phi kim phản ứng tạo thành các hợp chất có tính axit mạnh với hydro, từ đó các muối đơn giản có thể tạo ra. \n    Trong nhóm Halogen, tính chất vật lý biến đổi có quy luật: Trạng thái tập hợp, màu sắc, nhiệt độ nóng chảy, nhiệt độ sôi,... Flo tác dụng mãnh liệt với nước giải phóng oxi. Các Halogen khác tan tương đối ít trong nước và tan nhiều trong một số dung môi hữu cơ. Nhóm halogen bao gồm: F, Cl, Br, I còn At là nguyên tố phóng xạ.\n    Vì lớp electron ngoài cùng có cấu hình tương tự nên các halogen có nhiều điểm giống nhau về tính chất hoá học của đơn chất cũng như về thành phần và tính chất của các hợp chất.\n  Halogen có ái lực electron lớn. Nguyên tử halogen X với 7 electron lớp ngoài cùng dễ dàng thu thêm 1 electron để tạo thành ion âm X- có cấu hình electron của khí hiếm liền kề trong bảng tuần hoàn.\n  Các Halogen đều có độ âm điện lớn. Độ âm điện của Flo (3,\n        98) là lớn nhất trong tất cả các nguyên tố hoá học. Từ flo đến clo, brôm và iốt... bán kính nguyên tử tăng dần và độ âm điện giảm mạnh\n  Halogen là những phi kim điển hình, chúng là những chất ôxi hóa mạnh. Khả năng ôxi hoá của các halogen giảm dần từ flo đến iốt.\n  Trong các hợp chất, flo luôn luôn có số ôxi hoá -1, các halogen khác ngoài số ôxi hoá -1 còn có các số ôxi hoá +1, +3, +5, +7.",
+                "createdAt": "2018-11-15T12:34:10.748Z",
+                "updatedAt": "2018-11-15T12:34:10.748Z"
             },
             "createdAt": "2018-11-15T12:34:13.889Z",
             "updatedAt": "2018-11-15T12:34:13.889Z"
@@ -3804,7 +3804,7 @@
             "meltingPoint": null,
             "atomicNumber": 112,
             "electronicConfiguration": "[Rn] 5f14 6d10 7s2",
-            "standardState": "Gas",
+            "standardState": "Liquid",
             "source": "https://en.wikipedia.org/wiki/Copernicium",
             "imagePreview": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/Element%2FCn.JPG?alt=media&token=dd732037-6e10-429c-9046-90548442fd01",
             "summary": "Copernicium is a chemical element with symbol Cn and atomic number 112. It is an extremely radioactive synthetic element that can only be created in a laboratory. The most stable known isotope, copernicium-285, has a half-life of approximately 29 seconds, but it is possible that this copernicium isotope may have a nuclear isomer with a longer half-life, 8.9 min.",
@@ -3871,11 +3871,11 @@
             "ypos": 7,
             "category": {
                 "active": true,
-                "_id": "5bed67c2aba1d2fa60e0240f",
-                "name": "Kim loại chuyển tiếp",
-                "descr": "Kim loại chuyển tiếp là 40 nguyên tố hóa học có số nguyên tử từ 21 đến 30, 39 đến 48, 57 đến 80 và 89 đến 112. Nguyên nhân của tên này là do vị trí của chúng trong bảng tuần hoàn vì tại đó bắt đầu sự chuyển tiếp do có thêm điện tử trong quỹ đạo nguyên tử của lớp d. Nếu định nghĩa một cách chặt chẽ hơn thì kim loại chuyển tiếp là những nguyên tố tạo thành ít nhất là một ion với một lớp quỹ đạo (orbital) d được điền đầy một phần, tức là các nguyên tố khối d ngoại trừ scandi và kẽm.",
-                "createdAt": "2018-11-15T12:34:10.749Z",
-                "updatedAt": "2018-11-15T12:34:10.749Z"
+                "_id": "5bed67c2aba1d2fa60e02415",
+                "name": "Không rõ",
+                "descr": "Là nhóm các nguyên tố mới chưa được khám phá ra chi tiết, cụ thể.",
+                "createdAt": "2018-11-15T12:34:10.752Z",
+                "updatedAt": "2018-11-15T12:34:10.752Z"
             },
             "createdAt": "2018-11-15T12:34:13.069Z",
             "updatedAt": "2018-11-15T12:34:13.069Z"

@@ -10,10 +10,10 @@ import UIKit
 
 class CategoryModel: BaseModel, Codable {
     
-    var _id: String?
     var active: Bool?
+    var _id: String?
     var name: String?
     var descr: String?
-    var createdAt: Date?
-    var updatedAt: Date?
+    var createdAt: String?
+    var updatedAt: String?
 }

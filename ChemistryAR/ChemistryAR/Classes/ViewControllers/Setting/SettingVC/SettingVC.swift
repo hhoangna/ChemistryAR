@@ -192,6 +192,8 @@ extension SettingVC: SettingCellDelegate {
             let vc: ProfileVC = .load(SB: .Setting)
             vc.mode = .modeView
             vc.userModel = Caches().user
+            vc.updateAccountSuccess = {[weak self] (success) in
+                self?.tbvContent?.reloadData()}
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break
