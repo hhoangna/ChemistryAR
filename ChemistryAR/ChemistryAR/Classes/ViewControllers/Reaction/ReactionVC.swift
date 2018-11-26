@@ -18,7 +18,6 @@ class ReactionVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sbSearch?.setValue("Done", forKey: "cancelButtonText")
         // Do any additional setup after loading the view.
     }
     
@@ -39,11 +38,12 @@ class ReactionVC: BaseVC {
 }
 
 extension ReactionVC: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {        
         print("String: \(String(describing: searchBar.text))")
         fetchData()
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -54,7 +54,7 @@ extension ReactionVC: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.showsCancelButton = false
-        self.tbvContent?.reloadData()
+        searchBar.endEditing(true)
     }
 }
 
