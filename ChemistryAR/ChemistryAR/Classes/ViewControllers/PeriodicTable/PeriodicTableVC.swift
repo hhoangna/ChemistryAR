@@ -17,6 +17,8 @@ class PeriodicTableVC: BaseVC {
     var groupName = ["", "IA", "IIA", "IIIB", "IVB", "VB", "VIB", "VIIB", "VIIIB", "VIIIB", "VIIIB", "IB", "IIB", "IIIA", "IVA", "VA", "VIA", "VIIA", "VIIIA"]
     var periodName = ["", "1", "2", "3", "4", "5", "6", "7", "", "", ""]
     
+    lazy var searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,8 +27,14 @@ class PeriodicTableVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setupNavigationBar()
         setupSpreadSheetView()
         readDataJSON()
+    }
+    
+    func setupNavigationBar() {
+        let leftBarBtnItem = UIBarButtonItem.searchButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
+        self.navigationController?.navigationItem.leftBarButtonItem = leftBarBtnItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
