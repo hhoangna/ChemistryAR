@@ -70,7 +70,9 @@ extension ReactionVC: UITableViewDataSource {
         
         let dto:ReactionDetailModel = arrDisplay?[indexPath.row] ?? ReactionDetailModel()
         
-        cell.lblTitle?.attributedText = MDF(dto.phuong_trinh)
+        let str: String = dto.phuong_trinh?.replacingOccurrences(of:"class=\'span-color\'", with: "style=\'color:red;\'") ?? ""
+
+        cell.lblTitle?.attributedText = MDF(str)
         cell.tvContent?.text = dto.dieu_kien ?? ""
         
         return cell
