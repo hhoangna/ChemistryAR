@@ -131,6 +131,7 @@
 		84C7723121AB8B5700F60F43 /* ElementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723021AB8B5700F60F43 /* ElementVC.swift */; };
 		84C7723321AB8B6D00F60F43 /* ElementTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */; };
 		84C7723521ABB3BB00F60F43 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7723421ABB3BB00F60F43 /* NoteCell.xib */; };
+		84C7723821ABDCDC00F60F43 /* ReactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723721ABDCDC00F60F43 /* ReactionCell.swift */; };
 		84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */; };
 		84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E332218AA52F00AE429D /* ImagePickerVC.swift */; };
 		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
@@ -270,6 +271,7 @@
 		84C7723021AB8B5700F60F43 /* ElementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementVC.swift; sourceTree = "<group>"; };
 		84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTbvCell.swift; sourceTree = "<group>"; };
 		84C7723421ABB3BB00F60F43 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		84C7723721ABDCDC00F60F43 /* ReactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionCell.swift; sourceTree = "<group>"; };
 		84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
 		84C7E332218AA52F00AE429D /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
@@ -1056,6 +1058,7 @@
 		849712D0216E402800394891 /* Reaction */ = {
 			isa = PBXGroup;
 			children = (
+				84C7723621ABDCC600F60F43 /* Cell */,
 				849712D1216E40C000394891 /* ReactionVC.swift */,
 			);
 			path = Reaction;
@@ -1150,6 +1153,14 @@
 			isa = PBXGroup;
 			children = (
 				84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84C7723621ABDCC600F60F43 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84C7723721ABDCDC00F60F43 /* ReactionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1463,6 +1474,7 @@
 				84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */,
 				420DDD55219BFB9700E77A7F /* Services.swift in Sources */,
 				84436BCD2179840F0087D3FE /* BaseModel.swift in Sources */,
+				84C7723821ABDCDC00F60F43 /* ReactionCell.swift in Sources */,
 				8433A69821A52F8900B48B92 /* APIs + User.swift in Sources */,
 				848F7D97216376EF006F264C /* UIColor + Ext.swift in Sources */,
 				8484EF9C21A2A11A007F2180 /* ExtGestures.swift in Sources */,
@@ -1653,7 +1665,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 43432WKUU5;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1673,7 +1685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 43432WKUU5;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

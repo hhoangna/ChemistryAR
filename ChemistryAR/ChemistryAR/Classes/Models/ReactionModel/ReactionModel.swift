@@ -13,7 +13,7 @@ class ReactionDetailModel: BaseModel, Codable {
     var phuong_trinh: String? = ""
     var dieu_kien: String? = ""
     //var bookmark_active: String?
-    var id: String? = ""
+    var id: Int?
 }
 
 class ReactionModel: BaseModel, Codable {

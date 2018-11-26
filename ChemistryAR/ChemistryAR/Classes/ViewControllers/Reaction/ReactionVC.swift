@@ -17,8 +17,8 @@ class ReactionVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateCustomNavigationBar(.BackOnly, "Reaction")
 
+        sbSearch?.setValue("Done", forKey: "cancelButtonText")
         // Do any additional setup after loading the view.
     }
     
@@ -27,46 +27,53 @@ class ReactionVC: BaseVC {
         
         SERVICES().API.getReactionEquation(product:"", input: sbSearch?.text ?? "") { (result) in
             App().dismissLoadingIndicator()
-            
             switch result {
             case .object(let obj):
                 self.arrDisplay = obj.equation
                 self.tbvContent?.reloadData()
-                break
-                
             case .error(_ ):
                 self.showAlertView("Get Reaction Equation Error!")
             }
         }
     }
-
 }
 
 extension ReactionVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
-        print("String: \(searchBar.text)")
+        print("String: \(String(describing: searchBar.text))")
         fetchData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.showsCancelButton = false
+        self.tbvContent?.reloadData()
     }
 }
 
 extension ReactionVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return UITableView.automaticDimension
     }
 }
 
 extension ReactionVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: BaseTbvCell = tableView.dequeueReusableCell(withIdentifier: "ReactionCell", for: indexPath) as! BaseTbvCell
+        let cell: ReactionCell = tableView.dequeueReusableCell(withIdentifier: "ReactionCell", for: indexPath) as! ReactionCell
         
         let dto:ReactionDetailModel = arrDisplay?[indexPath.row] ?? ReactionDetailModel()
         
         cell.lblTitle?.attributedText = MDF(dto.phuong_trinh)
-        cell.lblSubtitle?.attributedText = MDF(dto.dieu_kien)
+        cell.tvContent?.attributedText = MDF(dto.dieu_kien)
         
-        return UITableViewCell()
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

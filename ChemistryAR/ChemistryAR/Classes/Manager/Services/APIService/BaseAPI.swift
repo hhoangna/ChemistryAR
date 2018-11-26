@@ -248,7 +248,7 @@ class BaseAPI {
                     
                     switch response.result {
                     case .success(let obj):
-                        result = self.handleResponse(dataResponse: response, object: obj, hasUnstructured: true)
+                        result = self.handleResponse(dataResponse: response, object: obj, hasUnstructured: false)
                         
                     case .failure(let error):
                         result = self.handleFailure(dataResponse: response, error: error)
