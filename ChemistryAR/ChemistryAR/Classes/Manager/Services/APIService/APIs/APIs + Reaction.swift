@@ -23,6 +23,7 @@ extension BaseAPI {
                        serverURL: str,
                        path: "",
                        input: .empty,
+                       hasUnstructured: true,
                        callback: callback)
     }
 }
