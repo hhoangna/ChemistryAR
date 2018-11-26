@@ -85,6 +85,7 @@ class BaseAPI {
                                                   headers:HTTPHeaders? = nil,
                                                   path: String,
                                                   input: APIInput,
+                                                  hasUnstructured:Bool = false,
                                                   callback:@escaping GenericAPICallback<RESULT, ERROR>) -> APIRequest{
         
         __identifier += 1;
@@ -141,7 +142,9 @@ class BaseAPI {
             
             switch dataResponse.result {
             case .success(let object):
-                result = self.handleResponse(dataResponse: dataResponse, object: object)
+                result = self.handleResponse(dataResponse: dataResponse,
+                                             object: object,
+                                             hasUnstructured: hasUnstructured)
                 
             case .failure(let error):
                 result = self.handleFailure(dataResponse: dataResponse, error: error)
@@ -290,7 +293,9 @@ fileprivate extension BaseAPI{
         //        }
     }
     
-    func handleResponse<RESULT:Codable, ERROR: APIError>(dataResponse: DataResponse<Any>, object: Any) -> APIOutput<RESULT, ERROR> {
+    func handleResponse<RESULT:Codable, ERROR: APIError>(dataResponse: DataResponse<Any>,
+                                                         object: Any,
+                                                         hasUnstructured:Bool) -> APIOutput<RESULT, ERROR> {
         
         let status: StatusCode = StatusCode(rawValue: (dataResponse.response?.statusCode)!) ?? .serverError
         switch status {
@@ -300,25 +305,32 @@ fileprivate extension BaseAPI{
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .formatted(.serverDateFormater)
-                objectResponse = try decoder.decode(HTTPResponse<RESULT>.self, from: dataResponse.data ?? Data())
                 
-                let success:Bool = objectResponse.success
-                
-                if success {
-                    if let obj = objectResponse.results{
-                        return .object(obj)
-                    }else {
-                        
-                        return .object(EmptyModel() as!RESULT)
-                    }
+                if hasUnstructured {
+                    let obj = try decoder.decode(RESULT.self, from: dataResponse.data ?? Data())
+                    return .object(obj)
                     
                 }else {
+                    objectResponse = try decoder.decode(HTTPResponse<RESULT>.self, from: dataResponse.data ?? Data())
                     
-                    let err = ERROR(dataResponse: dataResponse)
-                    //err.message = E(objectResponse.message)
-                    return .error(err)
+                    let success:Bool = objectResponse.success
+                    
+                    if success {
+                        if let obj = objectResponse.results{
+                            return .object(obj)
+                        }else {
+                            
+                            return .object(EmptyModel() as!RESULT)
+                        }
+                        
+                    }else {
+                        
+                        let err = ERROR(dataResponse: dataResponse)
+                        //err.message = E(objectResponse.message)
+                        return .error(err)
+                    }
                 }
-                
+               
             } catch let err {
                 print("Err:", err)
             }
