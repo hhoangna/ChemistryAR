@@ -27,14 +27,14 @@ class PeriodicTableVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupNavigationBar()
         setupSpreadSheetView()
         readDataJSON()
+        setupNavigationBar()
     }
     
     func setupNavigationBar() {
         let leftBarBtnItem = UIBarButtonItem.searchButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
-        self.navigationController?.navigationItem.leftBarButtonItem = leftBarBtnItem
+        App().mainVC?.barController?.navigationItem.leftBarButtonItems = [leftBarBtnItem]
     }
     
     override func viewDidAppear(_ animated: Bool) {
