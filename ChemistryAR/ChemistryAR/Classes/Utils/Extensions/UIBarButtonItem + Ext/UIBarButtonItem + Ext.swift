@@ -24,11 +24,26 @@ extension UIBarButtonItem {
         return item
     }
     
+    class func searchButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let frame = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let insets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 5)
+        let button = customButton(with: #imageLiteral(resourceName: "ic_search"),
+                                  highlightedImage: #imageLiteral(resourceName: "ic_search"),
+                                  frame: frame,
+                                  imageEdgeInsets: insets,
+                                  target: target,
+                                  action: action)
+        
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
     class func closeButton(target: Any, action: Selector) -> UIBarButtonItem {
         let frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         let insets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 0)
-        let button = customButton(with: #imageLiteral(resourceName: "favor"),
-                                  highlightedImage: #imageLiteral(resourceName: "ic-Close"),
+        let button = customButton(with: #imageLiteral(resourceName: "ic_removeText"),
+                                  highlightedImage: #imageLiteral(resourceName: "ic_removeText"),
                                   frame: frame,
                                   imageEdgeInsets: insets,
                                   target: target,
@@ -65,7 +80,7 @@ extension UIBarButtonItem {
     
     class func filterButton(target: Any, action: Selector) -> UIBarButtonItem {
         let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        let button = customButton(with: #imageLiteral(resourceName: "ic-Sort"),
+        let button = customButton(with: #imageLiteral(resourceName: "ic_Back"),
                                   frame: frame,
                                   target: target,
                                   action: action)

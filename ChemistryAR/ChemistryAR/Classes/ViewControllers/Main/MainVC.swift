@@ -30,7 +30,6 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         let tabBar = ESTabBarController()
         tabBar.delegate = self
         tabBar.navigationItem.hidesBackButton = true
-        tabBar.navigationItem.title = "Periodic Table"
         barController = tabBar
         
         let vPeriodic:PeriodicTableVC = PeriodicTableVC.load(SB: .Periodic)
@@ -51,6 +50,7 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if viewController is  PeriodicTableVC {
             tabBarController.navigationItem.title = "Periodic Table"
+            
         }else if viewController is ReactionVC{
             tabBarController.navigationItem.title = "Reaction Chemical"
 

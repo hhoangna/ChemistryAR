@@ -34,7 +34,6 @@ class PeriodicTableVC: BaseVC {
         vContainer?.flashScrollIndicators()
     }
     
-    
     func setupSpreadSheetView() {
         vContainer?.delegate = self
         vContainer?.dataSource = self
