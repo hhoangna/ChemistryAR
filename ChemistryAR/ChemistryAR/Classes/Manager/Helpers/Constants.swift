@@ -85,7 +85,7 @@ func MDF(_ str : String?) -> NSAttributedString {
     if let stringLength = att?.string.count {
         let range: NSRange = NSMakeRange(0, stringLength)
         att?.addAttribute(NSAttributedString.Key.paragraphStyle, value:attP, range:range)
-        att?.addAttribute(NSAttributedString.Key.font, value:UIFont.systemFont(ofSize: 14), range:range)
+        att?.addAttribute(NSAttributedString.Key.font, value:UIFont.boldSystemFont(ofSize: 16), range:range)
     }
     
     return att ?? NSAttributedString()
