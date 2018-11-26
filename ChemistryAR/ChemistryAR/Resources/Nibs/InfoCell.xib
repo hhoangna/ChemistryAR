@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InfoCell" customModule="ChemistryAR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="146" height="179"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPq-wl-4uK" customClass="DiagonalLine" customModule="ChemistryAR" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="146" height="179"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stg-GU-2Go">
+                            <rect key="frame" x="116.5" y="5" width="24.5" height="10"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cye-ms-QFO">
+                            <rect key="frame" x="5" y="164" width="25.5" height="10"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="cye-ms-QFO" secondAttribute="bottom" constant="5" id="8CB-wy-6ny"/>
+                        <constraint firstItem="stg-GU-2Go" firstAttribute="top" secondItem="cPq-wl-4uK" secondAttribute="top" constant="5" id="OYf-Nb-Y0r"/>
+                        <constraint firstItem="cye-ms-QFO" firstAttribute="leading" secondItem="cPq-wl-4uK" secondAttribute="leading" constant="5" id="bxJ-Rn-hDN"/>
+                        <constraint firstAttribute="trailing" secondItem="stg-GU-2Go" secondAttribute="trailing" constant="5" id="qwy-ZK-tqA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="flip" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cPq-wl-4uK" secondAttribute="trailing" id="DUy-Rc-rR7"/>
+                <constraint firstItem="cPq-wl-4uK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EHo-FD-lPj"/>
+                <constraint firstItem="cPq-wl-4uK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PAv-GQ-nTf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cPq-wl-4uK" secondAttribute="bottom" id="ZtR-Mp-w3w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-44.799999999999997" y="-66.11694152923539"/>
+        </view>
+    </objects>
+</document>

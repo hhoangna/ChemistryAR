@@ -124,6 +124,9 @@
 		84A99F5B2164AE10007C54CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F582164AE0F007C54CD /* Localizable.strings */; };
 		84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */; };
 		84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F602164B257007C54CD /* UIButton + Ext.swift */; };
+		84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7722221AA82CA00F60F43 /* InfoCell.xib */; };
+		84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */; };
+		84C7722821AB0D4000F60F43 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7722721AB0D4000F60F43 /* TeamCell.xib */; };
 		84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */; };
 		84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E332218AA52F00AE429D /* ImagePickerVC.swift */; };
 		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
@@ -254,6 +257,9 @@
 		84A99F5A2164AE0F007C54CD /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		84A99F602164B257007C54CD /* UIButton + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Ext.swift"; sourceTree = "<group>"; };
+		84C7722221AA82CA00F60F43 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
+		84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber + Ext.swift"; sourceTree = "<group>"; };
+		84C7722721AB0D4000F60F43 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
 		84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
 		84C7E332218AA52F00AE429D /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
@@ -757,6 +763,8 @@
 				84436BD82179CC170087D3FE /* ElementCell.xib */,
 				8433A6AA21A551ED00B48B92 /* TextViewInput.xib */,
 				8433A68921A3EECD00B48B92 /* ModelPanel.storyboard */,
+				84C7722221AA82CA00F60F43 /* InfoCell.xib */,
+				84C7722721AB0D4000F60F43 /* TeamCell.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -928,6 +936,7 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				84C7722421AAC77D00F60F43 /* NSNumber + Ext */,
 				8433A6A421A543E100B48B92 /* TextView + Ext */,
 				8433A6A121A5430000B48B92 /* UIAlertController + Ext */,
 				8433A69E21A541FD00B48B92 /* AttributedText + Ext */,
@@ -1095,6 +1104,14 @@
 			path = "UIButton + Ext";
 			sourceTree = "<group>";
 		};
+		84C7722421AAC77D00F60F43 /* NSNumber + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */,
+			);
+			path = "NSNumber + Ext";
+			sourceTree = "<group>";
+		};
 		84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -1207,12 +1224,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A99F4521648C30007C54CD /* Home.storyboard in Resources */,
+				84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */,
 				8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */,
 				8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */,
 				843F93E62174A7ED0016D04F /* GoogleService-Info.plist in Resources */,
 				420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */,
 				8433A68A21A3EECD00B48B92 /* ModelPanel.storyboard in Resources */,
 				84A99F3521646C4D007C54CD /* video_background.mp4 in Resources */,
+				84C7722821AB0D4000F60F43 /* TeamCell.xib in Resources */,
 				84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */,
 				84A99F3821647B47007C54CD /* Main.storyboard in Resources */,
 				84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */,
@@ -1363,6 +1382,7 @@
 				8433A69121A4FF0200B48B92 /* ScanModelClv.swift in Sources */,
 				420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
+				84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				8433A68821A3C0AB00B48B92 /* ModelCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
@@ -1577,7 +1597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 43432WKUU5;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1597,7 +1617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 43432WKUU5;
+				DEVELOPMENT_TEAM = 2UKZEPM7R9;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

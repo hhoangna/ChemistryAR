@@ -136,6 +136,20 @@ struct AppColor {
     static let brownColor           = UIColor(hex: "#7C630D")
     static let lightYellowColor     = UIColor(hex: "#FFFD89")
     static let greenColor           = UIColor(hex: "#15B227")
+    
+    static let khihiemColor         = UIColor(hex: "#c2fffe")
+    static let kiemthoColor         = UIColor(hex: "#feddb0")
+    static let kiemColor            = UIColor(hex: "#fc6769")
+    static let akimColor            = UIColor(hex: "#cccb9b")
+    static let chuyentiepColor      = UIColor(hex: "#fec0c1")
+    static let actiniColor          = UIColor(hex: "#fd9bcb")
+    static let lantanColor          = UIColor(hex: "#fec1fe")
+    static let unknownColor         = UIColor(hex: "#e8e8e8")
+    static let halogenColor         = UIColor(hex: "#fffe9f")
+    static let phikimColor          = UIColor(hex: "#a3fda4")
+    static let klyeuColor           = UIColor(hex: "#cccccc")
+    
+    static let gasColor             = UIColor(hex: "#ef1700")
 }
 
 struct Platform {

@@ -234,3 +234,72 @@ extension Array where Element: NSAttributedString {
     }
 }
 
+extension Character {
+    var unicode: String {
+        // See table here: https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts
+        let unicodeChars = [Character("0"):"\u{2070}",
+                            Character("1"):"\u{00B9}",
+                            Character("2"):"\u{00B2}",
+                            Character("3"):"\u{00B3}",
+                            Character("4"):"\u{2074}",
+                            Character("5"):"\u{2075}",
+                            Character("6"):"\u{2076}",
+                            Character("7"):"\u{2077}",
+                            Character("8"):"\u{2078}",
+                            Character("9"):"\u{2079}",
+                            Character("i"):"\u{2071}",
+                            Character("+"):"\u{207A}",
+                            Character("-"):"\u{207B}",
+                            Character("="):"\u{207C}",
+                            Character("("):"\u{207D}",
+                            Character(")"):"\u{207E}",
+                            Character("n"):"\u{207F}"]
+        
+        if let unicode = unicodeChars[self] {
+            return unicode
+        }
+        
+        return String(self)
+    }
+}
+
+extension String {
+    var unicodeSuperscript: String {
+        let char = Character(self)
+        return char.unicode
+    }
+    
+    func superscripted() -> String {
+        let regex = try! NSRegularExpression(pattern: "\\^\\{([^\\}]*)\\}")
+        var unprocessedString = self
+        var resultString = String()
+        
+        while let match = regex.firstMatch(in: unprocessedString, options: .reportCompletion, range: NSRange(location: 0, length: unprocessedString.count)) {
+            // add substring before match
+            let substringRange = unprocessedString.index(unprocessedString.startIndex, offsetBy: match.range.location)
+            let subString = unprocessedString.prefix(upTo: substringRange)
+            resultString.append(String(subString))
+            
+            // add match with subscripted style
+            let capturedSubstring = NSAttributedString(string: unprocessedString).attributedSubstring(from: match.range(at: 1)).mutableCopy() as! NSMutableAttributedString
+            capturedSubstring.string.forEach { (char) in
+                let superScript = char.unicode
+                let string = NSAttributedString(string: superScript)
+                resultString.append(string.string)
+            }
+            
+            // strip off the processed part
+            unprocessedString.deleteCharactersInRange(range: NSRange(location: 0, length: match.range.location + match.range.length))
+        }
+        
+        // add substring after last match
+        resultString.append(unprocessedString)
+        return resultString
+    }
+    
+    mutating func deleteCharactersInRange(range: NSRange) {
+        let mutableSelf = NSMutableString(string: self)
+        mutableSelf.deleteCharacters(in: range)
+        self = mutableSelf as String
+    }
+}
