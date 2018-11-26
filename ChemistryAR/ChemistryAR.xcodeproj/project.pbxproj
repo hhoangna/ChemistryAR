@@ -132,6 +132,8 @@
 		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
 		84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA02189CCF3001F0001 /* ProfileVC.swift */; };
 		84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA22189CD07001F0001 /* ProfileCell.swift */; };
+		8C02913821AB8DFD00AA2DB0 /* APIs + Reaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02913721AB8DFC00AA2DB0 /* APIs + Reaction.swift */; };
+		8C02913B21AB8E5A00AA2DB0 /* ReactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02913A21AB8E5A00AA2DB0 /* ReactionModel.swift */; };
 		C82270514EE2A2D17FD2AFA3 /* Pods_ChemistryAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8350ACC1D14490AD975BC97 /* Pods_ChemistryAR.framework */; };
 /* End PBXBuildFile section */
 
@@ -265,6 +267,8 @@
 		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
 		84F72DA02189CCF3001F0001 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		84F72DA22189CD07001F0001 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		8C02913721AB8DFC00AA2DB0 /* APIs + Reaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIs + Reaction.swift"; sourceTree = "<group>"; };
+		8C02913A21AB8E5A00AA2DB0 /* ReactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionModel.swift; sourceTree = "<group>"; };
 		970F231EF99B0C048E1C3E24 /* Pods-ChemistryAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.release.xcconfig"; sourceTree = "<group>"; };
 		C8350ACC1D14490AD975BC97 /* Pods_ChemistryAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChemistryAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -329,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				420DDD66219C0D8D00E77A7F /* APIs.swift */,
+				8C02913721AB8DFC00AA2DB0 /* APIs + Reaction.swift */,
 				84880DDB219DC5FF00C4D075 /* APIs + Element.swift */,
 				8433A69721A52F8900B48B92 /* APIs + User.swift */,
 			);
@@ -477,6 +482,7 @@
 		84154F1C21621FAE008F2C05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8C02913921AB8E2C00AA2DB0 /* ReactionModel */,
 				8433A6AF21A5A3D100B48B92 /* PasswordModel */,
 				84436BCA217983CA0087D3FE /* ElementModel */,
 				84880DD8219DB1D000C4D075 /* CategoryModel */,
@@ -1153,6 +1159,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8C02913921AB8E2C00AA2DB0 /* ReactionModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C02913A21AB8E5A00AA2DB0 /* ReactionModel.swift */,
+			);
+			path = ReactionModel;
+			sourceTree = "<group>";
+		};
 		E7D9037391AABB24C6871666 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1174,6 +1188,7 @@
 				84154EFE21621D34008F2C05 /* Frameworks */,
 				84154EFF21621D34008F2C05 /* Resources */,
 				0FF3C57354EB74C6F0146258 /* [CP] Embed Pods Frameworks */,
+				24B57CC17FAC203D31007D11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1259,7 +1274,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -1273,18 +1288,15 @@
 				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -1298,17 +1310,36 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24B57CC17FAC203D31007D11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2211AED69C7DC105ACBA76F /* [CP] Check Pods Manifest.lock */ = {
@@ -1379,6 +1410,7 @@
 				8484EF8D21A29A4A007F2180 /* DetectedBoundingBox.swift in Sources */,
 				8433A69621A5048E00B48B92 /* UITableView + Ext.swift in Sources */,
 				844305092188B2D00074B609 /* UIImageView + Ext.swift in Sources */,
+				8C02913B21AB8E5A00AA2DB0 /* ReactionModel.swift in Sources */,
 				8433A69121A4FF0200B48B92 /* ScanModelClv.swift in Sources */,
 				420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
@@ -1421,6 +1453,7 @@
 				8484EFB121A305ED007F2180 /* MultipeerSession.swift in Sources */,
 				8433A69D21A5419400B48B92 /* TextViewInputController.swift in Sources */,
 				8443050E2189421C0074B609 /* UserListVC.swift in Sources */,
+				8C02913821AB8DFD00AA2DB0 /* APIs + Reaction.swift in Sources */,
 				8484EF8521A29A4A007F2180 /* Tile.swift in Sources */,
 				420DDD5B219BFC7000E77A7F /* PushNotificationService.swift in Sources */,
 				84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */,
@@ -1597,7 +1630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UKZEPM7R9;
+				DEVELOPMENT_TEAM = 43432WKUU5;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1617,7 +1650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UKZEPM7R9;
+				DEVELOPMENT_TEAM = 43432WKUU5;
 				INFOPLIST_FILE = "$(SRCROOT)/ChemistryAR/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
