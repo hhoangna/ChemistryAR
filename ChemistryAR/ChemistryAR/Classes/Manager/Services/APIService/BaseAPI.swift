@@ -307,7 +307,7 @@ fileprivate extension BaseAPI{
                 decoder.dateDecodingStrategy = .formatted(.serverDateFormater)
                 
                 if hasUnstructured {
-                    let obj = try decoder.decode(RESULT.self, from: dataResponse.data ?? Data())
+                    let obj:RESULT = try decoder.decode(RESULT.self, from: dataResponse.data ?? Data())
                     return .object(obj)
                     
                 }else {
