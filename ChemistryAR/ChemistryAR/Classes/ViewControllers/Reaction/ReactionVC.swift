@@ -71,7 +71,7 @@ extension ReactionVC: UITableViewDataSource {
         let dto:ReactionDetailModel = arrDisplay?[indexPath.row] ?? ReactionDetailModel()
         
         cell.lblTitle?.attributedText = MDF(dto.phuong_trinh)
-        cell.tvContent?.attributedText = MDF(dto.dieu_kien)
+        cell.tvContent?.text = dto.dieu_kien ?? ""
         
         return cell
     }
