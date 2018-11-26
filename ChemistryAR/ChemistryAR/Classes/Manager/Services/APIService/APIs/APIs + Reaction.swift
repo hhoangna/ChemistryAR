@@ -18,7 +18,6 @@ extension BaseAPI {
             param = "\(param)/\(prStr ?? "")"
         }
 
-        
         let str = "http://www.studyvn.com/chemistry/find-equation/\(param)?getJSON&type=public"
         return request(method: .GET,
                        serverURL: str,

@@ -41,8 +41,10 @@ class ReactionVC: BaseVC {
 }
 
 extension ReactionVC: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("String: \(searchText)")
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        print("String: \(searchBar.text)")
         fetchData()
     }
 }
