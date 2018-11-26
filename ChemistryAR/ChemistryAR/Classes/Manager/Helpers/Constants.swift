@@ -72,6 +72,41 @@ func ABS<T>(_ x: T) -> T where T : Comparable, T : SignedNumeric {
     return x < 0 ? -x : x
 }
 
+
+func MDF(_ str : String?) -> NSAttributedString {
+    let htmlData = NSString(string: str ?? "").data(using: String.Encoding.utf8.rawValue)
+    let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+    
+    let att = try? NSMutableAttributedString.init(data: htmlData ?? Data(), options: options, documentAttributes: nil)
+    let attP = NSMutableParagraphStyle()
+    
+    attP.alignment = .left
+    
+    if let stringLength = att?.string.count {
+        let range: NSRange = NSMakeRange(0, stringLength)
+        att?.addAttribute(NSAttributedString.Key.paragraphStyle, value:attP, range:range)
+        att?.addAttribute(NSAttributedString.Key.font, value:UIFont.systemFont(ofSize: 14), range:range)
+    }
+    
+    return att ?? NSAttributedString()
+}
+
+func MD(_ val: String?) -> NSAttributedString {
+    let att = NSMutableAttributedString(string: E(val))
+    let attP = NSMutableParagraphStyle()
+    
+    attP.paragraphSpacing = CGFloat(10)
+    attP.lineSpacing = CGFloat(6)
+    
+    if let stringLength = val?.count {
+        let range: NSRange = NSMakeRange(0, stringLength)
+        att.addAttribute(NSAttributedString.Key.paragraphStyle, value:attP, range:range)
+        att.addAttribute(NSAttributedString.Key.font, value:UIFont.systemFont(ofSize: 24), range:range)
+    }
+    
+    return att
+}
+
 /// Network constants
 struct Network {
     static let googleAPIKey = "AIzaSyDXCigMmInLjLSiEoXRIBaS3teaFHiwtqs"
