@@ -49,6 +49,7 @@ class PeriodicTableVC: BaseVC {
         vContainer?.register(UINib(nibName: String(describing: ElementCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ElementCell.self))
         vContainer?.register(UINib(nibName: String(describing: InfoCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: InfoCell.self))
         vContainer?.register(UINib(nibName: String(describing: TeamCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: TeamCell.self))
+        vContainer?.register(UINib(nibName: String(describing: NoteCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: NoteCell.self))
         vContainer?.register(BlankCell.self, forCellWithReuseIdentifier: String(describing: BlankCell.self))
         vContainer?.register(TitleCell.self, forCellWithReuseIdentifier: String(describing: TitleCell.self))
     }
@@ -125,12 +126,11 @@ extension PeriodicTableVC: SpreadsheetViewDataSource {
             } else {
                 return cellPeriod(spreadsheetView, indexPath)
             }
-            
         } else if case (1...18, 1...10) = (indexPath.column, indexPath.row) {
             if case (2...17, 1) = (indexPath.column, indexPath.row) {
                 return cellTitle(spreadsheetView, indexPath)
             } else if case (3...12, 2...3) = (indexPath.column, indexPath.row) {
-                return cellBlank(spreadsheetView, indexPath)
+                return cellNote(spreadsheetView, indexPath)
             } else if case (0...18, 8) = (indexPath.column, indexPath.row) {
                 return cellBlank(spreadsheetView, indexPath)
             } else if case (18, 9...10) = (indexPath.column, indexPath.row) {
@@ -154,6 +154,35 @@ extension PeriodicTableVC: SpreadsheetViewDataSource {
 extension PeriodicTableVC: SpreadsheetViewDelegate {
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {
         print("Selected: (row: \(indexPath.row), column: \(indexPath.column))")
+        
+        if case (1...18, 0) = (indexPath.column, indexPath.row) {
+            return
+        } else if case (0, 1...10) = (indexPath.column, indexPath.row) {
+            return
+        } else if case (1...18, 1...10) = (indexPath.column, indexPath.row) {
+            if case (2...17, 1) = (indexPath.column, indexPath.row) {
+                return
+            } else if case (3...12, 2...3) = (indexPath.column, indexPath.row) {
+                return
+            } else if case (0...18, 8) = (indexPath.column, indexPath.row) {
+                return
+            } else if case (18, 9...10) = (indexPath.column, indexPath.row) {
+                return
+            } else if case (1...2, 9) = (indexPath.column, indexPath.row) {
+                return
+            } else if case (1...2, 10) = (indexPath.column, indexPath.row) {
+                return
+            } else if case (3, 6) = (indexPath.column, indexPath.row) {
+                return
+            }else if case (3, 7) = (indexPath.column, indexPath.row) {
+                return
+            } else {
+                let element = displayElement[indexPath.row - 1][indexPath.column - 1]
+                let vc: ElementVC = .load(SB: .Periodic)
+                vc.elementId = element._id
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 
@@ -260,6 +289,12 @@ extension PeriodicTableVC {
     
     func cellBlank(_ spreadsheetView: SpreadsheetView,_ indexPath:IndexPath) -> Cell {
         let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: BlankCell.self), for: indexPath) as! BlankCell
+        
+        return cell
+    }
+    
+    func cellNote(_ spreadsheetView: SpreadsheetView,_ indexPath:IndexPath) -> Cell {
+        let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: NoteCell.self), for: indexPath) as! NoteCell
         
         return cell
     }

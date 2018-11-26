@@ -10,10 +10,10 @@ import Foundation
 
 extension BaseAPI {
     @discardableResult
-    func getAllElement(callback: @escaping APICallback<[ElementModel]>) -> APIRequest{
+    func getElementDetail(elementId: String?, callback: @escaping APICallback<ElementModel>) -> APIRequest{
         
         return request(method: .GET,
-                       path: PATH_REQUEST_URL.GET_ALL_ELEMENT.URL,
+                       path: String(format: PATH_REQUEST_URL.GET_DETAIL_ELEMENT.URL, elementId!),
                        input: .empty,
                        callback: callback)
     }

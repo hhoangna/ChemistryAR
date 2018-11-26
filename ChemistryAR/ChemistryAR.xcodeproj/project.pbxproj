@@ -127,6 +127,10 @@
 		84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7722221AA82CA00F60F43 /* InfoCell.xib */; };
 		84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */; };
 		84C7722821AB0D4000F60F43 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7722721AB0D4000F60F43 /* TeamCell.xib */; };
+		84C7722D21AB866300F60F43 /* CoverBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7722C21AB866300F60F43 /* CoverBannerView.swift */; };
+		84C7723121AB8B5700F60F43 /* ElementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723021AB8B5700F60F43 /* ElementVC.swift */; };
+		84C7723321AB8B6D00F60F43 /* ElementTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */; };
+		84C7723521ABB3BB00F60F43 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7723421ABB3BB00F60F43 /* NoteCell.xib */; };
 		84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */; };
 		84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E332218AA52F00AE429D /* ImagePickerVC.swift */; };
 		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
@@ -260,6 +264,10 @@
 		84C7722221AA82CA00F60F43 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber + Ext.swift"; sourceTree = "<group>"; };
 		84C7722721AB0D4000F60F43 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		84C7722C21AB866300F60F43 /* CoverBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverBannerView.swift; sourceTree = "<group>"; };
+		84C7723021AB8B5700F60F43 /* ElementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementVC.swift; sourceTree = "<group>"; };
+		84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTbvCell.swift; sourceTree = "<group>"; };
+		84C7723421ABB3BB00F60F43 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
 		84C7E332218AA52F00AE429D /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
@@ -464,6 +472,7 @@
 		84154F1B21621FA8008F2C05 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				84C7722B21AB864500F60F43 /* CoverBannerCustom */,
 				8433A6A721A5460800B48B92 /* DatePicker */,
 				8433A69921A5412900B48B92 /* TextViewInput */,
 				84C7E331218AA50800AE429D /* ImagePicker */,
@@ -765,6 +774,7 @@
 				8433A68921A3EECD00B48B92 /* ModelPanel.storyboard */,
 				84C7722221AA82CA00F60F43 /* InfoCell.xib */,
 				84C7722721AB0D4000F60F43 /* TeamCell.xib */,
+				84C7723421ABB3BB00F60F43 /* NoteCell.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -796,6 +806,7 @@
 		844B728C2165FE1E001E778F /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
+				84C7722E21AB8B2D00F60F43 /* ElementDetailVC */,
 				844B728F216602B1001E778F /* Cell */,
 				844B728D2165FE4F001E778F /* PeriodicTableVC.swift */,
 			);
@@ -1112,6 +1123,31 @@
 			path = "NSNumber + Ext";
 			sourceTree = "<group>";
 		};
+		84C7722B21AB864500F60F43 /* CoverBannerCustom */ = {
+			isa = PBXGroup;
+			children = (
+				84C7722C21AB866300F60F43 /* CoverBannerView.swift */,
+			);
+			path = CoverBannerCustom;
+			sourceTree = "<group>";
+		};
+		84C7722E21AB8B2D00F60F43 /* ElementDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				84C7722F21AB8B3800F60F43 /* Cell */,
+				84C7723021AB8B5700F60F43 /* ElementVC.swift */,
+			);
+			path = ElementDetailVC;
+			sourceTree = "<group>";
+		};
+		84C7722F21AB8B3800F60F43 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1271,7 @@
 				84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */,
 				84A99F3821647B47007C54CD /* Main.storyboard in Resources */,
 				84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */,
+				84C7723521ABB3BB00F60F43 /* NoteCell.xib in Resources */,
 				84A99F222163B836007C54CD /* Login.storyboard in Resources */,
 				84A99F2921645324007C54CD /* TabBarTopView.xib in Resources */,
 				84880DE321A1158600C4D075 /* elements.json in Resources */,
@@ -1344,11 +1381,13 @@
 				420DDD5F219C07CE00E77A7F /* BaseAPI.swift in Sources */,
 				8484EF9E21A2A14E007F2180 /* ExtSessionInfo.swift in Sources */,
 				848F7D9C21637953006F264C /* Languages.swift in Sources */,
+				84C7722D21AB866300F60F43 /* CoverBannerView.swift in Sources */,
 				84430510218943740074B609 /* UserListCell.swift in Sources */,
 				84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */,
 				849712D4216E40CF00394891 /* SettingVC.swift in Sources */,
 				848F7D7E21632738006F264C /* CustomNavigationBar.swift in Sources */,
 				8433A6A321A5432200B48B92 /* UIAlertController + Ext.swift in Sources */,
+				84C7723121AB8B5700F60F43 /* ElementVC.swift in Sources */,
 				8433A6A921A5461D00B48B92 /* DatePickerController.swift in Sources */,
 				8484EF8B21A29A4A007F2180 /* Snapping.swift in Sources */,
 				84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */,
@@ -1399,6 +1438,7 @@
 				848F7D9021633A2A006F264C /* MainVC.swift in Sources */,
 				8433A6B121A5A3EF00B48B92 /* PasswordModel.swift in Sources */,
 				84436BD2217987E80087D3FE /* AppConfiguration.swift in Sources */,
+				84C7723321AB8B6D00F60F43 /* ElementTbvCell.swift in Sources */,
 				84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */,
 				849712E1216F45E100394891 /* BounceCustomTabbar.swift in Sources */,
 				8484EFB421A311D9007F2180 /* ARSharingState.swift in Sources */,
