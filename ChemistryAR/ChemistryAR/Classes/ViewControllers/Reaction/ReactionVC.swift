@@ -30,6 +30,8 @@ class ReactionVC: BaseVC {
             
             switch result {
             case .object(let obj):
+                self.arrDisplay = obj.equation
+                self.tbvContent?.reloadData()
                 break
                 
             case .error(_ ):
