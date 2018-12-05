@@ -13,28 +13,86 @@
 "Hello"="Xin chào";
 
 //LOGIN SCREEN
-"Login" = "Đăng nhập";
-"Register" = "Đăng ký";
+"LOGIN" = "Đăng nhập";
+"REGISTER" = "Đăng ký";
 "Email" = "Email";
 "Password" = "Mật khẩu";
 "User Name" = "Tên người dùng";
 "Re-Password"="Nhập lại mật khẩu";
 
-//BOTTOMBAR
-"Periodic" = "BTH";
-"Reaction" = "Phản ứng";
-"Home" = "Trang chính";
-"AR" = "AR";
-"Setting" = "Cài đặt";
-
 //HOME SCREEN
-"Periodic Table" = "Bảng tuần hoàn";
-"Chemical Reaction" = "Phản ứng hoá học";
-"Augmented Reality" = "Thực tế ảo";
+"Periodic Table" = "Bảng Tuần Hoàn";
+"Reaction Chemical" = "Phản Ứng";
+"Augmented Reality" = "Thực Tế Ảo";
+"Setting" = "Cài Đặt";
 
-//PERIODIC SCREEN
-"Mendeleev Periodic Table" = "Bảng tuần hoàn Mendeleev";
-"Solubility" = "Độ hoà tan";
-"Electronegativity of elements" = "Độ âm điện nguyên tố";
-"Molecular weight of organic substances" = "Trọng lượng phân tử hữu cơ";
-"Reactivity series" = "Chuỗi phản ứng";
+//PERIODIC TABLE
+"Search" = "Tìm kiếm";
+"Search with name, symbol..." = "Tìm với tên, kí hiệu...";
+"Name" = "Tên";
+"Symbol" = "Ký hiệu";
+"Atomic No."= "Số ng. tử";
+"Atomic Number"="Số nguyên tử";
+"Atomic Mass"= "Khối lượng nguyên tử";
+"Standard State"= "Trạng thái";
+"Density"="Mật độ";
+"Boiling Point"="Nhiệt độ sôi";
+"Melting Point"="Nhiệt độ nóng chảy";
+"Electronic Configuration"= "Cấu hình electron";
+"Oxidation States"="Số ô xi hoá";
+"Information"="Thông tin";
+"Other info"="Thông tin khác";
+"Group"="Nhóm";
+"Period"="Chu kì";
+
+//REACTION
+"Get Reaction Equation Error!"="Lấy phương trình lỗi!";
+
+//ARKIT
+"New Scan"="Quét mới";
+"Load Object"="Tải mô hình";
+"Cancel"="Huỷ";
+"Select options"="Chọn chế độ";
+"Mine" = "Của tôi";
+"Gallery"="Thư viện";
+"No Data"="Không có dữ liệu";
+
+//SETTING
+"Day Mode"="Ngày";
+"Night Mode"="Đêm";
+"Language"="Ngôn ngữ";
+"About"="Thông tin";
+"SETTING"="CÀI ĐẶT";
+"User Management"="Quản lý người dùng";
+"Model Management"="Quản lý mô hình";
+"DEVELOPER"="NHÀ PHÁT TRIỂN";
+"Last active: "="Hoạt động lần cuối: ";
+"Detail"="Chi tiết";
+"Profile"="Hồ sơ";
+"DOB"="Ngày sinh";
+"Address"="Địa chỉ";
+"Deactive Account"="Khoá tài khoản";
+"Active Account"="Mở tài khoản";
+"Change Password"="Đổi mật khẩu";
+"LOGOUT"="ĐĂNG XUẤT";
+"Old Password"="Mật khẩu cũ";
+"New Password"="Mật khẩu mới";
+"Re-New Password"="Nhập lại mật khẩu mới";
+"Do you want to update your change?"="Bạn muốn cập nhật thay đổi của bạn?";
+"Update"="Cập nhật";
+"Discard"="Huỷ bỏ";
+"Update successfully"="Cập nhật thàh công";
+"OK"="OK";
+"Not submit"="Chưa rõ";
+"Change Address"="Đổi địa chỉ";
+"Enter Address"="Nhập địa chỉ";
+"Change Username"="Đổi tên";
+"Enter Name"="Nhập tên";
+"Select date"="Chọn ngày";
+"ACCOUNT"="TÀI KHOẢN";
+"Push Notification"="Thông báo";
+"Yes"="Có";
+"Do you want to logout?"="Bạn có muốn đăng xuất?";
+"%i days ago"="%i ngày trước";
+"%i day ago"="%i ngày trước";
+"Deactived"="Đã khoá";

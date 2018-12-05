@@ -37,4 +37,11 @@ class UserModel: BaseModel, Codable {
         return body as! ResponseDictionary
     }
     
+    func activeAccount() -> ResponseDictionary {
+        let body = NSMutableDictionary()
+        body.setValue(active, forKey: "active")
+        
+        return body as! ResponseDictionary
+    }
+    
 }

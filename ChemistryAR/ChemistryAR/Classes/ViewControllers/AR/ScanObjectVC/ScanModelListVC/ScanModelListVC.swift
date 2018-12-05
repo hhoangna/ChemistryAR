@@ -38,8 +38,8 @@ class ScanModelListVC: BaseVC {
             topItemView?.delegate = self
         }
         
-        let tabMine = TabBarItem.init("Mine")
-        let tabAll = TabBarItem.init("Gallery")
+        let tabMine = TabBarItem.init("Mine".localized)
+        let tabAll = TabBarItem.init("Gallery".localized)
         
         topItemView?.tabBarTopItems = [tabMine,tabAll]
         if let tabBarItem = topItemView {

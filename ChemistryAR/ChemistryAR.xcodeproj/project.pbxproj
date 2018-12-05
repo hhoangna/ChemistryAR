@@ -115,7 +115,6 @@
 		84A99F33216468EB007C54CD /* RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F32216468EB007C54CD /* RegisterCell.swift */; };
 		84A99F3521646C4D007C54CD /* video_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F3421646C46007C54CD /* video_background.mp4 */; };
 		84A99F3821647B47007C54CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F3621647B47007C54CD /* Main.storyboard */; };
-		84A99F4521648C30007C54CD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F4421648C30007C54CD /* Home.storyboard */; };
 		84A99F4A2164901F007C54CD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F492164901F007C54CD /* Cache.swift */; };
 		84A99F4C2164A61B007C54CD /* Periodic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F4B2164A61B007C54CD /* Periodic.storyboard */; };
 		84A99F4E2164A62C007C54CD /* Reaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F4D2164A62C007C54CD /* Reaction.storyboard */; };
@@ -124,6 +123,8 @@
 		84A99F5B2164AE10007C54CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F582164AE0F007C54CD /* Localizable.strings */; };
 		84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */; };
 		84A99F612164B257007C54CD /* UIButton + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F602164B257007C54CD /* UIButton + Ext.swift */; };
+		84BC042F21AC476F007130B0 /* PeriodicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC042E21AC476F007130B0 /* PeriodicListCell.swift */; };
+		84BC043221AD1A25007130B0 /* UILabel + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC043121AD1A25007130B0 /* UILabel + Ext.swift */; };
 		84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7722221AA82CA00F60F43 /* InfoCell.xib */; };
 		84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */; };
 		84C7722821AB0D4000F60F43 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7722721AB0D4000F60F43 /* TeamCell.xib */; };
@@ -131,8 +132,10 @@
 		84C7723121AB8B5700F60F43 /* ElementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723021AB8B5700F60F43 /* ElementVC.swift */; };
 		84C7723321AB8B6D00F60F43 /* ElementTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */; };
 		84C7723521ABB3BB00F60F43 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C7723421ABB3BB00F60F43 /* NoteCell.xib */; };
+		84C7723B21ABF9F700F60F43 /* ElementListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7723A21ABF9F700F60F43 /* ElementListVC.swift */; };
 		84C7E330218A9F2800AE429D /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */; };
 		84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7E332218AA52F00AE429D /* ImagePickerVC.swift */; };
+		84C81A1821AFD2BE002938C7 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C81A1721AFD2BE002938C7 /* AboutVC.swift */; };
 		84F72D9D21898A64001F0001 /* ValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72D9C21898A64001F0001 /* ValidateUtils.swift */; };
 		84F72DA12189CCF3001F0001 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA02189CCF3001F0001 /* ProfileVC.swift */; };
 		84F72DA32189CD07001F0001 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F72DA22189CD07001F0001 /* ProfileCell.swift */; };
@@ -254,7 +257,6 @@
 		84A99F32216468EB007C54CD /* RegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCell.swift; sourceTree = "<group>"; };
 		84A99F3421646C46007C54CD /* video_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_background.mp4; sourceTree = "<group>"; };
 		84A99F3721647B47007C54CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84A99F4421648C30007C54CD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		84A99F492164901F007C54CD /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		84A99F4B2164A61B007C54CD /* Periodic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Periodic.storyboard; sourceTree = "<group>"; };
 		84A99F4D2164A62C007C54CD /* Reaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reaction.storyboard; sourceTree = "<group>"; };
@@ -264,6 +266,8 @@
 		84A99F5A2164AE0F007C54CD /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84A99F5D2164B19A007C54CD /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		84A99F602164B257007C54CD /* UIButton + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Ext.swift"; sourceTree = "<group>"; };
+		84BC042E21AC476F007130B0 /* PeriodicListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicListCell.swift; sourceTree = "<group>"; };
+		84BC043121AD1A25007130B0 /* UILabel + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Ext.swift"; sourceTree = "<group>"; };
 		84C7722221AA82CA00F60F43 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		84C7722521AAC79600F60F43 /* NSNumber + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber + Ext.swift"; sourceTree = "<group>"; };
 		84C7722721AB0D4000F60F43 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
@@ -271,8 +275,10 @@
 		84C7723021AB8B5700F60F43 /* ElementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementVC.swift; sourceTree = "<group>"; };
 		84C7723221AB8B6D00F60F43 /* ElementTbvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTbvCell.swift; sourceTree = "<group>"; };
 		84C7723421ABB3BB00F60F43 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		84C7723A21ABF9F700F60F43 /* ElementListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementListVC.swift; sourceTree = "<group>"; };
 		84C7E32F218A9F2800AE429D /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
 		84C7E332218AA52F00AE429D /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
+		84C81A1721AFD2BE002938C7 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		84F72D9C21898A64001F0001 /* ValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtils.swift; sourceTree = "<group>"; };
 		84F72DA02189CCF3001F0001 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		84F72DA22189CD07001F0001 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -542,7 +548,6 @@
 				84A99F3621647B47007C54CD /* Main.storyboard */,
 				84154F0D21621D36008F2C05 /* LaunchScreen.storyboard */,
 				84A99F212163B836007C54CD /* Login.storyboard */,
-				84A99F4421648C30007C54CD /* Home.storyboard */,
 				84A99F4B2164A61B007C54CD /* Periodic.storyboard */,
 				84A99F4D2164A62C007C54CD /* Reaction.storyboard */,
 				84A99F4F2164A637007C54CD /* Setting.storyboard */,
@@ -814,9 +819,9 @@
 		844B728C2165FE1E001E778F /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
+				84BC042D21AC4650007130B0 /* PeriodicTableVC */,
+				84C7723921ABF9D700F60F43 /* ElementListVC */,
 				84C7722E21AB8B2D00F60F43 /* ElementDetailVC */,
-				844B728F216602B1001E778F /* Cell */,
-				844B728D2165FE4F001E778F /* PeriodicTableVC.swift */,
 			);
 			path = PeriodicTable;
 			sourceTree = "<group>";
@@ -955,6 +960,7 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				84BC043021AD1A12007130B0 /* UILabel + Ext */,
 				84C7722421AAC77D00F60F43 /* NSNumber + Ext */,
 				8433A6A421A543E100B48B92 /* TextView + Ext */,
 				8433A6A121A5430000B48B92 /* UIAlertController + Ext */,
@@ -1047,6 +1053,7 @@
 		849712CF216E401C00394891 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				84C81A1621AFD2A1002938C7 /* AboutVC */,
 				8433A6AC21A5A09200B48B92 /* ChangePassVC */,
 				84F72D9E2189CB95001F0001 /* ProfileVC */,
 				8443050B218941D10074B609 /* UserManagementList */,
@@ -1124,6 +1131,31 @@
 			path = "UIButton + Ext";
 			sourceTree = "<group>";
 		};
+		84BC042C21AC4634007130B0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84BC042E21AC476F007130B0 /* PeriodicListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84BC042D21AC4650007130B0 /* PeriodicTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				844B728F216602B1001E778F /* Cell */,
+				844B728D2165FE4F001E778F /* PeriodicTableVC.swift */,
+			);
+			path = PeriodicTableVC;
+			sourceTree = "<group>";
+		};
+		84BC043021AD1A12007130B0 /* UILabel + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				84BC043121AD1A25007130B0 /* UILabel + Ext.swift */,
+			);
+			path = "UILabel + Ext";
+			sourceTree = "<group>";
+		};
 		84C7722421AAC77D00F60F43 /* NSNumber + Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -1165,6 +1197,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		84C7723921ABF9D700F60F43 /* ElementListVC */ = {
+			isa = PBXGroup;
+			children = (
+				84BC042C21AC4634007130B0 /* Cell */,
+				84C7723A21ABF9F700F60F43 /* ElementListVC.swift */,
+			);
+			path = ElementListVC;
+			sourceTree = "<group>";
+		};
 		84C7E32E218A9F0B00AE429D /* DateFormatter + Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -1179,6 +1220,14 @@
 				84C7E332218AA52F00AE429D /* ImagePickerVC.swift */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		84C81A1621AFD2A1002938C7 /* AboutVC */ = {
+			isa = PBXGroup;
+			children = (
+				84C81A1721AFD2BE002938C7 /* AboutVC.swift */,
+			);
+			path = AboutVC;
 			sourceTree = "<group>";
 		};
 		84F72D9B21898A47001F0001 /* ValidateUtils */ = {
@@ -1284,7 +1333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A99F4521648C30007C54CD /* Home.storyboard in Resources */,
 				84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */,
 				8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */,
 				8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */,
@@ -1321,51 +1369,35 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Panels/Panels.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Panels.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1406,6 +1438,7 @@
 				420DDD5F219C07CE00E77A7F /* BaseAPI.swift in Sources */,
 				8484EF9E21A2A14E007F2180 /* ExtSessionInfo.swift in Sources */,
 				848F7D9C21637953006F264C /* Languages.swift in Sources */,
+				84BC043221AD1A25007130B0 /* UILabel + Ext.swift in Sources */,
 				84C7722D21AB866300F60F43 /* CoverBannerView.swift in Sources */,
 				84430510218943740074B609 /* UserListCell.swift in Sources */,
 				84C7E333218AA52F00AE429D /* ImagePickerVC.swift in Sources */,
@@ -1421,6 +1454,7 @@
 				84880DD7219D03B100C4D075 /* SignupModel.swift in Sources */,
 				8484EF8721A29A4A007F2180 /* ScannedObject.swift in Sources */,
 				8433A68521A3C09500B48B92 /* ModelVC.swift in Sources */,
+				84C7723B21ABF9F700F60F43 /* ElementListVC.swift in Sources */,
 				8484EF7721A28FD2007F2180 /* FlashlightButton.swift in Sources */,
 				844B7291216602C9001E778F /* PeriodicCell.swift in Sources */,
 				844B728E2165FE4F001E778F /* PeriodicTableVC.swift in Sources */,
@@ -1434,6 +1468,7 @@
 				8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
 				420DDD69219C0F5C00E77A7F /* EmptyModel.swift in Sources */,
+				84C81A1821AFD2BE002938C7 /* AboutVC.swift in Sources */,
 				84880DDC219DC5FF00C4D075 /* APIs + Element.swift in Sources */,
 				8484EF9721A29E65007F2180 /* Scan.swift in Sources */,
 				8484EFA221A2A1D8007F2180 /* ExtNavigationBar.swift in Sources */,
@@ -1449,6 +1484,7 @@
 				420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
 				84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */,
+				84BC042F21AC476F007130B0 /* PeriodicListCell.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				8433A68821A3C0AB00B48B92 /* ModelCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,

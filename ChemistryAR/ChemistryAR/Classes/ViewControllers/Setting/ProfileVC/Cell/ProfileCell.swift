@@ -33,5 +33,4 @@ class ProfileCell: BaseTbvCell {
     @IBAction func onBtnRightPressed(_ sender: UIButton) {
         delegate?.didSelectBtnRight(cell: self, btn: sender)
     }
-
 }

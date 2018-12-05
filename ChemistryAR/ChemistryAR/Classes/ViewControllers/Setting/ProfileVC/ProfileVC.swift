@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileVC: BaseVC {
     
-    typealias ProfileCallback = (_ success: Bool) -> Void
+    typealias ProfileCallback = (_ success: Bool?) -> Void
     
     enum Row: Int {
         case Avatar = 0
@@ -36,8 +36,9 @@ class ProfileVC: BaseVC {
     
     var userModel: UserModel?
     var userTemple: UserModel?
-    var deleteAccountSuccess: ProfileCallback?
+    var deactiveAccountSuccess: ProfileCallback?
     var updateAccountSuccess: ProfileCallback?
+    var activeAccountSuccess: ProfileCallback?
     var mode: ModeScreen? {
         didSet {
             updateUI()
@@ -57,17 +58,24 @@ class ProfileVC: BaseVC {
     
     func updateUI() {
         if mode == .modeEdit {
-            self.updateCustomNavigationBar(.BackDone, "Profile")
+            self.updateCustomNavigationBar(.BackDone, "Profile".localized)
         } else if mode == .modeNew {
-            self.updateCustomNavigationBar(.BackOnly, "Profile")
+            if Caches().user._id == userModel?._id {
+                self.updateCustomNavigationBar(.Logout, "Profile".localized)
+            } else {
+                self.updateCustomNavigationBar(.BackOnly, "Profile".localized)
+            }
         } else {
-            self.updateCustomNavigationBar(.BackEdit, "Profile")
+            self.updateCustomNavigationBar(.BackEdit, "Profile".localized)
         }
         
         tbvContent?.reloadData()
     }
     
     @objc func fetchData() {
+        if tbvContent?.isRefreshing() ?? true {
+            self.tbvContent?.endRefreshControl()
+        }
         App().showLoadingIndicator()
         SERVICES().API.getDetailUser(model: userModel!) { (result) in
             App().dismissLoadingIndicator()
@@ -84,9 +92,9 @@ class ProfileVC: BaseVC {
     
     override func onNavigationBack(_ sender: UIBarButtonItem) {
         if mode == .modeEdit {
-            self.showAlertView("Do you want to update your change?", positiveTitle: "Update", positiveAction: { (ok) in
+            self.showAlertView("Do you want to update your change?".localized, positiveTitle: "Update".localized, positiveAction: { (ok) in
                 self.updateAccount()
-            }, negativeTitle: "Discard") { (cancel) in
+            }, negativeTitle: "Discard".localized) { (cancel) in
                 self.didSelectback()
             }
         } else {
@@ -97,9 +105,11 @@ class ProfileVC: BaseVC {
     override func onNavigationClickRightButton(_ sender: UIBarButtonItem) {
         if mode == .modeView {
             mode = .modeEdit
-        } else {
+        } else if mode == .modeEdit {
             updateAccount()
             mode = .modeView
+        } else {
+            App().onReLogin()
         }
     }
     
@@ -109,7 +119,7 @@ class ProfileVC: BaseVC {
             App().dismissLoadingIndicator()
             switch result {
             case .object(let obj):
-                self.showAlertView("Update successfully", positiveTitle: "OK", positiveAction: { (ok) in
+                self.showAlertView("Update successfully".localized, positiveTitle: "OK".localized, positiveAction: { (ok) in
                     self.userModel = obj
                     Caches().user = obj
                     self.updateAccountSuccess!(true)
@@ -141,12 +151,11 @@ extension ProfileVC: UITableViewDataSource {
                 return 100
             }
         case .Delete:
-            if mode == .modeNew {
+            if mode == .modeNew && Caches().user._id != userModel?._id {
                 return 55
             } else {
                 return 0
             }
-            
         }
     }
     
@@ -173,19 +182,38 @@ extension ProfileVC: UITableViewDelegate {
             let vc: ChangePassVC = .load(SB: .Setting)
             self.navigationController?.pushViewController(vc, animated: true)
         case .Delete:
-            doDeleteAccount()
+            if userModel?.active ?? true {
+                doDeactiveAccount()
+            } else {
+                doActiveAccount()
+            }
         default:
             break
         }
     }
     
-    func doDeleteAccount() {
+    func doActiveAccount() {
         App().showLoadingIndicator()
-        SERVICES().API.deleteUser(model: userModel!) { (result) in
+        userModel?.active = true
+        SERVICES().API.activeUser(model: userModel!) { (result) in
             App().dismissLoadingIndicator()
             switch result {
             case .object(_ ):
-                self.deleteAccountSuccess!(true)
+                self.activeAccountSuccess!(true)
+                self.didSelectback()
+            case .error(let err):
+                self.showAlertView(E(err.message))
+            }
+        }
+    }
+    
+    func doDeactiveAccount() {
+        App().showLoadingIndicator()
+        SERVICES().API.deactiveUser(model: userModel!) { (result) in
+            App().dismissLoadingIndicator()
+            switch result {
+            case .object(_ ):
+                self.deactiveAccountSuccess!(true)
                 self.didSelectback()
             case .error(let err):
                 self.showAlertView(E(err.message))
@@ -222,7 +250,7 @@ extension ProfileVC {
             let strinDate = DateFormatter.displayDateShortText.string(from: dob)
             cell.lblSubtitle2?.text = E(strinDate)
         } else {
-            cell.lblSubtitle2?.text = "Not submit"
+            cell.lblSubtitle2?.text = "Not submit".localized
         }
         cell.lblSubtitle3?.text = E(userModel?.address)
         
@@ -241,7 +269,7 @@ extension ProfileVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyButton,
                                                  for:indexPath) as! ProfileCell
         
-        cell.lblTitle?.text = "Change Password"
+        cell.lblTitle?.text = "Change Password".localized
         
         return cell
     }
@@ -250,8 +278,8 @@ extension ProfileVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyDelete,
                                                  for:indexPath) as! ProfileCell
         
-        cell.lblTitle?.text = "Delete Account"
-        cell.lblTitle?.textColor = .red
+        cell.lblTitle?.text = userModel?.active ?? true ? "Deactive Account".localized : "Active Account".localized
+        cell.lblTitle?.textColor = userModel?.active ?? true ? .red : AppColor.mainColor
         
         return cell
     }
@@ -299,8 +327,8 @@ extension ProfileVC: ProfileCellDelegate {
     }
     
     func doEditAddress() {
-        let alert = UIAlertController(style: .alert,title: "Change Address")
-        alert.showTextViewInput(placeholder: "Enter Address", oldText: E(userModel?.address)) { (ok, content) in
+        let alert = UIAlertController(style: .alert,title: "Change Address".localized)
+        alert.showTextViewInput(placeholder: "Enter Address".localized, oldText: E(userModel?.address)) { (ok, content) in
             if !isEmpty(content) {
                 self.userModel?.address = content
                 self.tbvContent?.reloadData()
@@ -309,8 +337,8 @@ extension ProfileVC: ProfileCellDelegate {
     }
     
     func doEditUserName() {
-        let alert = UIAlertController(style: .alert,title: "Change Username")
-        alert.showTextViewInput(placeholder: "Enter Username", oldText: E(userModel?.name)) { (ok, content) in
+        let alert = UIAlertController(style: .alert,title: "Change Username".localized)
+        alert.showTextViewInput(placeholder: "Enter Username".localized, oldText: E(userModel?.name)) { (ok, content) in
             if !isEmpty(content) {
                 self.userModel?.name = content
                 self.tbvContent?.reloadData()

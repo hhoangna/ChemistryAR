@@ -252,7 +252,7 @@ class ScanObjectVC: BaseVC, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPick
         readFile(url)
     }
     
-    func showAlert(title: String, message: String, buttonTitle: String? = "OK", showCancel: Bool = false, buttonHandler: ((UIAlertAction) -> Void)? = nil) {
+    func showAlert(title: String, message: String, buttonTitle: String? = "OK".localized, showCancel: Bool = false, buttonHandler: ((UIAlertAction) -> Void)? = nil) {
         print(title + "\n" + message)
         
         var actions = [UIAlertAction]()
@@ -260,7 +260,7 @@ class ScanObjectVC: BaseVC, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPick
             actions.append(UIAlertAction(title: buttonTitle, style: .default, handler: buttonHandler))
         }
         if showCancel {
-            actions.append(UIAlertAction(title: "Cancel", style: .cancel))
+            actions.append(UIAlertAction(title: "Cancel".localized, style: .cancel))
         }
         self.showAlert(title: title, message: message, actions: actions)
     }

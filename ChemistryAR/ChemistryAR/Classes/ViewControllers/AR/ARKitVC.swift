@@ -21,7 +21,6 @@ class ARKitVC: BaseVC, AVCaptureMetadataOutputObjectsDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateCustomNavigationBar(.BackOnly, "Periodic Table")
 
         setupSession()
     }
@@ -56,19 +55,19 @@ class ARKitVC: BaseVC, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBAction func btnScanObjectPressed(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Select options", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select options".localized, message: nil, preferredStyle: .actionSheet)
         
-        let modeNew = UIAlertAction(title: "New Scan", style: .default) { (ok) in
+        let modeNew = UIAlertAction(title: "New Scan".localized, style: .default) { (ok) in
             let vc: ScanObjectVC = .load(SB: .AR)
             self.present(vc, animated: true, completion: nil)
         }
         
-        let modeLoad = UIAlertAction(title: "Load Object", style: .default) { (ok) in
+        let modeLoad = UIAlertAction(title: "Load Object".localized, style: .default) { (ok) in
             let vc: ScanModelListVC = .load(SB: .AR)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (ok) in
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .destructive) { (ok) in
             return
         }
         

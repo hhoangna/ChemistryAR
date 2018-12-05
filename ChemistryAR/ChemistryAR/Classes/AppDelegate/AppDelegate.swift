@@ -79,9 +79,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     }
     
     func onLoginSuccess()  {
-        let mainVC:MainVC = .load(SB: .Main)
-        rootNV?.setViewControllers([mainVC], animated: false)
-        self.mainVC = mainVC
+        if Caches().user.active ?? true {
+            let mainVC:MainVC = .load(SB: .Main)
+            rootNV?.setViewControllers([mainVC], animated: false)
+            self.mainVC = mainVC
+        } else {
+            let mainVC:ProfileVC = .load(SB: .Setting)
+            mainVC.userModel = Caches().user
+            mainVC.mode = .modeNew
+            rootNV?.setViewControllers([mainVC], animated: false)
+        }
     }
 
     public func showLoadingIndicator(_ atView:UIView? = nil) {

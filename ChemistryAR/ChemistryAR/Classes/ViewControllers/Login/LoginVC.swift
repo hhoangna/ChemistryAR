@@ -34,8 +34,8 @@ class LoginVC: BaseVC {
         topItemView = TabBarTopView.load()
         topItemView?.delegate = self
         
-        let tabLogin = TabBarItem.init("Login", #imageLiteral(resourceName: "ic_Login"))
-        let tabRegister = TabBarItem.init("Register", #imageLiteral(resourceName: "ic_Register"))
+        let tabLogin = TabBarItem.init("LOGIN".localized, #imageLiteral(resourceName: "ic_Login"), AppColor.mainColor)
+        let tabRegister = TabBarItem.init("REGISTER".localized, #imageLiteral(resourceName: "ic_Register"), AppColor.purpleColor)
         
         topItemView?.tabBarTopItems = [tabLogin,tabRegister]
         if let tabBarItem = topItemView {

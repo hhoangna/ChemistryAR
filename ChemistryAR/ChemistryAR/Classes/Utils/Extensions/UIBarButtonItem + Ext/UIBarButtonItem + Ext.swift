@@ -25,7 +25,7 @@ extension UIBarButtonItem {
     }
     
     class func searchButton(target: Any, action: Selector) -> UIBarButtonItem {
-        let frame = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let frame = CGRect(x: 0, y: 0, width: 15, height: 20)
         let insets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 5)
         let button = customButton(with: #imageLiteral(resourceName: "ic_search"),
                                   highlightedImage: #imageLiteral(resourceName: "ic_search"),
@@ -49,6 +49,20 @@ extension UIBarButtonItem {
                                   target: target,
                                   action: action)
         
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
+    class func cancelButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let button = setUpButtonWithText(text: "Cancel".localized, target: target, action: action)
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
+    class func logoutButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let button = setUpButtonWithText(text: "LOGOUT".localized, textColor: .red, target: target, action: action)
         let item = UIBarButtonItem(customView: button)
         
         return item
@@ -106,6 +120,29 @@ extension UIBarButtonItem {
         button.imageEdgeInsets = imageEdgeInsets
         
         return button
+    }
+    
+    fileprivate class func setUpButtonWithText(text:String, textColor: UIColor? = AppColor.black, target:Any,action: Selector) -> UIButton{
+        let title = text
+        let color = textColor
+        let font = AppFont.helveticaRegular(with: 14)
+        
+        let labelSize = title.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 15),
+                                           options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                           attributes: [NSAttributedString.Key.font: font],
+                                           context: nil).size
+        let frame = CGRect(origin: CGPoint(), size: labelSize)
+        
+        
+        let normalTitle = NSAttributedString.attributedString(with: title, color: color!, font: font, alignment: .right)
+        let highlightedTitle = NSAttributedString.attributedString(with: title, color: AppColor.borderColor, font: font, alignment: .right)
+        
+        let button = customButton(with: normalTitle,
+                                  highlightedTitle: highlightedTitle,
+                                  frame: frame,
+                                  target: target,
+                                  action: action)
+        return button;
     }
     
     fileprivate class func customButton(with title: NSAttributedString,

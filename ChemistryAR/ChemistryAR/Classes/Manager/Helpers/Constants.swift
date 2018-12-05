@@ -160,6 +160,7 @@ struct Constants {
 struct AppColor {
     static let mainColor            = UIColor(hex: "#1B8FFD")
     static let titleTabColor        = UIColor(hex: "#414B5B")
+    static let purpleColor          = UIColor(hex: "#AF5CDC")
     static let grayColor            = UIColor(hex: "#8F99A4")
     static let white                = UIColor.white
     static let black                = UIColor.black

@@ -11,10 +11,12 @@ import UIKit
 struct TabBarItem {
     var title:String?
     var image: UIImage?
+    var color: UIColor?
     
-    init(_ name:String, _ image: UIImage? = nil) {
-        self.title = name;
+    init(_ name:String, _ image: UIImage? = nil, _ color: UIColor? = nil) {
+        self.title = name
         self.image = image
+        self.color = color
     }
 }
 
@@ -64,15 +66,7 @@ class TabBarTopView: UIView {
     }
     
     func setupViewColorSelect() {
-        let layer = CAGradientLayer()
-        layer.colors = [
-            UIColor.init(red: 255/255, green: 200/255, blue: 32/255, alpha: 1).cgColor,
-            UIColor.init(red: 255/255, green: 0, blue: 0, alpha: 1).cgColor
-        ]
-        layer.locations = [0.0, 1.2]
-        layer.endPoint = CGPoint(x: -0.8, y: 0.3)
-        vLineColor?.layer.addSublayer(layer)
-        conWidthvLineColor?.constant = ScreenSize.SCREEN_WIDTH / CGFloat(tabBarTopItems.count)
+        conWidthvLineColor?.constant = ScreenSize.SCREEN_WIDTH * 0.9 / CGFloat(tabBarTopItems.count)
     }
     
 }
@@ -112,9 +106,9 @@ extension TabBarTopView:UICollectionViewDataSource{
             cell.imgIcon?.image = barItem.image
             
             if row == indexSelected{
-                cell.lblTitle?.textColor = AppColor.mainColor
+                cell.lblTitle?.textColor = barItem.color
                 cell.lblTitle?.font = AppFont.helveticaBold(with: 14)
-                cell.imgIcon?.tintColor = AppColor.mainColor
+                cell.imgIcon?.tintColor = barItem.color
             }else {
                 cell.lblTitle?.textColor = AppColor.titleTabColor
                 cell.lblTitle?.font = AppFont.helveticaRegular(with: 14)
@@ -147,11 +141,21 @@ extension TabBarTopView {
         let contentOffsetX = scrollView.contentOffset.x;
         
         conLeftvLineColor?.constant = ((contentOffsetX / width) * width ) / CGFloat(tabBarTopItems.count)
+        if conLeftvLineColor?.constant ?? 0 > width / 2 {
+            vLineColor?.backgroundColor = AppColor.purpleColor
+        } else {
+            vLineColor?.backgroundColor = AppColor.mainColor
+        }
     }
     
     func updateContraintViewSelectedEndDecelerating(){
         let width = self.frame.size.width
         conLeftvLineColor?.constant = (CGFloat(indexSelected) * width ) / CGFloat(tabBarTopItems.count)
+        if conLeftvLineColor?.constant ?? 0 > width / 2 {
+            vLineColor?.backgroundColor = AppColor.purpleColor
+        } else {
+            vLineColor?.backgroundColor = AppColor.mainColor
+        }
         UIView.animate(withDuration: 0.2) {
             self.layoutIfNeeded()
         }

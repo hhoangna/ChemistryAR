@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseFirestore
 import ObjectMapper
 
 class UserListVC: BaseVC {
@@ -17,14 +16,13 @@ class UserListVC: BaseVC {
     fileprivate var indentifyUser = "UserCell"
     fileprivate var indentifyBlank = "BlankCell"
     
-    var db = Firestore.firestore()
     var arrUser: [UserModel]?
     var arrDisplay: [UserModel]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initData()
-        updateCustomNavigationBar(.BackOnly, "List User")
+        updateCustomNavigationBar(.BackOnly, "User Management".localized)
 
     }
     
@@ -86,7 +84,10 @@ extension UserListVC: UITableViewDelegate {
             vc.userModel = user
         }
         vc.mode = .modeNew
-        vc.deleteAccountSuccess = {[weak self] (success) in
+        vc.deactiveAccountSuccess = {[weak self] (success) in
+            self?.getAllUser()
+        }
+        vc.activeAccountSuccess = {[weak self] (success) in
             self?.getAllUser()
         }
 
@@ -108,7 +109,15 @@ extension UserListVC {
         cell.lblTitle?.text = user?.name
         cell.lblSubtitle?.text = user?.email
         cell.imgVip?.isHidden = user?.role == "user" ? true : false
-        cell.lblSubtitle1?.text = SF((user?.dateOffline!)! > 1 ? "%i days ago" : "%i day ago", para: user?.dateOffline)
+        if user?.active ?? true {
+            cell.lblSubtitle1?.text = SF((user?.dateOffline!)! > 1 ? "%i days ago".localized : "%i day ago".localized, para: user?.dateOffline)
+            cell.vContent?.backgroundColor = .white
+            cell.lblSubtitle1?.textColor = .black
+        } else {
+            cell.lblSubtitle1?.text = "Deactived".localized
+            cell.lblSubtitle1?.textColor = .red
+            cell.vContent?.backgroundColor = .lightGray
+        }
 
         return cell
     }

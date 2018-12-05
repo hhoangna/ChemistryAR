@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseAuth
 import ObjectMapper
 
 class RegisterCell: BaseClvCell {
@@ -19,9 +17,7 @@ class RegisterCell: BaseClvCell {
     @IBOutlet fileprivate weak var tfRePassword: UITextField!
     @IBOutlet fileprivate weak var viewResgister: UIView?
     @IBOutlet fileprivate weak var btnResgister: UIButton?
-    
-    var db = Firestore.firestore()
-    
+        
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         

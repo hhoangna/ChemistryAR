@@ -37,10 +37,10 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         let vARKit:ARKitVC = ARKitVC.load(SB: .AR)
         let vSetting:SettingVC = SettingVC.load(SB: .Setting)
         
-        vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Periodic Table", image: UIImage(named: "ic_table"), selectedImage: UIImage(named: "ic_tableSelected"))
-        vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Reaction Chemical", image: UIImage(named: "ic_react"), selectedImage: UIImage(named: "ic_reactSelected"))
-        vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality", image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
-        vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting", image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
+        vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Periodic Table".localized, image: UIImage(named: "ic_table"), selectedImage: UIImage(named: "ic_tableSelected"))
+        vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Reaction Chemical".localized, image: UIImage(named: "ic_react"), selectedImage: UIImage(named: "ic_reactSelected"))
+        vARKit.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Augmented Reality".localized, image: UIImage(named: "ic_AR"), selectedImage: UIImage(named: "ic_arSelected"))
+        vSetting.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Setting".localized, image: UIImage(named: "ic_set"), selectedImage: UIImage(named: "ic_setSelected"))
         
         tabBar.viewControllers = [vPeriodic, vReaction, vARKit, vSetting]
         
@@ -49,16 +49,16 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if viewController is  PeriodicTableVC {
-            tabBarController.navigationItem.title = "Periodic Table"
+            tabBarController.navigationItem.title = "Periodic Table".localized
             
         }else if viewController is ReactionVC{
-            tabBarController.navigationItem.title = "Reaction Chemical"
+            tabBarController.navigationItem.title = "Reaction Chemical".localized
 
         }else if viewController is ARKitVC{
-            tabBarController.navigationItem.title = "Augmented Reality"
+            tabBarController.navigationItem.title = "Augmented Reality".localized
 
         }else if viewController is SettingVC{
-            tabBarController.navigationItem.title = "Setting"
+            tabBarController.navigationItem.title = "Setting".localized
         }
     }
 }

@@ -13,6 +13,8 @@ enum NavigationBarStyle {
     case BackOnly
     case BackEdit
     case BackDone
+    case Logout
+    case Cancel
 }
 
 

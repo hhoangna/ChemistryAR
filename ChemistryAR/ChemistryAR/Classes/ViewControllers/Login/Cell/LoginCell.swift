@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 import ObjectMapper
 
 class LoginCell: BaseClvCell {
@@ -16,8 +14,6 @@ class LoginCell: BaseClvCell {
     @IBOutlet fileprivate weak var tfPassword: UITextField?
     @IBOutlet fileprivate weak var viewLogin: UIView?
     @IBOutlet fileprivate weak var btnLogin: UIButton?
-    
-    var db = Firestore.firestore()
     
     override func awakeFromNib() {
         super.awakeFromNib()

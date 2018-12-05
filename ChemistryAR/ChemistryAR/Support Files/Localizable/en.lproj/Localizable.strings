@@ -14,28 +14,90 @@
 "Hello"="Hello";
 
 //LOGIN SCREEN
-"Login" = "Login";
-"Register" = "Register";
+"LOGIN" = "LOGIN";
+"REGISTER" = "REGISTER";
 "Email" = "Email";
 "Password" = "Password";
 "User Name" = "User Name";
 "Re-Password"="Re-Password";
 
-//BOTTOMBAR
-"Periodic" = "Periodic";
-"Reaction" = "Reaction";
-"Home" = "Home";
-"AR" = "AR";
-"Setting" = "Setting";
-
 //HOME SCREEN
 "Periodic Table" = "Periodic Table";
-"Chemical Reaction" = "Chemical Reaction";
+"Reaction Chemical" = "Reaction Chemical";
 "Augmented Reality" = "Agumented Reality";
+"Setting" = "Setting";
 
-//PERIODIC SCREEN
-"Mendeleev Periodic Table" = "Mendeleev Periodic Table";
-"Solubility" = "Solubility";
-"Electronegativity of elements" = "Electronegativity of elements";
-"Molecular weight of organic substances" = "Molecular weight of organic substances";
-"Reactivity series" = "Reactivity series";
+//PERIODIC TABLE
+"Search" = "Search";
+"Search with name, symbol..." = "Search with name, symbol...";
+"Name" = "Name";
+"Symbol" = "Symbol";
+"Atomic No."= "Atomic No.";
+"Atomic Number"="Atomic Number";
+"Atomic Mass"= "Atomic Mass";
+"Standard State"= "Standard State";
+"Density"="Density";
+"Boiling Point"="Boiling Point";
+"Melting Point"="Melting Point";
+"Electronic Configuration"= "Electronic Configuration";
+"Oxidation States"="Oxidation States";
+"Information"="Information";
+"Other info"="Other info";
+"Group"="Group";
+"Period"="Period";
+
+//REACTION
+"Get Reaction Equation Error!"="Get Reaction Equation Error!";
+
+//ARKIT
+"New Scan"="New Scan";
+"Load Object"="Load Object";
+"Cancel"="Cancel";
+"Select options"="Select options";
+"Mine" = "Mine";
+"Gallery"="Gallery";
+"No Data"="No Data";
+"Load Model"="Load Model";
+"Next"="Next";
+"Light Off"="Light Off";
+"Light On"="Light On";
+
+//SETTING
+"Day Mode"="Day Mode";
+"Night Mode"="Night Mode";
+"Language"="Language";
+"About"="About";
+"SETTING"="SETTING";
+"User Management"="User Management";
+"Model Management"="Model Management";
+"DEVELOPER"="DEVELOPER";
+"Last active: "="Last active: ";
+"Detail"="Detail";
+"Profile"="Profile";
+"DOB"="DOB";
+"Address"="Address";
+"Deactive Account"="Deactive Account";
+"Active Account"="Active Account";
+"Change Password"="Change Password";
+"LOGOUT"="LOGOUT";
+"Old Password"="Old Password";
+"New Password"="New Password";
+"Re-New Password"="Re-New Password";
+"Do you want to update your change?"="Do you want to update your change?";
+"Update"="Update";
+"Discard"="Discard";
+"Update successfully"="Update successfully";
+"OK"="OK";
+"Not submit"="Not submit";
+"Change Address"="Change Address";
+"Enter Address"="Enter Address";
+"Change Username"="Change Username";
+"Enter Name"="Enter Name";
+"Select date"="Select date";
+"ACCOUNT"="ACCOUNT";
+"Push Notification"="Push Notification";
+"Yes"="Yes";
+"Do you want to logout?"="Do you want to logout?";
+"%i days ago"="%i days ago";
+"%i day ago"="%i day ago";
+"Deactived"="Deactived";

@@ -38,11 +38,20 @@ extension BaseAPI {
     }
     
     @discardableResult
-    func deleteUser(model: UserModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
+    func deactiveUser(model: UserModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
         
         return request(method: .DELETE,
                        path: String(format: PATH_REQUEST_URL.DELETE_USER.URL, E(model._id)),
                        input: .empty,
+                       callback: callback)
+    }
+    
+    @discardableResult
+    func activeUser(model: UserModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
+        
+        return request(method: .POST,
+                       path: String(format: PATH_REQUEST_URL.ACTIVE_USER.URL, E(model._id)),
+                       input: .json(model.activeAccount()),
                        callback: callback)
     }
     

@@ -82,7 +82,7 @@ extension ShowModelVC: ARSCNViewDelegate {
     // MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if let name = anchor.name, name.hasPrefix("panda") {
+        if let name = anchor.name, name.hasPrefix("max") {
             node.addChildNode(loadRedPandaModel())
         }
     }
@@ -247,7 +247,7 @@ extension ShowModelVC: ARSessionDelegate {
     
     // MARK: - AR session management
     private func loadRedPandaModel() -> SCNNode {
-        let sceneURL = Bundle.main.url(forResource: "max", withExtension: "scn", subdirectory: "Assets.scnassets")!
+        let sceneURL = Bundle.main.url(forResource: "max", withExtension: "scn", subdirectory: "art.scnassets")!
         let referenceNode = SCNReferenceNode(url: sceneURL)!
         referenceNode.load()
         

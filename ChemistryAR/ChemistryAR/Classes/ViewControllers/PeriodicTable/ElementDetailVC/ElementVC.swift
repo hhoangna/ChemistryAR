@@ -12,7 +12,7 @@ class ElementVC: BaseVC {
     
     @IBOutlet weak var tbvContent: UITableView?
     
-    var titleHeader = ["Atomic Number", "Atomic Mass", "Standard State", "Density", "Boiling Point", "Melting Point", "Electronic Configuration", "Oxidation States", "Information", "Other info"]
+    var titleHeader = ["Atomic Number".localized, "Atomic Mass".localized, "Standard State".localized, "Density".localized, "Boiling Point".localized, "Melting Point".localized, "Electronic Configuration".localized, "Oxidation States".localized, "Information".localized, "Other info".localized]
     var arrData: [String]?
     var elementDto: ElementModel?
     var elementId: String?
@@ -20,6 +20,7 @@ class ElementVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.updateCustomNavigationBar(.BackOnly, elementDto?.name)
         tbvContent?.addRefreshControl(self, action: #selector(fetchData))
     }
     
@@ -31,7 +32,7 @@ class ElementVC: BaseVC {
     
     @objc func fetchData() {
         App().showLoadingIndicator()
-        SERVICES().API.getElementDetail(elementId: elementId) { (result) in
+        SERVICES().API.getElementDetail(elementId: elementId ?? "") { (result) in
             App().dismissLoadingIndicator()
             if self.tbvContent?.isRefreshing() ?? false {
                 self.tbvContent?.endRefreshControl()

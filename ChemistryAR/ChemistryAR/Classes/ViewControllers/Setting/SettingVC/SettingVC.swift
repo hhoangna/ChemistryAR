@@ -31,9 +31,9 @@ class SettingVC: BaseVC {
     fileprivate var indentifyHeader = "HeaderCell"
     fileprivate var indentifyBlank = "BlankCell"
     
-    var arrHeader = ["ACCOUNT", "SETTING", "DEVELOPER", ""]
-    var arrSetting = ["Push Notification", "Language", "About"]
-    var arrDevelop = ["User Management", "Element Management"]
+    var arrHeader = ["ACCOUNT".localized, "SETTING".localized, "DEVELOPER".localized, ""]
+    var arrSetting = ["Push Notification".localized, "Language".localized, "About".localized]
+    var arrDevelop = ["User Management".localized, "Model Management".localized]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,13 @@ class SettingVC: BaseVC {
     }
     
     @IBAction func btnLogoutPressed(_ sender: UIButton) {
-        App().onReLogin()
+        let alert = UIAlertController(style: .actionSheet, title: "", message: "Do you want to logout?".localized)
+        alert.addAction(title: "LOGOUT".localized, style: .destructive) { (ok) in
+            App().onReLogin()
+        }
+        alert.addAction(title: "Cancel".localized, style: .cancel)
+        alert.show()
+        
     }
 }
 
@@ -66,13 +72,7 @@ extension SettingVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let sectionScreen: Section = Section(rawValue: section)!
-        switch sectionScreen {
-        case .Avatar:
-            return 1
-        default:
-            return 40
-        }
+        return 40
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -135,7 +135,14 @@ extension SettingVC: UITableViewDelegate {
         case .Avatar:
             break
         case .Setting:
-            break
+            if indexPath.row == 0 {
+                return
+            } else if indexPath.row == 1 {
+                return
+            } else {
+                let vc: AboutVC = .load(SB: .Setting)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         case .Developer:
             if roleType == .Admin {
                 let vc: UserListVC = .load(SB: .Setting)

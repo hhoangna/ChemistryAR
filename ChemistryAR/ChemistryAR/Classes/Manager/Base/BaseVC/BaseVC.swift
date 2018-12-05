@@ -49,6 +49,8 @@ class BaseVC: UIViewController {
         super.viewWillAppear(animated)
         printControllerName()
         self.navigationController?.setNavigationBarHidden(checkNavigationBarHidden(), animated: true)
+        App().mainVC?.barController?.navigationItem.rightBarButtonItems = []
+        self.navigationItem.hidesBackButton = true
     }
     
     func printControllerName() {
@@ -70,6 +72,8 @@ class BaseVC: UIViewController {
         let backBarItem: UIBarButtonItem = UIBarButtonItem.backButton(target: self, action: #selector(onNavigationBack(_:)))
         let editBarItem: UIBarButtonItem = UIBarButtonItem.editButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
         let saveBarItem: UIBarButtonItem = UIBarButtonItem.saveButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
+        let cancelBarItem: UIBarButtonItem = UIBarButtonItem.cancelButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
+        let logoutBarItem: UIBarButtonItem = UIBarButtonItem.logoutButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
 
         if let title = title {
             self.navigationItem.title = title
@@ -87,6 +91,12 @@ class BaseVC: UIViewController {
         case .BackDone:
             self.navigationItem.leftBarButtonItem = backBarItem
             self.navigationItem.rightBarButtonItem = saveBarItem
+            break
+        case .Logout:
+            self.navigationItem.rightBarButtonItem = logoutBarItem
+            break
+        case .Cancel:
+            self.navigationItem.rightBarButtonItem = cancelBarItem
             break
         }
     }

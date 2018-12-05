@@ -56,7 +56,7 @@ class ChangePassVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.updateCustomNavigationBar(.BackOnly, "Change Password")
+        self.updateCustomNavigationBar(.BackOnly, "Change Password".localized)
     }
     
     override func didReceiveMemoryWarning() {

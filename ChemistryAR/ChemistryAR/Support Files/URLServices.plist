@@ -9,7 +9,7 @@
 	<key>SIGNUP</key>
 	<string>signup</string>
 	<key>GET_ALL_ELEMENT</key>
-	<string>api/element</string>
+	<string>api/element?text=%@</string>
 	<key>GET_DETAIL_ELEMENT</key>
 	<string>api/element/%@</string>
 	<key>GET_ALL_USER</key>
@@ -22,5 +22,7 @@
 	<string>api/user/%@</string>
 	<key>CHANGE_PASS</key>
 	<string>api/user/changepassword</string>
+	<key>ACTIVE_USER</key>
+	<string>api/user/unlock/%@</string>
 </dict>
 </plist>

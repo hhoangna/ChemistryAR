@@ -31,7 +31,7 @@ class ReactionVC: BaseVC {
                 self.arrDisplay = obj.equation
                 self.tbvContent?.reloadData()
             case .error(_ ):
-                self.showAlertView("Get Reaction Equation Error!")
+                self.showAlertView("Get Reaction Equation Error!".localized)
             }
         }
     }

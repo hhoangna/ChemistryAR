@@ -95,3 +95,15 @@ class ElementModel: BaseModel, Codable {
         }
     }
 }
+
+class FilterElementModel: BaseModel, Codable {
+    var text: String?
+    var category: CategoryModel?
+    
+    func bodyFilter() -> ResponseDictionary {
+        let body = NSMutableDictionary()
+        body.setValue(E(text), forKey: "text")
+        
+        return body as! ResponseDictionary
+    }
+}

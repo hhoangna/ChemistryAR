@@ -179,6 +179,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Cancel"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnCancelPressed:" destination="ylp-se-IGF" eventType="touchUpInside" id="KwG-T6-aBB"/>
                                 </connections>
@@ -190,6 +193,9 @@
                                     <constraint firstAttribute="height" constant="45" id="Hab-k2-otx"/>
                                 </constraints>
                                 <state key="normal" title="Next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Next"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="ylp-se-IGF" eventType="touchUpInside" id="e5K-5J-4er"/>
                                 </connections>
@@ -220,6 +226,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Load Model"/>
                                 <state key="selected" image="addPressed"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Load Model"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loadModelButtonTapped:" destination="ylp-se-IGF" eventType="touchUpInside" id="apu-ih-wEo"/>
                                 </connections>
@@ -233,14 +242,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Light Off"/>
                                 <state key="selected" image="addPressed"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Light Off"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="toggleFlashlightButtonTapped:" destination="ylp-se-IGF" eventType="touchUpInside" id="06z-6R-LyU"/>
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6F-2o-TdP" userLabel="Session Info View">
-                                <rect key="frame" x="100.5" y="88" width="174.5" height="38"/>
+                                <rect key="frame" x="100.5" y="88" width="174" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hX7-Iw-k1p">
-                                    <rect key="frame" x="0.0" y="0.0" width="174.5" height="38"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initializing AR session." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-6C-b3u">
@@ -282,7 +294,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-NM-uRu" customClass="MessagesLabel" customModule="ChemistryAR" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -450,9 +462,9 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5k-L9-bzL">
-                                <rect key="frame" x="105" y="71.5" width="165" height="38"/>
+                                <rect key="frame" x="105" y="71.5" width="165.5" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tux-TT-8RK">
-                                    <rect key="frame" x="0.0" y="0.0" width="165" height="38"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="165.5" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initializing AR session." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8W-aT-DK5">
@@ -497,6 +509,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Cancel"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnCancelPressed:" destination="0GK-Sv-m8s" eventType="touchUpInside" id="AJu-x0-pWI"/>
                                     <action selector="shareSession:" destination="0GK-Sv-m8s" eventType="touchUpInside" id="p5K-wj-umV"/>
@@ -584,7 +599,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztu-jb-JNg" userLabel="vDate" customClass="HView" customModule="VSip_iOS" customModuleProvider="target">
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztu-jb-JNg" userLabel="vDate" customClass="HView" customModule="ChemistryAR" customModuleProvider="target">
                                                                         <rect key="frame" x="5" y="5" width="364" height="50"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnB-tl-tFz">
