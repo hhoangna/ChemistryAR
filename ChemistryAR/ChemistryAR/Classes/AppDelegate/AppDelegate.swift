@@ -13,9 +13,11 @@ import SwiftMessages
 import Firebase
 import ARKit
 import ESTabBarController_swift
+import FirebaseMessaging
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var rootNV: CustomNavigationBar?
@@ -28,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         Configuration.enableConfiguration()
         LanguageHelper.setLanguage(forLanguage: .EN)
         FirebaseApp.configure()
+        Configuration.enableConfiguration()
+        SERVICES().push.startPushNotifications()
+        SERVICES().push.delegate = self
+        SERVICES().firebase.setupFirebase()
         
         checkStatusLogin()
         
@@ -126,3 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     }
 }
 
+extension AppDelegate: PushNotificationServiceDelegate {
+    
+}

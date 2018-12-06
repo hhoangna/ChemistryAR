@@ -17,21 +17,19 @@ class Services {
     }()
     
     
-//    fileprivate(set) lazy var push: PushNotificationService = {
-//        return PushNotificationService_()
-//    }()
-//    
-//    fileprivate(set) lazy var firebase: FirebaseService = {
-//        return FirebaseService()
-//    }()
+    fileprivate(set) lazy var push: PushNotificationService = {
+        return PushNotificationService_()
+    }()
     
+    fileprivate(set) lazy var firebase: FirebaseService = {
+        return FirebaseService()
+    }()
     
     //MARK: - instances
     fileprivate(set) static var shared: Services?;
     static func setupShared(){
         shared = Services();
     }
-    
 }
 
 func SERVICES() -> Services {

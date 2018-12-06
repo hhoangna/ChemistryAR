@@ -1,0 +1,17 @@
+//
+//  Adhoc.xcconfig
+//  ChemistryAR
+//
+//  Created by Admin on 12/6/18.
+//  Copyright © 2018 HHumorous. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME =
+APP_VERSION = 1
+APP_BUNDLE_VERSION = 11
+APP_BUNDLE_ID =
+SERVER = development
+BUILD_SCHEME = Adhoc

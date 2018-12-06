@@ -19,6 +19,7 @@
 		420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD6B219C104D00E77A7F /* FileModel.swift */; };
 		420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420DDD6D219C11DB00E77A7F /* URLServices.plist */; };
 		42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */; };
+		840E7D8721B8CD26007883BE /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E7D8621B8CD26007883BE /* BuildConfiguration.swift */; };
 		84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84154F0421621D34008F2C05 /* AppDelegate.swift */; };
 		84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0B21621D36008F2C05 /* Assets.xcassets */; };
 		84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0D21621D36008F2C05 /* LaunchScreen.storyboard */; };
@@ -159,6 +160,8 @@
 		420DDD6D219C11DB00E77A7F /* URLServices.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLServices.plist; sourceTree = "<group>"; };
 		42891DDD2177968D007CA947 /* UIBarButtonItem + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Ext.swift"; sourceTree = "<group>"; };
 		71F5D8E2BA8CA7B795D43C72 /* Pods-ChemistryAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.debug.xcconfig"; sourceTree = "<group>"; };
+		840E7D8621B8CD26007883BE /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		840E7D8921B8CEB8007883BE /* Adhoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Adhoc.xcconfig; sourceTree = "<group>"; };
 		84154F0121621D34008F2C05 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84154F0421621D34008F2C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84154F0B21621D36008F2C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +400,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		840E7D8521B8CD03007883BE /* Build Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				840E7D8621B8CD26007883BE /* BuildConfiguration.swift */,
+			);
+			path = "Build Configuration";
+			sourceTree = "<group>";
+		};
+		840E7D8821B8CE93007883BE /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				840E7D8921B8CEB8007883BE /* Adhoc.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		84154EF821621D34008F2C05 = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +471,7 @@
 		84154F1821621F82008F2C05 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				840E7D8821B8CE93007883BE /* Configurations */,
 				84A99F572164AE0F007C54CD /* Localizable */,
 				843F93E52174A7ED0016D04F /* GoogleService-Info.plist */,
 				84154F1021621D36008F2C05 /* Info.plist */,
@@ -811,6 +831,7 @@
 		84436BD0217987D10087D3FE /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				840E7D8521B8CD03007883BE /* Build Configuration */,
 				84436BD1217987E80087D3FE /* AppConfiguration.swift */,
 			);
 			path = Configuration;
@@ -1375,6 +1396,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Panels/Panels.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -1392,6 +1414,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Panels.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -1485,6 +1508,7 @@
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
 				84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */,
 				84BC042F21AC476F007130B0 /* PeriodicListCell.swift in Sources */,
+				840E7D8721B8CD26007883BE /* BuildConfiguration.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
 				8433A68821A3C0AB00B48B92 /* ModelCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
