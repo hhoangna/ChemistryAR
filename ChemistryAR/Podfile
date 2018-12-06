@@ -14,6 +14,7 @@ target 'ChemistryAR' do
   pod 'ESTabBarController-swift'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'TLPhotoPicker'
