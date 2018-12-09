@@ -81,7 +81,8 @@ extension LoginCell {
         let login = LoginModel()
         login.email = tfUsername?.text
         login.password = tfPassword?.text
-        
+        App().onLoginSuccess()
+
         App().showLoadingIndicator()
         SERVICES().API.login(loginModel: login) {[weak self] (result) in
             App().dismissLoadingIndicator()

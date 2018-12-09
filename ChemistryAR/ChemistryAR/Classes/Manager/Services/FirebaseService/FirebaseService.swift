@@ -11,10 +11,14 @@ import FirebaseMessaging
 
 /// Service for Firebase details based on the BuildConfiguration
 class FirebaseService:NSObject {
-    
+    /*
     let tokenType:  MessagingAPNSTokenType;
     let options: FirebaseOptions;
-    
+ */
+    override init() {
+        super.init()
+    }
+    /*
     init(buildConf conf: BuildConfiguration? = nil) {
         
         var plistPath: String;
@@ -27,7 +31,7 @@ class FirebaseService:NSObject {
                 
             case .release:
                 tokenType = .prod
-                plistPath = Bundle.main.path(forResource: "GoogleService-Info-production", ofType: "plist")!
+                plistPath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!
             }
             
         }else {
@@ -37,15 +41,18 @@ class FirebaseService:NSObject {
         
         options = FirebaseOptions(contentsOfFile: plistPath)!;
     }
+ */
     
     func setupFirebase() {
-        FirebaseApp.configure(options: options);
+        let  plistPath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!
+        let option = FirebaseOptions(contentsOfFile: plistPath)
+        FirebaseApp.configure(options: option!)
         Messaging.messaging().delegate = self
         Messaging.messaging().shouldEstablishDirectChannel = true
     }
     
     func setPUSHToken(_ token: Data)  {
-        Messaging.messaging().setAPNSToken(token, type: tokenType)
+        Messaging.messaging().setAPNSToken(token, type: .sandbox)
     }
 }
 

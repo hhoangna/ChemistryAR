@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>763229810219-rnnau4uu87s56bfjokfush2fc3e8i4mi.apps.googleusercontent.com</string>
+	<string>763229810219-08hsuplmckivd0mao6hpkblhbtb61jdk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.763229810219-rnnau4uu87s56bfjokfush2fc3e8i4mi</string>
+	<string>com.googleusercontent.apps.763229810219-08hsuplmckivd0mao6hpkblhbtb61jdk</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCYXuwMPBZ7ypS7sb8dM8e2R-q9G-WClN0</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.hhoangna.ChemistryAR</string>
+	<string>com.horical.chemistryar</string>
 	<key>PROJECT_ID</key>
 	<string>ar-chemistry</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:763229810219:ios:defd01498c57a309</string>
+	<string>1:763229810219:ios:147c7d1cd00b112c</string>
 	<key>DATABASE_URL</key>
 	<string>https://ar-chemistry.firebaseio.com</string>
 </dict>

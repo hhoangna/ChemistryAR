@@ -82,9 +82,26 @@ extension ShowModelVC: ARSCNViewDelegate {
     // MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if let name = anchor.name, name.hasPrefix("max") {
-            node.addChildNode(loadRedPandaModel())
+        let file = ARFileModel()
+        file.urlServer = "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ModelDea%2Fmax.scn?alt=media&token=fa3ce6b8-fc1b-4227-a232-aa1d31747353"
+        file.name = "max.scn"
+        file.startDownload { (success, file) in
+            
+            print("Path local: \(file?.urlLocal)")
+            
+            if let url = file?.urlLocal {
+               // self.loadRedPandaModel(url)
+                        node.addChildNode(self.loadRedPandaModel(url))
+
+                
+            }
         }
+        
+//
+//        if let name = anchor.name, name.hasPrefix("max") {
+//        }
+//        node.addChildNode(loadRedPandaModel())
+
     }
 }
 
@@ -248,9 +265,16 @@ extension ShowModelVC: ARSessionDelegate {
     // MARK: - AR session management
     private func loadRedPandaModel() -> SCNNode {
         let sceneURL = Bundle.main.url(forResource: "max", withExtension: "scn", subdirectory: "art.scnassets")!
+        
         let referenceNode = SCNReferenceNode(url: sceneURL)!
         referenceNode.load()
         
+        return referenceNode
+    }
+    
+    private func loadRedPandaModel(_ url:URL) -> SCNNode{
+        let referenceNode = SCNReferenceNode(url: url)!
+        referenceNode.load()
         return referenceNode
     }
 }

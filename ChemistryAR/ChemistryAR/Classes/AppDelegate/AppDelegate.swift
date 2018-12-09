@@ -29,14 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         IQKeyboardManager.shared().isEnabled = true
         Configuration.enableConfiguration()
         LanguageHelper.setLanguage(forLanguage: .EN)
-        FirebaseApp.configure()
-        Configuration.enableConfiguration()
         SERVICES().push.startPushNotifications()
         SERVICES().push.delegate = self
         SERVICES().firebase.setupFirebase()
         
         checkStatusLogin()
-        
+
         return true
     }
     
@@ -129,6 +127,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
     public func showSuccessufullIndicator() {
         SVProgressHUD.showSuccess(withStatus: "Successfully")
+    }
+}
+
+extension AppDelegate{
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        SERVICES().push.didRegister(with: deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register Remote Notification: \(error)")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        self.refreshBadgeIconNumber()
     }
 }
 
