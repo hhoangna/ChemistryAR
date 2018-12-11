@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B57A00121C01E64009CE6EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B57A00021C01E63009CE6EE /* GoogleService-Info.plist */; };
 		420DDD52219BF8DC00E77A7F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD51219BF8DC00E77A7F /* LoginModel.swift */; };
 		420DDD55219BFB9700E77A7F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD54219BFB9700E77A7F /* Services.swift */; };
 		420DDD58219BFBC800E77A7F /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420DDD57219BFBC800E77A7F /* FirebaseService.swift */; };
@@ -54,7 +55,6 @@
 		8452DF4C21BB759E005C6E4C /* FileManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DF4B21BB759E005C6E4C /* FileManagers.swift */; };
 		846F0FC121BE54DB00BD882A /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F0FC021BE54DB00BD882A /* CellModel.swift */; };
 		847A12A721BEAE5C00C2F974 /* APIs + Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */; };
-		847A12A921BFB75700C2F974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847A12A821BFB75700C2F974 /* GoogleService-Info.plist */; };
 		8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */; };
 		8484EF6F21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */; };
 		8484EF7121A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */; };
@@ -149,6 +149,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B57A00021C01E63009CE6EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		420DDD51219BF8DC00E77A7F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		420DDD54219BFB9700E77A7F /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		420DDD57219BFBC800E77A7F /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		8452DF4B21BB759E005C6E4C /* FileManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagers.swift; sourceTree = "<group>"; };
 		846F0FC021BE54DB00BD882A /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + Compound.swift"; sourceTree = "<group>"; };
-		847A12A821BFB75700C2F974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
 		8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 		84154F1821621F82008F2C05 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				847A12A821BFB75700C2F974 /* GoogleService-Info.plist */,
+				3B57A00021C01E63009CE6EE /* GoogleService-Info.plist */,
 				840E7D8821B8CE93007883BE /* Configurations */,
 				84A99F572164AE0F007C54CD /* Localizable */,
 				84154F1021621D36008F2C05 /* Info.plist */,
@@ -1379,7 +1379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */,
-				847A12A921BFB75700C2F974 /* GoogleService-Info.plist in Resources */,
 				8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */,
 				8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */,
 				420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */,
@@ -1388,6 +1387,7 @@
 				84C7722821AB0D4000F60F43 /* TeamCell.xib in Resources */,
 				84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */,
 				84A99F3821647B47007C54CD /* Main.storyboard in Resources */,
+				3B57A00121C01E64009CE6EE /* GoogleService-Info.plist in Resources */,
 				84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */,
 				84C7723521ABB3BB00F60F43 /* NoteCell.xib in Resources */,
 				84A99F222163B836007C54CD /* Login.storyboard in Resources */,
