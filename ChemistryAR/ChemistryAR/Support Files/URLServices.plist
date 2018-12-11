@@ -10,6 +10,8 @@
 	<string>signup</string>
 	<key>GET_ALL_ELEMENT</key>
 	<string>api/element?text=%@</string>
+	<key>GET_ALL_COMPOUND</key>
+	<string>api/compound</string>
 	<key>GET_DETAIL_ELEMENT</key>
 	<string>api/element/%@</string>
 	<key>GET_ALL_USER</key>

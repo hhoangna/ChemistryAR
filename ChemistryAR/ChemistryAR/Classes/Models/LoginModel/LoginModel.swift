@@ -12,6 +12,8 @@ class LoginModel: BaseModel, Codable {
     
     var email:String?
     var password:String?
+    var deviceAPNSToken:String?
+    var deviceFcmToken:String?
     
     override func getDataObject() -> Data {
         return EncodeModel(model: self);

@@ -24,14 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     var mainVC: MainVC?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-                
+        
+        SERVICES().firebase.setupFirebase()
         // Override point for customization after application launch.
         IQKeyboardManager.shared().isEnabled = true
         Configuration.enableConfiguration()
         LanguageHelper.setLanguage(forLanguage: .EN)
         SERVICES().push.startPushNotifications()
         SERVICES().push.delegate = self
-        SERVICES().firebase.setupFirebase()
         
         checkStatusLogin()
 

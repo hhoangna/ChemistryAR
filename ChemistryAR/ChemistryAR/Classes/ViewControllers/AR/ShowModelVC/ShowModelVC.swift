@@ -10,7 +10,6 @@ import UIKit
 import SceneKit
 import ARKit
 import MultipeerConnectivity
-import Panels
 
 class ShowModelVC: BaseVC {
     // MARK: - IBOutlets
@@ -19,25 +18,33 @@ class ShowModelVC: BaseVC {
     @IBOutlet weak var sessionInfoLabel: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var sendMapButton: UIButton!
+    @IBOutlet weak var moreModelBtn: UIButton!
     @IBOutlet weak var mappingStatusLabel: UILabel!
+    @IBOutlet weak var vModel: UIView?
+    @IBOutlet weak var clvContent: UICollectionView!
+    @IBOutlet weak var csHeightViewModel: NSLayoutConstraint!
     
     // MARK: - View Life Cycle
     
     var multipeerSession: MultipeerSession!
     var mapProvider: MCPeerID?
-    lazy var panelManager = Panels(target: self)
+    var modelAR: SCNNode?
+    
+    var arrModel: [ARFileModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         multipeerSession = MultipeerSession(receivedDataHandler: receivedData)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let panel = UIStoryboard.instantiatePanel(identifier: "ModelPanel")
-        var panelConfiguration = PanelConfiguration(size: .custom(300.0))
-        panelConfiguration.animateEntry = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.panelManager.show(panel: panel, config: panelConfiguration)
-        }
+        vModel?.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        vModel?.layer.cornerRadius = 15
+        vModel?.isHidden = true
+        fetchAllModel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,32 +83,42 @@ class ShowModelVC: BaseVC {
         // Pause the view's AR session.
         sceneView.session.pause()
     }
+    
+    func fetchAllModel() {
+        App().showLoadingIndicator()
+        SERVICES().API.getAllCompound { (results) in
+            App().dismissLoadingIndicator()
+            switch results {
+            case .object(let obj):
+                self.arrModel = obj
+                self.clvContent.reloadData()
+            case .error(let err):
+                self.showAlertView(E(err.message))
+            }
+        }
+    }
+    
+    @IBAction func btnMoreARModelPressed(_ sender: UIButton) {
+        vModel?.animShow()
+        self.moreModelBtn.isHidden = true
+        self.sendMapButton.isHidden = true
+
+    }
+    
+    @IBAction func btnHideARModelPressed(_ sender: UIButton) {
+        vModel?.animHide()
+        self.moreModelBtn.isHidden = false
+        self.sendMapButton.isHidden = false
+    }
 }
 
 extension ShowModelVC: ARSCNViewDelegate {
     // MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        let file = ARFileModel()
-        file.urlServer = "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ModelDea%2Fmax.scn?alt=media&token=fa3ce6b8-fc1b-4227-a232-aa1d31747353"
-        file.name = "max.scn"
-        file.startDownload { (success, file) in
-            
-            print("Path local: \(file?.urlLocal)")
-            
-            if let url = file?.urlLocal {
-               // self.loadRedPandaModel(url)
-                        node.addChildNode(self.loadRedPandaModel(url))
-
-                
-            }
+        if let name = anchor.name, name.hasPrefix("panda") {
+            node.addChildNode(loadRedPandaModel())
         }
-        
-//
-//        if let name = anchor.name, name.hasPrefix("max") {
-//        }
-//        node.addChildNode(loadRedPandaModel())
-
     }
 }
 
@@ -263,18 +280,69 @@ extension ShowModelVC: ARSessionDelegate {
     }
     
     // MARK: - AR session management
+    
     private func loadRedPandaModel() -> SCNNode {
-        let sceneURL = Bundle.main.url(forResource: "max", withExtension: "scn", subdirectory: "art.scnassets")!
-        
-        let referenceNode = SCNReferenceNode(url: sceneURL)!
-        referenceNode.load()
-        
+        let model = ARFileModel()
+        var referenceNode = SCNReferenceNode()
+        model.urlServer = "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ModelDea%2Fmax.scn?alt=media&token=4ec020ca-c378-452c-aefc-5275884d7758"
+        model.name = "test"
+        model.startDownload { (success, file) in
+            referenceNode = SCNReferenceNode(url: (file?.urlLocal)!)!
+            referenceNode.load()
+        }
         return referenceNode
     }
     
-    private func loadRedPandaModel(_ url:URL) -> SCNNode{
+    private func configModelWith(_ url:URL) -> SCNNode{
         let referenceNode = SCNReferenceNode(url: url)!
         referenceNode.load()
         return referenceNode
+    }
+}
+
+extension ShowModelVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (collectionView.frame.size.width - 22)/4
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 3;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3;
+    }
+}
+
+extension ShowModelVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrModel?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let model = arrModel?[indexPath.item]
+        let cell: CellModel = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CellModel
+        
+        cell.lblTitle?.text = model?.name
+        cell.imgIcon?.setImageWithURL(url: model?.urlServer)
+        
+        return cell
+    }
+}
+
+extension ShowModelVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = arrModel?[indexPath.item]
+        model?.startDownload { (success, file) in
+            if let url = file?.urlLocal {
+                self.modelAR = self.configModelWith(url)
+            }
+        }
     }
 }

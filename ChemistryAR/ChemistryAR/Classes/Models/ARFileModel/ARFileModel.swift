@@ -9,11 +9,15 @@
 import UIKit
 import Alamofire
 
-class ARFileModel: BaseModel {
-    var urlServer:String?
-    var urlLocal:URL?
-    var fileContent:Data?
-    var name:String?
+class ARFileModel: BaseModel, Codable {
+    var urlServer: String?
+    var urlLocal: URL?
+    var fileContent: Data?
+    var name: String?
+    var _id: String?
+    var createdAt: Date?
+    var updatedAt: Date?
+    var active: Bool?
     
     func startDownload(callback: @escaping (Bool,ARFileModel?) -> Void){
         let fileUrl = self.getSaveFileUrl(fileName: E(name))

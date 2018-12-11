@@ -23,8 +23,6 @@
 		84154F0521621D34008F2C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84154F0421621D34008F2C05 /* AppDelegate.swift */; };
 		84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0B21621D36008F2C05 /* Assets.xcassets */; };
 		84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84154F0D21621D36008F2C05 /* LaunchScreen.storyboard */; };
-		8433A68521A3C09500B48B92 /* ModelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A68421A3C09500B48B92 /* ModelVC.swift */; };
-		8433A68821A3C0AB00B48B92 /* ModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A68721A3C0AB00B48B92 /* ModelCell.swift */; };
 		8433A68A21A3EECD00B48B92 /* ModelPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8433A68921A3EECD00B48B92 /* ModelPanel.storyboard */; };
 		8433A68F21A4FEE600B48B92 /* ScanModelListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A68E21A4FEE600B48B92 /* ScanModelListVC.swift */; };
 		8433A69121A4FF0200B48B92 /* ScanModelClv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433A69021A4FF0200B48B92 /* ScanModelClv.swift */; };
@@ -54,7 +52,9 @@
 		844B7291216602C9001E778F /* PeriodicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B7290216602C9001E778F /* PeriodicCell.swift */; };
 		8452DF4921BB7390005C6E4C /* ARFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DF4821BB7390005C6E4C /* ARFileModel.swift */; };
 		8452DF4C21BB759E005C6E4C /* FileManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DF4B21BB759E005C6E4C /* FileManagers.swift */; };
-		8452DF5221BB9752005C6E4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8452DF5121BB9752005C6E4C /* GoogleService-Info.plist */; };
+		846F0FC121BE54DB00BD882A /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F0FC021BE54DB00BD882A /* CellModel.swift */; };
+		847A12A721BEAE5C00C2F974 /* APIs + Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */; };
+		847A12A921BFB75700C2F974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847A12A821BFB75700C2F974 /* GoogleService-Info.plist */; };
 		8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */; };
 		8484EF6F21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */; };
 		8484EF7121A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */; };
@@ -170,8 +170,6 @@
 		84154F0B21621D36008F2C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84154F0E21621D36008F2C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84154F1021621D36008F2C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8433A68421A3C09500B48B92 /* ModelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVC.swift; sourceTree = "<group>"; };
-		8433A68721A3C0AB00B48B92 /* ModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCell.swift; sourceTree = "<group>"; };
 		8433A68921A3EECD00B48B92 /* ModelPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModelPanel.storyboard; sourceTree = "<group>"; };
 		8433A68E21A4FEE600B48B92 /* ScanModelListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModelListVC.swift; sourceTree = "<group>"; };
 		8433A69021A4FF0200B48B92 /* ScanModelClv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModelClv.swift; sourceTree = "<group>"; };
@@ -201,7 +199,9 @@
 		844B7290216602C9001E778F /* PeriodicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicCell.swift; sourceTree = "<group>"; };
 		8452DF4821BB7390005C6E4C /* ARFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFileModel.swift; sourceTree = "<group>"; };
 		8452DF4B21BB759E005C6E4C /* FileManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagers.swift; sourceTree = "<group>"; };
-		8452DF5121BB9752005C6E4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		846F0FC021BE54DB00BD882A /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + Compound.swift"; sourceTree = "<group>"; };
+		847A12A821BFB75700C2F974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
 		8484EF7021A28F38007F2180 /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -360,6 +360,7 @@
 				8C02913721AB8DFC00AA2DB0 /* APIs + Reaction.swift */,
 				84880DDB219DC5FF00C4D075 /* APIs + Element.swift */,
 				8433A69721A52F8900B48B92 /* APIs + User.swift */,
+				847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -477,7 +478,7 @@
 		84154F1821621F82008F2C05 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8452DF5121BB9752005C6E4C /* GoogleService-Info.plist */,
+				847A12A821BFB75700C2F974 /* GoogleService-Info.plist */,
 				840E7D8821B8CE93007883BE /* Configurations */,
 				84A99F572164AE0F007C54CD /* Localizable */,
 				84154F1021621D36008F2C05 /* Info.plist */,
@@ -642,23 +643,6 @@
 				848F7D7D21632738006F264C /* CustomNavigationBar.swift */,
 			);
 			path = CustomNavigationBar;
-			sourceTree = "<group>";
-		};
-		8433A68321A3C07F00B48B92 /* ModelVC */ = {
-			isa = PBXGroup;
-			children = (
-				8433A68621A3C09900B48B92 /* Cell */,
-				8433A68421A3C09500B48B92 /* ModelVC.swift */,
-			);
-			path = ModelVC;
-			sourceTree = "<group>";
-		};
-		8433A68621A3C09900B48B92 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				8433A68721A3C0AB00B48B92 /* ModelCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		8433A68B21A4FDFC00B48B92 /* Environment */ = {
@@ -879,6 +863,14 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
+		846F0FBF21BE54BE00BD882A /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+				846F0FC021BE54DB00BD882A /* CellModel.swift */,
+			);
+			path = CellModel;
+			sourceTree = "<group>";
+		};
 		8484EF6721A28D71007F2180 /* Gesture Recognizers */ = {
 			isa = PBXGroup;
 			children = (
@@ -952,7 +944,7 @@
 		8484EFA921A302ED007F2180 /* ShowModelVC */ = {
 			isa = PBXGroup;
 			children = (
-				8433A68321A3C07F00B48B92 /* ModelVC */,
+				846F0FBF21BE54BE00BD882A /* CellModel */,
 				8484EFB221A311C5007F2180 /* Utility */,
 				8484EFAF21A305A1007F2180 /* ARSharingMap */,
 				8484EFAA21A30484007F2180 /* ShowModelVC.swift */,
@@ -1353,10 +1345,10 @@
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1387,6 +1379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C7722321AA82CA00F60F43 /* InfoCell.xib in Resources */,
+				847A12A921BFB75700C2F974 /* GoogleService-Info.plist in Resources */,
 				8484EFA821A2A4C7007F2180 /* art.scnassets in Resources */,
 				8433A6AB21A551ED00B48B92 /* TextViewInput.xib in Resources */,
 				420DDD6E219C11DB00E77A7F /* URLServices.plist in Resources */,
@@ -1395,7 +1388,6 @@
 				84C7722821AB0D4000F60F43 /* TeamCell.xib in Resources */,
 				84154F0F21621D36008F2C05 /* LaunchScreen.storyboard in Resources */,
 				84A99F3821647B47007C54CD /* Main.storyboard in Resources */,
-				8452DF5221BB9752005C6E4C /* GoogleService-Info.plist in Resources */,
 				84154F0C21621D36008F2C05 /* Assets.xcassets in Resources */,
 				84C7723521ABB3BB00F60F43 /* NoteCell.xib in Resources */,
 				84A99F222163B836007C54CD /* Login.storyboard in Resources */,
@@ -1508,8 +1500,8 @@
 				84880DDA219DB1E100C4D075 /* CategoryModel.swift in Sources */,
 				8433A69B21A5414700B48B92 /* TextViewInput.swift in Sources */,
 				84880DD7219D03B100C4D075 /* SignupModel.swift in Sources */,
+				846F0FC121BE54DB00BD882A /* CellModel.swift in Sources */,
 				8484EF8721A29A4A007F2180 /* ScannedObject.swift in Sources */,
-				8433A68521A3C09500B48B92 /* ModelVC.swift in Sources */,
 				84C7723B21ABF9F700F60F43 /* ElementListVC.swift in Sources */,
 				8484EF7721A28FD2007F2180 /* FlashlightButton.swift in Sources */,
 				844B7291216602C9001E778F /* PeriodicCell.swift in Sources */,
@@ -1543,7 +1535,6 @@
 				84BC042F21AC476F007130B0 /* PeriodicListCell.swift in Sources */,
 				840E7D8721B8CD26007883BE /* BuildConfiguration.swift in Sources */,
 				848F7D92216375E9006F264C /* BaseTbvCell.swift in Sources */,
-				8433A68821A3C0AB00B48B92 /* ModelCell.swift in Sources */,
 				84A99F5E2164B19A007C54CD /* UITextField + Ext.swift in Sources */,
 				42891DDE2177968D007CA947 /* UIBarButtonItem + Ext.swift in Sources */,
 				8443050621889F250074B609 /* SettingCell.swift in Sources */,
@@ -1599,6 +1590,7 @@
 				8484EF9421A29D52007F2180 /* ARKit + Ext.swift in Sources */,
 				84A99F31216468DD007C54CD /* LoginCell.swift in Sources */,
 				8484EF7521A28FB8007F2180 /* RoundedButton.swift in Sources */,
+				847A12A721BEAE5C00C2F974 /* APIs + Compound.swift in Sources */,
 				8484EF8A21A29A4A007F2180 /* ObjectOrigin.swift in Sources */,
 				84436BD421798DC20087D3FE /* ElementModel.swift in Sources */,
 			);
@@ -1758,6 +1750,7 @@
 			baseConfigurationReference = 71F5D8E2BA8CA7B795D43C72 /* Pods-ChemistryAR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChemistryAR/ChemistryAR.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43432WKUU5;
@@ -1780,6 +1773,7 @@
 			baseConfigurationReference = 970F231EF99B0C048E1C3E24 /* Pods-ChemistryAR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChemistryAR/ChemistryAR.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43432WKUU5;

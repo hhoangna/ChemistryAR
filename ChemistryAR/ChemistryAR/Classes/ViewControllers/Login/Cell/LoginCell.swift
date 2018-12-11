@@ -20,7 +20,7 @@ class LoginCell: BaseClvCell {
         
         tfUsername?.keyboardType = .emailAddress
         tfUsername?.returnKeyType = .next
-        tfPassword?.returnKeyType = .go
+        tfPassword?.returnKeyType = .next
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -58,7 +58,11 @@ class LoginCell: BaseClvCell {
     }
     
     @IBAction func onbtnClickLogin(button: UIButton) {
-        login()
+        if !isEmpty(E(tfUsername?.text)) && !isEmpty(E(tfPassword?.text)) {
+            login()
+        } else {
+            self.rootVC?.showAlertView(E("Please enter Username & Password"))
+        }
     }
 }
 
@@ -67,7 +71,7 @@ extension LoginCell: UITextFieldDelegate {
         if tfUsername == textField {
             tfPassword?.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
+            tfPassword?.resignFirstResponder()
             if checkForValidate() {
                 login()
             }
@@ -81,7 +85,8 @@ extension LoginCell {
         let login = LoginModel()
         login.email = tfUsername?.text
         login.password = tfPassword?.text
-        App().onLoginSuccess()
+        login.deviceFcmToken = Cache().getTokenFCM()
+        login.deviceAPNSToken = Caches().getTokenDevice()
 
         App().showLoadingIndicator()
         SERVICES().API.login(loginModel: login) {[weak self] (result) in

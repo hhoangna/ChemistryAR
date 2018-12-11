@@ -431,6 +431,25 @@ extension UIView {
         return superview as? T ?? superview.flatMap { $0.superview(of: T.self) }
     }
     
+    func animShow(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseIn],
+                       animations: {
+                        self.center.y -= self.bounds.height
+                        self.layoutIfNeeded()
+        }, completion: nil)
+        self.isHidden = false
+    }
+    func animHide(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear],
+                       animations: {
+                        self.center.y += self.bounds.height
+                        self.layoutIfNeeded()
+                        
+        },  completion: {(_ completed: Bool) -> Void in
+            self.isHidden = true
+        })
+    }
+    
 }
 
 // MARK: - Methods
