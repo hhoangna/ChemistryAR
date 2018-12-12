@@ -285,7 +285,7 @@ extension ShowModelVC: ARSessionDelegate {
         let model = ARFileModel()
         var referenceNode = SCNReferenceNode()
         model.urlServer = "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ModelDea%2Fmax.scn?alt=media&token=4ec020ca-c378-452c-aefc-5275884d7758"
-        model.name = "test"
+        model.name = "test.scn"
         model.startDownload { (success, file) in
             referenceNode = SCNReferenceNode(url: (file?.urlLocal)!)!
             referenceNode.load()

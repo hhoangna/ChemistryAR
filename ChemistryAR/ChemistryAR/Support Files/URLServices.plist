@@ -14,6 +14,8 @@
 	<string>api/compound</string>
 	<key>GET_DETAIL_ELEMENT</key>
 	<string>api/element/%@</string>
+	<key>REQUEST_USER</key>
+	<string>api/user/unlock</string>
 	<key>GET_ALL_USER</key>
 	<string>api/user</string>
 	<key>GET_DETAIL_USER</key>

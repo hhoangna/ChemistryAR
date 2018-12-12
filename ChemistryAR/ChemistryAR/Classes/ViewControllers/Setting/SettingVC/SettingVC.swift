@@ -32,7 +32,7 @@ class SettingVC: BaseVC {
     fileprivate var indentifyBlank = "BlankCell"
     
     var arrHeader = ["ACCOUNT".localized, "SETTING".localized, "DEVELOPER".localized, ""]
-    var arrSetting = ["Push Notification".localized, "Language".localized, "About".localized]
+    var arrSetting = ["Notification".localized, "Language".localized, "About".localized]
     var arrDevelop = ["User Management".localized, "Model Management".localized]
 
     override func viewDidLoad() {
@@ -136,7 +136,8 @@ extension SettingVC: UITableViewDelegate {
             break
         case .Setting:
             if indexPath.row == 0 {
-                return
+                let vc: NotificationVC = .load(SB: .Setting)
+                self.navigationController?.pushViewController(vc, animated: true)
             } else if indexPath.row == 1 {
                 return
             } else {

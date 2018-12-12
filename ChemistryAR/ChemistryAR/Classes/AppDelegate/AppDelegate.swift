@@ -141,10 +141,28 @@ extension AppDelegate{
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        self.refreshBadgeIconNumber()
+        self.refreshBadgeIconNumber()
     }
 }
 
 extension AppDelegate: PushNotificationServiceDelegate {
+    func refreshBadgeIconNumber()  {
+        UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
+            DispatchQueue.main.async {
+                let count:Int = notifications.count
+                UIApplication.shared.applicationIconBadgeNumber = count
+                
+                let user:UserDefaults = UserDefaults.standard
+                user.set(count, forKey: "AppBadge")
+            }
+        }
+    }
     
+    func removeAllNotifications() {
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
+        let user:UserDefaults = UserDefaults.standard
+        user.set(0, forKey: "AppBadge")
+    }
 }

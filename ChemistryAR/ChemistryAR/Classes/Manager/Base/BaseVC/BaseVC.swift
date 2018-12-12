@@ -74,6 +74,7 @@ class BaseVC: UIViewController {
         let saveBarItem: UIBarButtonItem = UIBarButtonItem.saveButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
         let cancelBarItem: UIBarButtonItem = UIBarButtonItem.cancelButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
         let logoutBarItem: UIBarButtonItem = UIBarButtonItem.logoutButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
+        let deleteBarItem: UIBarButtonItem = UIBarButtonItem.deleteButton(target: self, action: #selector(onNavigationClickRightButton(_:)))
 
         if let title = title {
             self.navigationItem.title = title
@@ -91,6 +92,10 @@ class BaseVC: UIViewController {
         case .BackDone:
             self.navigationItem.leftBarButtonItem = backBarItem
             self.navigationItem.rightBarButtonItem = saveBarItem
+            break
+        case .BackDelete:
+            self.navigationItem.leftBarButtonItem = backBarItem
+            self.navigationItem.rightBarButtonItem = deleteBarItem
             break
         case .Logout:
             self.navigationItem.rightBarButtonItem = logoutBarItem

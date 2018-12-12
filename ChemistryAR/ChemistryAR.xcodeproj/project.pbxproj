@@ -54,6 +54,8 @@
 		8452DF4921BB7390005C6E4C /* ARFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DF4821BB7390005C6E4C /* ARFileModel.swift */; };
 		8452DF4C21BB759E005C6E4C /* FileManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DF4B21BB759E005C6E4C /* FileManagers.swift */; };
 		846F0FC121BE54DB00BD882A /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F0FC021BE54DB00BD882A /* CellModel.swift */; };
+		8475E5A021C0B9F800F533ED /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E59F21C0B9F800F533ED /* NotificationVC.swift */; };
+		8475E5A321C0BA1000F533ED /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E5A221C0BA1000F533ED /* NotificationCell.swift */; };
 		847A12A721BEAE5C00C2F974 /* APIs + Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */; };
 		8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */; };
 		8484EF6F21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */; };
@@ -201,6 +203,8 @@
 		8452DF4821BB7390005C6E4C /* ARFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFileModel.swift; sourceTree = "<group>"; };
 		8452DF4B21BB759E005C6E4C /* FileManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagers.swift; sourceTree = "<group>"; };
 		846F0FC021BE54DB00BD882A /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		8475E59F21C0B9F800F533ED /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		8475E5A221C0BA1000F533ED /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + Compound.swift"; sourceTree = "<group>"; };
 		8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -871,6 +875,23 @@
 			path = CellModel;
 			sourceTree = "<group>";
 		};
+		8475E59E21C0B9C400F533ED /* NotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				8475E5A121C0B9FF00F533ED /* Cell */,
+				8475E59F21C0B9F800F533ED /* NotificationVC.swift */,
+			);
+			path = NotificationList;
+			sourceTree = "<group>";
+		};
+		8475E5A121C0B9FF00F533ED /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8475E5A221C0BA1000F533ED /* NotificationCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8484EF6721A28D71007F2180 /* Gesture Recognizers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1090,6 +1111,7 @@
 		849712CF216E401C00394891 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				8475E59E21C0B9C400F533ED /* NotificationList */,
 				84C81A1621AFD2A1002938C7 /* AboutVC */,
 				8433A6AC21A5A09200B48B92 /* ChangePassVC */,
 				84F72D9E2189CB95001F0001 /* ProfileVC */,
@@ -1514,6 +1536,7 @@
 				8433A68F21A4FEE600B48B92 /* ScanModelListVC.swift in Sources */,
 				8484EFA021A2A195007F2180 /* ExtApplicationState.swift in Sources */,
 				8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */,
+				8475E5A021C0B9F800F533ED /* NotificationVC.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
 				420DDD69219C0F5C00E77A7F /* EmptyModel.swift in Sources */,
 				84C81A1821AFD2BE002938C7 /* AboutVC.swift in Sources */,
@@ -1544,6 +1567,7 @@
 				8433A6A621A543F200B48B92 /* TextView + Ext.swift in Sources */,
 				8484EFA621A2A2D4007F2180 /* ARCameraTrackingState.swift in Sources */,
 				8484EF8C21A29A4A007F2180 /* ObjectOriginAxis.swift in Sources */,
+				8475E5A321C0BA1000F533ED /* NotificationCell.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
 				420DDD52219BF8DC00E77A7F /* LoginModel.swift in Sources */,
 				848F7D9021633A2A006F264C /* MainVC.swift in Sources */,

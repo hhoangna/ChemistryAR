@@ -80,6 +80,18 @@ extension UIBarButtonItem {
         return item
     }
     
+    class func deleteButton(target: Any, action: Selector) -> UIBarButtonItem {
+        let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        let button = customButton(with: #imageLiteral(resourceName: "ic_delete"),
+                                  frame: frame,
+                                  target: target,
+                                  action: action)
+        
+        let item = UIBarButtonItem(customView: button)
+        
+        return item
+    }
+    
     class func saveButton(target: Any, action: Selector) -> UIBarButtonItem {
         let frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         let button = customButton(with: #imageLiteral(resourceName: "ic_checkCircle"),

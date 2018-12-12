@@ -95,9 +95,13 @@
 "Enter Name"="Enter Name";
 "Select date"="Select date";
 "ACCOUNT"="ACCOUNT";
-"Push Notification"="Push Notification";
+"Notification"="Notification";
 "Yes"="Yes";
 "Do you want to logout?"="Do you want to logout?";
 "%i days ago"="%i days ago";
 "%i day ago"="%i day ago";
 "Deactived"="Deactived";
+"UNLOCK REQUEST"="UNLOCK REQUEST";
+"Your account had been deactived. Please contact admin to active"="Your account had been deactived. Please contact admin to active";
+"Your request have been sent"="Your request have been sent";
+"Unknown error"="Unknown error";

@@ -56,6 +56,15 @@ extension BaseAPI {
     }
     
     @discardableResult
+    func requestActive(callback: @escaping APICallback<UserModel>) -> APIRequest{
+        
+        return request(method: .POST,
+                       path: PATH_REQUEST_URL.REQUEST_USER.URL,
+                       input: .empty,
+                       callback: callback)
+    }
+    
+    @discardableResult
     func changePassword(model: PasswordModel, callback: @escaping APICallback<UserModel>) -> APIRequest{
         return request(method: .POST,
                        path: PATH_REQUEST_URL.CHANGE_PASS.URL,

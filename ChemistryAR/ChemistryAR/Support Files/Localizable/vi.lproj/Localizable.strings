@@ -90,9 +90,13 @@
 "Enter Name"="Nhập tên";
 "Select date"="Chọn ngày";
 "ACCOUNT"="TÀI KHOẢN";
-"Push Notification"="Thông báo";
+"Notification"="Thông báo";
 "Yes"="Có";
 "Do you want to logout?"="Bạn có muốn đăng xuất?";
 "%i days ago"="%i ngày trước";
 "%i day ago"="%i ngày trước";
 "Deactived"="Đã khoá";
+"UNLOCK REQUEST"="YÊU CẦU MỞ KHOÁ";
+"Your account had been deactived. Please contact admin to active"="Tài khoản của bạn đã bị khoá. Hãy liên hệ quản trị viên để mở";
+"Your request have been sent"="Yêu cầu của bạn đã được gửi đi";
+"Unknown error"="Không rõ lỗi";

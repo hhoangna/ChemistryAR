@@ -493,6 +493,67 @@
             </objects>
             <point key="canvasLocation" x="710" y="734"/>
         </scene>
+        <!--NotificationVC-->
+        <scene sceneID="mdF-IH-Nff">
+            <objects>
+                <viewController storyboardIdentifier="NotificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4rE-ML-LoS" customClass="NotificationVC" customModule="ChemistryAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VhY-Rf-cVA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vqh-GJ-MLm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="101" id="NTz-v0-qsa" customClass="NotificationCell" customModule="ChemistryAR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="101"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NTz-v0-qsa" id="VWr-CP-5a9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtP-e2-BaF">
+                                                    <rect key="frame" x="5" y="5" width="365" height="91"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CtP-e2-BaF" firstAttribute="top" secondItem="VWr-CP-5a9" secondAttribute="top" constant="5" id="6aZ-NA-Jdc"/>
+                                                <constraint firstItem="CtP-e2-BaF" firstAttribute="leading" secondItem="VWr-CP-5a9" secondAttribute="leading" constant="5" id="Smv-DZ-rc2"/>
+                                                <constraint firstAttribute="trailing" secondItem="CtP-e2-BaF" secondAttribute="trailing" constant="5" id="o01-0a-wFr"/>
+                                                <constraint firstAttribute="bottom" secondItem="CtP-e2-BaF" secondAttribute="bottom" constant="5" id="yZy-mx-Hjk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4rE-ML-LoS" id="Bb4-Uk-WDT"/>
+                                    <outlet property="delegate" destination="4rE-ML-LoS" id="Qfl-Nb-55v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TnC-ml-0we" firstAttribute="bottom" secondItem="vqh-GJ-MLm" secondAttribute="bottom" id="56Z-IO-92M"/>
+                            <constraint firstItem="TnC-ml-0we" firstAttribute="trailing" secondItem="vqh-GJ-MLm" secondAttribute="trailing" id="90b-vR-woi"/>
+                            <constraint firstItem="vqh-GJ-MLm" firstAttribute="leading" secondItem="TnC-ml-0we" secondAttribute="leading" id="BgF-77-X4j"/>
+                            <constraint firstItem="vqh-GJ-MLm" firstAttribute="top" secondItem="TnC-ml-0we" secondAttribute="top" id="FxX-LH-f8T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TnC-ml-0we"/>
+                    </view>
+                    <connections>
+                        <outlet property="tbvContent" destination="vqh-GJ-MLm" id="TEq-aR-7Sf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9F-mL-OQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402.4000000000001" y="732.68365817091455"/>
+        </scene>
         <!--ProfileVC-->
         <scene sceneID="jpW-hx-gbx">
             <objects>
@@ -980,18 +1041,72 @@
                                     <outlet property="delegate" destination="wU8-ED-xsu" id="HgZ-n8-T6h"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTH-Ow-Zvm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-wH-ZF1">
+                                        <rect key="frame" x="30" y="388.5" width="315" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="nFC-LR-0oN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" title="UNLOCK REQUEST">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="UNLOCK REQUEST"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnRequestPressed:" destination="wU8-ED-xsu" eventType="touchUpInside" id="0uJ-yB-KHo"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your account had been deactived. Please contact admin to active" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq3-fo-YYB">
+                                        <rect key="frame" x="30" y="308.5" width="315" height="30"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0052181429170108373" alpha="0.69963942307692306" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Your account had been deactived. Please contact admin to active"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.69963942307692306" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZbU-wH-ZF1" firstAttribute="centerX" secondItem="kTH-Ow-Zvm" secondAttribute="centerX" id="Q5w-dt-VsO"/>
+                                    <constraint firstItem="ZbU-wH-ZF1" firstAttribute="top" secondItem="wq3-fo-YYB" secondAttribute="bottom" constant="50" id="SJu-LU-VeU"/>
+                                    <constraint firstItem="ZbU-wH-ZF1" firstAttribute="leading" secondItem="kTH-Ow-Zvm" secondAttribute="leading" constant="30" id="Yt3-0A-WcZ"/>
+                                    <constraint firstItem="wq3-fo-YYB" firstAttribute="centerY" secondItem="kTH-Ow-Zvm" secondAttribute="centerY" id="qcb-3E-2tv"/>
+                                    <constraint firstItem="wq3-fo-YYB" firstAttribute="leading" secondItem="kTH-Ow-Zvm" secondAttribute="leading" constant="30" id="vXx-R7-Lfy"/>
+                                    <constraint firstItem="wq3-fo-YYB" firstAttribute="centerX" secondItem="kTH-Ow-Zvm" secondAttribute="centerX" id="xvU-uW-jhH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kPi-Nw-CuF" firstAttribute="leading" secondItem="3re-Sm-N7t" secondAttribute="leading" id="0yq-yk-E3d"/>
                             <constraint firstItem="kPi-Nw-CuF" firstAttribute="top" secondItem="3re-Sm-N7t" secondAttribute="top" id="8oU-t4-VZa"/>
+                            <constraint firstItem="3re-Sm-N7t" firstAttribute="bottom" secondItem="kTH-Ow-Zvm" secondAttribute="bottom" id="VCw-4F-436"/>
                             <constraint firstAttribute="trailing" secondItem="kPi-Nw-CuF" secondAttribute="trailing" id="YLg-Gs-pvO"/>
+                            <constraint firstItem="3re-Sm-N7t" firstAttribute="trailing" secondItem="kTH-Ow-Zvm" secondAttribute="trailing" id="aYQ-k7-HRA"/>
+                            <constraint firstItem="kTH-Ow-Zvm" firstAttribute="leading" secondItem="3re-Sm-N7t" secondAttribute="leading" id="ngn-pg-FMO"/>
                             <constraint firstAttribute="bottom" secondItem="kPi-Nw-CuF" secondAttribute="bottom" id="sHo-jz-zJv"/>
+                            <constraint firstItem="kTH-Ow-Zvm" firstAttribute="top" secondItem="3re-Sm-N7t" secondAttribute="top" id="tz8-4L-zqi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3re-Sm-N7t"/>
                     </view>
                     <connections>
                         <outlet property="tbvContent" destination="kPi-Nw-CuF" id="Ixo-g0-9Zx"/>
+                        <outlet property="vLock" destination="kTH-Ow-Zvm" id="5Ll-Lc-mB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ha-UZ-LXK" userLabel="First Responder" sceneMemberID="firstResponder"/>

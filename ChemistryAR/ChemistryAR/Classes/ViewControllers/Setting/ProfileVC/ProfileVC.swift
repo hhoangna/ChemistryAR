@@ -28,6 +28,7 @@ class ProfileVC: BaseVC {
     }
     
     @IBOutlet weak var tbvContent: UITableView?
+    @IBOutlet weak var vLock: UIView?
     
     fileprivate var indentifyAvatar = "AvatarCell"
     fileprivate var indentifyRow = "RowCell"
@@ -59,14 +60,18 @@ class ProfileVC: BaseVC {
     func updateUI() {
         if mode == .modeEdit {
             self.updateCustomNavigationBar(.BackDone, "Profile".localized)
+            vLock?.isHidden = true
         } else if mode == .modeNew {
             if Caches().user._id == userModel?._id {
                 self.updateCustomNavigationBar(.Logout, "Profile".localized)
+                vLock?.isHidden = false
             } else {
                 self.updateCustomNavigationBar(.BackOnly, "Profile".localized)
+                vLock?.isHidden = true
             }
         } else {
             self.updateCustomNavigationBar(.BackEdit, "Profile".localized)
+            vLock?.isHidden = true
         }
         
         tbvContent?.reloadData()
@@ -127,6 +132,19 @@ class ProfileVC: BaseVC {
                 })
             case .error(let err):
                 self.showAlertView(E(err.message))
+            }
+        }
+    }
+    
+    @IBAction func btnRequestPressed(_ sender: UIButton) {
+        App().showLoadingIndicator()
+        SERVICES().API.requestActive { (results) in
+            App().dismissLoadingIndicator()
+            switch results {
+            case .object(_ ):
+                self.showAlertView("Your request have been sent".localized)
+            case .error(_ ):
+                self.showAlertView("Unknown error".localized)
             }
         }
     }
