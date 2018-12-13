@@ -16,8 +16,7 @@ target 'ChemistryAR' do
   pod 'Firebase/Storage'
   pod 'Firebase/Messaging'
   pod 'Alamofire'
-  pod 'ObjectMapper'
   pod 'TLPhotoPicker'
-  pod 'Panels'
-  pod 'ReachabilitySwift'
+  pod 'Letters'
+
 end

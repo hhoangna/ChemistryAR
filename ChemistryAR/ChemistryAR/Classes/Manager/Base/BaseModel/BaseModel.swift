@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectMapper
 
 public enum JSONValue<T:Codable>: Codable {
     

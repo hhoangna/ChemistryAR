@@ -13,6 +13,7 @@ class NotificationCell: BaseTbvCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgIcon?.tintColor = AppColor.yellowColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

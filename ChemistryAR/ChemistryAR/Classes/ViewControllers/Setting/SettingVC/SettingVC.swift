@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingVC: BaseVC {
     
@@ -33,7 +34,9 @@ class SettingVC: BaseVC {
     
     var arrHeader = ["ACCOUNT".localized, "SETTING".localized, "DEVELOPER".localized, ""]
     var arrSetting = ["Notification".localized, "Language".localized, "About".localized]
+    var arrSettingIcon = [#imageLiteral(resourceName: "find_1"), #imageLiteral(resourceName: "ic_Language"), #imageLiteral(resourceName: "ic_aboutUs")]
     var arrDevelop = ["User Management".localized, "Model Management".localized]
+    var arrDevelopIcon = [#imageLiteral(resourceName: "ic_listUser"), #imageLiteral(resourceName: "ic_listModel")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +52,19 @@ class SettingVC: BaseVC {
         }
         alert.addAction(title: "Cancel".localized, style: .cancel)
         alert.show()
-        
+    }
+    
+    func getCountNotify(callback:@escaping (Bool, Int) -> Void) {
+        UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
+            DispatchQueue.main.async {
+                
+                // User Key
+                let user:UserDefaults = UserDefaults.standard
+                user.set(notifications.count, forKey: "AppBadge")
+                
+                callback(true, notifications.count)
+            }
+        }
     }
 }
 
@@ -78,11 +93,7 @@ extension SettingVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell: SettingCell = tableView.dequeueReusableCell(withIdentifier: indentifyHeader) as! SettingCell
         
-        if roleType == .Admin {
-            cell.lblTitle?.text = arrHeader[section]
-        } else {
-            cell.lblTitle?.text = ""
-        }
+        cell.lblTitle?.text = arrHeader[section]
         
         return cell
     }
@@ -101,7 +112,7 @@ extension SettingVC: UITableViewDataSource {
         let sectionScreen: Section = Section(rawValue: indexPath.section)!
         switch sectionScreen {
         case .Avatar:
-            return 100
+            return 160
         case .Setting:
             return 50
         case .Developer:
@@ -133,7 +144,12 @@ extension SettingVC: UITableViewDelegate {
         let rowScreen: Section = Section(rawValue: section)!
         switch rowScreen {
         case .Avatar:
-            break
+            let vc: ProfileVC = .load(SB: .Setting)
+            vc.mode = .modeView
+            vc.userModel = Caches().user
+            vc.updateAccountSuccess = {[weak self] (success) in
+                self?.tbvContent?.reloadData()}
+            self.navigationController?.pushViewController(vc, animated: true)
         case .Setting:
             if indexPath.row == 0 {
                 let vc: NotificationVC = .load(SB: .Setting)
@@ -145,12 +161,14 @@ extension SettingVC: UITableViewDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         case .Developer:
-            if roleType == .Admin {
+            if indexPath.row == 0 {
                 let vc: UserListVC = .load(SB: .Setting)
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
-                break
+                let vc: ModelListVC = .load(SB: .Setting)
+                
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
@@ -163,13 +181,14 @@ extension SettingVC {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyAvatar,
                                                  for:indexPath) as! SettingCell
-        
-        cell.imgAvatar?.setImageWithURL(url: Caches().user.avatar, placeHolderImage: UIImage(named: "ic_User"))
+        if !isEmpty(Caches().user.avatar) {
+            cell.imgAvatar?.setImageWithURL(url: Caches().user.avatar, placeHolderImage: UIImage(named: "ic_User"))
+        } else {
+            cell.imgAvatar?.setImage(string: Caches().user.name, color: AppColor.borderColor, circular: true, textAttributes: [NSAttributedString.Key.font: AppFont.helveticaBold(with: 25), NSAttributedString.Key.foregroundColor: AppColor.black])
+        }
         cell.lblTitle?.text = Caches().user.name
         cell.lblSubtitle?.text = Caches().user.email
         cell.imgVip?.isHidden = roleType == .User ? true : false
-        
-        cell.delegate = self
         
         return cell
     }
@@ -177,8 +196,20 @@ extension SettingVC {
     func cellSetting(_ tableView:UITableView,_ indexPath:IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyTitle,
                                                  for:indexPath) as! SettingCell
-        
+        cell.imgIcon?.image = arrSettingIcon[indexPath.row]
         cell.lblTitle?.text = arrSetting[indexPath.row]
+        if indexPath.row == 0 {
+            getCountNotify {(success, count) in
+                if count > 0 {
+                    cell.btnEdit?.isHidden = false
+                    cell.btnEdit?.setTitle(String(format: "%i", count), for: .normal)
+                } else {
+                    cell.btnEdit?.isHidden = true
+                }
+            }
+        } else {
+            cell.btnEdit?.isHidden = true
+        }
         
         return cell
     }
@@ -186,25 +217,10 @@ extension SettingVC {
     func cellDeveloper(_ tableView:UITableView,_ indexPath:IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyTitle,
                                                  for:indexPath) as! SettingCell
-        
+        cell.imgIcon?.image = arrDevelopIcon[indexPath.row]
         cell.lblTitle?.text = arrDevelop[indexPath.row]
+        cell.btnEdit?.isHidden = true
         
         return cell
-    }
-}
-
-extension SettingVC: SettingCellDelegate {
-    func didSelectChangeMode(cell: SettingCell, btn: UIButton) {
-        switch btn.tag {
-        case 0:
-            let vc: ProfileVC = .load(SB: .Setting)
-            vc.mode = .modeView
-            vc.userModel = Caches().user
-            vc.updateAccountSuccess = {[weak self] (success) in
-                self?.tbvContent?.reloadData()}
-            self.navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
-        }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectMapper
 
 class UserListVC: BaseVC {
     
@@ -23,7 +22,6 @@ class UserListVC: BaseVC {
         
         initData()
         updateCustomNavigationBar(.BackOnly, "User Management".localized)
-
     }
     
     func initData() {
@@ -56,6 +54,11 @@ class UserListVC: BaseVC {
     func filterListUser(list: [UserModel]?) {
         arrDisplay = list?.filter { (user) -> Bool in
             return user._id != Caches().user._id
+        }
+        if (self.arrDisplay?.count ?? 0 > 0){
+            UIView.removeViewNoItemAtParentView(self.tbvContent!)
+        }else {
+            UIView.addViewNoItemWithTitle("No Users".localized, intoParentView: self.tbvContent!)
         }
     }
 }
@@ -105,7 +108,11 @@ extension UserListVC {
                                                  for:indexPath) as! UserListCell
 
         let user = arrDisplay?[row]
-        cell.imgIcon?.setImageWithURL(url: user?.avatar, placeHolderImage: UIImage(named: "ic_User"))
+        if let url = user?.avatar {
+            cell.imgIcon?.setImageWithURL(url: url, placeHolderImage: UIImage(named: "ic_User"))
+        } else {
+            cell.imgIcon?.setImage(string: user?.name, color: AppColor.borderColor, circular: true, textAttributes: [NSAttributedString.Key.font: AppFont.helveticaBold(with: 18), NSAttributedString.Key.foregroundColor: AppColor.black])
+        }
         cell.lblTitle?.text = user?.name
         cell.lblSubtitle?.text = user?.email
         cell.imgVip?.isHidden = user?.role == "user" ? true : false

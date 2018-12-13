@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ObjectMapper
 
 class LoginCell: BaseClvCell {
     @IBOutlet fileprivate weak var tfUsername: UITextField?

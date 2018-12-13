@@ -18,13 +18,11 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         super.viewDidLoad()
         pushHomeViewController()
     }
-    
 
     func pushHomeViewController() {
         let vc  = setupESTabBarController()
         self.navigationController?.pushViewController(vc, animated: false)
     }
-    
     
     func setupESTabBarController() -> ESTabBarController {
         let tabBar = ESTabBarController()
@@ -36,6 +34,7 @@ class MainVC: BaseVC, UITabBarControllerDelegate {
         let vReaction:ReactionVC = ReactionVC.load(SB: .Reaction)
         let vARKit:ARKitVC = ARKitVC.load(SB: .AR)
         let vSetting:SettingVC = SettingVC.load(SB: .Setting)
+        App().settingVC = vSetting
         
         vPeriodic.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Periodic Table".localized, image: UIImage(named: "ic_table"), selectedImage: UIImage(named: "ic_tableSelected"))
         vReaction.tabBarItem = ESTabBarItem.init(BounceCustomTabbar(), title: "Reaction Chemical".localized, image: UIImage(named: "ic_react"), selectedImage: UIImage(named: "ic_reactSelected"))

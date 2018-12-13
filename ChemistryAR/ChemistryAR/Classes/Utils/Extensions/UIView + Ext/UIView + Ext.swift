@@ -519,3 +519,36 @@ extension UIView {
     }
 }
 
+extension UIView{
+    
+    @discardableResult
+    class func addViewNoItemWithTitle(_ title:String,intoParentView parentView:UIView) -> UIView{
+        removeViewNoItemAtParentView(parentView)
+        
+        let view = UIView(frame: CGRectMake(0, 0, parentView.frame.size.width/2, 70))
+        view.isUserInteractionEnabled = false
+        let imv = UIImageView(frame: CGRectMake(0, 5, view.frame.size.width, 25))
+        imv.image = UIImage(named: "ic-NoImageGray")
+        imv.contentMode = .scaleAspectFit
+        view.addSubview(imv)
+        
+        let lbl = UILabel(frame: CGRectMake(0, 45, view.frame.size.width, 20))
+        lbl.text = title
+        lbl.textAlignment = .center
+        lbl.textColor = AppColor.grayColor
+        view.addSubview(lbl)
+        view.center = parentView.center
+        view.tag = 1000
+        
+        parentView.addSubview(view)
+        
+        return view
+    }
+    
+    
+    class func removeViewNoItemAtParentView(_ parentView:UIView)  {
+        let view = parentView.viewWithTag(1000)
+        view?.removeFromSuperview()
+    }
+}
+

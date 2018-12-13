@@ -50,6 +50,7 @@ class ProfileVC: BaseVC {
         super.viewDidLoad()
 
         initData()
+        updateUI()
     }
     
     func initData() {
@@ -60,18 +61,18 @@ class ProfileVC: BaseVC {
     func updateUI() {
         if mode == .modeEdit {
             self.updateCustomNavigationBar(.BackDone, "Profile".localized)
-            vLock?.isHidden = true
+            self.vLock?.isHidden = true
         } else if mode == .modeNew {
             if Caches().user._id == userModel?._id {
                 self.updateCustomNavigationBar(.Logout, "Profile".localized)
-                vLock?.isHidden = false
+                self.vLock?.isHidden = false
             } else {
                 self.updateCustomNavigationBar(.BackOnly, "Profile".localized)
-                vLock?.isHidden = true
+                self.vLock?.isHidden = true
             }
         } else {
             self.updateCustomNavigationBar(.BackEdit, "Profile".localized)
-            vLock?.isHidden = true
+            self.vLock?.isHidden = true
         }
         
         tbvContent?.reloadData()
@@ -246,7 +247,12 @@ extension ProfileVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: indentifyAvatar,
                                                  for:indexPath) as! ProfileCell
         
-        cell.imgIcon?.setImageWithURL(url: userModel?.avatar, placeHolderImage: UIImage(named: "ic_User"))
+        if let url = userModel?.avatar {
+            cell.imgIcon?.setImageWithURL(url: url, placeHolderImage: UIImage(named: "ic_User"))
+        } else {
+            cell.imgIcon?.setImage(string: userModel?.name, color: AppColor.borderColor, circular: true, textAttributes: [NSAttributedString.Key.font: AppFont.helveticaBold(with: 25), NSAttributedString.Key.foregroundColor: AppColor.black])
+        }
+        
         if mode == .modeEdit {
             cell.btnEdit?.isHidden = false
         } else {

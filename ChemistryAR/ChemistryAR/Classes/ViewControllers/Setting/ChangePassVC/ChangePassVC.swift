@@ -34,14 +34,11 @@ class ChangePassVC: BaseVC {
     }
     
     struct ValidateRegister {
-        var isValidateEmail:Bool = false
         var isValidateConfirmPassword:Bool = false
         var isValidatePassword:Bool = false
     }
     
-    
-    var isValidateRegister:ValidateRegister = ValidateRegister()
-    var isCheckEnableButtonRegister:Bool = false {
+    var isValidateRegister:ValidateRegister = ValidateRegister(){
         didSet {
             checkEnableCreateProfile()
         }
@@ -50,7 +47,7 @@ class ChangePassVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initUI()
+        checkEnableCreateProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,45 +56,14 @@ class ChangePassVC: BaseVC {
         self.updateCustomNavigationBar(.BackOnly, "Change Password".localized)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func initUI() {
-        setUpTextField()
-        setUpButtonResgister()
-    }
-    
-    func setUpTextField() {
-        tfPassword.delegate = self;
-        tfOldPass.delegate = self;
-        tfRePassword.delegate = self;
-        tfPassword.isSecureTextEntry = true;
-        tfRePassword.isSecureTextEntry = true;
-        tfOldPass.isSecureTextEntry = true
-    }
-    
-    func setUpButtonResgister()  {
-        btnSave?.setRoudary(radius: 4.0);
-        isCheckEnableButtonRegister = false;
+    override func onNavigationBack(_ sender: UIBarButtonItem) {
+        didSelectback()
     }
     
     func checkEnableCreateProfile(){
-        btnSave?.isEnabled = isCheckEnableButtonRegister
-        btnSave?.alpha = isCheckEnableButtonRegister ? 1 : 0.5
-    }
-    
-    func validateRegister()->Bool{
-        var isRegister:Bool = false
-        guard isValidateRegister.isValidatePassword,
-            isValidateRegister.isValidatePassword,
-            isValidateRegister.isValidateConfirmPassword
-            else {
-                return isRegister
-        }
-        isRegister = true
-        return isRegister
+        btnSave?.isEnabled =   isValidateRegister.isValidateConfirmPassword &&
+            isValidateRegister.isValidatePassword
+        btnSave?.alpha =  btnSave?.isEnabled ?? true ? 1 : 0.5
     }
     
     func performLocalValidatePassword(){
@@ -138,13 +104,13 @@ extension ChangePassVC{
                     App().onReLogin()
                 })
             case .error(_ ):
-                self.showAlertView("Your password incorrect")
+                self.showAlertView("Your password incorrect".localized)
             }
         }
     }
 }
 
-extension ChangePassVC:UITextFieldDelegate {
+extension ChangePassVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == tfOldPass {
             tfPassword.becomeFirstResponder()
@@ -162,18 +128,14 @@ extension ChangePassVC:UITextFieldDelegate {
         switch textField {
         case tfOldPass:
             performLocalValidatePassword()
-            break
         case tfPassword:
             performLocalValidatePassword()
-            break
         case tfRePassword:
             performLocalValidateConfirmPassword(rePass: updatedString)
-            break
         default:
             print("ok")
         }
         
-        isCheckEnableButtonRegister = validateRegister()
         return true
     }
 }

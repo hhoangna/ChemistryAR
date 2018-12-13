@@ -56,6 +56,10 @@
 		846F0FC121BE54DB00BD882A /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F0FC021BE54DB00BD882A /* CellModel.swift */; };
 		8475E5A021C0B9F800F533ED /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E59F21C0B9F800F533ED /* NotificationVC.swift */; };
 		8475E5A321C0BA1000F533ED /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E5A221C0BA1000F533ED /* NotificationCell.swift */; };
+		8475E5A621C1FB6200F533ED /* Date + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E5A521C1FB6200F533ED /* Date + Ext.swift */; };
+		8475E5AA21C2371000F533ED /* ModelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E5A921C2371000F533ED /* ModelListCell.swift */; };
+		8475E5AC21C2372100F533ED /* ModelListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E5AB21C2372100F533ED /* ModelListVC.swift */; };
+		8475E5AF21C2635900F533ED /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475E5AE21C2635900F533ED /* NotificationModel.swift */; };
 		847A12A721BEAE5C00C2F974 /* APIs + Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */; };
 		8484EF6D21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */; };
 		8484EF6F21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */; };
@@ -205,6 +209,10 @@
 		846F0FC021BE54DB00BD882A /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		8475E59F21C0B9F800F533ED /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		8475E5A221C0BA1000F533ED /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		8475E5A521C1FB6200F533ED /* Date + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Ext.swift"; sourceTree = "<group>"; };
+		8475E5A921C2371000F533ED /* ModelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelListCell.swift; sourceTree = "<group>"; };
+		8475E5AB21C2372100F533ED /* ModelListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelListVC.swift; sourceTree = "<group>"; };
+		8475E5AE21C2635900F533ED /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		847A12A621BEAE5C00C2F974 /* APIs + Compound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIs + Compound.swift"; sourceTree = "<group>"; };
 		8484EF6C21A28E74007F2180 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		8484EF6E21A28EC5007F2180 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -530,6 +538,7 @@
 		84154F1C21621FAE008F2C05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8475E5AD21C2633D00F533ED /* NotificationModel */,
 				8452DF4721BB735F005C6E4C /* ARFileModel */,
 				8C02913921AB8E2C00AA2DB0 /* ReactionModel */,
 				8433A6AF21A5A3D100B48B92 /* PasswordModel */,
@@ -892,6 +901,39 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8475E5A421C1FB4B00F533ED /* Date + Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8475E5A521C1FB6200F533ED /* Date + Ext.swift */,
+			);
+			path = "Date + Ext";
+			sourceTree = "<group>";
+		};
+		8475E5A721C236EE00F533ED /* ModelManagementList */ = {
+			isa = PBXGroup;
+			children = (
+				8475E5A821C236FC00F533ED /* Cell */,
+				8475E5AB21C2372100F533ED /* ModelListVC.swift */,
+			);
+			path = ModelManagementList;
+			sourceTree = "<group>";
+		};
+		8475E5A821C236FC00F533ED /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8475E5A921C2371000F533ED /* ModelListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8475E5AD21C2633D00F533ED /* NotificationModel */ = {
+			isa = PBXGroup;
+			children = (
+				8475E5AE21C2635900F533ED /* NotificationModel.swift */,
+			);
+			path = NotificationModel;
+			sourceTree = "<group>";
+		};
 		8484EF6721A28D71007F2180 /* Gesture Recognizers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,6 +1060,7 @@
 		848F7D7F216329F7006F264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8475E5A421C1FB4B00F533ED /* Date + Ext */,
 				84BC043021AD1A12007130B0 /* UILabel + Ext */,
 				84C7722421AAC77D00F60F43 /* NSNumber + Ext */,
 				8433A6A421A543E100B48B92 /* TextView + Ext */,
@@ -1115,6 +1158,7 @@
 				84C81A1621AFD2A1002938C7 /* AboutVC */,
 				8433A6AC21A5A09200B48B92 /* ChangePassVC */,
 				84F72D9E2189CB95001F0001 /* ProfileVC */,
+				8475E5A721C236EE00F533ED /* ModelManagementList */,
 				8443050B218941D10074B609 /* UserManagementList */,
 				8443050A218941B70074B609 /* SettingVC */,
 			);
@@ -1440,10 +1484,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Panels/Panels.framework",
+				"${BUILT_PRODUCTS_DIR}/Letters/Letters.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
@@ -1458,10 +1500,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Panels.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Letters.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
@@ -1539,6 +1579,7 @@
 				8475E5A021C0B9F800F533ED /* NotificationVC.swift in Sources */,
 				84A99F2D21645396007C54CD /* TabBarTopViewCell.swift in Sources */,
 				420DDD69219C0F5C00E77A7F /* EmptyModel.swift in Sources */,
+				8475E5AC21C2372100F533ED /* ModelListVC.swift in Sources */,
 				84C81A1821AFD2BE002938C7 /* AboutVC.swift in Sources */,
 				84880DDC219DC5FF00C4D075 /* APIs + Element.swift in Sources */,
 				8484EF9721A29E65007F2180 /* Scan.swift in Sources */,
@@ -1554,6 +1595,7 @@
 				8433A69121A4FF0200B48B92 /* ScanModelClv.swift in Sources */,
 				420DDD6C219C104D00E77A7F /* FileModel.swift in Sources */,
 				848F7D8A216330A2006F264C /* BaseNV.swift in Sources */,
+				8475E5AF21C2635900F533ED /* NotificationModel.swift in Sources */,
 				84C7722621AAC79600F60F43 /* NSNumber + Ext.swift in Sources */,
 				84BC042F21AC476F007130B0 /* PeriodicListCell.swift in Sources */,
 				840E7D8721B8CD26007883BE /* BuildConfiguration.swift in Sources */,
@@ -1566,6 +1608,7 @@
 				848F7D8E216339EB006F264C /* BaseVC.swift in Sources */,
 				8433A6A621A543F200B48B92 /* TextView + Ext.swift in Sources */,
 				8484EFA621A2A2D4007F2180 /* ARCameraTrackingState.swift in Sources */,
+				8475E5AA21C2371000F533ED /* ModelListCell.swift in Sources */,
 				8484EF8C21A29A4A007F2180 /* ObjectOriginAxis.swift in Sources */,
 				8475E5A321C0BA1000F533ED /* NotificationCell.swift in Sources */,
 				84A99F2821645324007C54CD /* TabBarTopView.swift in Sources */,
@@ -1616,6 +1659,7 @@
 				8484EF7521A28FB8007F2180 /* RoundedButton.swift in Sources */,
 				847A12A721BEAE5C00C2F974 /* APIs + Compound.swift in Sources */,
 				8484EF8A21A29A4A007F2180 /* ObjectOrigin.swift in Sources */,
+				8475E5A621C1FB6200F533ED /* Date + Ext.swift in Sources */,
 				84436BD421798DC20087D3FE /* ElementModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

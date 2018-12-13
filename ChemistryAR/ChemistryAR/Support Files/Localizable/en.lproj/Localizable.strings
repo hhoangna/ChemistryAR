@@ -85,6 +85,7 @@
 "Re-New Password"="Re-New Password";
 "Do you want to update your change?"="Do you want to update your change?";
 "Update"="Update";
+"Save"="Save";
 "Discard"="Discard";
 "Update successfully"="Update successfully";
 "OK"="OK";
@@ -105,3 +106,11 @@
 "Your account had been deactived. Please contact admin to active"="Your account had been deactived. Please contact admin to active";
 "Your request have been sent"="Your request have been sent";
 "Unknown error"="Unknown error";
+"Clear All Notifications?"="Clear All Notifications?";
+"No Notifications"="No Notifications";
+"No Models"="No Models";
+"No Users"="No Users";
+"No Equations"="No Equations";
+"Enter input element, compound, ..."="Enter input element, compound, ...";
+"Your password incorrect"="Your password incorrect";
+

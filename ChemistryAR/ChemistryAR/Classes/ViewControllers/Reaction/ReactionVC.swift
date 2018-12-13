@@ -18,6 +18,8 @@ class ReactionVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        sbSearch?.placeholder = "Enter input element, compound, ...".localized
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.init(name: "Helveti-Regular", size: 13)
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +31,11 @@ class ReactionVC: BaseVC {
             switch result {
             case .object(let obj):
                 self.arrDisplay = obj.equation
+                if (self.arrDisplay?.count ?? 0 > 0){
+                    UIView.removeViewNoItemAtParentView(self.tbvContent!)
+                }else {
+                    UIView.addViewNoItemWithTitle("No Equations".localized, intoParentView: self.tbvContent!)
+                }
                 self.tbvContent?.reloadData()
             case .error(_ ):
                 self.showAlertView("Get Reaction Equation Error!".localized)
