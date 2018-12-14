@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 //
 protocol PushNotificationServiceDelegate: class {
-//    func tapPushNotification(with notificationScreen: NotificationScreenModel)
+    func tapPushNotification(with notificationScreen: NotificationModel)
 }
 
 protocol PushNotificationService: class {
@@ -47,20 +47,26 @@ class PushNotificationService_: NSObject, PushNotificationService {
             UNUserNotificationCenter.current().requestAuthorization(options: authOptions) {
                 (granted, error) in
                 print("Permission granted: \(granted)")
+                guard granted else { return }
+                self.getNotificationSettings()
             }
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             UIApplication.shared.registerUserNotificationSettings(settings)
         }
-
-        /*DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-         self.fireToTestDeliveringOrderPushNotification();
-         };*/
     }
 
     func stopPushNotifications() {
         UIApplication.shared.unregisterForRemoteNotifications()
+    }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            //UIApplication.shared.registerForRemoteNotifications()
+        }
     }
 
     func didRegister(with deviceToken: Data) {
@@ -76,31 +82,15 @@ fileprivate extension PushNotificationService_ {
     func handleTapReceiveNotificaton(response: UNNotificationResponse) {
         let content = response.notification.request.content;
         
-        print(content.userInfo)
-        if let dic = content.userInfo["screen"] as? String  {
-            let data = dic.data(using: .utf8)!
-            do {
-                let decoder = JSONDecoder()
-//                let obj = try decoder.decode(UserModel.self, from: data)
-
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {  [weak self] in
-//                    self?.delegate?.tapPushNotification(with: obj)
-//                }
-            
-            } catch let err {
-                print("Err:", err)
-            }
-        
-        }else if  let dic = content.userInfo["screen"] as? ResponseDictionary {
+        if let dic = content.userInfo as? ResponseDictionary {
             do {
                 let data: Data = try JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
                 let decoder = JSONDecoder()
-//                let obj = try decoder.decode(UserModel.self, from: data)
-
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {  [weak self] in
-//                    self?.delegate?.tapPushNotification(with: obj)
-//                }
-            
+                let obj = try decoder.decode(NotificationModel.self, from: data)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {  [weak self] in
+                    self?.delegate?.tapPushNotification(with: obj)
+                }
             } catch let err {
                 print("Err:", err)
             }
@@ -115,7 +105,7 @@ extension PushNotificationService_: UNUserNotificationCenterDelegate {
         let userInfo = notification.request.content.userInfo as? [String: Any]
         print("===>Will Present Notification: \(userInfo ?? [:])")
         completionHandler([.alert,.badge,.sound])
-//        self.perform(#selector(refetchCountNotification), with: nil, afterDelay: 0.025)
+        self.perform(#selector(refetchCountNotification), with: nil, afterDelay: 0.025)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -123,5 +113,9 @@ extension PushNotificationService_: UNUserNotificationCenterDelegate {
         handleTapReceiveNotificaton(response: response)
         
         completionHandler()
+    }
+    
+    @objc func refetchCountNotification() {
+        App().settingVC?.tbvContent?.reloadData()
     }
 }

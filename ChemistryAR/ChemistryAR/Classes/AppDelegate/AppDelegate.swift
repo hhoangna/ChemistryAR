@@ -161,6 +161,16 @@ extension AppDelegate{
 }
 
 extension AppDelegate: PushNotificationServiceDelegate {
+    
+    func tapPushNotification(with notificationScreen: NotificationModel) {
+        NotificationModel.getVCFrom(notiData: notificationScreen) { (success, vc) in
+            if success{
+                App().settingVC?.tbvContent?.reloadData()
+                App().rootNV?.pushViewController(vc, animated: false)
+            }
+        }
+    }
+    
     func refreshBadgeIconNumber()  {
         UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
             DispatchQueue.main.async {

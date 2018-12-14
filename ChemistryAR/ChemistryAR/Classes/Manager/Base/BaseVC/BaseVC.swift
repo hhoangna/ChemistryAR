@@ -51,6 +51,7 @@ class BaseVC: UIViewController {
         self.navigationController?.setNavigationBarHidden(checkNavigationBarHidden(), animated: true)
         App().mainVC?.barController?.navigationItem.rightBarButtonItems = []
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     func printControllerName() {

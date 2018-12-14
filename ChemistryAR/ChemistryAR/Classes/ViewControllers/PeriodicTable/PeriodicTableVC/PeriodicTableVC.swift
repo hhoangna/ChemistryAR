@@ -50,6 +50,7 @@ class PeriodicTableVC: BaseVC {
         
         vContainer?.intercellSpacing = CGSize(width: 2, height: 2)
         vContainer?.gridStyle = .none
+        vContainer?.bounces = false
         
         vContainer?.register(GroupCell.self, forCellWithReuseIdentifier: String(describing: GroupCell.self))
         vContainer?.register(CycleCell.self, forCellWithReuseIdentifier: String(describing: CycleCell.self))

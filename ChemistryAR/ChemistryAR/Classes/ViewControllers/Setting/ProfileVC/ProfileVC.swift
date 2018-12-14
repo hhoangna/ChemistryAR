@@ -219,7 +219,7 @@ extension ProfileVC: UITableViewDelegate {
             switch result {
             case .object(_ ):
                 self.activeAccountSuccess!(true)
-                self.didSelectback()
+                self.fetchData()
             case .error(let err):
                 self.showAlertView(E(err.message))
             }

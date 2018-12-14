@@ -20,24 +20,10 @@ class NotificationModel: BaseModel, Codable {
     }
     
     var identify: String?
-    var action: String?
-    var desc: String?
     var title: String?
     var body: String?
     var date: Date?
-    var _id: String?
-    
-    func setupWithData(_ data: Data) {
-        if let obj:NotificationModel = DecodeModel(data: data){
-            action = obj.action
-            desc = obj.desc
-            body = obj.body
-            date = obj.date
-            title = obj.title
-            identify = obj.identify
-            _id = obj._id
-        }
-    }
+    var desc: String?
     
     class func getVCFrom(notiData:NotificationModel,
                                    callback: NotificationScreenCallback) {
@@ -48,14 +34,15 @@ class NotificationModel: BaseModel, Codable {
                     
                 case .Request:
                     let dto = UserModel()
-                    dto._id = notiData._id
-                    let vc: ProfileVC = ProfileVC.load(SB: .Setting)
+                    dto._id = notiData.desc
+                    let vc: ProfileVC = .load(SB: .Setting)
                     vc.mode = .modeNew
                     vc.userModel = dto
                     callback(true , vc);
+                case .Lock, .Unlock:
+                    App().onReLogin()
                 default:
                     break
-                    
                 }
             }
         }

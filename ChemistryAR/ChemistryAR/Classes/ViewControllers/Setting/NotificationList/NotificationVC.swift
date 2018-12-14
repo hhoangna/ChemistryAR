@@ -53,15 +53,7 @@ class NotificationVC: BaseVC {
         }
         UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
             self.arrNotifications = notifications
-            DispatchQueue.main.async {
-                App().dismissLoadingIndicator()
-                if (self.arrNotifications.count > 0){
-                    UIView.removeViewNoItemAtParentView(self.tbvContent!)
-                }else {
-                    UIView.addViewNoItemWithTitle("No Notifications".localized, intoParentView: self.tbvContent!)
-                }
-                self.tbvContent?.reloadData()
-            }
+            self.fetchData()
         }
     }
     
@@ -72,37 +64,22 @@ class NotificationVC: BaseVC {
             let title = content.title
             if let userInfo:ResponseDictionary = content.userInfo as? ResponseDictionary{
                 let noti = NotificationModel()
-                if let screen = (userInfo["screen"] as? String)?.data(using: String.Encoding.utf8) {
-                    noti.setupWithData(screen)
-                    noti.title = title
-                    noti.body = content.body;
-                    noti.notifyDate = notification.date;
-                    
-                }else if let screen = (userInfo["screen"] as? ResponseDictionary) {
-                    
-                    do {
-                        let data =  try JSONSerialization.data(withJSONObject: screen, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        noti.setupWithData(data)
-                        noti.title = title
-                        noti.body = content.body;
-                        noti.notifyDate = notification.date;
-                        
-                    }catch (let error){
-                        print("Error: \(error)")
-                    }
-                }
-                arrContent.append(noti)
+                noti.identify = userInfo["identify"] as? String
+                noti.desc = userInfo["desc"] as? String
+                noti.title = title
+                noti.body = content.body;
+                noti.date = notification.date;
+                arrDisplay.append(noti)
             }
         }
         
         DispatchQueue.main.async {
             App().dismissLoadingIndicator()
             self.tbvContent?.endRefreshControl()
-            self.vAction?.isHidden = !(self.arrContent.count > 0)
-            if (self.arrContent.count > 0){
+            if (self.arrDisplay.count > 0){
                 UIView.removeViewNoItemAtParentView(self.tbvContent!)
             }else {
-                UIView.addViewNoItemWithTitle("No data".localized, intoParentView: self.tbvContent!)
+                UIView.addViewNoItemWithTitle("No Notifications".localized, intoParentView: self.tbvContent!)
             }
             self.tbvContent?.reloadData()
         }
@@ -120,7 +97,7 @@ extension NotificationVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrNotifications.count
+        return arrDisplay.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -133,13 +110,14 @@ extension NotificationVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:NotificationCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NotificationCell
-        if (arrNotifications.count != 0) {
-            let dto = arrNotifications[indexPath.row]
+        if (arrDisplay.count != 0) {
+            let dto = arrDisplay[indexPath.row]
             
-            cell.lblTitle?.text = dto.request.content.body
+            cell.lblTitle?.text = dto.title
+            cell.lblSubtitle1?.text = dto.body
             
             let now = Date()
-            cell.lblSubtitle?.text = now.offsetLong(from: dto.date)
+            cell.lblSubtitle?.text = now.offsetLong(from: dto.date!)
         }
         return cell
     }
@@ -157,18 +135,16 @@ extension NotificationVC: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let noti = arrNotifications[indexPath.row]
+        let noti = arrDisplay[indexPath.row]
         
-        noti.request.content.userInfo["aps"]
-//        NotificationScreenModel.getVCFromScreenDto(notiData: noti) { (fetchSuccess, vc)  in
-//            if fetchSuccess{
-//                DispatchQueue.main.async {
-//                    App().rootNV?.pushViewController(vc, animated: false)
-//                    App().removeReadNotification(notification: self.arrHistoryNotifications[indexPath.row].request)
-//                    self.onPullRefresh()
-//                }
-//            }
-//        }
-        
+        NotificationModel.getVCFrom(notiData: noti) { (fetchSuccess, vc)  in
+            if fetchSuccess{
+                DispatchQueue.main.async {
+                    App().rootNV?.pushViewController(vc, animated: true)
+                    App().removeReadNotification(notification: self.arrNotifications[indexPath.row].request)
+                    self.onPullRefresh()
+                }
+            }
+        }
     }
 }
