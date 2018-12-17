@@ -741,7 +741,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-2Q-TkN">
+                                                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-2Q-TkN">
                                                                                 <rect key="frame" x="12" y="2" width="64" height="64"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="z9k-2Q-TkN" secondAttribute="height" id="96m-s5-vGQ"/>
@@ -836,6 +836,7 @@
                     <connections>
                         <outlet property="clvContent" destination="BbJ-oO-d6F" id="yF5-iH-fso"/>
                         <outlet property="tabBarTopItemView" destination="WOi-fi-1vl" id="W7a-vh-Crq"/>
+                        <outlet property="vContent" destination="etq-UP-kYV" id="35k-3M-UV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9P-fZ-1jH" userLabel="First Responder" sceneMemberID="firstResponder"/>

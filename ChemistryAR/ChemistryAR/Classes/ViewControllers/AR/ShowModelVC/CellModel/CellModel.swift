@@ -9,7 +9,7 @@
 import UIKit
 
 typealias ModelNameCallback = (_ success: Bool, _ name: String) -> Void
-typealias ModelURLCallback = (_ success: Bool, _ url: URL) -> Void
+typealias ModelFileCallback = (_ success: Bool, _ file: ARFileModel) -> Void
 
 class CellModel: BaseClvCell {
     @IBOutlet weak var clvContent: UICollectionView!
@@ -23,7 +23,7 @@ class CellModel: BaseClvCell {
     }
     
     var nameCallback: ModelNameCallback?
-    var urlCallback: ModelURLCallback?
+    var fileCallback: ModelFileCallback?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -106,8 +106,8 @@ extension CellModel: UICollectionViewDataSource {
         let model = listModel[indexPath.item]
         let cell: ModelClvCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ModelClvCell
         
-        cell.lblTitle?.text = model.name
-        cell.imgIcon?.setImageWithURL(url: model.urlServer)
+        cell.lblTitle?.text = model.symbol
+        cell.imgIcon?.setImageWithURL(url: model.image)
         
         return cell
     }
@@ -122,9 +122,7 @@ extension CellModel: UICollectionViewDelegate {
         } else {
             if model.urlLocal == nil {
                 model.startDownload { (success, file) in
-                    if let url = file?.urlLocal {
-                        self.urlCallback!(true, url)
-                    }
+                    self.fileCallback!(true, file ?? ARFileModel())
                 }
             } else {
                 return

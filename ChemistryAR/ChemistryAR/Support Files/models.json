@@ -3,36 +3,42 @@
   "name": "Vinyl Axetylen",
   "summary": "Unknown",
   "symbol": "C4H4",
-  "urlServer": ""
+  "urlServer": "",
+  "image": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ImageDea%2FC4H4.png?alt=media&token=b4271aff-1506-45de-939b-a22c8e6cb82f"
   },
   {
   "name": "Etanol",
   "summary": "Etanol, còn được biết đến như là rượu etylic, ancol etylic, rượu ngũ cốc hay cồn, là một hợp chất hữu cơ, nằm trong dãy đồng đẳng của rượu metylic, dễ cháy, không màu, là một trong các rượu thông thường có trong thành phần của đồ uống chứa cồn. Trong cách nói dân dã, thông thường nó được nhắc đến một cách đơn giản là rượu. Etanol là một ancol mạch hở, công thức hóa học của nó là C2H6O hay C2H5OH. Một công thức thay thế khác là CH3-CH2-OH thể hiện cacbon ở nhóm metyl (CH3–) liên kết với carbon ở nhóm metylen (–CH2–), nhóm này lại liên kết với oxy của nhóm hydroxyl (–OH). Nó là đồng phân nhóm chức của dimetyl ete. Etanol thường được viết tắt là EtOH, sử dụng cách ký hiệu hoá học thường dùng đại diện cho nhóm etyl (C2H5) là Et.",
   "symbol": "C2H5OH",
-  "urlServer": ""
+  "urlServer": "",
+  "image": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ImageDea%2FC2H5OH.png?alt=media&token=5f959479-1c9e-4df7-bc7b-484cfe13b344"
   },
   {
   "name": "Ethylene Glycol",
   "summary": "Ethylene glycol là một hợp chất hữu cơ có công thức (CH₂OH)₂. Nó chủ yếu được sử dụng cho hai mục đích, một là nguyên liệu thô trong sản xuất sợi polyester, hai là cho các công thức chống ăn mòn. Đó là một loại xi-rô hương vị không màu, không mùi, không mùi. Ethylene glycol có độc tính vừa phải",
   "symbol": "C2H6O2",
-  "urlServer": ""
+  "urlServer": "",
+  "image": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ImageDea%2FC2H6O2.png?alt=media&token=6b0b183a-58c9-4969-8943-7cc69012b2fa"
   },
   {
   "name": "Cyclopentadiene",
   "summary": "",
   "symbol": "C5H6",
-  "urlServer": ""
+  "urlServer": "",
+  "image": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ImageDea%2FC5H6.png?alt=media&token=42d55810-345f-4e9f-8757-92b0fe32548c"
   },
   {
   "name": "Metylamin",
   "summary": "",
   "symbol": "CH5N",
-  "urlServer": ""
+  "urlServer": "",
+  "image": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ImageDea%2FCH5N.png?alt=media&token=ed8bd7cd-3c0d-484d-ac13-2613baee2f3b"
   },
   {
   "name": "4-Nitroaniline",
   "summary": "",
   "symbol": "C6H6N2O2",
-  "urlServer": ""
+  "urlServer": "",
+  "image": "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ImageDea%2FC6H6N2O2.png?alt=media&token=2cf70cd9-665c-428a-874a-88abfd64a19e"
   }
 ]

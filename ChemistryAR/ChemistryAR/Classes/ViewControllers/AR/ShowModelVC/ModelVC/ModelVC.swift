@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import ARKit
+
+typealias ARNameCallback = (_ success: Bool, _ name: String) -> Void
+typealias ARURLCallback = (_ success: Bool, _ file: URL) -> Void
 
 class ModelVC: BaseVC {
 
-    @IBOutlet weak var vModel: UIView?
+    @IBOutlet weak var vContent: UIView?
     @IBOutlet weak var clvContent: UICollectionView!
     @IBOutlet weak var csHeightViewModel: NSLayoutConstraint!
     
     var statusSelected: Int = 0
     var isUpdateData: Bool = true
+    var modelAR: ARFileModel?
+    var nameAR: String? = ""
+    
+    var nameARModel: ARNameCallback?
+    var urlARModel: ARURLCallback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +35,9 @@ class ModelVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        vModel?.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        vModel?.layer.cornerRadius = 15
+        showModelViewWithAnimation()
+        vContent?.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        vContent?.layer.cornerRadius = 15
     }
     
     func setupTabBarItemView() {
@@ -44,9 +54,48 @@ class ModelVC: BaseVC {
             tabBarTopItemView?.addSubview(tabBarItem, edge: UIEdgeInsets.zero)
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !isEmpty(nameAR) {
+            nameARModel!(true, E(nameAR))
+        }
+        if modelAR?.urlLocal != nil {
+            urlARModel!(true, (modelAR?.urlLocal)!)
+        }
+    }
+    
+    @objc func showModelViewWithAnimation()  {
+        let height = vContent?.frame.size.height ?? 0
+        
+        vContent?.transform = CGAffineTransform(translationX: 0, y: height)
+        UIView.animate(withDuration: 0.3) {
+            self.vContent?.transform = .identity
+        }
+    }
+    
+    func hideModelView()  {
+        let height = vContent?.frame.size.height ?? 0
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
+            self?.vContent?.transform = CGAffineTransform(translationX: 0, y: height)
+        }) {[weak self] (isFinish) in
+            self?.dismiss(animated: false, completion: nil)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        if let touch = touches.first {
+            if touch.view != self.vContent {
+                hideModelView()
+            }
+        }
+    }
 
     @IBAction func btnHideARModelPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        hideModelView()
     }
 }
 
@@ -80,19 +129,19 @@ extension ModelVC: UICollectionViewDataSource {
         
         cell.rootVC = self
         cell.tabSelected = statusSelected
-//        if statusSelected == 0 {
-//            cell.nameCallback = {[weak self] (success, name) in
-//                if success {
-//                    self?.nameAR = name
-//                }
-//            }
-//        } else {
-//            cell.urlCallback = {[weak self] (success, url) in
-//                if success {
-//                    self?.modelAR = self?.configModelWith(url)
-//                }
-//            }
-//        }
+        if statusSelected == 0 {
+            cell.nameCallback = {[weak self] (success, name) in
+                if success {
+                    self?.nameAR = name
+                }
+            }
+        } else {
+            cell.fileCallback = {[weak self] (success, file) in
+                if success {
+                    self?.modelAR = file
+                }
+            }
+        }
         
         return cell
     }

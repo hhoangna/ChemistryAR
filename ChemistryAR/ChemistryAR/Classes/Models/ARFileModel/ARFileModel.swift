@@ -19,6 +19,7 @@ class ARFileModel: BaseModel, Codable {
     var updatedAt: Date?
     var active: Bool?
     var symbol: String?
+    var image: String?
     
     func startDownload(callback: @escaping (Bool,ARFileModel?) -> Void){
         let fileUrl = self.getSaveFileUrl(fileName: E(name))

@@ -72,19 +72,23 @@ class ShowModelVC: BaseVC {
     }
     
     @IBAction func btnMoreARModelPressed(_ sender: UIButton) {
-//        vModel?.animShow()
-//        self.moreModelBtn.isHidden = true
-//        self.sendMapButton.isHidden = true
+        
+        self.nameAR = nil
+        self.modelAR = nil
+        
         let vc: ModelVC = .load(SB: .AR)
+        vc.nameARModel = {[weak self] (success, name) in
+            if success {
+                self?.nameAR = name
+            }
+        }
+        vc.urlARModel = {[weak self] (success, url) in
+            if success {
+                self?.modelAR = self?.configModelWith(url)
+            }
+        }
         self.present(vc, animated: true, completion: nil)
-
     }
-    
-//    @IBAction func btnHideARModelPressed(_ sender: UIButton) {
-//        vModel?.animHide()
-//        self.moreModelBtn.isHidden = false
-//        self.sendMapButton.isHidden = false
-//    }
 }
 
 extension ShowModelVC: ARSCNViewDelegate {
@@ -92,7 +96,12 @@ extension ShowModelVC: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let name = anchor.name, name.hasPrefix("panda") {
-            node.addChildNode(loadRedPandaModel(nameAR))
+            if !isEmpty(self.nameAR) {
+                node.addChildNode(loadRedPandaModel(nameAR))
+            }
+            if self.modelAR != nil {
+                node.addChildNode(modelAR!)
+            }
         }
     }
 }
@@ -263,7 +272,7 @@ extension ShowModelVC: ARSessionDelegate {
         let hoverSequence = SCNAction.sequence([hoverUp, hoverDown])
         let rotateAndHover = SCNAction.group([rotateOne, hoverSequence])
         let repeatForever = SCNAction.repeatForever(rotateAndHover)
-        let scale = SCNAction.scale(by: 0.05, duration: 0.3)
+        let scale = SCNAction.scale(by: 0.1, duration: 0.3)
         node.runAction(repeatForever)
         node.runAction(scale)
     }
