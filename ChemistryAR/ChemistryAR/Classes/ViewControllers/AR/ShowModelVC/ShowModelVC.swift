@@ -29,13 +29,16 @@ class ShowModelVC: BaseVC {
     var multipeerSession: MultipeerSession!
     var mapProvider: MCPeerID?
     var modelAR: SCNNode?
+    var nameAR: String? = ""
     
-    var arrModel: [ARFileModel]?
+    var statusSelected: Int = 0
+    var isUpdateData: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         multipeerSession = MultipeerSession(receivedDataHandler: receivedData)
+        setupTabBarItemView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +47,8 @@ class ShowModelVC: BaseVC {
         vModel?.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         vModel?.layer.cornerRadius = 15
         vModel?.isHidden = true
-        fetchAllModel()
+        
+        self.addDismissKeyboardDetector()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,26 +86,38 @@ class ShowModelVC: BaseVC {
         
         // Pause the view's AR session.
         sceneView.session.pause()
+        self.removeDismissKeyboardDetector()
     }
     
-    func fetchAllModel() {
-        App().showLoadingIndicator()
-        SERVICES().API.getAllCompound { (results) in
-            App().dismissLoadingIndicator()
-            switch results {
-            case .object(let obj):
-                self.arrModel = obj
-                self.clvContent.reloadData()
-            case .error(let err):
-                self.showAlertView(E(err.message))
-            }
+    override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: clvContent ?? UIView()) ?? false {
+            return false
+        }
+        
+        return true
+    }
+    
+    func setupTabBarItemView() {
+        if topItemView == nil {
+            topItemView = TabBarTopView.load()
+            topItemView?.delegate = self
+        }
+        
+        let tabMine = TabBarItem.init("Mine".localized, nil, AppColor.mainColor)
+        let tabLibrary = TabBarItem.init("Library".localized, nil, AppColor.mainColor)
+        
+        topItemView?.tabBarTopItems = [tabMine,tabLibrary]
+        if let tabBarItem = topItemView {
+            tabBarTopItemView?.addSubview(tabBarItem, edge: UIEdgeInsets.zero)
         }
     }
     
     @IBAction func btnMoreARModelPressed(_ sender: UIButton) {
-        vModel?.animShow()
-        self.moreModelBtn.isHidden = true
-        self.sendMapButton.isHidden = true
+//        vModel?.animShow()
+//        self.moreModelBtn.isHidden = true
+//        self.sendMapButton.isHidden = true
+        let vc: ModelVC = .load(SB: .AR)
+        self.present(vc, animated: true, completion: nil)
 
     }
     
@@ -117,7 +133,7 @@ extension ShowModelVC: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let name = anchor.name, name.hasPrefix("panda") {
-            node.addChildNode(loadRedPandaModel())
+            node.addChildNode(loadRedPandaModel(nameAR))
         }
     }
 }
@@ -281,21 +297,32 @@ extension ShowModelVC: ARSessionDelegate {
     
     // MARK: - AR session management
     
-    private func loadRedPandaModel() -> SCNNode {
-        let model = ARFileModel()
-        var referenceNode = SCNReferenceNode()
-        model.urlServer = "https://firebasestorage.googleapis.com/v0/b/ar-chemistry.appspot.com/o/ModelDea%2Fmax.scn?alt=media&token=4ec020ca-c378-452c-aefc-5275884d7758"
-        model.name = "test.scn"
-        model.startDownload { (success, file) in
-            referenceNode = SCNReferenceNode(url: (file?.urlLocal)!)!
-            referenceNode.load()
-        }
+    func addAnimation(node: SCNNode) {
+        let rotateOne = SCNAction.rotateBy(x: 0, y: CGFloat(Float.pi), z: 0, duration: 5.0)
+        let hoverUp = SCNAction.moveBy(x: 0, y: 0.2, z: 0, duration: 2.5)
+        let hoverDown = SCNAction.moveBy(x: 0, y: -0.2, z: 0, duration: 2.5)
+        let hoverSequence = SCNAction.sequence([hoverUp, hoverDown])
+        let rotateAndHover = SCNAction.group([rotateOne, hoverSequence])
+        let repeatForever = SCNAction.repeatForever(rotateAndHover)
+        let scale = SCNAction.scale(by: 0.05, duration: 0.3)
+        node.runAction(repeatForever)
+        node.runAction(scale)
+    }
+    
+    private func loadRedPandaModel(_ name: String?) -> SCNNode {
+        let sceneURL = Bundle.main.url(forResource: name!, withExtension: "scn", subdirectory: "art.scnassets")!
+        let referenceNode = SCNReferenceNode(url: sceneURL)!
+        addAnimation(node: referenceNode)
+        referenceNode.load()
+        
         return referenceNode
     }
     
     private func configModelWith(_ url:URL) -> SCNNode{
         let referenceNode = SCNReferenceNode(url: url)!
+        addAnimation(node: referenceNode)
         referenceNode.load()
+        
         return referenceNode
     }
 }
@@ -303,46 +330,100 @@ extension ShowModelVC: ARSessionDelegate {
 extension ShowModelVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (collectionView.frame.size.width - 22)/4
-        return CGSize(width: width, height: width)
+        print(collectionView.frame.size)
+        return collectionView.frame.size;
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 3;
+        return 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
+        return UIEdgeInsets.zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3;
+        return 0;
     }
 }
 
 extension ShowModelVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrModel?.count ?? 0
+        return topItemView?.tabBarTopItems.count ?? 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = arrModel?[indexPath.item]
         let cell: CellModel = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CellModel
         
-        cell.lblTitle?.text = model?.name
-        cell.imgIcon?.setImageWithURL(url: model?.urlServer)
+        cell.rootVC = self
+        cell.tabSelected = statusSelected
+        if statusSelected == 0 {
+            cell.nameCallback = {[weak self] (success, name) in
+                if success {
+                    self?.nameAR = name
+                }
+            }
+        } else {
+            cell.urlCallback = {[weak self] (success, url) in
+                if success {
+                    self?.modelAR = self?.configModelWith(url)
+                }
+            }
+        }
         
         return cell
     }
 }
 
+extension ShowModelVC: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isUpdateData = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        topItemView?.updateContraintViewSelectedDidScroll(scrollView)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        topItemView?.scrollViewDidEndDecelerating(scrollView)
+        
+        isUpdateData = true
+        let contentOffsetX = scrollView.contentOffset.x
+        let indexSelect = Int(contentOffsetX / ScreenSize.SCREEN_WIDTH)
+        
+        if indexSelect == 0 {
+            statusSelected = 0
+        } else {
+            statusSelected = 1
+        }
+        clvContent.reloadData()
+    }
+}
+
+extension ShowModelVC: TabBarTopViewDelegate {
+    func didSelectedTabBarTopItem(tabBarTopItemView: TabBarTopView, indexBarItem: Int) {
+        print("IndexTabBarItem:\(indexBarItem)")
+        isUpdateData = true
+        if indexBarItem == 0 {
+            statusSelected = 0
+        } else {
+            statusSelected = 1
+        }
+        
+        scrollToPageSelected(indexBarItem)
+    }
+    
+    func scrollToPageSelected(_ indexPage:Int) {
+        let width = self.view.frame.size.width
+        let pointX = CGFloat(indexPage) * width
+        
+        clvContent?.contentOffset =  CGPoint(x: pointX, y: (clvContent?.contentOffset.y)!);
+        clvContent?.reloadData()
+    }
+}
+
 extension ShowModelVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let model = arrModel?[indexPath.item]
-        model?.startDownload { (success, file) in
-            if let url = file?.urlLocal {
-                self.modelAR = self.configModelWith(url)
-            }
-        }
+        print("select cc")
     }
 }

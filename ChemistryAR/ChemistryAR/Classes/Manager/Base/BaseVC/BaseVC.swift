@@ -181,6 +181,12 @@ extension BaseVC {
     }
 }
 
+extension BaseVC: UIGestureRecognizerDelegate{
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return true
+    }
+}
+
 //MARK: -Other funtion
 extension BaseVC {
     func didSelectback() {

@@ -66,7 +66,7 @@ class TabBarTopView: UIView {
     }
     
     func setupViewColorSelect() {
-        conWidthvLineColor?.constant = ScreenSize.SCREEN_WIDTH * 0.9 / CGFloat(tabBarTopItems.count)
+        conWidthvLineColor?.constant = self.frame.size.width / CGFloat(tabBarTopItems.count)
     }
     
 }
